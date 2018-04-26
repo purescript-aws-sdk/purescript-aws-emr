@@ -121,13 +121,13 @@ listSteps (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
-modifyInstanceFleet :: forall eff. EMR.Service -> EMRTypes.ModifyInstanceFleetInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+modifyInstanceFleet :: forall eff. EMR.Service -> EMRTypes.ModifyInstanceFleetInput -> Aff (exception :: EXCEPTION | eff) Unit
 modifyInstanceFleet (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "modifyInstanceFleet"
 
 
 -- | <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>
-modifyInstanceGroups :: forall eff. EMR.Service -> EMRTypes.ModifyInstanceGroupsInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+modifyInstanceGroups :: forall eff. EMR.Service -> EMRTypes.ModifyInstanceGroupsInput -> Aff (exception :: EXCEPTION | eff) Unit
 modifyInstanceGroups (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "modifyInstanceGroups"
 
@@ -157,18 +157,18 @@ runJobFlow (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.</p> <p> <code>SetTerminationProtection</code> is used to prevent accidental termination of a cluster and to ensure that in the event of an error, the instances persist so that you can recover any data stored in their ephemeral instance storage.</p> <p> To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code> to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code> in which you set the value to <code>false</code>. </p> <p> For more information, see<a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. </p>
-setTerminationProtection :: forall eff. EMR.Service -> EMRTypes.SetTerminationProtectionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setTerminationProtection :: forall eff. EMR.Service -> EMRTypes.SetTerminationProtectionInput -> Aff (exception :: EXCEPTION | eff) Unit
 setTerminationProtection (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setTerminationProtection"
 
 
 -- | <p>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified clusters (job flows). This action works on running clusters. You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only by an IAM user who created the cluster or the AWS account that owns the cluster.</p>
-setVisibleToAllUsers :: forall eff. EMR.Service -> EMRTypes.SetVisibleToAllUsersInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setVisibleToAllUsers :: forall eff. EMR.Service -> EMRTypes.SetVisibleToAllUsersInput -> Aff (exception :: EXCEPTION | eff) Unit
 setVisibleToAllUsers (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setVisibleToAllUsers"
 
 
 -- | <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet completed is canceled and the EC2 instances on which the cluster is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.</p> <p>The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5 minutes for the cluster to completely terminate and release allocated resources, such as Amazon EC2 instances.</p>
-terminateJobFlows :: forall eff. EMR.Service -> EMRTypes.TerminateJobFlowsInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+terminateJobFlows :: forall eff. EMR.Service -> EMRTypes.TerminateJobFlowsInput -> Aff (exception :: EXCEPTION | eff) Unit
 terminateJobFlows (EMR.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "terminateJobFlows"

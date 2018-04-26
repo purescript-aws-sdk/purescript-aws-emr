@@ -58,7 +58,7 @@ Constructs AddInstanceFleetInput's fields from required parameters
 
 ``` purescript
 newtype AddInstanceFleetOutput
-  = AddInstanceFleetOutput { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) }
+  = AddInstanceFleetOutput { "ClusterId" :: Maybe (XmlStringMaxLen256), "InstanceFleetId" :: Maybe (InstanceFleetId) }
 ```
 
 ##### Instances
@@ -81,7 +81,7 @@ Constructs AddInstanceFleetOutput from required parameters
 #### `newAddInstanceFleetOutput'`
 
 ``` purescript
-newAddInstanceFleetOutput' :: ({ "ClusterId" :: NullOrUndefined (XmlStringMaxLen256), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) } -> { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) }) -> AddInstanceFleetOutput
+newAddInstanceFleetOutput' :: ({ "ClusterId" :: Maybe (XmlStringMaxLen256), "InstanceFleetId" :: Maybe (InstanceFleetId) } -> { "ClusterId" :: Maybe (XmlStringMaxLen256), "InstanceFleetId" :: Maybe (InstanceFleetId) }) -> AddInstanceFleetOutput
 ```
 
 Constructs AddInstanceFleetOutput's fields from required parameters
@@ -124,7 +124,7 @@ Constructs AddInstanceGroupsInput's fields from required parameters
 
 ``` purescript
 newtype AddInstanceGroupsOutput
-  = AddInstanceGroupsOutput { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256), "InstanceGroupIds" :: NullOrUndefined (InstanceGroupIdsList) }
+  = AddInstanceGroupsOutput { "JobFlowId" :: Maybe (XmlStringMaxLen256), "InstanceGroupIds" :: Maybe (InstanceGroupIdsList) }
 ```
 
 <p>Output from an AddInstanceGroups call.</p>
@@ -149,7 +149,7 @@ Constructs AddInstanceGroupsOutput from required parameters
 #### `newAddInstanceGroupsOutput'`
 
 ``` purescript
-newAddInstanceGroupsOutput' :: ({ "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256), "InstanceGroupIds" :: NullOrUndefined (InstanceGroupIdsList) } -> { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256), "InstanceGroupIds" :: NullOrUndefined (InstanceGroupIdsList) }) -> AddInstanceGroupsOutput
+newAddInstanceGroupsOutput' :: ({ "JobFlowId" :: Maybe (XmlStringMaxLen256), "InstanceGroupIds" :: Maybe (InstanceGroupIdsList) } -> { "JobFlowId" :: Maybe (XmlStringMaxLen256), "InstanceGroupIds" :: Maybe (InstanceGroupIdsList) }) -> AddInstanceGroupsOutput
 ```
 
 Constructs AddInstanceGroupsOutput's fields from required parameters
@@ -192,7 +192,7 @@ Constructs AddJobFlowStepsInput's fields from required parameters
 
 ``` purescript
 newtype AddJobFlowStepsOutput
-  = AddJobFlowStepsOutput { "StepIds" :: NullOrUndefined (StepIdsList) }
+  = AddJobFlowStepsOutput { "StepIds" :: Maybe (StepIdsList) }
 ```
 
 <p> The output for the <a>AddJobFlowSteps</a> operation. </p>
@@ -217,7 +217,7 @@ Constructs AddJobFlowStepsOutput from required parameters
 #### `newAddJobFlowStepsOutput'`
 
 ``` purescript
-newAddJobFlowStepsOutput' :: ({ "StepIds" :: NullOrUndefined (StepIdsList) } -> { "StepIds" :: NullOrUndefined (StepIdsList) }) -> AddJobFlowStepsOutput
+newAddJobFlowStepsOutput' :: ({ "StepIds" :: Maybe (StepIdsList) } -> { "StepIds" :: Maybe (StepIdsList) }) -> AddJobFlowStepsOutput
 ```
 
 Constructs AddJobFlowStepsOutput's fields from required parameters
@@ -294,7 +294,7 @@ Encode AdjustmentType
 
 ``` purescript
 newtype Application
-  = Application { "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList), "AdditionalInfo" :: NullOrUndefined (StringMap) }
+  = Application { "Name" :: Maybe (String), "Version" :: Maybe (String), "Args" :: Maybe (StringList), "AdditionalInfo" :: Maybe (StringMap) }
 ```
 
 <p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html">Using the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the cluster using MapR M3 or M5 Edition, respectively.</p> </li> </ul> <note> <p>In Amazon EMR releases 4.x and later, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.</p> </note>
@@ -319,7 +319,7 @@ Constructs Application from required parameters
 #### `newApplication'`
 
 ``` purescript
-newApplication' :: ({ "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList), "AdditionalInfo" :: NullOrUndefined (StringMap) } -> { "Name" :: NullOrUndefined (String), "Version" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList), "AdditionalInfo" :: NullOrUndefined (StringMap) }) -> Application
+newApplication' :: ({ "Name" :: Maybe (String), "Version" :: Maybe (String), "Args" :: Maybe (StringList), "AdditionalInfo" :: Maybe (StringMap) } -> { "Name" :: Maybe (String), "Version" :: Maybe (String), "Args" :: Maybe (StringList), "AdditionalInfo" :: Maybe (StringMap) }) -> Application
 ```
 
 Constructs Application's fields from required parameters
@@ -378,7 +378,7 @@ Constructs AutoScalingPolicy's fields from required parameters
 
 ``` purescript
 newtype AutoScalingPolicyDescription
-  = AutoScalingPolicyDescription { "Status" :: NullOrUndefined (AutoScalingPolicyStatus), "Constraints" :: NullOrUndefined (ScalingConstraints), "Rules" :: NullOrUndefined (ScalingRuleList) }
+  = AutoScalingPolicyDescription { "Status" :: Maybe (AutoScalingPolicyStatus), "Constraints" :: Maybe (ScalingConstraints), "Rules" :: Maybe (ScalingRuleList) }
 ```
 
 <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
@@ -403,7 +403,7 @@ Constructs AutoScalingPolicyDescription from required parameters
 #### `newAutoScalingPolicyDescription'`
 
 ``` purescript
-newAutoScalingPolicyDescription' :: ({ "Status" :: NullOrUndefined (AutoScalingPolicyStatus), "Constraints" :: NullOrUndefined (ScalingConstraints), "Rules" :: NullOrUndefined (ScalingRuleList) } -> { "Status" :: NullOrUndefined (AutoScalingPolicyStatus), "Constraints" :: NullOrUndefined (ScalingConstraints), "Rules" :: NullOrUndefined (ScalingRuleList) }) -> AutoScalingPolicyDescription
+newAutoScalingPolicyDescription' :: ({ "Status" :: Maybe (AutoScalingPolicyStatus), "Constraints" :: Maybe (ScalingConstraints), "Rules" :: Maybe (ScalingRuleList) } -> { "Status" :: Maybe (AutoScalingPolicyStatus), "Constraints" :: Maybe (ScalingConstraints), "Rules" :: Maybe (ScalingRuleList) }) -> AutoScalingPolicyDescription
 ```
 
 Constructs AutoScalingPolicyDescription's fields from required parameters
@@ -428,7 +428,7 @@ Encode AutoScalingPolicyState
 
 ``` purescript
 newtype AutoScalingPolicyStateChangeReason
-  = AutoScalingPolicyStateChangeReason { "Code" :: NullOrUndefined (AutoScalingPolicyStateChangeReasonCode), "Message" :: NullOrUndefined (String) }
+  = AutoScalingPolicyStateChangeReason { "Code" :: Maybe (AutoScalingPolicyStateChangeReasonCode), "Message" :: Maybe (String) }
 ```
 
 <p>The reason for an <a>AutoScalingPolicyStatus</a> change.</p>
@@ -453,7 +453,7 @@ Constructs AutoScalingPolicyStateChangeReason from required parameters
 #### `newAutoScalingPolicyStateChangeReason'`
 
 ``` purescript
-newAutoScalingPolicyStateChangeReason' :: ({ "Code" :: NullOrUndefined (AutoScalingPolicyStateChangeReasonCode), "Message" :: NullOrUndefined (String) } -> { "Code" :: NullOrUndefined (AutoScalingPolicyStateChangeReasonCode), "Message" :: NullOrUndefined (String) }) -> AutoScalingPolicyStateChangeReason
+newAutoScalingPolicyStateChangeReason' :: ({ "Code" :: Maybe (AutoScalingPolicyStateChangeReasonCode), "Message" :: Maybe (String) } -> { "Code" :: Maybe (AutoScalingPolicyStateChangeReasonCode), "Message" :: Maybe (String) }) -> AutoScalingPolicyStateChangeReason
 ```
 
 Constructs AutoScalingPolicyStateChangeReason's fields from required parameters
@@ -478,7 +478,7 @@ Encode AutoScalingPolicyStateChangeReasonCode
 
 ``` purescript
 newtype AutoScalingPolicyStatus
-  = AutoScalingPolicyStatus { "State" :: NullOrUndefined (AutoScalingPolicyState), "StateChangeReason" :: NullOrUndefined (AutoScalingPolicyStateChangeReason) }
+  = AutoScalingPolicyStatus { "State" :: Maybe (AutoScalingPolicyState), "StateChangeReason" :: Maybe (AutoScalingPolicyStateChangeReason) }
 ```
 
 <p>The status of an automatic scaling policy. </p>
@@ -503,7 +503,7 @@ Constructs AutoScalingPolicyStatus from required parameters
 #### `newAutoScalingPolicyStatus'`
 
 ``` purescript
-newAutoScalingPolicyStatus' :: ({ "State" :: NullOrUndefined (AutoScalingPolicyState), "StateChangeReason" :: NullOrUndefined (AutoScalingPolicyStateChangeReason) } -> { "State" :: NullOrUndefined (AutoScalingPolicyState), "StateChangeReason" :: NullOrUndefined (AutoScalingPolicyStateChangeReason) }) -> AutoScalingPolicyStatus
+newAutoScalingPolicyStatus' :: ({ "State" :: Maybe (AutoScalingPolicyState), "StateChangeReason" :: Maybe (AutoScalingPolicyStateChangeReason) } -> { "State" :: Maybe (AutoScalingPolicyState), "StateChangeReason" :: Maybe (AutoScalingPolicyStateChangeReason) }) -> AutoScalingPolicyStatus
 ```
 
 Constructs AutoScalingPolicyStatus's fields from required parameters
@@ -578,7 +578,7 @@ Encode BootstrapActionConfigList
 
 ``` purescript
 newtype BootstrapActionDetail
-  = BootstrapActionDetail { "BootstrapActionConfig" :: NullOrUndefined (BootstrapActionConfig) }
+  = BootstrapActionDetail { "BootstrapActionConfig" :: Maybe (BootstrapActionConfig) }
 ```
 
 <p>Reports the configuration of a bootstrap action in a cluster (job flow).</p>
@@ -603,7 +603,7 @@ Constructs BootstrapActionDetail from required parameters
 #### `newBootstrapActionDetail'`
 
 ``` purescript
-newBootstrapActionDetail' :: ({ "BootstrapActionConfig" :: NullOrUndefined (BootstrapActionConfig) } -> { "BootstrapActionConfig" :: NullOrUndefined (BootstrapActionConfig) }) -> BootstrapActionDetail
+newBootstrapActionDetail' :: ({ "BootstrapActionConfig" :: Maybe (BootstrapActionConfig) } -> { "BootstrapActionConfig" :: Maybe (BootstrapActionConfig) }) -> BootstrapActionDetail
 ```
 
 Constructs BootstrapActionDetail's fields from required parameters
@@ -628,7 +628,7 @@ Encode BootstrapActionDetailList
 
 ``` purescript
 newtype CancelStepsInfo
-  = CancelStepsInfo { "StepId" :: NullOrUndefined (StepId), "Status" :: NullOrUndefined (CancelStepsRequestStatus), "Reason" :: NullOrUndefined (String) }
+  = CancelStepsInfo { "StepId" :: Maybe (StepId), "Status" :: Maybe (CancelStepsRequestStatus), "Reason" :: Maybe (String) }
 ```
 
 <p>Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.</p>
@@ -653,7 +653,7 @@ Constructs CancelStepsInfo from required parameters
 #### `newCancelStepsInfo'`
 
 ``` purescript
-newCancelStepsInfo' :: ({ "StepId" :: NullOrUndefined (StepId), "Status" :: NullOrUndefined (CancelStepsRequestStatus), "Reason" :: NullOrUndefined (String) } -> { "StepId" :: NullOrUndefined (StepId), "Status" :: NullOrUndefined (CancelStepsRequestStatus), "Reason" :: NullOrUndefined (String) }) -> CancelStepsInfo
+newCancelStepsInfo' :: ({ "StepId" :: Maybe (StepId), "Status" :: Maybe (CancelStepsRequestStatus), "Reason" :: Maybe (String) } -> { "StepId" :: Maybe (StepId), "Status" :: Maybe (CancelStepsRequestStatus), "Reason" :: Maybe (String) }) -> CancelStepsInfo
 ```
 
 Constructs CancelStepsInfo's fields from required parameters
@@ -678,7 +678,7 @@ Encode CancelStepsInfoList
 
 ``` purescript
 newtype CancelStepsInput
-  = CancelStepsInput { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256), "StepIds" :: NullOrUndefined (StepIdsList) }
+  = CancelStepsInput { "ClusterId" :: Maybe (XmlStringMaxLen256), "StepIds" :: Maybe (StepIdsList) }
 ```
 
 <p>The input argument to the <a>CancelSteps</a> operation.</p>
@@ -703,7 +703,7 @@ Constructs CancelStepsInput from required parameters
 #### `newCancelStepsInput'`
 
 ``` purescript
-newCancelStepsInput' :: ({ "ClusterId" :: NullOrUndefined (XmlStringMaxLen256), "StepIds" :: NullOrUndefined (StepIdsList) } -> { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256), "StepIds" :: NullOrUndefined (StepIdsList) }) -> CancelStepsInput
+newCancelStepsInput' :: ({ "ClusterId" :: Maybe (XmlStringMaxLen256), "StepIds" :: Maybe (StepIdsList) } -> { "ClusterId" :: Maybe (XmlStringMaxLen256), "StepIds" :: Maybe (StepIdsList) }) -> CancelStepsInput
 ```
 
 Constructs CancelStepsInput's fields from required parameters
@@ -712,7 +712,7 @@ Constructs CancelStepsInput's fields from required parameters
 
 ``` purescript
 newtype CancelStepsOutput
-  = CancelStepsOutput { "CancelStepsInfoList" :: NullOrUndefined (CancelStepsInfoList) }
+  = CancelStepsOutput { "CancelStepsInfoList" :: Maybe (CancelStepsInfoList) }
 ```
 
 <p> The output for the <a>CancelSteps</a> operation. </p>
@@ -737,7 +737,7 @@ Constructs CancelStepsOutput from required parameters
 #### `newCancelStepsOutput'`
 
 ``` purescript
-newCancelStepsOutput' :: ({ "CancelStepsInfoList" :: NullOrUndefined (CancelStepsInfoList) } -> { "CancelStepsInfoList" :: NullOrUndefined (CancelStepsInfoList) }) -> CancelStepsOutput
+newCancelStepsOutput' :: ({ "CancelStepsInfoList" :: Maybe (CancelStepsInfoList) } -> { "CancelStepsInfoList" :: Maybe (CancelStepsInfoList) }) -> CancelStepsOutput
 ```
 
 Constructs CancelStepsOutput's fields from required parameters
@@ -762,7 +762,7 @@ Encode CancelStepsRequestStatus
 
 ``` purescript
 newtype CloudWatchAlarmDefinition
-  = CloudWatchAlarmDefinition { "ComparisonOperator" :: ComparisonOperator, "EvaluationPeriods" :: NullOrUndefined (Int), "MetricName" :: String, "Namespace" :: NullOrUndefined (String), "Period" :: Int, "Statistic" :: NullOrUndefined (Statistic), "Threshold" :: NonNegativeDouble, "Unit" :: NullOrUndefined (Unit''), "Dimensions" :: NullOrUndefined (MetricDimensionList) }
+  = CloudWatchAlarmDefinition { "ComparisonOperator" :: ComparisonOperator, "EvaluationPeriods" :: Maybe (Int), "MetricName" :: String, "Namespace" :: Maybe (String), "Period" :: Int, "Statistic" :: Maybe (Statistic), "Threshold" :: NonNegativeDouble, "Unit" :: Maybe (Unit''), "Dimensions" :: Maybe (MetricDimensionList) }
 ```
 
 <p>The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.</p>
@@ -787,7 +787,7 @@ Constructs CloudWatchAlarmDefinition from required parameters
 #### `newCloudWatchAlarmDefinition'`
 
 ``` purescript
-newCloudWatchAlarmDefinition' :: ComparisonOperator -> String -> Int -> NonNegativeDouble -> ({ "ComparisonOperator" :: ComparisonOperator, "EvaluationPeriods" :: NullOrUndefined (Int), "MetricName" :: String, "Namespace" :: NullOrUndefined (String), "Period" :: Int, "Statistic" :: NullOrUndefined (Statistic), "Threshold" :: NonNegativeDouble, "Unit" :: NullOrUndefined (Unit''), "Dimensions" :: NullOrUndefined (MetricDimensionList) } -> { "ComparisonOperator" :: ComparisonOperator, "EvaluationPeriods" :: NullOrUndefined (Int), "MetricName" :: String, "Namespace" :: NullOrUndefined (String), "Period" :: Int, "Statistic" :: NullOrUndefined (Statistic), "Threshold" :: NonNegativeDouble, "Unit" :: NullOrUndefined (Unit''), "Dimensions" :: NullOrUndefined (MetricDimensionList) }) -> CloudWatchAlarmDefinition
+newCloudWatchAlarmDefinition' :: ComparisonOperator -> String -> Int -> NonNegativeDouble -> ({ "ComparisonOperator" :: ComparisonOperator, "EvaluationPeriods" :: Maybe (Int), "MetricName" :: String, "Namespace" :: Maybe (String), "Period" :: Int, "Statistic" :: Maybe (Statistic), "Threshold" :: NonNegativeDouble, "Unit" :: Maybe (Unit''), "Dimensions" :: Maybe (MetricDimensionList) } -> { "ComparisonOperator" :: ComparisonOperator, "EvaluationPeriods" :: Maybe (Int), "MetricName" :: String, "Namespace" :: Maybe (String), "Period" :: Int, "Statistic" :: Maybe (Statistic), "Threshold" :: NonNegativeDouble, "Unit" :: Maybe (Unit''), "Dimensions" :: Maybe (MetricDimensionList) }) -> CloudWatchAlarmDefinition
 ```
 
 Constructs CloudWatchAlarmDefinition's fields from required parameters
@@ -796,7 +796,7 @@ Constructs CloudWatchAlarmDefinition's fields from required parameters
 
 ``` purescript
 newtype Cluster
-  = Cluster { "Id" :: NullOrUndefined (ClusterId), "Name" :: NullOrUndefined (String), "Status" :: NullOrUndefined (ClusterStatus), "Ec2InstanceAttributes" :: NullOrUndefined (Ec2InstanceAttributes), "InstanceCollectionType" :: NullOrUndefined (InstanceCollectionType), "LogUri" :: NullOrUndefined (String), "RequestedAmiVersion" :: NullOrUndefined (String), "RunningAmiVersion" :: NullOrUndefined (String), "ReleaseLabel" :: NullOrUndefined (String), "AutoTerminate" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "Applications" :: NullOrUndefined (ApplicationList), "Tags" :: NullOrUndefined (TagList), "ServiceRole" :: NullOrUndefined (String), "NormalizedInstanceHours" :: NullOrUndefined (Int), "MasterPublicDnsName" :: NullOrUndefined (String), "Configurations" :: NullOrUndefined (ConfigurationList), "SecurityConfiguration" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior), "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256), "EbsRootVolumeSize" :: NullOrUndefined (Int), "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot), "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) }
+  = Cluster { "Id" :: Maybe (ClusterId), "Name" :: Maybe (String), "Status" :: Maybe (ClusterStatus), "Ec2InstanceAttributes" :: Maybe (Ec2InstanceAttributes), "InstanceCollectionType" :: Maybe (InstanceCollectionType), "LogUri" :: Maybe (String), "RequestedAmiVersion" :: Maybe (String), "RunningAmiVersion" :: Maybe (String), "ReleaseLabel" :: Maybe (String), "AutoTerminate" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "VisibleToAllUsers" :: Maybe (Boolean), "Applications" :: Maybe (ApplicationList), "Tags" :: Maybe (TagList), "ServiceRole" :: Maybe (String), "NormalizedInstanceHours" :: Maybe (Int), "MasterPublicDnsName" :: Maybe (String), "Configurations" :: Maybe (ConfigurationList), "SecurityConfiguration" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior), "CustomAmiId" :: Maybe (XmlStringMaxLen256), "EbsRootVolumeSize" :: Maybe (Int), "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot), "KerberosAttributes" :: Maybe (KerberosAttributes) }
 ```
 
 <p>The detailed description of the cluster.</p>
@@ -821,7 +821,7 @@ Constructs Cluster from required parameters
 #### `newCluster'`
 
 ``` purescript
-newCluster' :: ({ "Id" :: NullOrUndefined (ClusterId), "Name" :: NullOrUndefined (String), "Status" :: NullOrUndefined (ClusterStatus), "Ec2InstanceAttributes" :: NullOrUndefined (Ec2InstanceAttributes), "InstanceCollectionType" :: NullOrUndefined (InstanceCollectionType), "LogUri" :: NullOrUndefined (String), "RequestedAmiVersion" :: NullOrUndefined (String), "RunningAmiVersion" :: NullOrUndefined (String), "ReleaseLabel" :: NullOrUndefined (String), "AutoTerminate" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "Applications" :: NullOrUndefined (ApplicationList), "Tags" :: NullOrUndefined (TagList), "ServiceRole" :: NullOrUndefined (String), "NormalizedInstanceHours" :: NullOrUndefined (Int), "MasterPublicDnsName" :: NullOrUndefined (String), "Configurations" :: NullOrUndefined (ConfigurationList), "SecurityConfiguration" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior), "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256), "EbsRootVolumeSize" :: NullOrUndefined (Int), "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot), "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) } -> { "Id" :: NullOrUndefined (ClusterId), "Name" :: NullOrUndefined (String), "Status" :: NullOrUndefined (ClusterStatus), "Ec2InstanceAttributes" :: NullOrUndefined (Ec2InstanceAttributes), "InstanceCollectionType" :: NullOrUndefined (InstanceCollectionType), "LogUri" :: NullOrUndefined (String), "RequestedAmiVersion" :: NullOrUndefined (String), "RunningAmiVersion" :: NullOrUndefined (String), "ReleaseLabel" :: NullOrUndefined (String), "AutoTerminate" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "Applications" :: NullOrUndefined (ApplicationList), "Tags" :: NullOrUndefined (TagList), "ServiceRole" :: NullOrUndefined (String), "NormalizedInstanceHours" :: NullOrUndefined (Int), "MasterPublicDnsName" :: NullOrUndefined (String), "Configurations" :: NullOrUndefined (ConfigurationList), "SecurityConfiguration" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior), "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256), "EbsRootVolumeSize" :: NullOrUndefined (Int), "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot), "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) }) -> Cluster
+newCluster' :: ({ "Id" :: Maybe (ClusterId), "Name" :: Maybe (String), "Status" :: Maybe (ClusterStatus), "Ec2InstanceAttributes" :: Maybe (Ec2InstanceAttributes), "InstanceCollectionType" :: Maybe (InstanceCollectionType), "LogUri" :: Maybe (String), "RequestedAmiVersion" :: Maybe (String), "RunningAmiVersion" :: Maybe (String), "ReleaseLabel" :: Maybe (String), "AutoTerminate" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "VisibleToAllUsers" :: Maybe (Boolean), "Applications" :: Maybe (ApplicationList), "Tags" :: Maybe (TagList), "ServiceRole" :: Maybe (String), "NormalizedInstanceHours" :: Maybe (Int), "MasterPublicDnsName" :: Maybe (String), "Configurations" :: Maybe (ConfigurationList), "SecurityConfiguration" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior), "CustomAmiId" :: Maybe (XmlStringMaxLen256), "EbsRootVolumeSize" :: Maybe (Int), "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot), "KerberosAttributes" :: Maybe (KerberosAttributes) } -> { "Id" :: Maybe (ClusterId), "Name" :: Maybe (String), "Status" :: Maybe (ClusterStatus), "Ec2InstanceAttributes" :: Maybe (Ec2InstanceAttributes), "InstanceCollectionType" :: Maybe (InstanceCollectionType), "LogUri" :: Maybe (String), "RequestedAmiVersion" :: Maybe (String), "RunningAmiVersion" :: Maybe (String), "ReleaseLabel" :: Maybe (String), "AutoTerminate" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "VisibleToAllUsers" :: Maybe (Boolean), "Applications" :: Maybe (ApplicationList), "Tags" :: Maybe (TagList), "ServiceRole" :: Maybe (String), "NormalizedInstanceHours" :: Maybe (Int), "MasterPublicDnsName" :: Maybe (String), "Configurations" :: Maybe (ConfigurationList), "SecurityConfiguration" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior), "CustomAmiId" :: Maybe (XmlStringMaxLen256), "EbsRootVolumeSize" :: Maybe (Int), "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot), "KerberosAttributes" :: Maybe (KerberosAttributes) }) -> Cluster
 ```
 
 Constructs Cluster's fields from required parameters
@@ -862,7 +862,7 @@ Encode ClusterState
 
 ``` purescript
 newtype ClusterStateChangeReason
-  = ClusterStateChangeReason { "Code" :: NullOrUndefined (ClusterStateChangeReasonCode), "Message" :: NullOrUndefined (String) }
+  = ClusterStateChangeReason { "Code" :: Maybe (ClusterStateChangeReasonCode), "Message" :: Maybe (String) }
 ```
 
 <p>The reason that the cluster changed to its current state.</p>
@@ -887,7 +887,7 @@ Constructs ClusterStateChangeReason from required parameters
 #### `newClusterStateChangeReason'`
 
 ``` purescript
-newClusterStateChangeReason' :: ({ "Code" :: NullOrUndefined (ClusterStateChangeReasonCode), "Message" :: NullOrUndefined (String) } -> { "Code" :: NullOrUndefined (ClusterStateChangeReasonCode), "Message" :: NullOrUndefined (String) }) -> ClusterStateChangeReason
+newClusterStateChangeReason' :: ({ "Code" :: Maybe (ClusterStateChangeReasonCode), "Message" :: Maybe (String) } -> { "Code" :: Maybe (ClusterStateChangeReasonCode), "Message" :: Maybe (String) }) -> ClusterStateChangeReason
 ```
 
 Constructs ClusterStateChangeReason's fields from required parameters
@@ -928,7 +928,7 @@ Encode ClusterStateList
 
 ``` purescript
 newtype ClusterStatus
-  = ClusterStatus { "State" :: NullOrUndefined (ClusterState), "StateChangeReason" :: NullOrUndefined (ClusterStateChangeReason), "Timeline" :: NullOrUndefined (ClusterTimeline) }
+  = ClusterStatus { "State" :: Maybe (ClusterState), "StateChangeReason" :: Maybe (ClusterStateChangeReason), "Timeline" :: Maybe (ClusterTimeline) }
 ```
 
 <p>The detailed status of the cluster.</p>
@@ -953,7 +953,7 @@ Constructs ClusterStatus from required parameters
 #### `newClusterStatus'`
 
 ``` purescript
-newClusterStatus' :: ({ "State" :: NullOrUndefined (ClusterState), "StateChangeReason" :: NullOrUndefined (ClusterStateChangeReason), "Timeline" :: NullOrUndefined (ClusterTimeline) } -> { "State" :: NullOrUndefined (ClusterState), "StateChangeReason" :: NullOrUndefined (ClusterStateChangeReason), "Timeline" :: NullOrUndefined (ClusterTimeline) }) -> ClusterStatus
+newClusterStatus' :: ({ "State" :: Maybe (ClusterState), "StateChangeReason" :: Maybe (ClusterStateChangeReason), "Timeline" :: Maybe (ClusterTimeline) } -> { "State" :: Maybe (ClusterState), "StateChangeReason" :: Maybe (ClusterStateChangeReason), "Timeline" :: Maybe (ClusterTimeline) }) -> ClusterStatus
 ```
 
 Constructs ClusterStatus's fields from required parameters
@@ -962,7 +962,7 @@ Constructs ClusterStatus's fields from required parameters
 
 ``` purescript
 newtype ClusterSummary
-  = ClusterSummary { "Id" :: NullOrUndefined (ClusterId), "Name" :: NullOrUndefined (String), "Status" :: NullOrUndefined (ClusterStatus), "NormalizedInstanceHours" :: NullOrUndefined (Int) }
+  = ClusterSummary { "Id" :: Maybe (ClusterId), "Name" :: Maybe (String), "Status" :: Maybe (ClusterStatus), "NormalizedInstanceHours" :: Maybe (Int) }
 ```
 
 <p>The summary description of the cluster.</p>
@@ -987,7 +987,7 @@ Constructs ClusterSummary from required parameters
 #### `newClusterSummary'`
 
 ``` purescript
-newClusterSummary' :: ({ "Id" :: NullOrUndefined (ClusterId), "Name" :: NullOrUndefined (String), "Status" :: NullOrUndefined (ClusterStatus), "NormalizedInstanceHours" :: NullOrUndefined (Int) } -> { "Id" :: NullOrUndefined (ClusterId), "Name" :: NullOrUndefined (String), "Status" :: NullOrUndefined (ClusterStatus), "NormalizedInstanceHours" :: NullOrUndefined (Int) }) -> ClusterSummary
+newClusterSummary' :: ({ "Id" :: Maybe (ClusterId), "Name" :: Maybe (String), "Status" :: Maybe (ClusterStatus), "NormalizedInstanceHours" :: Maybe (Int) } -> { "Id" :: Maybe (ClusterId), "Name" :: Maybe (String), "Status" :: Maybe (ClusterStatus), "NormalizedInstanceHours" :: Maybe (Int) }) -> ClusterSummary
 ```
 
 Constructs ClusterSummary's fields from required parameters
@@ -1012,7 +1012,7 @@ Encode ClusterSummaryList
 
 ``` purescript
 newtype ClusterTimeline
-  = ClusterTimeline { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }
+  = ClusterTimeline { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }
 ```
 
 <p>Represents the timeline of the cluster's lifecycle.</p>
@@ -1037,7 +1037,7 @@ Constructs ClusterTimeline from required parameters
 #### `newClusterTimeline'`
 
 ``` purescript
-newClusterTimeline' :: ({ "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) } -> { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }) -> ClusterTimeline
+newClusterTimeline' :: ({ "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) } -> { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }) -> ClusterTimeline
 ```
 
 Constructs ClusterTimeline's fields from required parameters
@@ -1046,7 +1046,7 @@ Constructs ClusterTimeline's fields from required parameters
 
 ``` purescript
 newtype Command
-  = Command { "Name" :: NullOrUndefined (String), "ScriptPath" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList) }
+  = Command { "Name" :: Maybe (String), "ScriptPath" :: Maybe (String), "Args" :: Maybe (StringList) }
 ```
 
 <p>An entity describing an executable that runs on a cluster.</p>
@@ -1071,7 +1071,7 @@ Constructs Command from required parameters
 #### `newCommand'`
 
 ``` purescript
-newCommand' :: ({ "Name" :: NullOrUndefined (String), "ScriptPath" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList) } -> { "Name" :: NullOrUndefined (String), "ScriptPath" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList) }) -> Command
+newCommand' :: ({ "Name" :: Maybe (String), "ScriptPath" :: Maybe (String), "Args" :: Maybe (StringList) } -> { "Name" :: Maybe (String), "ScriptPath" :: Maybe (String), "Args" :: Maybe (StringList) }) -> Command
 ```
 
 Constructs Command's fields from required parameters
@@ -1112,7 +1112,7 @@ Encode ComparisonOperator
 
 ``` purescript
 newtype Configuration
-  = Configuration { "Classification" :: NullOrUndefined (String), "Properties" :: NullOrUndefined (StringMap) }
+  = Configuration { "Classification" :: Maybe (String), "Properties" :: Maybe (StringMap) }
 ```
 
 <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
@@ -1137,7 +1137,7 @@ Constructs Configuration from required parameters
 #### `newConfiguration'`
 
 ``` purescript
-newConfiguration' :: ({ "Classification" :: NullOrUndefined (String), "Properties" :: NullOrUndefined (StringMap) } -> { "Classification" :: NullOrUndefined (String), "Properties" :: NullOrUndefined (StringMap) }) -> Configuration
+newConfiguration' :: ({ "Classification" :: Maybe (String), "Properties" :: Maybe (StringMap) } -> { "Classification" :: Maybe (String), "Properties" :: Maybe (StringMap) }) -> Configuration
 ```
 
 Constructs Configuration's fields from required parameters
@@ -1324,7 +1324,7 @@ Constructs DescribeClusterInput's fields from required parameters
 
 ``` purescript
 newtype DescribeClusterOutput
-  = DescribeClusterOutput { "Cluster" :: NullOrUndefined (Cluster) }
+  = DescribeClusterOutput { "Cluster" :: Maybe (Cluster) }
 ```
 
 <p>This output contains the description of the cluster.</p>
@@ -1349,7 +1349,7 @@ Constructs DescribeClusterOutput from required parameters
 #### `newDescribeClusterOutput'`
 
 ``` purescript
-newDescribeClusterOutput' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> DescribeClusterOutput
+newDescribeClusterOutput' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> DescribeClusterOutput
 ```
 
 Constructs DescribeClusterOutput's fields from required parameters
@@ -1358,7 +1358,7 @@ Constructs DescribeClusterOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeJobFlowsInput
-  = DescribeJobFlowsInput { "CreatedAfter" :: NullOrUndefined (Date), "CreatedBefore" :: NullOrUndefined (Date), "JobFlowIds" :: NullOrUndefined (XmlStringList), "JobFlowStates" :: NullOrUndefined (JobFlowExecutionStateList) }
+  = DescribeJobFlowsInput { "CreatedAfter" :: Maybe (Date), "CreatedBefore" :: Maybe (Date), "JobFlowIds" :: Maybe (XmlStringList), "JobFlowStates" :: Maybe (JobFlowExecutionStateList) }
 ```
 
 <p> The input for the <a>DescribeJobFlows</a> operation. </p>
@@ -1383,7 +1383,7 @@ Constructs DescribeJobFlowsInput from required parameters
 #### `newDescribeJobFlowsInput'`
 
 ``` purescript
-newDescribeJobFlowsInput' :: ({ "CreatedAfter" :: NullOrUndefined (Date), "CreatedBefore" :: NullOrUndefined (Date), "JobFlowIds" :: NullOrUndefined (XmlStringList), "JobFlowStates" :: NullOrUndefined (JobFlowExecutionStateList) } -> { "CreatedAfter" :: NullOrUndefined (Date), "CreatedBefore" :: NullOrUndefined (Date), "JobFlowIds" :: NullOrUndefined (XmlStringList), "JobFlowStates" :: NullOrUndefined (JobFlowExecutionStateList) }) -> DescribeJobFlowsInput
+newDescribeJobFlowsInput' :: ({ "CreatedAfter" :: Maybe (Date), "CreatedBefore" :: Maybe (Date), "JobFlowIds" :: Maybe (XmlStringList), "JobFlowStates" :: Maybe (JobFlowExecutionStateList) } -> { "CreatedAfter" :: Maybe (Date), "CreatedBefore" :: Maybe (Date), "JobFlowIds" :: Maybe (XmlStringList), "JobFlowStates" :: Maybe (JobFlowExecutionStateList) }) -> DescribeJobFlowsInput
 ```
 
 Constructs DescribeJobFlowsInput's fields from required parameters
@@ -1392,7 +1392,7 @@ Constructs DescribeJobFlowsInput's fields from required parameters
 
 ``` purescript
 newtype DescribeJobFlowsOutput
-  = DescribeJobFlowsOutput { "JobFlows" :: NullOrUndefined (JobFlowDetailList) }
+  = DescribeJobFlowsOutput { "JobFlows" :: Maybe (JobFlowDetailList) }
 ```
 
 <p> The output for the <a>DescribeJobFlows</a> operation. </p>
@@ -1417,7 +1417,7 @@ Constructs DescribeJobFlowsOutput from required parameters
 #### `newDescribeJobFlowsOutput'`
 
 ``` purescript
-newDescribeJobFlowsOutput' :: ({ "JobFlows" :: NullOrUndefined (JobFlowDetailList) } -> { "JobFlows" :: NullOrUndefined (JobFlowDetailList) }) -> DescribeJobFlowsOutput
+newDescribeJobFlowsOutput' :: ({ "JobFlows" :: Maybe (JobFlowDetailList) } -> { "JobFlows" :: Maybe (JobFlowDetailList) }) -> DescribeJobFlowsOutput
 ```
 
 Constructs DescribeJobFlowsOutput's fields from required parameters
@@ -1458,7 +1458,7 @@ Constructs DescribeSecurityConfigurationInput's fields from required parameters
 
 ``` purescript
 newtype DescribeSecurityConfigurationOutput
-  = DescribeSecurityConfigurationOutput { "Name" :: NullOrUndefined (XmlString), "SecurityConfiguration" :: NullOrUndefined (String), "CreationDateTime" :: NullOrUndefined (Date) }
+  = DescribeSecurityConfigurationOutput { "Name" :: Maybe (XmlString), "SecurityConfiguration" :: Maybe (String), "CreationDateTime" :: Maybe (Date) }
 ```
 
 ##### Instances
@@ -1481,7 +1481,7 @@ Constructs DescribeSecurityConfigurationOutput from required parameters
 #### `newDescribeSecurityConfigurationOutput'`
 
 ``` purescript
-newDescribeSecurityConfigurationOutput' :: ({ "Name" :: NullOrUndefined (XmlString), "SecurityConfiguration" :: NullOrUndefined (String), "CreationDateTime" :: NullOrUndefined (Date) } -> { "Name" :: NullOrUndefined (XmlString), "SecurityConfiguration" :: NullOrUndefined (String), "CreationDateTime" :: NullOrUndefined (Date) }) -> DescribeSecurityConfigurationOutput
+newDescribeSecurityConfigurationOutput' :: ({ "Name" :: Maybe (XmlString), "SecurityConfiguration" :: Maybe (String), "CreationDateTime" :: Maybe (Date) } -> { "Name" :: Maybe (XmlString), "SecurityConfiguration" :: Maybe (String), "CreationDateTime" :: Maybe (Date) }) -> DescribeSecurityConfigurationOutput
 ```
 
 Constructs DescribeSecurityConfigurationOutput's fields from required parameters
@@ -1524,7 +1524,7 @@ Constructs DescribeStepInput's fields from required parameters
 
 ``` purescript
 newtype DescribeStepOutput
-  = DescribeStepOutput { "Step" :: NullOrUndefined (Step) }
+  = DescribeStepOutput { "Step" :: Maybe (Step) }
 ```
 
 <p>This output contains the description of the cluster step.</p>
@@ -1549,7 +1549,7 @@ Constructs DescribeStepOutput from required parameters
 #### `newDescribeStepOutput'`
 
 ``` purescript
-newDescribeStepOutput' :: ({ "Step" :: NullOrUndefined (Step) } -> { "Step" :: NullOrUndefined (Step) }) -> DescribeStepOutput
+newDescribeStepOutput' :: ({ "Step" :: Maybe (Step) } -> { "Step" :: Maybe (Step) }) -> DescribeStepOutput
 ```
 
 Constructs DescribeStepOutput's fields from required parameters
@@ -1590,7 +1590,7 @@ Encode EC2InstanceIdsToTerminateList
 
 ``` purescript
 newtype EbsBlockDevice
-  = EbsBlockDevice { "VolumeSpecification" :: NullOrUndefined (VolumeSpecification), "Device" :: NullOrUndefined (String) }
+  = EbsBlockDevice { "VolumeSpecification" :: Maybe (VolumeSpecification), "Device" :: Maybe (String) }
 ```
 
 <p>Configuration of requested EBS block device associated with the instance group.</p>
@@ -1615,7 +1615,7 @@ Constructs EbsBlockDevice from required parameters
 #### `newEbsBlockDevice'`
 
 ``` purescript
-newEbsBlockDevice' :: ({ "VolumeSpecification" :: NullOrUndefined (VolumeSpecification), "Device" :: NullOrUndefined (String) } -> { "VolumeSpecification" :: NullOrUndefined (VolumeSpecification), "Device" :: NullOrUndefined (String) }) -> EbsBlockDevice
+newEbsBlockDevice' :: ({ "VolumeSpecification" :: Maybe (VolumeSpecification), "Device" :: Maybe (String) } -> { "VolumeSpecification" :: Maybe (VolumeSpecification), "Device" :: Maybe (String) }) -> EbsBlockDevice
 ```
 
 Constructs EbsBlockDevice's fields from required parameters
@@ -1624,7 +1624,7 @@ Constructs EbsBlockDevice's fields from required parameters
 
 ``` purescript
 newtype EbsBlockDeviceConfig
-  = EbsBlockDeviceConfig { "VolumeSpecification" :: VolumeSpecification, "VolumesPerInstance" :: NullOrUndefined (Int) }
+  = EbsBlockDeviceConfig { "VolumeSpecification" :: VolumeSpecification, "VolumesPerInstance" :: Maybe (Int) }
 ```
 
 <p>Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.</p>
@@ -1649,7 +1649,7 @@ Constructs EbsBlockDeviceConfig from required parameters
 #### `newEbsBlockDeviceConfig'`
 
 ``` purescript
-newEbsBlockDeviceConfig' :: VolumeSpecification -> ({ "VolumeSpecification" :: VolumeSpecification, "VolumesPerInstance" :: NullOrUndefined (Int) } -> { "VolumeSpecification" :: VolumeSpecification, "VolumesPerInstance" :: NullOrUndefined (Int) }) -> EbsBlockDeviceConfig
+newEbsBlockDeviceConfig' :: VolumeSpecification -> ({ "VolumeSpecification" :: VolumeSpecification, "VolumesPerInstance" :: Maybe (Int) } -> { "VolumeSpecification" :: VolumeSpecification, "VolumesPerInstance" :: Maybe (Int) }) -> EbsBlockDeviceConfig
 ```
 
 Constructs EbsBlockDeviceConfig's fields from required parameters
@@ -1690,7 +1690,7 @@ Encode EbsBlockDeviceList
 
 ``` purescript
 newtype EbsConfiguration
-  = EbsConfiguration { "EbsBlockDeviceConfigs" :: NullOrUndefined (EbsBlockDeviceConfigList), "EbsOptimized" :: NullOrUndefined (BooleanObject) }
+  = EbsConfiguration { "EbsBlockDeviceConfigs" :: Maybe (EbsBlockDeviceConfigList), "EbsOptimized" :: Maybe (BooleanObject) }
 ```
 
 <p>The Amazon EBS configuration of a cluster instance.</p>
@@ -1715,7 +1715,7 @@ Constructs EbsConfiguration from required parameters
 #### `newEbsConfiguration'`
 
 ``` purescript
-newEbsConfiguration' :: ({ "EbsBlockDeviceConfigs" :: NullOrUndefined (EbsBlockDeviceConfigList), "EbsOptimized" :: NullOrUndefined (BooleanObject) } -> { "EbsBlockDeviceConfigs" :: NullOrUndefined (EbsBlockDeviceConfigList), "EbsOptimized" :: NullOrUndefined (BooleanObject) }) -> EbsConfiguration
+newEbsConfiguration' :: ({ "EbsBlockDeviceConfigs" :: Maybe (EbsBlockDeviceConfigList), "EbsOptimized" :: Maybe (BooleanObject) } -> { "EbsBlockDeviceConfigs" :: Maybe (EbsBlockDeviceConfigList), "EbsOptimized" :: Maybe (BooleanObject) }) -> EbsConfiguration
 ```
 
 Constructs EbsConfiguration's fields from required parameters
@@ -1724,7 +1724,7 @@ Constructs EbsConfiguration's fields from required parameters
 
 ``` purescript
 newtype EbsVolume
-  = EbsVolume { "Device" :: NullOrUndefined (String), "VolumeId" :: NullOrUndefined (String) }
+  = EbsVolume { "Device" :: Maybe (String), "VolumeId" :: Maybe (String) }
 ```
 
 <p>EBS block device that's attached to an EC2 instance.</p>
@@ -1749,7 +1749,7 @@ Constructs EbsVolume from required parameters
 #### `newEbsVolume'`
 
 ``` purescript
-newEbsVolume' :: ({ "Device" :: NullOrUndefined (String), "VolumeId" :: NullOrUndefined (String) } -> { "Device" :: NullOrUndefined (String), "VolumeId" :: NullOrUndefined (String) }) -> EbsVolume
+newEbsVolume' :: ({ "Device" :: Maybe (String), "VolumeId" :: Maybe (String) } -> { "Device" :: Maybe (String), "VolumeId" :: Maybe (String) }) -> EbsVolume
 ```
 
 Constructs EbsVolume's fields from required parameters
@@ -1774,7 +1774,7 @@ Encode EbsVolumeList
 
 ``` purescript
 newtype Ec2InstanceAttributes
-  = Ec2InstanceAttributes { "Ec2KeyName" :: NullOrUndefined (String), "Ec2SubnetId" :: NullOrUndefined (String), "RequestedEc2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List), "Ec2AvailabilityZone" :: NullOrUndefined (String), "RequestedEc2AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List), "IamInstanceProfile" :: NullOrUndefined (String), "EmrManagedMasterSecurityGroup" :: NullOrUndefined (String), "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (String), "ServiceAccessSecurityGroup" :: NullOrUndefined (String), "AdditionalMasterSecurityGroups" :: NullOrUndefined (StringList), "AdditionalSlaveSecurityGroups" :: NullOrUndefined (StringList) }
+  = Ec2InstanceAttributes { "Ec2KeyName" :: Maybe (String), "Ec2SubnetId" :: Maybe (String), "RequestedEc2SubnetIds" :: Maybe (XmlStringMaxLen256List), "Ec2AvailabilityZone" :: Maybe (String), "RequestedEc2AvailabilityZones" :: Maybe (XmlStringMaxLen256List), "IamInstanceProfile" :: Maybe (String), "EmrManagedMasterSecurityGroup" :: Maybe (String), "EmrManagedSlaveSecurityGroup" :: Maybe (String), "ServiceAccessSecurityGroup" :: Maybe (String), "AdditionalMasterSecurityGroups" :: Maybe (StringList), "AdditionalSlaveSecurityGroups" :: Maybe (StringList) }
 ```
 
 <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
@@ -1799,7 +1799,7 @@ Constructs Ec2InstanceAttributes from required parameters
 #### `newEc2InstanceAttributes'`
 
 ``` purescript
-newEc2InstanceAttributes' :: ({ "Ec2KeyName" :: NullOrUndefined (String), "Ec2SubnetId" :: NullOrUndefined (String), "RequestedEc2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List), "Ec2AvailabilityZone" :: NullOrUndefined (String), "RequestedEc2AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List), "IamInstanceProfile" :: NullOrUndefined (String), "EmrManagedMasterSecurityGroup" :: NullOrUndefined (String), "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (String), "ServiceAccessSecurityGroup" :: NullOrUndefined (String), "AdditionalMasterSecurityGroups" :: NullOrUndefined (StringList), "AdditionalSlaveSecurityGroups" :: NullOrUndefined (StringList) } -> { "Ec2KeyName" :: NullOrUndefined (String), "Ec2SubnetId" :: NullOrUndefined (String), "RequestedEc2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List), "Ec2AvailabilityZone" :: NullOrUndefined (String), "RequestedEc2AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List), "IamInstanceProfile" :: NullOrUndefined (String), "EmrManagedMasterSecurityGroup" :: NullOrUndefined (String), "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (String), "ServiceAccessSecurityGroup" :: NullOrUndefined (String), "AdditionalMasterSecurityGroups" :: NullOrUndefined (StringList), "AdditionalSlaveSecurityGroups" :: NullOrUndefined (StringList) }) -> Ec2InstanceAttributes
+newEc2InstanceAttributes' :: ({ "Ec2KeyName" :: Maybe (String), "Ec2SubnetId" :: Maybe (String), "RequestedEc2SubnetIds" :: Maybe (XmlStringMaxLen256List), "Ec2AvailabilityZone" :: Maybe (String), "RequestedEc2AvailabilityZones" :: Maybe (XmlStringMaxLen256List), "IamInstanceProfile" :: Maybe (String), "EmrManagedMasterSecurityGroup" :: Maybe (String), "EmrManagedSlaveSecurityGroup" :: Maybe (String), "ServiceAccessSecurityGroup" :: Maybe (String), "AdditionalMasterSecurityGroups" :: Maybe (StringList), "AdditionalSlaveSecurityGroups" :: Maybe (StringList) } -> { "Ec2KeyName" :: Maybe (String), "Ec2SubnetId" :: Maybe (String), "RequestedEc2SubnetIds" :: Maybe (XmlStringMaxLen256List), "Ec2AvailabilityZone" :: Maybe (String), "RequestedEc2AvailabilityZones" :: Maybe (XmlStringMaxLen256List), "IamInstanceProfile" :: Maybe (String), "EmrManagedMasterSecurityGroup" :: Maybe (String), "EmrManagedSlaveSecurityGroup" :: Maybe (String), "ServiceAccessSecurityGroup" :: Maybe (String), "AdditionalMasterSecurityGroups" :: Maybe (StringList), "AdditionalSlaveSecurityGroups" :: Maybe (StringList) }) -> Ec2InstanceAttributes
 ```
 
 Constructs Ec2InstanceAttributes's fields from required parameters
@@ -1840,7 +1840,7 @@ Encode ErrorMessage
 
 ``` purescript
 newtype FailureDetails
-  = FailureDetails { "Reason" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String), "LogFile" :: NullOrUndefined (String) }
+  = FailureDetails { "Reason" :: Maybe (String), "Message" :: Maybe (String), "LogFile" :: Maybe (String) }
 ```
 
 <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
@@ -1865,7 +1865,7 @@ Constructs FailureDetails from required parameters
 #### `newFailureDetails'`
 
 ``` purescript
-newFailureDetails' :: ({ "Reason" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String), "LogFile" :: NullOrUndefined (String) } -> { "Reason" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String), "LogFile" :: NullOrUndefined (String) }) -> FailureDetails
+newFailureDetails' :: ({ "Reason" :: Maybe (String), "Message" :: Maybe (String), "LogFile" :: Maybe (String) } -> { "Reason" :: Maybe (String), "Message" :: Maybe (String), "LogFile" :: Maybe (String) }) -> FailureDetails
 ```
 
 Constructs FailureDetails's fields from required parameters
@@ -1874,7 +1874,7 @@ Constructs FailureDetails's fields from required parameters
 
 ``` purescript
 newtype HadoopJarStepConfig
-  = HadoopJarStepConfig { "Properties" :: NullOrUndefined (KeyValueList), "Jar" :: XmlString, "MainClass" :: NullOrUndefined (XmlString), "Args" :: NullOrUndefined (XmlStringList) }
+  = HadoopJarStepConfig { "Properties" :: Maybe (KeyValueList), "Jar" :: XmlString, "MainClass" :: Maybe (XmlString), "Args" :: Maybe (XmlStringList) }
 ```
 
 <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
@@ -1899,7 +1899,7 @@ Constructs HadoopJarStepConfig from required parameters
 #### `newHadoopJarStepConfig'`
 
 ``` purescript
-newHadoopJarStepConfig' :: XmlString -> ({ "Properties" :: NullOrUndefined (KeyValueList), "Jar" :: XmlString, "MainClass" :: NullOrUndefined (XmlString), "Args" :: NullOrUndefined (XmlStringList) } -> { "Properties" :: NullOrUndefined (KeyValueList), "Jar" :: XmlString, "MainClass" :: NullOrUndefined (XmlString), "Args" :: NullOrUndefined (XmlStringList) }) -> HadoopJarStepConfig
+newHadoopJarStepConfig' :: XmlString -> ({ "Properties" :: Maybe (KeyValueList), "Jar" :: XmlString, "MainClass" :: Maybe (XmlString), "Args" :: Maybe (XmlStringList) } -> { "Properties" :: Maybe (KeyValueList), "Jar" :: XmlString, "MainClass" :: Maybe (XmlString), "Args" :: Maybe (XmlStringList) }) -> HadoopJarStepConfig
 ```
 
 Constructs HadoopJarStepConfig's fields from required parameters
@@ -1908,7 +1908,7 @@ Constructs HadoopJarStepConfig's fields from required parameters
 
 ``` purescript
 newtype HadoopStepConfig
-  = HadoopStepConfig { "Jar" :: NullOrUndefined (String), "Properties" :: NullOrUndefined (StringMap), "MainClass" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList) }
+  = HadoopStepConfig { "Jar" :: Maybe (String), "Properties" :: Maybe (StringMap), "MainClass" :: Maybe (String), "Args" :: Maybe (StringList) }
 ```
 
 <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
@@ -1933,7 +1933,7 @@ Constructs HadoopStepConfig from required parameters
 #### `newHadoopStepConfig'`
 
 ``` purescript
-newHadoopStepConfig' :: ({ "Jar" :: NullOrUndefined (String), "Properties" :: NullOrUndefined (StringMap), "MainClass" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList) } -> { "Jar" :: NullOrUndefined (String), "Properties" :: NullOrUndefined (StringMap), "MainClass" :: NullOrUndefined (String), "Args" :: NullOrUndefined (StringList) }) -> HadoopStepConfig
+newHadoopStepConfig' :: ({ "Jar" :: Maybe (String), "Properties" :: Maybe (StringMap), "MainClass" :: Maybe (String), "Args" :: Maybe (StringList) } -> { "Jar" :: Maybe (String), "Properties" :: Maybe (StringMap), "MainClass" :: Maybe (String), "Args" :: Maybe (StringList) }) -> HadoopStepConfig
 ```
 
 Constructs HadoopStepConfig's fields from required parameters
@@ -1942,7 +1942,7 @@ Constructs HadoopStepConfig's fields from required parameters
 
 ``` purescript
 newtype Instance
-  = Instance { "Id" :: NullOrUndefined (InstanceId), "Ec2InstanceId" :: NullOrUndefined (InstanceId), "PublicDnsName" :: NullOrUndefined (String), "PublicIpAddress" :: NullOrUndefined (String), "PrivateDnsName" :: NullOrUndefined (String), "PrivateIpAddress" :: NullOrUndefined (String), "Status" :: NullOrUndefined (InstanceStatus), "InstanceGroupId" :: NullOrUndefined (String), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId), "Market" :: NullOrUndefined (MarketType), "InstanceType" :: NullOrUndefined (InstanceType), "EbsVolumes" :: NullOrUndefined (EbsVolumeList) }
+  = Instance { "Id" :: Maybe (InstanceId), "Ec2InstanceId" :: Maybe (InstanceId), "PublicDnsName" :: Maybe (String), "PublicIpAddress" :: Maybe (String), "PrivateDnsName" :: Maybe (String), "PrivateIpAddress" :: Maybe (String), "Status" :: Maybe (InstanceStatus), "InstanceGroupId" :: Maybe (String), "InstanceFleetId" :: Maybe (InstanceFleetId), "Market" :: Maybe (MarketType), "InstanceType" :: Maybe (InstanceType), "EbsVolumes" :: Maybe (EbsVolumeList) }
 ```
 
 <p>Represents an EC2 instance provisioned as part of cluster.</p>
@@ -1967,7 +1967,7 @@ Constructs Instance from required parameters
 #### `newInstance'`
 
 ``` purescript
-newInstance' :: ({ "Id" :: NullOrUndefined (InstanceId), "Ec2InstanceId" :: NullOrUndefined (InstanceId), "PublicDnsName" :: NullOrUndefined (String), "PublicIpAddress" :: NullOrUndefined (String), "PrivateDnsName" :: NullOrUndefined (String), "PrivateIpAddress" :: NullOrUndefined (String), "Status" :: NullOrUndefined (InstanceStatus), "InstanceGroupId" :: NullOrUndefined (String), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId), "Market" :: NullOrUndefined (MarketType), "InstanceType" :: NullOrUndefined (InstanceType), "EbsVolumes" :: NullOrUndefined (EbsVolumeList) } -> { "Id" :: NullOrUndefined (InstanceId), "Ec2InstanceId" :: NullOrUndefined (InstanceId), "PublicDnsName" :: NullOrUndefined (String), "PublicIpAddress" :: NullOrUndefined (String), "PrivateDnsName" :: NullOrUndefined (String), "PrivateIpAddress" :: NullOrUndefined (String), "Status" :: NullOrUndefined (InstanceStatus), "InstanceGroupId" :: NullOrUndefined (String), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId), "Market" :: NullOrUndefined (MarketType), "InstanceType" :: NullOrUndefined (InstanceType), "EbsVolumes" :: NullOrUndefined (EbsVolumeList) }) -> Instance
+newInstance' :: ({ "Id" :: Maybe (InstanceId), "Ec2InstanceId" :: Maybe (InstanceId), "PublicDnsName" :: Maybe (String), "PublicIpAddress" :: Maybe (String), "PrivateDnsName" :: Maybe (String), "PrivateIpAddress" :: Maybe (String), "Status" :: Maybe (InstanceStatus), "InstanceGroupId" :: Maybe (String), "InstanceFleetId" :: Maybe (InstanceFleetId), "Market" :: Maybe (MarketType), "InstanceType" :: Maybe (InstanceType), "EbsVolumes" :: Maybe (EbsVolumeList) } -> { "Id" :: Maybe (InstanceId), "Ec2InstanceId" :: Maybe (InstanceId), "PublicDnsName" :: Maybe (String), "PublicIpAddress" :: Maybe (String), "PrivateDnsName" :: Maybe (String), "PrivateIpAddress" :: Maybe (String), "Status" :: Maybe (InstanceStatus), "InstanceGroupId" :: Maybe (String), "InstanceFleetId" :: Maybe (InstanceFleetId), "Market" :: Maybe (MarketType), "InstanceType" :: Maybe (InstanceType), "EbsVolumes" :: Maybe (EbsVolumeList) }) -> Instance
 ```
 
 Constructs Instance's fields from required parameters
@@ -1992,7 +1992,7 @@ Encode InstanceCollectionType
 
 ``` purescript
 newtype InstanceFleet
-  = InstanceFleet { "Id" :: NullOrUndefined (InstanceFleetId), "Name" :: NullOrUndefined (XmlStringMaxLen256), "Status" :: NullOrUndefined (InstanceFleetStatus), "InstanceFleetType" :: NullOrUndefined (InstanceFleetType), "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber), "ProvisionedOnDemandCapacity" :: NullOrUndefined (WholeNumber), "ProvisionedSpotCapacity" :: NullOrUndefined (WholeNumber), "InstanceTypeSpecifications" :: NullOrUndefined (InstanceTypeSpecificationList), "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) }
+  = InstanceFleet { "Id" :: Maybe (InstanceFleetId), "Name" :: Maybe (XmlStringMaxLen256), "Status" :: Maybe (InstanceFleetStatus), "InstanceFleetType" :: Maybe (InstanceFleetType), "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber), "ProvisionedOnDemandCapacity" :: Maybe (WholeNumber), "ProvisionedSpotCapacity" :: Maybe (WholeNumber), "InstanceTypeSpecifications" :: Maybe (InstanceTypeSpecificationList), "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) }
 ```
 
 <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2017,7 +2017,7 @@ Constructs InstanceFleet from required parameters
 #### `newInstanceFleet'`
 
 ``` purescript
-newInstanceFleet' :: ({ "Id" :: NullOrUndefined (InstanceFleetId), "Name" :: NullOrUndefined (XmlStringMaxLen256), "Status" :: NullOrUndefined (InstanceFleetStatus), "InstanceFleetType" :: NullOrUndefined (InstanceFleetType), "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber), "ProvisionedOnDemandCapacity" :: NullOrUndefined (WholeNumber), "ProvisionedSpotCapacity" :: NullOrUndefined (WholeNumber), "InstanceTypeSpecifications" :: NullOrUndefined (InstanceTypeSpecificationList), "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) } -> { "Id" :: NullOrUndefined (InstanceFleetId), "Name" :: NullOrUndefined (XmlStringMaxLen256), "Status" :: NullOrUndefined (InstanceFleetStatus), "InstanceFleetType" :: NullOrUndefined (InstanceFleetType), "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber), "ProvisionedOnDemandCapacity" :: NullOrUndefined (WholeNumber), "ProvisionedSpotCapacity" :: NullOrUndefined (WholeNumber), "InstanceTypeSpecifications" :: NullOrUndefined (InstanceTypeSpecificationList), "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) }) -> InstanceFleet
+newInstanceFleet' :: ({ "Id" :: Maybe (InstanceFleetId), "Name" :: Maybe (XmlStringMaxLen256), "Status" :: Maybe (InstanceFleetStatus), "InstanceFleetType" :: Maybe (InstanceFleetType), "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber), "ProvisionedOnDemandCapacity" :: Maybe (WholeNumber), "ProvisionedSpotCapacity" :: Maybe (WholeNumber), "InstanceTypeSpecifications" :: Maybe (InstanceTypeSpecificationList), "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) } -> { "Id" :: Maybe (InstanceFleetId), "Name" :: Maybe (XmlStringMaxLen256), "Status" :: Maybe (InstanceFleetStatus), "InstanceFleetType" :: Maybe (InstanceFleetType), "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber), "ProvisionedOnDemandCapacity" :: Maybe (WholeNumber), "ProvisionedSpotCapacity" :: Maybe (WholeNumber), "InstanceTypeSpecifications" :: Maybe (InstanceTypeSpecificationList), "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) }) -> InstanceFleet
 ```
 
 Constructs InstanceFleet's fields from required parameters
@@ -2026,7 +2026,7 @@ Constructs InstanceFleet's fields from required parameters
 
 ``` purescript
 newtype InstanceFleetConfig
-  = InstanceFleetConfig { "Name" :: NullOrUndefined (XmlStringMaxLen256), "InstanceFleetType" :: InstanceFleetType, "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber), "InstanceTypeConfigs" :: NullOrUndefined (InstanceTypeConfigList), "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) }
+  = InstanceFleetConfig { "Name" :: Maybe (XmlStringMaxLen256), "InstanceFleetType" :: InstanceFleetType, "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber), "InstanceTypeConfigs" :: Maybe (InstanceTypeConfigList), "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) }
 ```
 
 <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2051,7 +2051,7 @@ Constructs InstanceFleetConfig from required parameters
 #### `newInstanceFleetConfig'`
 
 ``` purescript
-newInstanceFleetConfig' :: InstanceFleetType -> ({ "Name" :: NullOrUndefined (XmlStringMaxLen256), "InstanceFleetType" :: InstanceFleetType, "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber), "InstanceTypeConfigs" :: NullOrUndefined (InstanceTypeConfigList), "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) } -> { "Name" :: NullOrUndefined (XmlStringMaxLen256), "InstanceFleetType" :: InstanceFleetType, "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber), "InstanceTypeConfigs" :: NullOrUndefined (InstanceTypeConfigList), "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) }) -> InstanceFleetConfig
+newInstanceFleetConfig' :: InstanceFleetType -> ({ "Name" :: Maybe (XmlStringMaxLen256), "InstanceFleetType" :: InstanceFleetType, "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber), "InstanceTypeConfigs" :: Maybe (InstanceTypeConfigList), "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) } -> { "Name" :: Maybe (XmlStringMaxLen256), "InstanceFleetType" :: InstanceFleetType, "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber), "InstanceTypeConfigs" :: Maybe (InstanceTypeConfigList), "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) }) -> InstanceFleetConfig
 ```
 
 Constructs InstanceFleetConfig's fields from required parameters
@@ -2108,7 +2108,7 @@ Encode InstanceFleetList
 
 ``` purescript
 newtype InstanceFleetModifyConfig
-  = InstanceFleetModifyConfig { "InstanceFleetId" :: InstanceFleetId, "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) }
+  = InstanceFleetModifyConfig { "InstanceFleetId" :: InstanceFleetId, "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber) }
 ```
 
 <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2133,7 +2133,7 @@ Constructs InstanceFleetModifyConfig from required parameters
 #### `newInstanceFleetModifyConfig'`
 
 ``` purescript
-newInstanceFleetModifyConfig' :: InstanceFleetId -> ({ "InstanceFleetId" :: InstanceFleetId, "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) } -> { "InstanceFleetId" :: InstanceFleetId, "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber), "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) }) -> InstanceFleetModifyConfig
+newInstanceFleetModifyConfig' :: InstanceFleetId -> ({ "InstanceFleetId" :: InstanceFleetId, "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber) } -> { "InstanceFleetId" :: InstanceFleetId, "TargetOnDemandCapacity" :: Maybe (WholeNumber), "TargetSpotCapacity" :: Maybe (WholeNumber) }) -> InstanceFleetModifyConfig
 ```
 
 Constructs InstanceFleetModifyConfig's fields from required parameters
@@ -2192,7 +2192,7 @@ Encode InstanceFleetState
 
 ``` purescript
 newtype InstanceFleetStateChangeReason
-  = InstanceFleetStateChangeReason { "Code" :: NullOrUndefined (InstanceFleetStateChangeReasonCode), "Message" :: NullOrUndefined (String) }
+  = InstanceFleetStateChangeReason { "Code" :: Maybe (InstanceFleetStateChangeReasonCode), "Message" :: Maybe (String) }
 ```
 
 <p>Provides status change reason details for the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2217,7 +2217,7 @@ Constructs InstanceFleetStateChangeReason from required parameters
 #### `newInstanceFleetStateChangeReason'`
 
 ``` purescript
-newInstanceFleetStateChangeReason' :: ({ "Code" :: NullOrUndefined (InstanceFleetStateChangeReasonCode), "Message" :: NullOrUndefined (String) } -> { "Code" :: NullOrUndefined (InstanceFleetStateChangeReasonCode), "Message" :: NullOrUndefined (String) }) -> InstanceFleetStateChangeReason
+newInstanceFleetStateChangeReason' :: ({ "Code" :: Maybe (InstanceFleetStateChangeReasonCode), "Message" :: Maybe (String) } -> { "Code" :: Maybe (InstanceFleetStateChangeReasonCode), "Message" :: Maybe (String) }) -> InstanceFleetStateChangeReason
 ```
 
 Constructs InstanceFleetStateChangeReason's fields from required parameters
@@ -2242,7 +2242,7 @@ Encode InstanceFleetStateChangeReasonCode
 
 ``` purescript
 newtype InstanceFleetStatus
-  = InstanceFleetStatus { "State" :: NullOrUndefined (InstanceFleetState), "StateChangeReason" :: NullOrUndefined (InstanceFleetStateChangeReason), "Timeline" :: NullOrUndefined (InstanceFleetTimeline) }
+  = InstanceFleetStatus { "State" :: Maybe (InstanceFleetState), "StateChangeReason" :: Maybe (InstanceFleetStateChangeReason), "Timeline" :: Maybe (InstanceFleetTimeline) }
 ```
 
 <p>The status of the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2267,7 +2267,7 @@ Constructs InstanceFleetStatus from required parameters
 #### `newInstanceFleetStatus'`
 
 ``` purescript
-newInstanceFleetStatus' :: ({ "State" :: NullOrUndefined (InstanceFleetState), "StateChangeReason" :: NullOrUndefined (InstanceFleetStateChangeReason), "Timeline" :: NullOrUndefined (InstanceFleetTimeline) } -> { "State" :: NullOrUndefined (InstanceFleetState), "StateChangeReason" :: NullOrUndefined (InstanceFleetStateChangeReason), "Timeline" :: NullOrUndefined (InstanceFleetTimeline) }) -> InstanceFleetStatus
+newInstanceFleetStatus' :: ({ "State" :: Maybe (InstanceFleetState), "StateChangeReason" :: Maybe (InstanceFleetStateChangeReason), "Timeline" :: Maybe (InstanceFleetTimeline) } -> { "State" :: Maybe (InstanceFleetState), "StateChangeReason" :: Maybe (InstanceFleetStateChangeReason), "Timeline" :: Maybe (InstanceFleetTimeline) }) -> InstanceFleetStatus
 ```
 
 Constructs InstanceFleetStatus's fields from required parameters
@@ -2276,7 +2276,7 @@ Constructs InstanceFleetStatus's fields from required parameters
 
 ``` purescript
 newtype InstanceFleetTimeline
-  = InstanceFleetTimeline { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }
+  = InstanceFleetTimeline { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }
 ```
 
 <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2301,7 +2301,7 @@ Constructs InstanceFleetTimeline from required parameters
 #### `newInstanceFleetTimeline'`
 
 ``` purescript
-newInstanceFleetTimeline' :: ({ "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) } -> { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }) -> InstanceFleetTimeline
+newInstanceFleetTimeline' :: ({ "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) } -> { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }) -> InstanceFleetTimeline
 ```
 
 Constructs InstanceFleetTimeline's fields from required parameters
@@ -2326,7 +2326,7 @@ Encode InstanceFleetType
 
 ``` purescript
 newtype InstanceGroup
-  = InstanceGroup { "Id" :: NullOrUndefined (InstanceGroupId), "Name" :: NullOrUndefined (String), "Market" :: NullOrUndefined (MarketType), "InstanceGroupType" :: NullOrUndefined (InstanceGroupType), "BidPrice" :: NullOrUndefined (String), "InstanceType" :: NullOrUndefined (InstanceType), "RequestedInstanceCount" :: NullOrUndefined (Int), "RunningInstanceCount" :: NullOrUndefined (Int), "Status" :: NullOrUndefined (InstanceGroupStatus), "Configurations" :: NullOrUndefined (ConfigurationList), "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList), "EbsOptimized" :: NullOrUndefined (BooleanObject), "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) }
+  = InstanceGroup { "Id" :: Maybe (InstanceGroupId), "Name" :: Maybe (String), "Market" :: Maybe (MarketType), "InstanceGroupType" :: Maybe (InstanceGroupType), "BidPrice" :: Maybe (String), "InstanceType" :: Maybe (InstanceType), "RequestedInstanceCount" :: Maybe (Int), "RunningInstanceCount" :: Maybe (Int), "Status" :: Maybe (InstanceGroupStatus), "Configurations" :: Maybe (ConfigurationList), "EbsBlockDevices" :: Maybe (EbsBlockDeviceList), "EbsOptimized" :: Maybe (BooleanObject), "ShrinkPolicy" :: Maybe (ShrinkPolicy), "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) }
 ```
 
 <p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>
@@ -2351,7 +2351,7 @@ Constructs InstanceGroup from required parameters
 #### `newInstanceGroup'`
 
 ``` purescript
-newInstanceGroup' :: ({ "Id" :: NullOrUndefined (InstanceGroupId), "Name" :: NullOrUndefined (String), "Market" :: NullOrUndefined (MarketType), "InstanceGroupType" :: NullOrUndefined (InstanceGroupType), "BidPrice" :: NullOrUndefined (String), "InstanceType" :: NullOrUndefined (InstanceType), "RequestedInstanceCount" :: NullOrUndefined (Int), "RunningInstanceCount" :: NullOrUndefined (Int), "Status" :: NullOrUndefined (InstanceGroupStatus), "Configurations" :: NullOrUndefined (ConfigurationList), "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList), "EbsOptimized" :: NullOrUndefined (BooleanObject), "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) } -> { "Id" :: NullOrUndefined (InstanceGroupId), "Name" :: NullOrUndefined (String), "Market" :: NullOrUndefined (MarketType), "InstanceGroupType" :: NullOrUndefined (InstanceGroupType), "BidPrice" :: NullOrUndefined (String), "InstanceType" :: NullOrUndefined (InstanceType), "RequestedInstanceCount" :: NullOrUndefined (Int), "RunningInstanceCount" :: NullOrUndefined (Int), "Status" :: NullOrUndefined (InstanceGroupStatus), "Configurations" :: NullOrUndefined (ConfigurationList), "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList), "EbsOptimized" :: NullOrUndefined (BooleanObject), "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) }) -> InstanceGroup
+newInstanceGroup' :: ({ "Id" :: Maybe (InstanceGroupId), "Name" :: Maybe (String), "Market" :: Maybe (MarketType), "InstanceGroupType" :: Maybe (InstanceGroupType), "BidPrice" :: Maybe (String), "InstanceType" :: Maybe (InstanceType), "RequestedInstanceCount" :: Maybe (Int), "RunningInstanceCount" :: Maybe (Int), "Status" :: Maybe (InstanceGroupStatus), "Configurations" :: Maybe (ConfigurationList), "EbsBlockDevices" :: Maybe (EbsBlockDeviceList), "EbsOptimized" :: Maybe (BooleanObject), "ShrinkPolicy" :: Maybe (ShrinkPolicy), "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) } -> { "Id" :: Maybe (InstanceGroupId), "Name" :: Maybe (String), "Market" :: Maybe (MarketType), "InstanceGroupType" :: Maybe (InstanceGroupType), "BidPrice" :: Maybe (String), "InstanceType" :: Maybe (InstanceType), "RequestedInstanceCount" :: Maybe (Int), "RunningInstanceCount" :: Maybe (Int), "Status" :: Maybe (InstanceGroupStatus), "Configurations" :: Maybe (ConfigurationList), "EbsBlockDevices" :: Maybe (EbsBlockDeviceList), "EbsOptimized" :: Maybe (BooleanObject), "ShrinkPolicy" :: Maybe (ShrinkPolicy), "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) }) -> InstanceGroup
 ```
 
 Constructs InstanceGroup's fields from required parameters
@@ -2360,7 +2360,7 @@ Constructs InstanceGroup's fields from required parameters
 
 ``` purescript
 newtype InstanceGroupConfig
-  = InstanceGroupConfig { "Name" :: NullOrUndefined (XmlStringMaxLen256), "Market" :: NullOrUndefined (MarketType), "InstanceRole" :: InstanceRoleType, "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceCount" :: Int, "Configurations" :: NullOrUndefined (ConfigurationList), "EbsConfiguration" :: NullOrUndefined (EbsConfiguration), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicy) }
+  = InstanceGroupConfig { "Name" :: Maybe (XmlStringMaxLen256), "Market" :: Maybe (MarketType), "InstanceRole" :: InstanceRoleType, "BidPrice" :: Maybe (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceCount" :: Int, "Configurations" :: Maybe (ConfigurationList), "EbsConfiguration" :: Maybe (EbsConfiguration), "AutoScalingPolicy" :: Maybe (AutoScalingPolicy) }
 ```
 
 <p>Configuration defining a new instance group.</p>
@@ -2385,7 +2385,7 @@ Constructs InstanceGroupConfig from required parameters
 #### `newInstanceGroupConfig'`
 
 ``` purescript
-newInstanceGroupConfig' :: Int -> InstanceRoleType -> InstanceType -> ({ "Name" :: NullOrUndefined (XmlStringMaxLen256), "Market" :: NullOrUndefined (MarketType), "InstanceRole" :: InstanceRoleType, "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceCount" :: Int, "Configurations" :: NullOrUndefined (ConfigurationList), "EbsConfiguration" :: NullOrUndefined (EbsConfiguration), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicy) } -> { "Name" :: NullOrUndefined (XmlStringMaxLen256), "Market" :: NullOrUndefined (MarketType), "InstanceRole" :: InstanceRoleType, "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceCount" :: Int, "Configurations" :: NullOrUndefined (ConfigurationList), "EbsConfiguration" :: NullOrUndefined (EbsConfiguration), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicy) }) -> InstanceGroupConfig
+newInstanceGroupConfig' :: Int -> InstanceRoleType -> InstanceType -> ({ "Name" :: Maybe (XmlStringMaxLen256), "Market" :: Maybe (MarketType), "InstanceRole" :: InstanceRoleType, "BidPrice" :: Maybe (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceCount" :: Int, "Configurations" :: Maybe (ConfigurationList), "EbsConfiguration" :: Maybe (EbsConfiguration), "AutoScalingPolicy" :: Maybe (AutoScalingPolicy) } -> { "Name" :: Maybe (XmlStringMaxLen256), "Market" :: Maybe (MarketType), "InstanceRole" :: InstanceRoleType, "BidPrice" :: Maybe (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceCount" :: Int, "Configurations" :: Maybe (ConfigurationList), "EbsConfiguration" :: Maybe (EbsConfiguration), "AutoScalingPolicy" :: Maybe (AutoScalingPolicy) }) -> InstanceGroupConfig
 ```
 
 Constructs InstanceGroupConfig's fields from required parameters
@@ -2410,7 +2410,7 @@ Encode InstanceGroupConfigList
 
 ``` purescript
 newtype InstanceGroupDetail
-  = InstanceGroupDetail { "InstanceGroupId" :: NullOrUndefined (XmlStringMaxLen256), "Name" :: NullOrUndefined (XmlStringMaxLen256), "Market" :: MarketType, "InstanceRole" :: InstanceRoleType, "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceRequestCount" :: Int, "InstanceRunningCount" :: Int, "State" :: InstanceGroupState, "LastStateChangeReason" :: NullOrUndefined (XmlString), "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }
+  = InstanceGroupDetail { "InstanceGroupId" :: Maybe (XmlStringMaxLen256), "Name" :: Maybe (XmlStringMaxLen256), "Market" :: MarketType, "InstanceRole" :: InstanceRoleType, "BidPrice" :: Maybe (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceRequestCount" :: Int, "InstanceRunningCount" :: Int, "State" :: InstanceGroupState, "LastStateChangeReason" :: Maybe (XmlString), "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }
 ```
 
 <p>Detailed information about an instance group.</p>
@@ -2435,7 +2435,7 @@ Constructs InstanceGroupDetail from required parameters
 #### `newInstanceGroupDetail'`
 
 ``` purescript
-newInstanceGroupDetail' :: Date -> Int -> InstanceRoleType -> Int -> InstanceType -> MarketType -> InstanceGroupState -> ({ "InstanceGroupId" :: NullOrUndefined (XmlStringMaxLen256), "Name" :: NullOrUndefined (XmlStringMaxLen256), "Market" :: MarketType, "InstanceRole" :: InstanceRoleType, "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceRequestCount" :: Int, "InstanceRunningCount" :: Int, "State" :: InstanceGroupState, "LastStateChangeReason" :: NullOrUndefined (XmlString), "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) } -> { "InstanceGroupId" :: NullOrUndefined (XmlStringMaxLen256), "Name" :: NullOrUndefined (XmlStringMaxLen256), "Market" :: MarketType, "InstanceRole" :: InstanceRoleType, "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceRequestCount" :: Int, "InstanceRunningCount" :: Int, "State" :: InstanceGroupState, "LastStateChangeReason" :: NullOrUndefined (XmlString), "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }) -> InstanceGroupDetail
+newInstanceGroupDetail' :: Date -> Int -> InstanceRoleType -> Int -> InstanceType -> MarketType -> InstanceGroupState -> ({ "InstanceGroupId" :: Maybe (XmlStringMaxLen256), "Name" :: Maybe (XmlStringMaxLen256), "Market" :: MarketType, "InstanceRole" :: InstanceRoleType, "BidPrice" :: Maybe (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceRequestCount" :: Int, "InstanceRunningCount" :: Int, "State" :: InstanceGroupState, "LastStateChangeReason" :: Maybe (XmlString), "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) } -> { "InstanceGroupId" :: Maybe (XmlStringMaxLen256), "Name" :: Maybe (XmlStringMaxLen256), "Market" :: MarketType, "InstanceRole" :: InstanceRoleType, "BidPrice" :: Maybe (XmlStringMaxLen256), "InstanceType" :: InstanceType, "InstanceRequestCount" :: Int, "InstanceRunningCount" :: Int, "State" :: InstanceGroupState, "LastStateChangeReason" :: Maybe (XmlString), "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }) -> InstanceGroupDetail
 ```
 
 Constructs InstanceGroupDetail's fields from required parameters
@@ -2508,7 +2508,7 @@ Encode InstanceGroupList
 
 ``` purescript
 newtype InstanceGroupModifyConfig
-  = InstanceGroupModifyConfig { "InstanceGroupId" :: XmlStringMaxLen256, "InstanceCount" :: NullOrUndefined (Int), "EC2InstanceIdsToTerminate" :: NullOrUndefined (EC2InstanceIdsToTerminateList), "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) }
+  = InstanceGroupModifyConfig { "InstanceGroupId" :: XmlStringMaxLen256, "InstanceCount" :: Maybe (Int), "EC2InstanceIdsToTerminate" :: Maybe (EC2InstanceIdsToTerminateList), "ShrinkPolicy" :: Maybe (ShrinkPolicy) }
 ```
 
 <p>Modify an instance group size.</p>
@@ -2533,7 +2533,7 @@ Constructs InstanceGroupModifyConfig from required parameters
 #### `newInstanceGroupModifyConfig'`
 
 ``` purescript
-newInstanceGroupModifyConfig' :: XmlStringMaxLen256 -> ({ "InstanceGroupId" :: XmlStringMaxLen256, "InstanceCount" :: NullOrUndefined (Int), "EC2InstanceIdsToTerminate" :: NullOrUndefined (EC2InstanceIdsToTerminateList), "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) } -> { "InstanceGroupId" :: XmlStringMaxLen256, "InstanceCount" :: NullOrUndefined (Int), "EC2InstanceIdsToTerminate" :: NullOrUndefined (EC2InstanceIdsToTerminateList), "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) }) -> InstanceGroupModifyConfig
+newInstanceGroupModifyConfig' :: XmlStringMaxLen256 -> ({ "InstanceGroupId" :: XmlStringMaxLen256, "InstanceCount" :: Maybe (Int), "EC2InstanceIdsToTerminate" :: Maybe (EC2InstanceIdsToTerminateList), "ShrinkPolicy" :: Maybe (ShrinkPolicy) } -> { "InstanceGroupId" :: XmlStringMaxLen256, "InstanceCount" :: Maybe (Int), "EC2InstanceIdsToTerminate" :: Maybe (EC2InstanceIdsToTerminateList), "ShrinkPolicy" :: Maybe (ShrinkPolicy) }) -> InstanceGroupModifyConfig
 ```
 
 Constructs InstanceGroupModifyConfig's fields from required parameters
@@ -2574,7 +2574,7 @@ Encode InstanceGroupState
 
 ``` purescript
 newtype InstanceGroupStateChangeReason
-  = InstanceGroupStateChangeReason { "Code" :: NullOrUndefined (InstanceGroupStateChangeReasonCode), "Message" :: NullOrUndefined (String) }
+  = InstanceGroupStateChangeReason { "Code" :: Maybe (InstanceGroupStateChangeReasonCode), "Message" :: Maybe (String) }
 ```
 
 <p>The status change reason details for the instance group.</p>
@@ -2599,7 +2599,7 @@ Constructs InstanceGroupStateChangeReason from required parameters
 #### `newInstanceGroupStateChangeReason'`
 
 ``` purescript
-newInstanceGroupStateChangeReason' :: ({ "Code" :: NullOrUndefined (InstanceGroupStateChangeReasonCode), "Message" :: NullOrUndefined (String) } -> { "Code" :: NullOrUndefined (InstanceGroupStateChangeReasonCode), "Message" :: NullOrUndefined (String) }) -> InstanceGroupStateChangeReason
+newInstanceGroupStateChangeReason' :: ({ "Code" :: Maybe (InstanceGroupStateChangeReasonCode), "Message" :: Maybe (String) } -> { "Code" :: Maybe (InstanceGroupStateChangeReasonCode), "Message" :: Maybe (String) }) -> InstanceGroupStateChangeReason
 ```
 
 Constructs InstanceGroupStateChangeReason's fields from required parameters
@@ -2624,7 +2624,7 @@ Encode InstanceGroupStateChangeReasonCode
 
 ``` purescript
 newtype InstanceGroupStatus
-  = InstanceGroupStatus { "State" :: NullOrUndefined (InstanceGroupState), "StateChangeReason" :: NullOrUndefined (InstanceGroupStateChangeReason), "Timeline" :: NullOrUndefined (InstanceGroupTimeline) }
+  = InstanceGroupStatus { "State" :: Maybe (InstanceGroupState), "StateChangeReason" :: Maybe (InstanceGroupStateChangeReason), "Timeline" :: Maybe (InstanceGroupTimeline) }
 ```
 
 <p>The details of the instance group status.</p>
@@ -2649,7 +2649,7 @@ Constructs InstanceGroupStatus from required parameters
 #### `newInstanceGroupStatus'`
 
 ``` purescript
-newInstanceGroupStatus' :: ({ "State" :: NullOrUndefined (InstanceGroupState), "StateChangeReason" :: NullOrUndefined (InstanceGroupStateChangeReason), "Timeline" :: NullOrUndefined (InstanceGroupTimeline) } -> { "State" :: NullOrUndefined (InstanceGroupState), "StateChangeReason" :: NullOrUndefined (InstanceGroupStateChangeReason), "Timeline" :: NullOrUndefined (InstanceGroupTimeline) }) -> InstanceGroupStatus
+newInstanceGroupStatus' :: ({ "State" :: Maybe (InstanceGroupState), "StateChangeReason" :: Maybe (InstanceGroupStateChangeReason), "Timeline" :: Maybe (InstanceGroupTimeline) } -> { "State" :: Maybe (InstanceGroupState), "StateChangeReason" :: Maybe (InstanceGroupStateChangeReason), "Timeline" :: Maybe (InstanceGroupTimeline) }) -> InstanceGroupStatus
 ```
 
 Constructs InstanceGroupStatus's fields from required parameters
@@ -2658,7 +2658,7 @@ Constructs InstanceGroupStatus's fields from required parameters
 
 ``` purescript
 newtype InstanceGroupTimeline
-  = InstanceGroupTimeline { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }
+  = InstanceGroupTimeline { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }
 ```
 
 <p>The timeline of the instance group lifecycle.</p>
@@ -2683,7 +2683,7 @@ Constructs InstanceGroupTimeline from required parameters
 #### `newInstanceGroupTimeline'`
 
 ``` purescript
-newInstanceGroupTimeline' :: ({ "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) } -> { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }) -> InstanceGroupTimeline
+newInstanceGroupTimeline' :: ({ "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) } -> { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }) -> InstanceGroupTimeline
 ```
 
 Constructs InstanceGroupTimeline's fields from required parameters
@@ -2756,7 +2756,7 @@ Encode InstanceList
 
 ``` purescript
 newtype InstanceResizePolicy
-  = InstanceResizePolicy { "InstancesToTerminate" :: NullOrUndefined (EC2InstanceIdsList), "InstancesToProtect" :: NullOrUndefined (EC2InstanceIdsList), "InstanceTerminationTimeout" :: NullOrUndefined (Int) }
+  = InstanceResizePolicy { "InstancesToTerminate" :: Maybe (EC2InstanceIdsList), "InstancesToProtect" :: Maybe (EC2InstanceIdsList), "InstanceTerminationTimeout" :: Maybe (Int) }
 ```
 
 <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
@@ -2781,7 +2781,7 @@ Constructs InstanceResizePolicy from required parameters
 #### `newInstanceResizePolicy'`
 
 ``` purescript
-newInstanceResizePolicy' :: ({ "InstancesToTerminate" :: NullOrUndefined (EC2InstanceIdsList), "InstancesToProtect" :: NullOrUndefined (EC2InstanceIdsList), "InstanceTerminationTimeout" :: NullOrUndefined (Int) } -> { "InstancesToTerminate" :: NullOrUndefined (EC2InstanceIdsList), "InstancesToProtect" :: NullOrUndefined (EC2InstanceIdsList), "InstanceTerminationTimeout" :: NullOrUndefined (Int) }) -> InstanceResizePolicy
+newInstanceResizePolicy' :: ({ "InstancesToTerminate" :: Maybe (EC2InstanceIdsList), "InstancesToProtect" :: Maybe (EC2InstanceIdsList), "InstanceTerminationTimeout" :: Maybe (Int) } -> { "InstancesToTerminate" :: Maybe (EC2InstanceIdsList), "InstancesToProtect" :: Maybe (EC2InstanceIdsList), "InstanceTerminationTimeout" :: Maybe (Int) }) -> InstanceResizePolicy
 ```
 
 Constructs InstanceResizePolicy's fields from required parameters
@@ -2822,7 +2822,7 @@ Encode InstanceState
 
 ``` purescript
 newtype InstanceStateChangeReason
-  = InstanceStateChangeReason { "Code" :: NullOrUndefined (InstanceStateChangeReasonCode), "Message" :: NullOrUndefined (String) }
+  = InstanceStateChangeReason { "Code" :: Maybe (InstanceStateChangeReasonCode), "Message" :: Maybe (String) }
 ```
 
 <p>The details of the status change reason for the instance.</p>
@@ -2847,7 +2847,7 @@ Constructs InstanceStateChangeReason from required parameters
 #### `newInstanceStateChangeReason'`
 
 ``` purescript
-newInstanceStateChangeReason' :: ({ "Code" :: NullOrUndefined (InstanceStateChangeReasonCode), "Message" :: NullOrUndefined (String) } -> { "Code" :: NullOrUndefined (InstanceStateChangeReasonCode), "Message" :: NullOrUndefined (String) }) -> InstanceStateChangeReason
+newInstanceStateChangeReason' :: ({ "Code" :: Maybe (InstanceStateChangeReasonCode), "Message" :: Maybe (String) } -> { "Code" :: Maybe (InstanceStateChangeReasonCode), "Message" :: Maybe (String) }) -> InstanceStateChangeReason
 ```
 
 Constructs InstanceStateChangeReason's fields from required parameters
@@ -2888,7 +2888,7 @@ Encode InstanceStateList
 
 ``` purescript
 newtype InstanceStatus
-  = InstanceStatus { "State" :: NullOrUndefined (InstanceState), "StateChangeReason" :: NullOrUndefined (InstanceStateChangeReason), "Timeline" :: NullOrUndefined (InstanceTimeline) }
+  = InstanceStatus { "State" :: Maybe (InstanceState), "StateChangeReason" :: Maybe (InstanceStateChangeReason), "Timeline" :: Maybe (InstanceTimeline) }
 ```
 
 <p>The instance status details.</p>
@@ -2913,7 +2913,7 @@ Constructs InstanceStatus from required parameters
 #### `newInstanceStatus'`
 
 ``` purescript
-newInstanceStatus' :: ({ "State" :: NullOrUndefined (InstanceState), "StateChangeReason" :: NullOrUndefined (InstanceStateChangeReason), "Timeline" :: NullOrUndefined (InstanceTimeline) } -> { "State" :: NullOrUndefined (InstanceState), "StateChangeReason" :: NullOrUndefined (InstanceStateChangeReason), "Timeline" :: NullOrUndefined (InstanceTimeline) }) -> InstanceStatus
+newInstanceStatus' :: ({ "State" :: Maybe (InstanceState), "StateChangeReason" :: Maybe (InstanceStateChangeReason), "Timeline" :: Maybe (InstanceTimeline) } -> { "State" :: Maybe (InstanceState), "StateChangeReason" :: Maybe (InstanceStateChangeReason), "Timeline" :: Maybe (InstanceTimeline) }) -> InstanceStatus
 ```
 
 Constructs InstanceStatus's fields from required parameters
@@ -2922,7 +2922,7 @@ Constructs InstanceStatus's fields from required parameters
 
 ``` purescript
 newtype InstanceTimeline
-  = InstanceTimeline { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }
+  = InstanceTimeline { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }
 ```
 
 <p>The timeline of the instance lifecycle.</p>
@@ -2947,7 +2947,7 @@ Constructs InstanceTimeline from required parameters
 #### `newInstanceTimeline'`
 
 ``` purescript
-newInstanceTimeline' :: ({ "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) } -> { "CreationDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }) -> InstanceTimeline
+newInstanceTimeline' :: ({ "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) } -> { "CreationDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }) -> InstanceTimeline
 ```
 
 Constructs InstanceTimeline's fields from required parameters
@@ -2972,7 +2972,7 @@ Encode InstanceType
 
 ``` purescript
 newtype InstanceTypeConfig
-  = InstanceTypeConfig { "InstanceType" :: InstanceType, "WeightedCapacity" :: NullOrUndefined (WholeNumber), "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble), "EbsConfiguration" :: NullOrUndefined (EbsConfiguration), "Configurations" :: NullOrUndefined (ConfigurationList) }
+  = InstanceTypeConfig { "InstanceType" :: InstanceType, "WeightedCapacity" :: Maybe (WholeNumber), "BidPrice" :: Maybe (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble), "EbsConfiguration" :: Maybe (EbsConfiguration), "Configurations" :: Maybe (ConfigurationList) }
 ```
 
 <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -2997,7 +2997,7 @@ Constructs InstanceTypeConfig from required parameters
 #### `newInstanceTypeConfig'`
 
 ``` purescript
-newInstanceTypeConfig' :: InstanceType -> ({ "InstanceType" :: InstanceType, "WeightedCapacity" :: NullOrUndefined (WholeNumber), "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble), "EbsConfiguration" :: NullOrUndefined (EbsConfiguration), "Configurations" :: NullOrUndefined (ConfigurationList) } -> { "InstanceType" :: InstanceType, "WeightedCapacity" :: NullOrUndefined (WholeNumber), "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble), "EbsConfiguration" :: NullOrUndefined (EbsConfiguration), "Configurations" :: NullOrUndefined (ConfigurationList) }) -> InstanceTypeConfig
+newInstanceTypeConfig' :: InstanceType -> ({ "InstanceType" :: InstanceType, "WeightedCapacity" :: Maybe (WholeNumber), "BidPrice" :: Maybe (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble), "EbsConfiguration" :: Maybe (EbsConfiguration), "Configurations" :: Maybe (ConfigurationList) } -> { "InstanceType" :: InstanceType, "WeightedCapacity" :: Maybe (WholeNumber), "BidPrice" :: Maybe (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble), "EbsConfiguration" :: Maybe (EbsConfiguration), "Configurations" :: Maybe (ConfigurationList) }) -> InstanceTypeConfig
 ```
 
 Constructs InstanceTypeConfig's fields from required parameters
@@ -3022,7 +3022,7 @@ Encode InstanceTypeConfigList
 
 ``` purescript
 newtype InstanceTypeSpecification
-  = InstanceTypeSpecification { "InstanceType" :: NullOrUndefined (InstanceType), "WeightedCapacity" :: NullOrUndefined (WholeNumber), "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble), "Configurations" :: NullOrUndefined (ConfigurationList), "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList), "EbsOptimized" :: NullOrUndefined (BooleanObject) }
+  = InstanceTypeSpecification { "InstanceType" :: Maybe (InstanceType), "WeightedCapacity" :: Maybe (WholeNumber), "BidPrice" :: Maybe (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble), "Configurations" :: Maybe (ConfigurationList), "EbsBlockDevices" :: Maybe (EbsBlockDeviceList), "EbsOptimized" :: Maybe (BooleanObject) }
 ```
 
 <p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -3047,7 +3047,7 @@ Constructs InstanceTypeSpecification from required parameters
 #### `newInstanceTypeSpecification'`
 
 ``` purescript
-newInstanceTypeSpecification' :: ({ "InstanceType" :: NullOrUndefined (InstanceType), "WeightedCapacity" :: NullOrUndefined (WholeNumber), "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble), "Configurations" :: NullOrUndefined (ConfigurationList), "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList), "EbsOptimized" :: NullOrUndefined (BooleanObject) } -> { "InstanceType" :: NullOrUndefined (InstanceType), "WeightedCapacity" :: NullOrUndefined (WholeNumber), "BidPrice" :: NullOrUndefined (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble), "Configurations" :: NullOrUndefined (ConfigurationList), "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList), "EbsOptimized" :: NullOrUndefined (BooleanObject) }) -> InstanceTypeSpecification
+newInstanceTypeSpecification' :: ({ "InstanceType" :: Maybe (InstanceType), "WeightedCapacity" :: Maybe (WholeNumber), "BidPrice" :: Maybe (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble), "Configurations" :: Maybe (ConfigurationList), "EbsBlockDevices" :: Maybe (EbsBlockDeviceList), "EbsOptimized" :: Maybe (BooleanObject) } -> { "InstanceType" :: Maybe (InstanceType), "WeightedCapacity" :: Maybe (WholeNumber), "BidPrice" :: Maybe (XmlStringMaxLen256), "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble), "Configurations" :: Maybe (ConfigurationList), "EbsBlockDevices" :: Maybe (EbsBlockDeviceList), "EbsOptimized" :: Maybe (BooleanObject) }) -> InstanceTypeSpecification
 ```
 
 Constructs InstanceTypeSpecification's fields from required parameters
@@ -3090,7 +3090,7 @@ Encode InternalServerError
 
 ``` purescript
 newtype InternalServerException
-  = InternalServerException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = InternalServerException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>This exception occurs when there is an internal failure in the EMR service.</p>
@@ -3115,7 +3115,7 @@ Constructs InternalServerException from required parameters
 #### `newInternalServerException'`
 
 ``` purescript
-newInternalServerException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> InternalServerException
+newInternalServerException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> InternalServerException
 ```
 
 Constructs InternalServerException's fields from required parameters
@@ -3124,7 +3124,7 @@ Constructs InternalServerException's fields from required parameters
 
 ``` purescript
 newtype InvalidRequestException
-  = InvalidRequestException { "ErrorCode" :: NullOrUndefined (ErrorCode), "Message" :: NullOrUndefined (ErrorMessage) }
+  = InvalidRequestException { "ErrorCode" :: Maybe (ErrorCode), "Message" :: Maybe (ErrorMessage) }
 ```
 
 <p>This exception occurs when there is something wrong with user input.</p>
@@ -3149,7 +3149,7 @@ Constructs InvalidRequestException from required parameters
 #### `newInvalidRequestException'`
 
 ``` purescript
-newInvalidRequestException' :: ({ "ErrorCode" :: NullOrUndefined (ErrorCode), "Message" :: NullOrUndefined (ErrorMessage) } -> { "ErrorCode" :: NullOrUndefined (ErrorCode), "Message" :: NullOrUndefined (ErrorMessage) }) -> InvalidRequestException
+newInvalidRequestException' :: ({ "ErrorCode" :: Maybe (ErrorCode), "Message" :: Maybe (ErrorMessage) } -> { "ErrorCode" :: Maybe (ErrorCode), "Message" :: Maybe (ErrorMessage) }) -> InvalidRequestException
 ```
 
 Constructs InvalidRequestException's fields from required parameters
@@ -3158,7 +3158,7 @@ Constructs InvalidRequestException's fields from required parameters
 
 ``` purescript
 newtype JobFlowDetail
-  = JobFlowDetail { "JobFlowId" :: XmlStringMaxLen256, "Name" :: XmlStringMaxLen256, "LogUri" :: NullOrUndefined (XmlString), "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256), "ExecutionStatusDetail" :: JobFlowExecutionStatusDetail, "Instances" :: JobFlowInstancesDetail, "Steps" :: NullOrUndefined (StepDetailList), "BootstrapActions" :: NullOrUndefined (BootstrapActionDetailList), "SupportedProducts" :: NullOrUndefined (SupportedProductsList), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "JobFlowRole" :: NullOrUndefined (XmlString), "ServiceRole" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) }
+  = JobFlowDetail { "JobFlowId" :: XmlStringMaxLen256, "Name" :: XmlStringMaxLen256, "LogUri" :: Maybe (XmlString), "AmiVersion" :: Maybe (XmlStringMaxLen256), "ExecutionStatusDetail" :: JobFlowExecutionStatusDetail, "Instances" :: JobFlowInstancesDetail, "Steps" :: Maybe (StepDetailList), "BootstrapActions" :: Maybe (BootstrapActionDetailList), "SupportedProducts" :: Maybe (SupportedProductsList), "VisibleToAllUsers" :: Maybe (Boolean), "JobFlowRole" :: Maybe (XmlString), "ServiceRole" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) }
 ```
 
 <p>A description of a cluster (job flow).</p>
@@ -3183,7 +3183,7 @@ Constructs JobFlowDetail from required parameters
 #### `newJobFlowDetail'`
 
 ``` purescript
-newJobFlowDetail' :: JobFlowExecutionStatusDetail -> JobFlowInstancesDetail -> XmlStringMaxLen256 -> XmlStringMaxLen256 -> ({ "JobFlowId" :: XmlStringMaxLen256, "Name" :: XmlStringMaxLen256, "LogUri" :: NullOrUndefined (XmlString), "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256), "ExecutionStatusDetail" :: JobFlowExecutionStatusDetail, "Instances" :: JobFlowInstancesDetail, "Steps" :: NullOrUndefined (StepDetailList), "BootstrapActions" :: NullOrUndefined (BootstrapActionDetailList), "SupportedProducts" :: NullOrUndefined (SupportedProductsList), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "JobFlowRole" :: NullOrUndefined (XmlString), "ServiceRole" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) } -> { "JobFlowId" :: XmlStringMaxLen256, "Name" :: XmlStringMaxLen256, "LogUri" :: NullOrUndefined (XmlString), "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256), "ExecutionStatusDetail" :: JobFlowExecutionStatusDetail, "Instances" :: JobFlowInstancesDetail, "Steps" :: NullOrUndefined (StepDetailList), "BootstrapActions" :: NullOrUndefined (BootstrapActionDetailList), "SupportedProducts" :: NullOrUndefined (SupportedProductsList), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "JobFlowRole" :: NullOrUndefined (XmlString), "ServiceRole" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) }) -> JobFlowDetail
+newJobFlowDetail' :: JobFlowExecutionStatusDetail -> JobFlowInstancesDetail -> XmlStringMaxLen256 -> XmlStringMaxLen256 -> ({ "JobFlowId" :: XmlStringMaxLen256, "Name" :: XmlStringMaxLen256, "LogUri" :: Maybe (XmlString), "AmiVersion" :: Maybe (XmlStringMaxLen256), "ExecutionStatusDetail" :: JobFlowExecutionStatusDetail, "Instances" :: JobFlowInstancesDetail, "Steps" :: Maybe (StepDetailList), "BootstrapActions" :: Maybe (BootstrapActionDetailList), "SupportedProducts" :: Maybe (SupportedProductsList), "VisibleToAllUsers" :: Maybe (Boolean), "JobFlowRole" :: Maybe (XmlString), "ServiceRole" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) } -> { "JobFlowId" :: XmlStringMaxLen256, "Name" :: XmlStringMaxLen256, "LogUri" :: Maybe (XmlString), "AmiVersion" :: Maybe (XmlStringMaxLen256), "ExecutionStatusDetail" :: JobFlowExecutionStatusDetail, "Instances" :: JobFlowInstancesDetail, "Steps" :: Maybe (StepDetailList), "BootstrapActions" :: Maybe (BootstrapActionDetailList), "SupportedProducts" :: Maybe (SupportedProductsList), "VisibleToAllUsers" :: Maybe (Boolean), "JobFlowRole" :: Maybe (XmlString), "ServiceRole" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) }) -> JobFlowDetail
 ```
 
 Constructs JobFlowDetail's fields from required parameters
@@ -3242,7 +3242,7 @@ Encode JobFlowExecutionStateList
 
 ``` purescript
 newtype JobFlowExecutionStatusDetail
-  = JobFlowExecutionStatusDetail { "State" :: JobFlowExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date), "LastStateChangeReason" :: NullOrUndefined (XmlString) }
+  = JobFlowExecutionStatusDetail { "State" :: JobFlowExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date), "LastStateChangeReason" :: Maybe (XmlString) }
 ```
 
 <p>Describes the status of the cluster (job flow).</p>
@@ -3267,7 +3267,7 @@ Constructs JobFlowExecutionStatusDetail from required parameters
 #### `newJobFlowExecutionStatusDetail'`
 
 ``` purescript
-newJobFlowExecutionStatusDetail' :: Date -> JobFlowExecutionState -> ({ "State" :: JobFlowExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date), "LastStateChangeReason" :: NullOrUndefined (XmlString) } -> { "State" :: JobFlowExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "ReadyDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date), "LastStateChangeReason" :: NullOrUndefined (XmlString) }) -> JobFlowExecutionStatusDetail
+newJobFlowExecutionStatusDetail' :: Date -> JobFlowExecutionState -> ({ "State" :: JobFlowExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date), "LastStateChangeReason" :: Maybe (XmlString) } -> { "State" :: JobFlowExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "ReadyDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date), "LastStateChangeReason" :: Maybe (XmlString) }) -> JobFlowExecutionStatusDetail
 ```
 
 Constructs JobFlowExecutionStatusDetail's fields from required parameters
@@ -3276,7 +3276,7 @@ Constructs JobFlowExecutionStatusDetail's fields from required parameters
 
 ``` purescript
 newtype JobFlowInstancesConfig
-  = JobFlowInstancesConfig { "MasterInstanceType" :: NullOrUndefined (InstanceType), "SlaveInstanceType" :: NullOrUndefined (InstanceType), "InstanceCount" :: NullOrUndefined (Int), "InstanceGroups" :: NullOrUndefined (InstanceGroupConfigList), "InstanceFleets" :: NullOrUndefined (InstanceFleetConfigList), "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256), "Placement" :: NullOrUndefined (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List), "EmrManagedMasterSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "ServiceAccessSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "AdditionalMasterSecurityGroups" :: NullOrUndefined (SecurityGroupsList), "AdditionalSlaveSecurityGroups" :: NullOrUndefined (SecurityGroupsList) }
+  = JobFlowInstancesConfig { "MasterInstanceType" :: Maybe (InstanceType), "SlaveInstanceType" :: Maybe (InstanceType), "InstanceCount" :: Maybe (Int), "InstanceGroups" :: Maybe (InstanceGroupConfigList), "InstanceFleets" :: Maybe (InstanceFleetConfigList), "Ec2KeyName" :: Maybe (XmlStringMaxLen256), "Placement" :: Maybe (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "HadoopVersion" :: Maybe (XmlStringMaxLen256), "Ec2SubnetId" :: Maybe (XmlStringMaxLen256), "Ec2SubnetIds" :: Maybe (XmlStringMaxLen256List), "EmrManagedMasterSecurityGroup" :: Maybe (XmlStringMaxLen256), "EmrManagedSlaveSecurityGroup" :: Maybe (XmlStringMaxLen256), "ServiceAccessSecurityGroup" :: Maybe (XmlStringMaxLen256), "AdditionalMasterSecurityGroups" :: Maybe (SecurityGroupsList), "AdditionalSlaveSecurityGroups" :: Maybe (SecurityGroupsList) }
 ```
 
 <p>A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.</p>
@@ -3301,7 +3301,7 @@ Constructs JobFlowInstancesConfig from required parameters
 #### `newJobFlowInstancesConfig'`
 
 ``` purescript
-newJobFlowInstancesConfig' :: ({ "MasterInstanceType" :: NullOrUndefined (InstanceType), "SlaveInstanceType" :: NullOrUndefined (InstanceType), "InstanceCount" :: NullOrUndefined (Int), "InstanceGroups" :: NullOrUndefined (InstanceGroupConfigList), "InstanceFleets" :: NullOrUndefined (InstanceFleetConfigList), "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256), "Placement" :: NullOrUndefined (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List), "EmrManagedMasterSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "ServiceAccessSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "AdditionalMasterSecurityGroups" :: NullOrUndefined (SecurityGroupsList), "AdditionalSlaveSecurityGroups" :: NullOrUndefined (SecurityGroupsList) } -> { "MasterInstanceType" :: NullOrUndefined (InstanceType), "SlaveInstanceType" :: NullOrUndefined (InstanceType), "InstanceCount" :: NullOrUndefined (Int), "InstanceGroups" :: NullOrUndefined (InstanceGroupConfigList), "InstanceFleets" :: NullOrUndefined (InstanceFleetConfigList), "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256), "Placement" :: NullOrUndefined (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List), "EmrManagedMasterSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "ServiceAccessSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256), "AdditionalMasterSecurityGroups" :: NullOrUndefined (SecurityGroupsList), "AdditionalSlaveSecurityGroups" :: NullOrUndefined (SecurityGroupsList) }) -> JobFlowInstancesConfig
+newJobFlowInstancesConfig' :: ({ "MasterInstanceType" :: Maybe (InstanceType), "SlaveInstanceType" :: Maybe (InstanceType), "InstanceCount" :: Maybe (Int), "InstanceGroups" :: Maybe (InstanceGroupConfigList), "InstanceFleets" :: Maybe (InstanceFleetConfigList), "Ec2KeyName" :: Maybe (XmlStringMaxLen256), "Placement" :: Maybe (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "HadoopVersion" :: Maybe (XmlStringMaxLen256), "Ec2SubnetId" :: Maybe (XmlStringMaxLen256), "Ec2SubnetIds" :: Maybe (XmlStringMaxLen256List), "EmrManagedMasterSecurityGroup" :: Maybe (XmlStringMaxLen256), "EmrManagedSlaveSecurityGroup" :: Maybe (XmlStringMaxLen256), "ServiceAccessSecurityGroup" :: Maybe (XmlStringMaxLen256), "AdditionalMasterSecurityGroups" :: Maybe (SecurityGroupsList), "AdditionalSlaveSecurityGroups" :: Maybe (SecurityGroupsList) } -> { "MasterInstanceType" :: Maybe (InstanceType), "SlaveInstanceType" :: Maybe (InstanceType), "InstanceCount" :: Maybe (Int), "InstanceGroups" :: Maybe (InstanceGroupConfigList), "InstanceFleets" :: Maybe (InstanceFleetConfigList), "Ec2KeyName" :: Maybe (XmlStringMaxLen256), "Placement" :: Maybe (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "HadoopVersion" :: Maybe (XmlStringMaxLen256), "Ec2SubnetId" :: Maybe (XmlStringMaxLen256), "Ec2SubnetIds" :: Maybe (XmlStringMaxLen256List), "EmrManagedMasterSecurityGroup" :: Maybe (XmlStringMaxLen256), "EmrManagedSlaveSecurityGroup" :: Maybe (XmlStringMaxLen256), "ServiceAccessSecurityGroup" :: Maybe (XmlStringMaxLen256), "AdditionalMasterSecurityGroups" :: Maybe (SecurityGroupsList), "AdditionalSlaveSecurityGroups" :: Maybe (SecurityGroupsList) }) -> JobFlowInstancesConfig
 ```
 
 Constructs JobFlowInstancesConfig's fields from required parameters
@@ -3310,7 +3310,7 @@ Constructs JobFlowInstancesConfig's fields from required parameters
 
 ``` purescript
 newtype JobFlowInstancesDetail
-  = JobFlowInstancesDetail { "MasterInstanceType" :: InstanceType, "MasterPublicDnsName" :: NullOrUndefined (XmlString), "MasterInstanceId" :: NullOrUndefined (XmlString), "SlaveInstanceType" :: InstanceType, "InstanceCount" :: Int, "InstanceGroups" :: NullOrUndefined (InstanceGroupDetailList), "NormalizedInstanceHours" :: NullOrUndefined (Int), "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256), "Placement" :: NullOrUndefined (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) }
+  = JobFlowInstancesDetail { "MasterInstanceType" :: InstanceType, "MasterPublicDnsName" :: Maybe (XmlString), "MasterInstanceId" :: Maybe (XmlString), "SlaveInstanceType" :: InstanceType, "InstanceCount" :: Int, "InstanceGroups" :: Maybe (InstanceGroupDetailList), "NormalizedInstanceHours" :: Maybe (Int), "Ec2KeyName" :: Maybe (XmlStringMaxLen256), "Ec2SubnetId" :: Maybe (XmlStringMaxLen256), "Placement" :: Maybe (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "HadoopVersion" :: Maybe (XmlStringMaxLen256) }
 ```
 
 <p>Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.</p>
@@ -3335,7 +3335,7 @@ Constructs JobFlowInstancesDetail from required parameters
 #### `newJobFlowInstancesDetail'`
 
 ``` purescript
-newJobFlowInstancesDetail' :: Int -> InstanceType -> InstanceType -> ({ "MasterInstanceType" :: InstanceType, "MasterPublicDnsName" :: NullOrUndefined (XmlString), "MasterInstanceId" :: NullOrUndefined (XmlString), "SlaveInstanceType" :: InstanceType, "InstanceCount" :: Int, "InstanceGroups" :: NullOrUndefined (InstanceGroupDetailList), "NormalizedInstanceHours" :: NullOrUndefined (Int), "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256), "Placement" :: NullOrUndefined (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) } -> { "MasterInstanceType" :: InstanceType, "MasterPublicDnsName" :: NullOrUndefined (XmlString), "MasterInstanceId" :: NullOrUndefined (XmlString), "SlaveInstanceType" :: InstanceType, "InstanceCount" :: Int, "InstanceGroups" :: NullOrUndefined (InstanceGroupDetailList), "NormalizedInstanceHours" :: NullOrUndefined (Int), "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256), "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256), "Placement" :: NullOrUndefined (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean), "TerminationProtected" :: NullOrUndefined (Boolean), "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) }) -> JobFlowInstancesDetail
+newJobFlowInstancesDetail' :: Int -> InstanceType -> InstanceType -> ({ "MasterInstanceType" :: InstanceType, "MasterPublicDnsName" :: Maybe (XmlString), "MasterInstanceId" :: Maybe (XmlString), "SlaveInstanceType" :: InstanceType, "InstanceCount" :: Int, "InstanceGroups" :: Maybe (InstanceGroupDetailList), "NormalizedInstanceHours" :: Maybe (Int), "Ec2KeyName" :: Maybe (XmlStringMaxLen256), "Ec2SubnetId" :: Maybe (XmlStringMaxLen256), "Placement" :: Maybe (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "HadoopVersion" :: Maybe (XmlStringMaxLen256) } -> { "MasterInstanceType" :: InstanceType, "MasterPublicDnsName" :: Maybe (XmlString), "MasterInstanceId" :: Maybe (XmlString), "SlaveInstanceType" :: InstanceType, "InstanceCount" :: Int, "InstanceGroups" :: Maybe (InstanceGroupDetailList), "NormalizedInstanceHours" :: Maybe (Int), "Ec2KeyName" :: Maybe (XmlStringMaxLen256), "Ec2SubnetId" :: Maybe (XmlStringMaxLen256), "Placement" :: Maybe (PlacementType), "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean), "TerminationProtected" :: Maybe (Boolean), "HadoopVersion" :: Maybe (XmlStringMaxLen256) }) -> JobFlowInstancesDetail
 ```
 
 Constructs JobFlowInstancesDetail's fields from required parameters
@@ -3344,7 +3344,7 @@ Constructs JobFlowInstancesDetail's fields from required parameters
 
 ``` purescript
 newtype KerberosAttributes
-  = KerberosAttributes { "Realm" :: XmlStringMaxLen256, "KdcAdminPassword" :: XmlStringMaxLen256, "CrossRealmTrustPrincipalPassword" :: NullOrUndefined (XmlStringMaxLen256), "ADDomainJoinUser" :: NullOrUndefined (XmlStringMaxLen256), "ADDomainJoinPassword" :: NullOrUndefined (XmlStringMaxLen256) }
+  = KerberosAttributes { "Realm" :: XmlStringMaxLen256, "KdcAdminPassword" :: XmlStringMaxLen256, "CrossRealmTrustPrincipalPassword" :: Maybe (XmlStringMaxLen256), "ADDomainJoinUser" :: Maybe (XmlStringMaxLen256), "ADDomainJoinPassword" :: Maybe (XmlStringMaxLen256) }
 ```
 
 <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
@@ -3369,7 +3369,7 @@ Constructs KerberosAttributes from required parameters
 #### `newKerberosAttributes'`
 
 ``` purescript
-newKerberosAttributes' :: XmlStringMaxLen256 -> XmlStringMaxLen256 -> ({ "Realm" :: XmlStringMaxLen256, "KdcAdminPassword" :: XmlStringMaxLen256, "CrossRealmTrustPrincipalPassword" :: NullOrUndefined (XmlStringMaxLen256), "ADDomainJoinUser" :: NullOrUndefined (XmlStringMaxLen256), "ADDomainJoinPassword" :: NullOrUndefined (XmlStringMaxLen256) } -> { "Realm" :: XmlStringMaxLen256, "KdcAdminPassword" :: XmlStringMaxLen256, "CrossRealmTrustPrincipalPassword" :: NullOrUndefined (XmlStringMaxLen256), "ADDomainJoinUser" :: NullOrUndefined (XmlStringMaxLen256), "ADDomainJoinPassword" :: NullOrUndefined (XmlStringMaxLen256) }) -> KerberosAttributes
+newKerberosAttributes' :: XmlStringMaxLen256 -> XmlStringMaxLen256 -> ({ "Realm" :: XmlStringMaxLen256, "KdcAdminPassword" :: XmlStringMaxLen256, "CrossRealmTrustPrincipalPassword" :: Maybe (XmlStringMaxLen256), "ADDomainJoinUser" :: Maybe (XmlStringMaxLen256), "ADDomainJoinPassword" :: Maybe (XmlStringMaxLen256) } -> { "Realm" :: XmlStringMaxLen256, "KdcAdminPassword" :: XmlStringMaxLen256, "CrossRealmTrustPrincipalPassword" :: Maybe (XmlStringMaxLen256), "ADDomainJoinUser" :: Maybe (XmlStringMaxLen256), "ADDomainJoinPassword" :: Maybe (XmlStringMaxLen256) }) -> KerberosAttributes
 ```
 
 Constructs KerberosAttributes's fields from required parameters
@@ -3378,7 +3378,7 @@ Constructs KerberosAttributes's fields from required parameters
 
 ``` purescript
 newtype KeyValue
-  = KeyValue { "Key" :: NullOrUndefined (XmlString), "Value" :: NullOrUndefined (XmlString) }
+  = KeyValue { "Key" :: Maybe (XmlString), "Value" :: Maybe (XmlString) }
 ```
 
 <p>A key value pair.</p>
@@ -3403,7 +3403,7 @@ Constructs KeyValue from required parameters
 #### `newKeyValue'`
 
 ``` purescript
-newKeyValue' :: ({ "Key" :: NullOrUndefined (XmlString), "Value" :: NullOrUndefined (XmlString) } -> { "Key" :: NullOrUndefined (XmlString), "Value" :: NullOrUndefined (XmlString) }) -> KeyValue
+newKeyValue' :: ({ "Key" :: Maybe (XmlString), "Value" :: Maybe (XmlString) } -> { "Key" :: Maybe (XmlString), "Value" :: Maybe (XmlString) }) -> KeyValue
 ```
 
 Constructs KeyValue's fields from required parameters
@@ -3428,7 +3428,7 @@ Encode KeyValueList
 
 ``` purescript
 newtype ListBootstrapActionsInput
-  = ListBootstrapActionsInput { "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) }
+  = ListBootstrapActionsInput { "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) }
 ```
 
 <p>This input determines which bootstrap actions to retrieve.</p>
@@ -3453,7 +3453,7 @@ Constructs ListBootstrapActionsInput from required parameters
 #### `newListBootstrapActionsInput'`
 
 ``` purescript
-newListBootstrapActionsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) } -> { "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) }) -> ListBootstrapActionsInput
+newListBootstrapActionsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) } -> { "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) }) -> ListBootstrapActionsInput
 ```
 
 Constructs ListBootstrapActionsInput's fields from required parameters
@@ -3462,7 +3462,7 @@ Constructs ListBootstrapActionsInput's fields from required parameters
 
 ``` purescript
 newtype ListBootstrapActionsOutput
-  = ListBootstrapActionsOutput { "BootstrapActions" :: NullOrUndefined (CommandList), "Marker" :: NullOrUndefined (Marker) }
+  = ListBootstrapActionsOutput { "BootstrapActions" :: Maybe (CommandList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This output contains the bootstrap actions detail.</p>
@@ -3487,7 +3487,7 @@ Constructs ListBootstrapActionsOutput from required parameters
 #### `newListBootstrapActionsOutput'`
 
 ``` purescript
-newListBootstrapActionsOutput' :: ({ "BootstrapActions" :: NullOrUndefined (CommandList), "Marker" :: NullOrUndefined (Marker) } -> { "BootstrapActions" :: NullOrUndefined (CommandList), "Marker" :: NullOrUndefined (Marker) }) -> ListBootstrapActionsOutput
+newListBootstrapActionsOutput' :: ({ "BootstrapActions" :: Maybe (CommandList), "Marker" :: Maybe (Marker) } -> { "BootstrapActions" :: Maybe (CommandList), "Marker" :: Maybe (Marker) }) -> ListBootstrapActionsOutput
 ```
 
 Constructs ListBootstrapActionsOutput's fields from required parameters
@@ -3496,7 +3496,7 @@ Constructs ListBootstrapActionsOutput's fields from required parameters
 
 ``` purescript
 newtype ListClustersInput
-  = ListClustersInput { "CreatedAfter" :: NullOrUndefined (Date), "CreatedBefore" :: NullOrUndefined (Date), "ClusterStates" :: NullOrUndefined (ClusterStateList), "Marker" :: NullOrUndefined (Marker) }
+  = ListClustersInput { "CreatedAfter" :: Maybe (Date), "CreatedBefore" :: Maybe (Date), "ClusterStates" :: Maybe (ClusterStateList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>
@@ -3521,7 +3521,7 @@ Constructs ListClustersInput from required parameters
 #### `newListClustersInput'`
 
 ``` purescript
-newListClustersInput' :: ({ "CreatedAfter" :: NullOrUndefined (Date), "CreatedBefore" :: NullOrUndefined (Date), "ClusterStates" :: NullOrUndefined (ClusterStateList), "Marker" :: NullOrUndefined (Marker) } -> { "CreatedAfter" :: NullOrUndefined (Date), "CreatedBefore" :: NullOrUndefined (Date), "ClusterStates" :: NullOrUndefined (ClusterStateList), "Marker" :: NullOrUndefined (Marker) }) -> ListClustersInput
+newListClustersInput' :: ({ "CreatedAfter" :: Maybe (Date), "CreatedBefore" :: Maybe (Date), "ClusterStates" :: Maybe (ClusterStateList), "Marker" :: Maybe (Marker) } -> { "CreatedAfter" :: Maybe (Date), "CreatedBefore" :: Maybe (Date), "ClusterStates" :: Maybe (ClusterStateList), "Marker" :: Maybe (Marker) }) -> ListClustersInput
 ```
 
 Constructs ListClustersInput's fields from required parameters
@@ -3530,7 +3530,7 @@ Constructs ListClustersInput's fields from required parameters
 
 ``` purescript
 newtype ListClustersOutput
-  = ListClustersOutput { "Clusters" :: NullOrUndefined (ClusterSummaryList), "Marker" :: NullOrUndefined (Marker) }
+  = ListClustersOutput { "Clusters" :: Maybe (ClusterSummaryList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>
@@ -3555,7 +3555,7 @@ Constructs ListClustersOutput from required parameters
 #### `newListClustersOutput'`
 
 ``` purescript
-newListClustersOutput' :: ({ "Clusters" :: NullOrUndefined (ClusterSummaryList), "Marker" :: NullOrUndefined (Marker) } -> { "Clusters" :: NullOrUndefined (ClusterSummaryList), "Marker" :: NullOrUndefined (Marker) }) -> ListClustersOutput
+newListClustersOutput' :: ({ "Clusters" :: Maybe (ClusterSummaryList), "Marker" :: Maybe (Marker) } -> { "Clusters" :: Maybe (ClusterSummaryList), "Marker" :: Maybe (Marker) }) -> ListClustersOutput
 ```
 
 Constructs ListClustersOutput's fields from required parameters
@@ -3564,7 +3564,7 @@ Constructs ListClustersOutput's fields from required parameters
 
 ``` purescript
 newtype ListInstanceFleetsInput
-  = ListInstanceFleetsInput { "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) }
+  = ListInstanceFleetsInput { "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -3587,7 +3587,7 @@ Constructs ListInstanceFleetsInput from required parameters
 #### `newListInstanceFleetsInput'`
 
 ``` purescript
-newListInstanceFleetsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) } -> { "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) }) -> ListInstanceFleetsInput
+newListInstanceFleetsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) } -> { "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) }) -> ListInstanceFleetsInput
 ```
 
 Constructs ListInstanceFleetsInput's fields from required parameters
@@ -3596,7 +3596,7 @@ Constructs ListInstanceFleetsInput's fields from required parameters
 
 ``` purescript
 newtype ListInstanceFleetsOutput
-  = ListInstanceFleetsOutput { "InstanceFleets" :: NullOrUndefined (InstanceFleetList), "Marker" :: NullOrUndefined (Marker) }
+  = ListInstanceFleetsOutput { "InstanceFleets" :: Maybe (InstanceFleetList), "Marker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -3619,7 +3619,7 @@ Constructs ListInstanceFleetsOutput from required parameters
 #### `newListInstanceFleetsOutput'`
 
 ``` purescript
-newListInstanceFleetsOutput' :: ({ "InstanceFleets" :: NullOrUndefined (InstanceFleetList), "Marker" :: NullOrUndefined (Marker) } -> { "InstanceFleets" :: NullOrUndefined (InstanceFleetList), "Marker" :: NullOrUndefined (Marker) }) -> ListInstanceFleetsOutput
+newListInstanceFleetsOutput' :: ({ "InstanceFleets" :: Maybe (InstanceFleetList), "Marker" :: Maybe (Marker) } -> { "InstanceFleets" :: Maybe (InstanceFleetList), "Marker" :: Maybe (Marker) }) -> ListInstanceFleetsOutput
 ```
 
 Constructs ListInstanceFleetsOutput's fields from required parameters
@@ -3628,7 +3628,7 @@ Constructs ListInstanceFleetsOutput's fields from required parameters
 
 ``` purescript
 newtype ListInstanceGroupsInput
-  = ListInstanceGroupsInput { "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) }
+  = ListInstanceGroupsInput { "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) }
 ```
 
 <p>This input determines which instance groups to retrieve.</p>
@@ -3653,7 +3653,7 @@ Constructs ListInstanceGroupsInput from required parameters
 #### `newListInstanceGroupsInput'`
 
 ``` purescript
-newListInstanceGroupsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) } -> { "ClusterId" :: ClusterId, "Marker" :: NullOrUndefined (Marker) }) -> ListInstanceGroupsInput
+newListInstanceGroupsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) } -> { "ClusterId" :: ClusterId, "Marker" :: Maybe (Marker) }) -> ListInstanceGroupsInput
 ```
 
 Constructs ListInstanceGroupsInput's fields from required parameters
@@ -3662,7 +3662,7 @@ Constructs ListInstanceGroupsInput's fields from required parameters
 
 ``` purescript
 newtype ListInstanceGroupsOutput
-  = ListInstanceGroupsOutput { "InstanceGroups" :: NullOrUndefined (InstanceGroupList), "Marker" :: NullOrUndefined (Marker) }
+  = ListInstanceGroupsOutput { "InstanceGroups" :: Maybe (InstanceGroupList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This input determines which instance groups to retrieve.</p>
@@ -3687,7 +3687,7 @@ Constructs ListInstanceGroupsOutput from required parameters
 #### `newListInstanceGroupsOutput'`
 
 ``` purescript
-newListInstanceGroupsOutput' :: ({ "InstanceGroups" :: NullOrUndefined (InstanceGroupList), "Marker" :: NullOrUndefined (Marker) } -> { "InstanceGroups" :: NullOrUndefined (InstanceGroupList), "Marker" :: NullOrUndefined (Marker) }) -> ListInstanceGroupsOutput
+newListInstanceGroupsOutput' :: ({ "InstanceGroups" :: Maybe (InstanceGroupList), "Marker" :: Maybe (Marker) } -> { "InstanceGroups" :: Maybe (InstanceGroupList), "Marker" :: Maybe (Marker) }) -> ListInstanceGroupsOutput
 ```
 
 Constructs ListInstanceGroupsOutput's fields from required parameters
@@ -3696,7 +3696,7 @@ Constructs ListInstanceGroupsOutput's fields from required parameters
 
 ``` purescript
 newtype ListInstancesInput
-  = ListInstancesInput { "ClusterId" :: ClusterId, "InstanceGroupId" :: NullOrUndefined (InstanceGroupId), "InstanceGroupTypes" :: NullOrUndefined (InstanceGroupTypeList), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId), "InstanceFleetType" :: NullOrUndefined (InstanceFleetType), "InstanceStates" :: NullOrUndefined (InstanceStateList), "Marker" :: NullOrUndefined (Marker) }
+  = ListInstancesInput { "ClusterId" :: ClusterId, "InstanceGroupId" :: Maybe (InstanceGroupId), "InstanceGroupTypes" :: Maybe (InstanceGroupTypeList), "InstanceFleetId" :: Maybe (InstanceFleetId), "InstanceFleetType" :: Maybe (InstanceFleetType), "InstanceStates" :: Maybe (InstanceStateList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This input determines which instances to list.</p>
@@ -3721,7 +3721,7 @@ Constructs ListInstancesInput from required parameters
 #### `newListInstancesInput'`
 
 ``` purescript
-newListInstancesInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "InstanceGroupId" :: NullOrUndefined (InstanceGroupId), "InstanceGroupTypes" :: NullOrUndefined (InstanceGroupTypeList), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId), "InstanceFleetType" :: NullOrUndefined (InstanceFleetType), "InstanceStates" :: NullOrUndefined (InstanceStateList), "Marker" :: NullOrUndefined (Marker) } -> { "ClusterId" :: ClusterId, "InstanceGroupId" :: NullOrUndefined (InstanceGroupId), "InstanceGroupTypes" :: NullOrUndefined (InstanceGroupTypeList), "InstanceFleetId" :: NullOrUndefined (InstanceFleetId), "InstanceFleetType" :: NullOrUndefined (InstanceFleetType), "InstanceStates" :: NullOrUndefined (InstanceStateList), "Marker" :: NullOrUndefined (Marker) }) -> ListInstancesInput
+newListInstancesInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "InstanceGroupId" :: Maybe (InstanceGroupId), "InstanceGroupTypes" :: Maybe (InstanceGroupTypeList), "InstanceFleetId" :: Maybe (InstanceFleetId), "InstanceFleetType" :: Maybe (InstanceFleetType), "InstanceStates" :: Maybe (InstanceStateList), "Marker" :: Maybe (Marker) } -> { "ClusterId" :: ClusterId, "InstanceGroupId" :: Maybe (InstanceGroupId), "InstanceGroupTypes" :: Maybe (InstanceGroupTypeList), "InstanceFleetId" :: Maybe (InstanceFleetId), "InstanceFleetType" :: Maybe (InstanceFleetType), "InstanceStates" :: Maybe (InstanceStateList), "Marker" :: Maybe (Marker) }) -> ListInstancesInput
 ```
 
 Constructs ListInstancesInput's fields from required parameters
@@ -3730,7 +3730,7 @@ Constructs ListInstancesInput's fields from required parameters
 
 ``` purescript
 newtype ListInstancesOutput
-  = ListInstancesOutput { "Instances" :: NullOrUndefined (InstanceList), "Marker" :: NullOrUndefined (Marker) }
+  = ListInstancesOutput { "Instances" :: Maybe (InstanceList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This output contains the list of instances.</p>
@@ -3755,7 +3755,7 @@ Constructs ListInstancesOutput from required parameters
 #### `newListInstancesOutput'`
 
 ``` purescript
-newListInstancesOutput' :: ({ "Instances" :: NullOrUndefined (InstanceList), "Marker" :: NullOrUndefined (Marker) } -> { "Instances" :: NullOrUndefined (InstanceList), "Marker" :: NullOrUndefined (Marker) }) -> ListInstancesOutput
+newListInstancesOutput' :: ({ "Instances" :: Maybe (InstanceList), "Marker" :: Maybe (Marker) } -> { "Instances" :: Maybe (InstanceList), "Marker" :: Maybe (Marker) }) -> ListInstancesOutput
 ```
 
 Constructs ListInstancesOutput's fields from required parameters
@@ -3764,7 +3764,7 @@ Constructs ListInstancesOutput's fields from required parameters
 
 ``` purescript
 newtype ListSecurityConfigurationsInput
-  = ListSecurityConfigurationsInput { "Marker" :: NullOrUndefined (Marker) }
+  = ListSecurityConfigurationsInput { "Marker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -3787,7 +3787,7 @@ Constructs ListSecurityConfigurationsInput from required parameters
 #### `newListSecurityConfigurationsInput'`
 
 ``` purescript
-newListSecurityConfigurationsInput' :: ({ "Marker" :: NullOrUndefined (Marker) } -> { "Marker" :: NullOrUndefined (Marker) }) -> ListSecurityConfigurationsInput
+newListSecurityConfigurationsInput' :: ({ "Marker" :: Maybe (Marker) } -> { "Marker" :: Maybe (Marker) }) -> ListSecurityConfigurationsInput
 ```
 
 Constructs ListSecurityConfigurationsInput's fields from required parameters
@@ -3796,7 +3796,7 @@ Constructs ListSecurityConfigurationsInput's fields from required parameters
 
 ``` purescript
 newtype ListSecurityConfigurationsOutput
-  = ListSecurityConfigurationsOutput { "SecurityConfigurations" :: NullOrUndefined (SecurityConfigurationList), "Marker" :: NullOrUndefined (Marker) }
+  = ListSecurityConfigurationsOutput { "SecurityConfigurations" :: Maybe (SecurityConfigurationList), "Marker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -3819,7 +3819,7 @@ Constructs ListSecurityConfigurationsOutput from required parameters
 #### `newListSecurityConfigurationsOutput'`
 
 ``` purescript
-newListSecurityConfigurationsOutput' :: ({ "SecurityConfigurations" :: NullOrUndefined (SecurityConfigurationList), "Marker" :: NullOrUndefined (Marker) } -> { "SecurityConfigurations" :: NullOrUndefined (SecurityConfigurationList), "Marker" :: NullOrUndefined (Marker) }) -> ListSecurityConfigurationsOutput
+newListSecurityConfigurationsOutput' :: ({ "SecurityConfigurations" :: Maybe (SecurityConfigurationList), "Marker" :: Maybe (Marker) } -> { "SecurityConfigurations" :: Maybe (SecurityConfigurationList), "Marker" :: Maybe (Marker) }) -> ListSecurityConfigurationsOutput
 ```
 
 Constructs ListSecurityConfigurationsOutput's fields from required parameters
@@ -3828,7 +3828,7 @@ Constructs ListSecurityConfigurationsOutput's fields from required parameters
 
 ``` purescript
 newtype ListStepsInput
-  = ListStepsInput { "ClusterId" :: ClusterId, "StepStates" :: NullOrUndefined (StepStateList), "StepIds" :: NullOrUndefined (XmlStringList), "Marker" :: NullOrUndefined (Marker) }
+  = ListStepsInput { "ClusterId" :: ClusterId, "StepStates" :: Maybe (StepStateList), "StepIds" :: Maybe (XmlStringList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This input determines which steps to list.</p>
@@ -3853,7 +3853,7 @@ Constructs ListStepsInput from required parameters
 #### `newListStepsInput'`
 
 ``` purescript
-newListStepsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "StepStates" :: NullOrUndefined (StepStateList), "StepIds" :: NullOrUndefined (XmlStringList), "Marker" :: NullOrUndefined (Marker) } -> { "ClusterId" :: ClusterId, "StepStates" :: NullOrUndefined (StepStateList), "StepIds" :: NullOrUndefined (XmlStringList), "Marker" :: NullOrUndefined (Marker) }) -> ListStepsInput
+newListStepsInput' :: ClusterId -> ({ "ClusterId" :: ClusterId, "StepStates" :: Maybe (StepStateList), "StepIds" :: Maybe (XmlStringList), "Marker" :: Maybe (Marker) } -> { "ClusterId" :: ClusterId, "StepStates" :: Maybe (StepStateList), "StepIds" :: Maybe (XmlStringList), "Marker" :: Maybe (Marker) }) -> ListStepsInput
 ```
 
 Constructs ListStepsInput's fields from required parameters
@@ -3862,7 +3862,7 @@ Constructs ListStepsInput's fields from required parameters
 
 ``` purescript
 newtype ListStepsOutput
-  = ListStepsOutput { "Steps" :: NullOrUndefined (StepSummaryList), "Marker" :: NullOrUndefined (Marker) }
+  = ListStepsOutput { "Steps" :: Maybe (StepSummaryList), "Marker" :: Maybe (Marker) }
 ```
 
 <p>This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.</p>
@@ -3887,7 +3887,7 @@ Constructs ListStepsOutput from required parameters
 #### `newListStepsOutput'`
 
 ``` purescript
-newListStepsOutput' :: ({ "Steps" :: NullOrUndefined (StepSummaryList), "Marker" :: NullOrUndefined (Marker) } -> { "Steps" :: NullOrUndefined (StepSummaryList), "Marker" :: NullOrUndefined (Marker) }) -> ListStepsOutput
+newListStepsOutput' :: ({ "Steps" :: Maybe (StepSummaryList), "Marker" :: Maybe (Marker) } -> { "Steps" :: Maybe (StepSummaryList), "Marker" :: Maybe (Marker) }) -> ListStepsOutput
 ```
 
 Constructs ListStepsOutput's fields from required parameters
@@ -3928,7 +3928,7 @@ Encode MarketType
 
 ``` purescript
 newtype MetricDimension
-  = MetricDimension { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = MetricDimension { "Key" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.</p>
@@ -3953,7 +3953,7 @@ Constructs MetricDimension from required parameters
 #### `newMetricDimension'`
 
 ``` purescript
-newMetricDimension' :: ({ "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> MetricDimension
+newMetricDimension' :: ({ "Key" :: Maybe (String), "Value" :: Maybe (String) } -> { "Key" :: Maybe (String), "Value" :: Maybe (String) }) -> MetricDimension
 ```
 
 Constructs MetricDimension's fields from required parameters
@@ -4010,7 +4010,7 @@ Constructs ModifyInstanceFleetInput's fields from required parameters
 
 ``` purescript
 newtype ModifyInstanceGroupsInput
-  = ModifyInstanceGroupsInput { "ClusterId" :: NullOrUndefined (ClusterId), "InstanceGroups" :: NullOrUndefined (InstanceGroupModifyConfigList) }
+  = ModifyInstanceGroupsInput { "ClusterId" :: Maybe (ClusterId), "InstanceGroups" :: Maybe (InstanceGroupModifyConfigList) }
 ```
 
 <p>Change the size of some instance groups.</p>
@@ -4035,7 +4035,7 @@ Constructs ModifyInstanceGroupsInput from required parameters
 #### `newModifyInstanceGroupsInput'`
 
 ``` purescript
-newModifyInstanceGroupsInput' :: ({ "ClusterId" :: NullOrUndefined (ClusterId), "InstanceGroups" :: NullOrUndefined (InstanceGroupModifyConfigList) } -> { "ClusterId" :: NullOrUndefined (ClusterId), "InstanceGroups" :: NullOrUndefined (InstanceGroupModifyConfigList) }) -> ModifyInstanceGroupsInput
+newModifyInstanceGroupsInput' :: ({ "ClusterId" :: Maybe (ClusterId), "InstanceGroups" :: Maybe (InstanceGroupModifyConfigList) } -> { "ClusterId" :: Maybe (ClusterId), "InstanceGroups" :: Maybe (InstanceGroupModifyConfigList) }) -> ModifyInstanceGroupsInput
 ```
 
 Constructs ModifyInstanceGroupsInput's fields from required parameters
@@ -4076,7 +4076,7 @@ Encode NonNegativeDouble
 
 ``` purescript
 newtype PlacementType
-  = PlacementType { "AvailabilityZone" :: NullOrUndefined (XmlString), "AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) }
+  = PlacementType { "AvailabilityZone" :: Maybe (XmlString), "AvailabilityZones" :: Maybe (XmlStringMaxLen256List) }
 ```
 
 <p>The Amazon EC2 Availability Zone configuration of the cluster (job flow).</p>
@@ -4101,7 +4101,7 @@ Constructs PlacementType from required parameters
 #### `newPlacementType'`
 
 ``` purescript
-newPlacementType' :: ({ "AvailabilityZone" :: NullOrUndefined (XmlString), "AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) } -> { "AvailabilityZone" :: NullOrUndefined (XmlString), "AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) }) -> PlacementType
+newPlacementType' :: ({ "AvailabilityZone" :: Maybe (XmlString), "AvailabilityZones" :: Maybe (XmlStringMaxLen256List) } -> { "AvailabilityZone" :: Maybe (XmlString), "AvailabilityZones" :: Maybe (XmlStringMaxLen256List) }) -> PlacementType
 ```
 
 Constructs PlacementType's fields from required parameters
@@ -4142,7 +4142,7 @@ Constructs PutAutoScalingPolicyInput's fields from required parameters
 
 ``` purescript
 newtype PutAutoScalingPolicyOutput
-  = PutAutoScalingPolicyOutput { "ClusterId" :: NullOrUndefined (ClusterId), "InstanceGroupId" :: NullOrUndefined (InstanceGroupId), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) }
+  = PutAutoScalingPolicyOutput { "ClusterId" :: Maybe (ClusterId), "InstanceGroupId" :: Maybe (InstanceGroupId), "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) }
 ```
 
 ##### Instances
@@ -4165,7 +4165,7 @@ Constructs PutAutoScalingPolicyOutput from required parameters
 #### `newPutAutoScalingPolicyOutput'`
 
 ``` purescript
-newPutAutoScalingPolicyOutput' :: ({ "ClusterId" :: NullOrUndefined (ClusterId), "InstanceGroupId" :: NullOrUndefined (InstanceGroupId), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) } -> { "ClusterId" :: NullOrUndefined (ClusterId), "InstanceGroupId" :: NullOrUndefined (InstanceGroupId), "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) }) -> PutAutoScalingPolicyOutput
+newPutAutoScalingPolicyOutput' :: ({ "ClusterId" :: Maybe (ClusterId), "InstanceGroupId" :: Maybe (InstanceGroupId), "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) } -> { "ClusterId" :: Maybe (ClusterId), "InstanceGroupId" :: Maybe (InstanceGroupId), "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) }) -> PutAutoScalingPolicyOutput
 ```
 
 Constructs PutAutoScalingPolicyOutput's fields from required parameters
@@ -4306,7 +4306,7 @@ Encode ResourceId
 
 ``` purescript
 newtype RunJobFlowInput
-  = RunJobFlowInput { "Name" :: XmlStringMaxLen256, "LogUri" :: NullOrUndefined (XmlString), "AdditionalInfo" :: NullOrUndefined (XmlString), "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256), "ReleaseLabel" :: NullOrUndefined (XmlStringMaxLen256), "Instances" :: JobFlowInstancesConfig, "Steps" :: NullOrUndefined (StepConfigList), "BootstrapActions" :: NullOrUndefined (BootstrapActionConfigList), "SupportedProducts" :: NullOrUndefined (SupportedProductsList), "NewSupportedProducts" :: NullOrUndefined (NewSupportedProductsList), "Applications" :: NullOrUndefined (ApplicationList), "Configurations" :: NullOrUndefined (ConfigurationList), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "JobFlowRole" :: NullOrUndefined (XmlString), "ServiceRole" :: NullOrUndefined (XmlString), "Tags" :: NullOrUndefined (TagList), "SecurityConfiguration" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior), "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256), "EbsRootVolumeSize" :: NullOrUndefined (Int), "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot), "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) }
+  = RunJobFlowInput { "Name" :: XmlStringMaxLen256, "LogUri" :: Maybe (XmlString), "AdditionalInfo" :: Maybe (XmlString), "AmiVersion" :: Maybe (XmlStringMaxLen256), "ReleaseLabel" :: Maybe (XmlStringMaxLen256), "Instances" :: JobFlowInstancesConfig, "Steps" :: Maybe (StepConfigList), "BootstrapActions" :: Maybe (BootstrapActionConfigList), "SupportedProducts" :: Maybe (SupportedProductsList), "NewSupportedProducts" :: Maybe (NewSupportedProductsList), "Applications" :: Maybe (ApplicationList), "Configurations" :: Maybe (ConfigurationList), "VisibleToAllUsers" :: Maybe (Boolean), "JobFlowRole" :: Maybe (XmlString), "ServiceRole" :: Maybe (XmlString), "Tags" :: Maybe (TagList), "SecurityConfiguration" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior), "CustomAmiId" :: Maybe (XmlStringMaxLen256), "EbsRootVolumeSize" :: Maybe (Int), "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot), "KerberosAttributes" :: Maybe (KerberosAttributes) }
 ```
 
 <p> Input to the <a>RunJobFlow</a> operation. </p>
@@ -4331,7 +4331,7 @@ Constructs RunJobFlowInput from required parameters
 #### `newRunJobFlowInput'`
 
 ``` purescript
-newRunJobFlowInput' :: JobFlowInstancesConfig -> XmlStringMaxLen256 -> ({ "Name" :: XmlStringMaxLen256, "LogUri" :: NullOrUndefined (XmlString), "AdditionalInfo" :: NullOrUndefined (XmlString), "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256), "ReleaseLabel" :: NullOrUndefined (XmlStringMaxLen256), "Instances" :: JobFlowInstancesConfig, "Steps" :: NullOrUndefined (StepConfigList), "BootstrapActions" :: NullOrUndefined (BootstrapActionConfigList), "SupportedProducts" :: NullOrUndefined (SupportedProductsList), "NewSupportedProducts" :: NullOrUndefined (NewSupportedProductsList), "Applications" :: NullOrUndefined (ApplicationList), "Configurations" :: NullOrUndefined (ConfigurationList), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "JobFlowRole" :: NullOrUndefined (XmlString), "ServiceRole" :: NullOrUndefined (XmlString), "Tags" :: NullOrUndefined (TagList), "SecurityConfiguration" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior), "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256), "EbsRootVolumeSize" :: NullOrUndefined (Int), "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot), "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) } -> { "Name" :: XmlStringMaxLen256, "LogUri" :: NullOrUndefined (XmlString), "AdditionalInfo" :: NullOrUndefined (XmlString), "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256), "ReleaseLabel" :: NullOrUndefined (XmlStringMaxLen256), "Instances" :: JobFlowInstancesConfig, "Steps" :: NullOrUndefined (StepConfigList), "BootstrapActions" :: NullOrUndefined (BootstrapActionConfigList), "SupportedProducts" :: NullOrUndefined (SupportedProductsList), "NewSupportedProducts" :: NullOrUndefined (NewSupportedProductsList), "Applications" :: NullOrUndefined (ApplicationList), "Configurations" :: NullOrUndefined (ConfigurationList), "VisibleToAllUsers" :: NullOrUndefined (Boolean), "JobFlowRole" :: NullOrUndefined (XmlString), "ServiceRole" :: NullOrUndefined (XmlString), "Tags" :: NullOrUndefined (TagList), "SecurityConfiguration" :: NullOrUndefined (XmlString), "AutoScalingRole" :: NullOrUndefined (XmlString), "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior), "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256), "EbsRootVolumeSize" :: NullOrUndefined (Int), "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot), "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) }) -> RunJobFlowInput
+newRunJobFlowInput' :: JobFlowInstancesConfig -> XmlStringMaxLen256 -> ({ "Name" :: XmlStringMaxLen256, "LogUri" :: Maybe (XmlString), "AdditionalInfo" :: Maybe (XmlString), "AmiVersion" :: Maybe (XmlStringMaxLen256), "ReleaseLabel" :: Maybe (XmlStringMaxLen256), "Instances" :: JobFlowInstancesConfig, "Steps" :: Maybe (StepConfigList), "BootstrapActions" :: Maybe (BootstrapActionConfigList), "SupportedProducts" :: Maybe (SupportedProductsList), "NewSupportedProducts" :: Maybe (NewSupportedProductsList), "Applications" :: Maybe (ApplicationList), "Configurations" :: Maybe (ConfigurationList), "VisibleToAllUsers" :: Maybe (Boolean), "JobFlowRole" :: Maybe (XmlString), "ServiceRole" :: Maybe (XmlString), "Tags" :: Maybe (TagList), "SecurityConfiguration" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior), "CustomAmiId" :: Maybe (XmlStringMaxLen256), "EbsRootVolumeSize" :: Maybe (Int), "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot), "KerberosAttributes" :: Maybe (KerberosAttributes) } -> { "Name" :: XmlStringMaxLen256, "LogUri" :: Maybe (XmlString), "AdditionalInfo" :: Maybe (XmlString), "AmiVersion" :: Maybe (XmlStringMaxLen256), "ReleaseLabel" :: Maybe (XmlStringMaxLen256), "Instances" :: JobFlowInstancesConfig, "Steps" :: Maybe (StepConfigList), "BootstrapActions" :: Maybe (BootstrapActionConfigList), "SupportedProducts" :: Maybe (SupportedProductsList), "NewSupportedProducts" :: Maybe (NewSupportedProductsList), "Applications" :: Maybe (ApplicationList), "Configurations" :: Maybe (ConfigurationList), "VisibleToAllUsers" :: Maybe (Boolean), "JobFlowRole" :: Maybe (XmlString), "ServiceRole" :: Maybe (XmlString), "Tags" :: Maybe (TagList), "SecurityConfiguration" :: Maybe (XmlString), "AutoScalingRole" :: Maybe (XmlString), "ScaleDownBehavior" :: Maybe (ScaleDownBehavior), "CustomAmiId" :: Maybe (XmlStringMaxLen256), "EbsRootVolumeSize" :: Maybe (Int), "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot), "KerberosAttributes" :: Maybe (KerberosAttributes) }) -> RunJobFlowInput
 ```
 
 Constructs RunJobFlowInput's fields from required parameters
@@ -4340,7 +4340,7 @@ Constructs RunJobFlowInput's fields from required parameters
 
 ``` purescript
 newtype RunJobFlowOutput
-  = RunJobFlowOutput { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) }
+  = RunJobFlowOutput { "JobFlowId" :: Maybe (XmlStringMaxLen256) }
 ```
 
 <p> The result of the <a>RunJobFlow</a> operation. </p>
@@ -4365,7 +4365,7 @@ Constructs RunJobFlowOutput from required parameters
 #### `newRunJobFlowOutput'`
 
 ``` purescript
-newRunJobFlowOutput' :: ({ "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) } -> { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) }) -> RunJobFlowOutput
+newRunJobFlowOutput' :: ({ "JobFlowId" :: Maybe (XmlStringMaxLen256) } -> { "JobFlowId" :: Maybe (XmlStringMaxLen256) }) -> RunJobFlowOutput
 ```
 
 Constructs RunJobFlowOutput's fields from required parameters
@@ -4390,7 +4390,7 @@ Encode ScaleDownBehavior
 
 ``` purescript
 newtype ScalingAction
-  = ScalingAction { "Market" :: NullOrUndefined (MarketType), "SimpleScalingPolicyConfiguration" :: SimpleScalingPolicyConfiguration }
+  = ScalingAction { "Market" :: Maybe (MarketType), "SimpleScalingPolicyConfiguration" :: SimpleScalingPolicyConfiguration }
 ```
 
 <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
@@ -4415,7 +4415,7 @@ Constructs ScalingAction from required parameters
 #### `newScalingAction'`
 
 ``` purescript
-newScalingAction' :: SimpleScalingPolicyConfiguration -> ({ "Market" :: NullOrUndefined (MarketType), "SimpleScalingPolicyConfiguration" :: SimpleScalingPolicyConfiguration } -> { "Market" :: NullOrUndefined (MarketType), "SimpleScalingPolicyConfiguration" :: SimpleScalingPolicyConfiguration }) -> ScalingAction
+newScalingAction' :: SimpleScalingPolicyConfiguration -> ({ "Market" :: Maybe (MarketType), "SimpleScalingPolicyConfiguration" :: SimpleScalingPolicyConfiguration } -> { "Market" :: Maybe (MarketType), "SimpleScalingPolicyConfiguration" :: SimpleScalingPolicyConfiguration }) -> ScalingAction
 ```
 
 Constructs ScalingAction's fields from required parameters
@@ -4458,7 +4458,7 @@ Constructs ScalingConstraints's fields from required parameters
 
 ``` purescript
 newtype ScalingRule
-  = ScalingRule { "Name" :: String, "Description" :: NullOrUndefined (String), "Action" :: ScalingAction, "Trigger" :: ScalingTrigger }
+  = ScalingRule { "Name" :: String, "Description" :: Maybe (String), "Action" :: ScalingAction, "Trigger" :: ScalingTrigger }
 ```
 
 <p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
@@ -4483,7 +4483,7 @@ Constructs ScalingRule from required parameters
 #### `newScalingRule'`
 
 ``` purescript
-newScalingRule' :: ScalingAction -> String -> ScalingTrigger -> ({ "Name" :: String, "Description" :: NullOrUndefined (String), "Action" :: ScalingAction, "Trigger" :: ScalingTrigger } -> { "Name" :: String, "Description" :: NullOrUndefined (String), "Action" :: ScalingAction, "Trigger" :: ScalingTrigger }) -> ScalingRule
+newScalingRule' :: ScalingAction -> String -> ScalingTrigger -> ({ "Name" :: String, "Description" :: Maybe (String), "Action" :: ScalingAction, "Trigger" :: ScalingTrigger } -> { "Name" :: String, "Description" :: Maybe (String), "Action" :: ScalingAction, "Trigger" :: ScalingTrigger }) -> ScalingRule
 ```
 
 Constructs ScalingRule's fields from required parameters
@@ -4542,7 +4542,7 @@ Constructs ScalingTrigger's fields from required parameters
 
 ``` purescript
 newtype ScriptBootstrapActionConfig
-  = ScriptBootstrapActionConfig { "Path" :: XmlString, "Args" :: NullOrUndefined (XmlStringList) }
+  = ScriptBootstrapActionConfig { "Path" :: XmlString, "Args" :: Maybe (XmlStringList) }
 ```
 
 <p>Configuration of the script to run during a bootstrap action.</p>
@@ -4567,7 +4567,7 @@ Constructs ScriptBootstrapActionConfig from required parameters
 #### `newScriptBootstrapActionConfig'`
 
 ``` purescript
-newScriptBootstrapActionConfig' :: XmlString -> ({ "Path" :: XmlString, "Args" :: NullOrUndefined (XmlStringList) } -> { "Path" :: XmlString, "Args" :: NullOrUndefined (XmlStringList) }) -> ScriptBootstrapActionConfig
+newScriptBootstrapActionConfig' :: XmlString -> ({ "Path" :: XmlString, "Args" :: Maybe (XmlStringList) } -> { "Path" :: XmlString, "Args" :: Maybe (XmlStringList) }) -> ScriptBootstrapActionConfig
 ```
 
 Constructs ScriptBootstrapActionConfig's fields from required parameters
@@ -4592,7 +4592,7 @@ Encode SecurityConfigurationList
 
 ``` purescript
 newtype SecurityConfigurationSummary
-  = SecurityConfigurationSummary { "Name" :: NullOrUndefined (XmlString), "CreationDateTime" :: NullOrUndefined (Date) }
+  = SecurityConfigurationSummary { "Name" :: Maybe (XmlString), "CreationDateTime" :: Maybe (Date) }
 ```
 
 <p>The creation date and time, and name, of a security configuration.</p>
@@ -4617,7 +4617,7 @@ Constructs SecurityConfigurationSummary from required parameters
 #### `newSecurityConfigurationSummary'`
 
 ``` purescript
-newSecurityConfigurationSummary' :: ({ "Name" :: NullOrUndefined (XmlString), "CreationDateTime" :: NullOrUndefined (Date) } -> { "Name" :: NullOrUndefined (XmlString), "CreationDateTime" :: NullOrUndefined (Date) }) -> SecurityConfigurationSummary
+newSecurityConfigurationSummary' :: ({ "Name" :: Maybe (XmlString), "CreationDateTime" :: Maybe (Date) } -> { "Name" :: Maybe (XmlString), "CreationDateTime" :: Maybe (Date) }) -> SecurityConfigurationSummary
 ```
 
 Constructs SecurityConfigurationSummary's fields from required parameters
@@ -4710,7 +4710,7 @@ Constructs SetVisibleToAllUsersInput's fields from required parameters
 
 ``` purescript
 newtype ShrinkPolicy
-  = ShrinkPolicy { "DecommissionTimeout" :: NullOrUndefined (Int), "InstanceResizePolicy" :: NullOrUndefined (InstanceResizePolicy) }
+  = ShrinkPolicy { "DecommissionTimeout" :: Maybe (Int), "InstanceResizePolicy" :: Maybe (InstanceResizePolicy) }
 ```
 
 <p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>
@@ -4735,7 +4735,7 @@ Constructs ShrinkPolicy from required parameters
 #### `newShrinkPolicy'`
 
 ``` purescript
-newShrinkPolicy' :: ({ "DecommissionTimeout" :: NullOrUndefined (Int), "InstanceResizePolicy" :: NullOrUndefined (InstanceResizePolicy) } -> { "DecommissionTimeout" :: NullOrUndefined (Int), "InstanceResizePolicy" :: NullOrUndefined (InstanceResizePolicy) }) -> ShrinkPolicy
+newShrinkPolicy' :: ({ "DecommissionTimeout" :: Maybe (Int), "InstanceResizePolicy" :: Maybe (InstanceResizePolicy) } -> { "DecommissionTimeout" :: Maybe (Int), "InstanceResizePolicy" :: Maybe (InstanceResizePolicy) }) -> ShrinkPolicy
 ```
 
 Constructs ShrinkPolicy's fields from required parameters
@@ -4744,7 +4744,7 @@ Constructs ShrinkPolicy's fields from required parameters
 
 ``` purescript
 newtype SimpleScalingPolicyConfiguration
-  = SimpleScalingPolicyConfiguration { "AdjustmentType" :: NullOrUndefined (AdjustmentType), "ScalingAdjustment" :: Int, "CoolDown" :: NullOrUndefined (Int) }
+  = SimpleScalingPolicyConfiguration { "AdjustmentType" :: Maybe (AdjustmentType), "ScalingAdjustment" :: Int, "CoolDown" :: Maybe (Int) }
 ```
 
 <p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>
@@ -4769,7 +4769,7 @@ Constructs SimpleScalingPolicyConfiguration from required parameters
 #### `newSimpleScalingPolicyConfiguration'`
 
 ``` purescript
-newSimpleScalingPolicyConfiguration' :: Int -> ({ "AdjustmentType" :: NullOrUndefined (AdjustmentType), "ScalingAdjustment" :: Int, "CoolDown" :: NullOrUndefined (Int) } -> { "AdjustmentType" :: NullOrUndefined (AdjustmentType), "ScalingAdjustment" :: Int, "CoolDown" :: NullOrUndefined (Int) }) -> SimpleScalingPolicyConfiguration
+newSimpleScalingPolicyConfiguration' :: Int -> ({ "AdjustmentType" :: Maybe (AdjustmentType), "ScalingAdjustment" :: Int, "CoolDown" :: Maybe (Int) } -> { "AdjustmentType" :: Maybe (AdjustmentType), "ScalingAdjustment" :: Int, "CoolDown" :: Maybe (Int) }) -> SimpleScalingPolicyConfiguration
 ```
 
 Constructs SimpleScalingPolicyConfiguration's fields from required parameters
@@ -4778,7 +4778,7 @@ Constructs SimpleScalingPolicyConfiguration's fields from required parameters
 
 ``` purescript
 newtype SpotProvisioningSpecification
-  = SpotProvisioningSpecification { "TimeoutDurationMinutes" :: WholeNumber, "TimeoutAction" :: SpotProvisioningTimeoutAction, "BlockDurationMinutes" :: NullOrUndefined (WholeNumber) }
+  = SpotProvisioningSpecification { "TimeoutDurationMinutes" :: WholeNumber, "TimeoutAction" :: SpotProvisioningTimeoutAction, "BlockDurationMinutes" :: Maybe (WholeNumber) }
 ```
 
 <p>The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
@@ -4803,7 +4803,7 @@ Constructs SpotProvisioningSpecification from required parameters
 #### `newSpotProvisioningSpecification'`
 
 ``` purescript
-newSpotProvisioningSpecification' :: SpotProvisioningTimeoutAction -> WholeNumber -> ({ "TimeoutDurationMinutes" :: WholeNumber, "TimeoutAction" :: SpotProvisioningTimeoutAction, "BlockDurationMinutes" :: NullOrUndefined (WholeNumber) } -> { "TimeoutDurationMinutes" :: WholeNumber, "TimeoutAction" :: SpotProvisioningTimeoutAction, "BlockDurationMinutes" :: NullOrUndefined (WholeNumber) }) -> SpotProvisioningSpecification
+newSpotProvisioningSpecification' :: SpotProvisioningTimeoutAction -> WholeNumber -> ({ "TimeoutDurationMinutes" :: WholeNumber, "TimeoutAction" :: SpotProvisioningTimeoutAction, "BlockDurationMinutes" :: Maybe (WholeNumber) } -> { "TimeoutDurationMinutes" :: WholeNumber, "TimeoutAction" :: SpotProvisioningTimeoutAction, "BlockDurationMinutes" :: Maybe (WholeNumber) }) -> SpotProvisioningSpecification
 ```
 
 Constructs SpotProvisioningSpecification's fields from required parameters
@@ -4844,7 +4844,7 @@ Encode Statistic
 
 ``` purescript
 newtype Step
-  = Step { "Id" :: NullOrUndefined (StepId), "Name" :: NullOrUndefined (String), "Config" :: NullOrUndefined (HadoopStepConfig), "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "Status" :: NullOrUndefined (StepStatus) }
+  = Step { "Id" :: Maybe (StepId), "Name" :: Maybe (String), "Config" :: Maybe (HadoopStepConfig), "ActionOnFailure" :: Maybe (ActionOnFailure), "Status" :: Maybe (StepStatus) }
 ```
 
 <p>This represents a step in a cluster.</p>
@@ -4869,7 +4869,7 @@ Constructs Step from required parameters
 #### `newStep'`
 
 ``` purescript
-newStep' :: ({ "Id" :: NullOrUndefined (StepId), "Name" :: NullOrUndefined (String), "Config" :: NullOrUndefined (HadoopStepConfig), "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "Status" :: NullOrUndefined (StepStatus) } -> { "Id" :: NullOrUndefined (StepId), "Name" :: NullOrUndefined (String), "Config" :: NullOrUndefined (HadoopStepConfig), "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "Status" :: NullOrUndefined (StepStatus) }) -> Step
+newStep' :: ({ "Id" :: Maybe (StepId), "Name" :: Maybe (String), "Config" :: Maybe (HadoopStepConfig), "ActionOnFailure" :: Maybe (ActionOnFailure), "Status" :: Maybe (StepStatus) } -> { "Id" :: Maybe (StepId), "Name" :: Maybe (String), "Config" :: Maybe (HadoopStepConfig), "ActionOnFailure" :: Maybe (ActionOnFailure), "Status" :: Maybe (StepStatus) }) -> Step
 ```
 
 Constructs Step's fields from required parameters
@@ -4878,7 +4878,7 @@ Constructs Step's fields from required parameters
 
 ``` purescript
 newtype StepConfig
-  = StepConfig { "Name" :: XmlStringMaxLen256, "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "HadoopJarStep" :: HadoopJarStepConfig }
+  = StepConfig { "Name" :: XmlStringMaxLen256, "ActionOnFailure" :: Maybe (ActionOnFailure), "HadoopJarStep" :: HadoopJarStepConfig }
 ```
 
 <p>Specification of a cluster (job flow) step.</p>
@@ -4903,7 +4903,7 @@ Constructs StepConfig from required parameters
 #### `newStepConfig'`
 
 ``` purescript
-newStepConfig' :: HadoopJarStepConfig -> XmlStringMaxLen256 -> ({ "Name" :: XmlStringMaxLen256, "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "HadoopJarStep" :: HadoopJarStepConfig } -> { "Name" :: XmlStringMaxLen256, "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "HadoopJarStep" :: HadoopJarStepConfig }) -> StepConfig
+newStepConfig' :: HadoopJarStepConfig -> XmlStringMaxLen256 -> ({ "Name" :: XmlStringMaxLen256, "ActionOnFailure" :: Maybe (ActionOnFailure), "HadoopJarStep" :: HadoopJarStepConfig } -> { "Name" :: XmlStringMaxLen256, "ActionOnFailure" :: Maybe (ActionOnFailure), "HadoopJarStep" :: HadoopJarStepConfig }) -> StepConfig
 ```
 
 Constructs StepConfig's fields from required parameters
@@ -4994,7 +4994,7 @@ Encode StepExecutionState
 
 ``` purescript
 newtype StepExecutionStatusDetail
-  = StepExecutionStatusDetail { "State" :: StepExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date), "LastStateChangeReason" :: NullOrUndefined (XmlString) }
+  = StepExecutionStatusDetail { "State" :: StepExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date), "LastStateChangeReason" :: Maybe (XmlString) }
 ```
 
 <p>The execution state of a step.</p>
@@ -5019,7 +5019,7 @@ Constructs StepExecutionStatusDetail from required parameters
 #### `newStepExecutionStatusDetail'`
 
 ``` purescript
-newStepExecutionStatusDetail' :: Date -> StepExecutionState -> ({ "State" :: StepExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date), "LastStateChangeReason" :: NullOrUndefined (XmlString) } -> { "State" :: StepExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date), "LastStateChangeReason" :: NullOrUndefined (XmlString) }) -> StepExecutionStatusDetail
+newStepExecutionStatusDetail' :: Date -> StepExecutionState -> ({ "State" :: StepExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date), "LastStateChangeReason" :: Maybe (XmlString) } -> { "State" :: StepExecutionState, "CreationDateTime" :: Date, "StartDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date), "LastStateChangeReason" :: Maybe (XmlString) }) -> StepExecutionStatusDetail
 ```
 
 Constructs StepExecutionStatusDetail's fields from required parameters
@@ -5076,7 +5076,7 @@ Encode StepState
 
 ``` purescript
 newtype StepStateChangeReason
-  = StepStateChangeReason { "Code" :: NullOrUndefined (StepStateChangeReasonCode), "Message" :: NullOrUndefined (String) }
+  = StepStateChangeReason { "Code" :: Maybe (StepStateChangeReasonCode), "Message" :: Maybe (String) }
 ```
 
 <p>The details of the step state change reason.</p>
@@ -5101,7 +5101,7 @@ Constructs StepStateChangeReason from required parameters
 #### `newStepStateChangeReason'`
 
 ``` purescript
-newStepStateChangeReason' :: ({ "Code" :: NullOrUndefined (StepStateChangeReasonCode), "Message" :: NullOrUndefined (String) } -> { "Code" :: NullOrUndefined (StepStateChangeReasonCode), "Message" :: NullOrUndefined (String) }) -> StepStateChangeReason
+newStepStateChangeReason' :: ({ "Code" :: Maybe (StepStateChangeReasonCode), "Message" :: Maybe (String) } -> { "Code" :: Maybe (StepStateChangeReasonCode), "Message" :: Maybe (String) }) -> StepStateChangeReason
 ```
 
 Constructs StepStateChangeReason's fields from required parameters
@@ -5142,7 +5142,7 @@ Encode StepStateList
 
 ``` purescript
 newtype StepStatus
-  = StepStatus { "State" :: NullOrUndefined (StepState), "StateChangeReason" :: NullOrUndefined (StepStateChangeReason), "FailureDetails" :: NullOrUndefined (FailureDetails), "Timeline" :: NullOrUndefined (StepTimeline) }
+  = StepStatus { "State" :: Maybe (StepState), "StateChangeReason" :: Maybe (StepStateChangeReason), "FailureDetails" :: Maybe (FailureDetails), "Timeline" :: Maybe (StepTimeline) }
 ```
 
 <p>The execution status details of the cluster step.</p>
@@ -5167,7 +5167,7 @@ Constructs StepStatus from required parameters
 #### `newStepStatus'`
 
 ``` purescript
-newStepStatus' :: ({ "State" :: NullOrUndefined (StepState), "StateChangeReason" :: NullOrUndefined (StepStateChangeReason), "FailureDetails" :: NullOrUndefined (FailureDetails), "Timeline" :: NullOrUndefined (StepTimeline) } -> { "State" :: NullOrUndefined (StepState), "StateChangeReason" :: NullOrUndefined (StepStateChangeReason), "FailureDetails" :: NullOrUndefined (FailureDetails), "Timeline" :: NullOrUndefined (StepTimeline) }) -> StepStatus
+newStepStatus' :: ({ "State" :: Maybe (StepState), "StateChangeReason" :: Maybe (StepStateChangeReason), "FailureDetails" :: Maybe (FailureDetails), "Timeline" :: Maybe (StepTimeline) } -> { "State" :: Maybe (StepState), "StateChangeReason" :: Maybe (StepStateChangeReason), "FailureDetails" :: Maybe (FailureDetails), "Timeline" :: Maybe (StepTimeline) }) -> StepStatus
 ```
 
 Constructs StepStatus's fields from required parameters
@@ -5176,7 +5176,7 @@ Constructs StepStatus's fields from required parameters
 
 ``` purescript
 newtype StepSummary
-  = StepSummary { "Id" :: NullOrUndefined (StepId), "Name" :: NullOrUndefined (String), "Config" :: NullOrUndefined (HadoopStepConfig), "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "Status" :: NullOrUndefined (StepStatus) }
+  = StepSummary { "Id" :: Maybe (StepId), "Name" :: Maybe (String), "Config" :: Maybe (HadoopStepConfig), "ActionOnFailure" :: Maybe (ActionOnFailure), "Status" :: Maybe (StepStatus) }
 ```
 
 <p>The summary of the cluster step.</p>
@@ -5201,7 +5201,7 @@ Constructs StepSummary from required parameters
 #### `newStepSummary'`
 
 ``` purescript
-newStepSummary' :: ({ "Id" :: NullOrUndefined (StepId), "Name" :: NullOrUndefined (String), "Config" :: NullOrUndefined (HadoopStepConfig), "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "Status" :: NullOrUndefined (StepStatus) } -> { "Id" :: NullOrUndefined (StepId), "Name" :: NullOrUndefined (String), "Config" :: NullOrUndefined (HadoopStepConfig), "ActionOnFailure" :: NullOrUndefined (ActionOnFailure), "Status" :: NullOrUndefined (StepStatus) }) -> StepSummary
+newStepSummary' :: ({ "Id" :: Maybe (StepId), "Name" :: Maybe (String), "Config" :: Maybe (HadoopStepConfig), "ActionOnFailure" :: Maybe (ActionOnFailure), "Status" :: Maybe (StepStatus) } -> { "Id" :: Maybe (StepId), "Name" :: Maybe (String), "Config" :: Maybe (HadoopStepConfig), "ActionOnFailure" :: Maybe (ActionOnFailure), "Status" :: Maybe (StepStatus) }) -> StepSummary
 ```
 
 Constructs StepSummary's fields from required parameters
@@ -5226,7 +5226,7 @@ Encode StepSummaryList
 
 ``` purescript
 newtype StepTimeline
-  = StepTimeline { "CreationDateTime" :: NullOrUndefined (Date), "StartDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }
+  = StepTimeline { "CreationDateTime" :: Maybe (Date), "StartDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }
 ```
 
 <p>The timeline of the cluster step lifecycle.</p>
@@ -5251,7 +5251,7 @@ Constructs StepTimeline from required parameters
 #### `newStepTimeline'`
 
 ``` purescript
-newStepTimeline' :: ({ "CreationDateTime" :: NullOrUndefined (Date), "StartDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) } -> { "CreationDateTime" :: NullOrUndefined (Date), "StartDateTime" :: NullOrUndefined (Date), "EndDateTime" :: NullOrUndefined (Date) }) -> StepTimeline
+newStepTimeline' :: ({ "CreationDateTime" :: Maybe (Date), "StartDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) } -> { "CreationDateTime" :: Maybe (Date), "StartDateTime" :: Maybe (Date), "EndDateTime" :: Maybe (Date) }) -> StepTimeline
 ```
 
 Constructs StepTimeline's fields from required parameters
@@ -5292,7 +5292,7 @@ Encode StringMap
 
 ``` purescript
 newtype SupportedProductConfig
-  = SupportedProductConfig { "Name" :: NullOrUndefined (XmlStringMaxLen256), "Args" :: NullOrUndefined (XmlStringList) }
+  = SupportedProductConfig { "Name" :: Maybe (XmlStringMaxLen256), "Args" :: Maybe (XmlStringList) }
 ```
 
 <p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>
@@ -5317,7 +5317,7 @@ Constructs SupportedProductConfig from required parameters
 #### `newSupportedProductConfig'`
 
 ``` purescript
-newSupportedProductConfig' :: ({ "Name" :: NullOrUndefined (XmlStringMaxLen256), "Args" :: NullOrUndefined (XmlStringList) } -> { "Name" :: NullOrUndefined (XmlStringMaxLen256), "Args" :: NullOrUndefined (XmlStringList) }) -> SupportedProductConfig
+newSupportedProductConfig' :: ({ "Name" :: Maybe (XmlStringMaxLen256), "Args" :: Maybe (XmlStringList) } -> { "Name" :: Maybe (XmlStringMaxLen256), "Args" :: Maybe (XmlStringList) }) -> SupportedProductConfig
 ```
 
 Constructs SupportedProductConfig's fields from required parameters
@@ -5342,7 +5342,7 @@ Encode SupportedProductsList
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = Tag { "Key" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
@@ -5367,7 +5367,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (String), "Value" :: Maybe (String) } -> { "Key" :: Maybe (String), "Value" :: Maybe (String) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -5442,7 +5442,7 @@ Encode Unit''
 
 ``` purescript
 newtype VolumeSpecification
-  = VolumeSpecification { "VolumeType" :: String, "Iops" :: NullOrUndefined (Int), "SizeInGB" :: Int }
+  = VolumeSpecification { "VolumeType" :: String, "Iops" :: Maybe (Int), "SizeInGB" :: Int }
 ```
 
 <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
@@ -5467,7 +5467,7 @@ Constructs VolumeSpecification from required parameters
 #### `newVolumeSpecification'`
 
 ``` purescript
-newVolumeSpecification' :: Int -> String -> ({ "VolumeType" :: String, "Iops" :: NullOrUndefined (Int), "SizeInGB" :: Int } -> { "VolumeType" :: String, "Iops" :: NullOrUndefined (Int), "SizeInGB" :: Int }) -> VolumeSpecification
+newVolumeSpecification' :: Int -> String -> ({ "VolumeType" :: String, "Iops" :: Maybe (Int), "SizeInGB" :: Int } -> { "VolumeType" :: String, "Iops" :: Maybe (Int), "SizeInGB" :: Int }) -> VolumeSpecification
 ```
 
 Constructs VolumeSpecification's fields from required parameters

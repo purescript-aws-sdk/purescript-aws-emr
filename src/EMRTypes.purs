@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -49,8 +48,8 @@ newAddInstanceFleetInput' _ClusterId _InstanceFleet customize = (AddInstanceFlee
 
 
 newtype AddInstanceFleetOutput = AddInstanceFleetOutput 
-  { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId)
+  { "ClusterId" :: Maybe (XmlStringMaxLen256)
+  , "InstanceFleetId" :: Maybe (InstanceFleetId)
   }
 derive instance newtypeAddInstanceFleetOutput :: Newtype AddInstanceFleetOutput _
 derive instance repGenericAddInstanceFleetOutput :: Generic AddInstanceFleetOutput _
@@ -60,12 +59,12 @@ instance encodeAddInstanceFleetOutput :: Encode AddInstanceFleetOutput where enc
 
 -- | Constructs AddInstanceFleetOutput from required parameters
 newAddInstanceFleetOutput :: AddInstanceFleetOutput
-newAddInstanceFleetOutput  = AddInstanceFleetOutput { "ClusterId": (NullOrUndefined Nothing), "InstanceFleetId": (NullOrUndefined Nothing) }
+newAddInstanceFleetOutput  = AddInstanceFleetOutput { "ClusterId": Nothing, "InstanceFleetId": Nothing }
 
 -- | Constructs AddInstanceFleetOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddInstanceFleetOutput' :: ( { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) } -> {"ClusterId" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) } ) -> AddInstanceFleetOutput
-newAddInstanceFleetOutput'  customize = (AddInstanceFleetOutput <<< customize) { "ClusterId": (NullOrUndefined Nothing), "InstanceFleetId": (NullOrUndefined Nothing) }
+newAddInstanceFleetOutput' :: ( { "ClusterId" :: Maybe (XmlStringMaxLen256) , "InstanceFleetId" :: Maybe (InstanceFleetId) } -> {"ClusterId" :: Maybe (XmlStringMaxLen256) , "InstanceFleetId" :: Maybe (InstanceFleetId) } ) -> AddInstanceFleetOutput
+newAddInstanceFleetOutput'  customize = (AddInstanceFleetOutput <<< customize) { "ClusterId": Nothing, "InstanceFleetId": Nothing }
 
 
 
@@ -93,8 +92,8 @@ newAddInstanceGroupsInput' _InstanceGroups _JobFlowId customize = (AddInstanceGr
 
 -- | <p>Output from an AddInstanceGroups call.</p>
 newtype AddInstanceGroupsOutput = AddInstanceGroupsOutput 
-  { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "InstanceGroupIds" :: NullOrUndefined (InstanceGroupIdsList)
+  { "JobFlowId" :: Maybe (XmlStringMaxLen256)
+  , "InstanceGroupIds" :: Maybe (InstanceGroupIdsList)
   }
 derive instance newtypeAddInstanceGroupsOutput :: Newtype AddInstanceGroupsOutput _
 derive instance repGenericAddInstanceGroupsOutput :: Generic AddInstanceGroupsOutput _
@@ -104,12 +103,12 @@ instance encodeAddInstanceGroupsOutput :: Encode AddInstanceGroupsOutput where e
 
 -- | Constructs AddInstanceGroupsOutput from required parameters
 newAddInstanceGroupsOutput :: AddInstanceGroupsOutput
-newAddInstanceGroupsOutput  = AddInstanceGroupsOutput { "InstanceGroupIds": (NullOrUndefined Nothing), "JobFlowId": (NullOrUndefined Nothing) }
+newAddInstanceGroupsOutput  = AddInstanceGroupsOutput { "InstanceGroupIds": Nothing, "JobFlowId": Nothing }
 
 -- | Constructs AddInstanceGroupsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddInstanceGroupsOutput' :: ( { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceGroupIds" :: NullOrUndefined (InstanceGroupIdsList) } -> {"JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceGroupIds" :: NullOrUndefined (InstanceGroupIdsList) } ) -> AddInstanceGroupsOutput
-newAddInstanceGroupsOutput'  customize = (AddInstanceGroupsOutput <<< customize) { "InstanceGroupIds": (NullOrUndefined Nothing), "JobFlowId": (NullOrUndefined Nothing) }
+newAddInstanceGroupsOutput' :: ( { "JobFlowId" :: Maybe (XmlStringMaxLen256) , "InstanceGroupIds" :: Maybe (InstanceGroupIdsList) } -> {"JobFlowId" :: Maybe (XmlStringMaxLen256) , "InstanceGroupIds" :: Maybe (InstanceGroupIdsList) } ) -> AddInstanceGroupsOutput
+newAddInstanceGroupsOutput'  customize = (AddInstanceGroupsOutput <<< customize) { "InstanceGroupIds": Nothing, "JobFlowId": Nothing }
 
 
 
@@ -137,7 +136,7 @@ newAddJobFlowStepsInput' _JobFlowId _Steps customize = (AddJobFlowStepsInput <<<
 
 -- | <p> The output for the <a>AddJobFlowSteps</a> operation. </p>
 newtype AddJobFlowStepsOutput = AddJobFlowStepsOutput 
-  { "StepIds" :: NullOrUndefined (StepIdsList)
+  { "StepIds" :: Maybe (StepIdsList)
   }
 derive instance newtypeAddJobFlowStepsOutput :: Newtype AddJobFlowStepsOutput _
 derive instance repGenericAddJobFlowStepsOutput :: Generic AddJobFlowStepsOutput _
@@ -147,12 +146,12 @@ instance encodeAddJobFlowStepsOutput :: Encode AddJobFlowStepsOutput where encod
 
 -- | Constructs AddJobFlowStepsOutput from required parameters
 newAddJobFlowStepsOutput :: AddJobFlowStepsOutput
-newAddJobFlowStepsOutput  = AddJobFlowStepsOutput { "StepIds": (NullOrUndefined Nothing) }
+newAddJobFlowStepsOutput  = AddJobFlowStepsOutput { "StepIds": Nothing }
 
 -- | Constructs AddJobFlowStepsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddJobFlowStepsOutput' :: ( { "StepIds" :: NullOrUndefined (StepIdsList) } -> {"StepIds" :: NullOrUndefined (StepIdsList) } ) -> AddJobFlowStepsOutput
-newAddJobFlowStepsOutput'  customize = (AddJobFlowStepsOutput <<< customize) { "StepIds": (NullOrUndefined Nothing) }
+newAddJobFlowStepsOutput' :: ( { "StepIds" :: Maybe (StepIdsList) } -> {"StepIds" :: Maybe (StepIdsList) } ) -> AddJobFlowStepsOutput
+newAddJobFlowStepsOutput'  customize = (AddJobFlowStepsOutput <<< customize) { "StepIds": Nothing }
 
 
 
@@ -199,10 +198,10 @@ instance encodeAdjustmentType :: Encode AdjustmentType where encode = genericEnc
 
 -- | <p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html">Using the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the cluster using MapR M3 or M5 Edition, respectively.</p> </li> </ul> <note> <p>In Amazon EMR releases 4.x and later, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.</p> </note>
 newtype Application = Application 
-  { "Name" :: NullOrUndefined (String)
-  , "Version" :: NullOrUndefined (String)
-  , "Args" :: NullOrUndefined (StringList)
-  , "AdditionalInfo" :: NullOrUndefined (StringMap)
+  { "Name" :: Maybe (String)
+  , "Version" :: Maybe (String)
+  , "Args" :: Maybe (StringList)
+  , "AdditionalInfo" :: Maybe (StringMap)
   }
 derive instance newtypeApplication :: Newtype Application _
 derive instance repGenericApplication :: Generic Application _
@@ -212,12 +211,12 @@ instance encodeApplication :: Encode Application where encode = genericEncode op
 
 -- | Constructs Application from required parameters
 newApplication :: Application
-newApplication  = Application { "AdditionalInfo": (NullOrUndefined Nothing), "Args": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newApplication  = Application { "AdditionalInfo": Nothing, "Args": Nothing, "Name": Nothing, "Version": Nothing }
 
 -- | Constructs Application's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newApplication' :: ( { "Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) , "Args" :: NullOrUndefined (StringList) , "AdditionalInfo" :: NullOrUndefined (StringMap) } -> {"Name" :: NullOrUndefined (String) , "Version" :: NullOrUndefined (String) , "Args" :: NullOrUndefined (StringList) , "AdditionalInfo" :: NullOrUndefined (StringMap) } ) -> Application
-newApplication'  customize = (Application <<< customize) { "AdditionalInfo": (NullOrUndefined Nothing), "Args": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newApplication' :: ( { "Name" :: Maybe (String) , "Version" :: Maybe (String) , "Args" :: Maybe (StringList) , "AdditionalInfo" :: Maybe (StringMap) } -> {"Name" :: Maybe (String) , "Version" :: Maybe (String) , "Args" :: Maybe (StringList) , "AdditionalInfo" :: Maybe (StringMap) } ) -> Application
+newApplication'  customize = (Application <<< customize) { "AdditionalInfo": Nothing, "Args": Nothing, "Name": Nothing, "Version": Nothing }
 
 
 
@@ -254,9 +253,9 @@ newAutoScalingPolicy' _Constraints _Rules customize = (AutoScalingPolicy <<< cus
 
 -- | <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
 newtype AutoScalingPolicyDescription = AutoScalingPolicyDescription 
-  { "Status" :: NullOrUndefined (AutoScalingPolicyStatus)
-  , "Constraints" :: NullOrUndefined (ScalingConstraints)
-  , "Rules" :: NullOrUndefined (ScalingRuleList)
+  { "Status" :: Maybe (AutoScalingPolicyStatus)
+  , "Constraints" :: Maybe (ScalingConstraints)
+  , "Rules" :: Maybe (ScalingRuleList)
   }
 derive instance newtypeAutoScalingPolicyDescription :: Newtype AutoScalingPolicyDescription _
 derive instance repGenericAutoScalingPolicyDescription :: Generic AutoScalingPolicyDescription _
@@ -266,12 +265,12 @@ instance encodeAutoScalingPolicyDescription :: Encode AutoScalingPolicyDescripti
 
 -- | Constructs AutoScalingPolicyDescription from required parameters
 newAutoScalingPolicyDescription :: AutoScalingPolicyDescription
-newAutoScalingPolicyDescription  = AutoScalingPolicyDescription { "Constraints": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newAutoScalingPolicyDescription  = AutoScalingPolicyDescription { "Constraints": Nothing, "Rules": Nothing, "Status": Nothing }
 
 -- | Constructs AutoScalingPolicyDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutoScalingPolicyDescription' :: ( { "Status" :: NullOrUndefined (AutoScalingPolicyStatus) , "Constraints" :: NullOrUndefined (ScalingConstraints) , "Rules" :: NullOrUndefined (ScalingRuleList) } -> {"Status" :: NullOrUndefined (AutoScalingPolicyStatus) , "Constraints" :: NullOrUndefined (ScalingConstraints) , "Rules" :: NullOrUndefined (ScalingRuleList) } ) -> AutoScalingPolicyDescription
-newAutoScalingPolicyDescription'  customize = (AutoScalingPolicyDescription <<< customize) { "Constraints": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newAutoScalingPolicyDescription' :: ( { "Status" :: Maybe (AutoScalingPolicyStatus) , "Constraints" :: Maybe (ScalingConstraints) , "Rules" :: Maybe (ScalingRuleList) } -> {"Status" :: Maybe (AutoScalingPolicyStatus) , "Constraints" :: Maybe (ScalingConstraints) , "Rules" :: Maybe (ScalingRuleList) } ) -> AutoScalingPolicyDescription
+newAutoScalingPolicyDescription'  customize = (AutoScalingPolicyDescription <<< customize) { "Constraints": Nothing, "Rules": Nothing, "Status": Nothing }
 
 
 
@@ -286,8 +285,8 @@ instance encodeAutoScalingPolicyState :: Encode AutoScalingPolicyState where enc
 
 -- | <p>The reason for an <a>AutoScalingPolicyStatus</a> change.</p>
 newtype AutoScalingPolicyStateChangeReason = AutoScalingPolicyStateChangeReason 
-  { "Code" :: NullOrUndefined (AutoScalingPolicyStateChangeReasonCode)
-  , "Message" :: NullOrUndefined (String)
+  { "Code" :: Maybe (AutoScalingPolicyStateChangeReasonCode)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeAutoScalingPolicyStateChangeReason :: Newtype AutoScalingPolicyStateChangeReason _
 derive instance repGenericAutoScalingPolicyStateChangeReason :: Generic AutoScalingPolicyStateChangeReason _
@@ -297,12 +296,12 @@ instance encodeAutoScalingPolicyStateChangeReason :: Encode AutoScalingPolicySta
 
 -- | Constructs AutoScalingPolicyStateChangeReason from required parameters
 newAutoScalingPolicyStateChangeReason :: AutoScalingPolicyStateChangeReason
-newAutoScalingPolicyStateChangeReason  = AutoScalingPolicyStateChangeReason { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newAutoScalingPolicyStateChangeReason  = AutoScalingPolicyStateChangeReason { "Code": Nothing, "Message": Nothing }
 
 -- | Constructs AutoScalingPolicyStateChangeReason's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutoScalingPolicyStateChangeReason' :: ( { "Code" :: NullOrUndefined (AutoScalingPolicyStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } -> {"Code" :: NullOrUndefined (AutoScalingPolicyStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } ) -> AutoScalingPolicyStateChangeReason
-newAutoScalingPolicyStateChangeReason'  customize = (AutoScalingPolicyStateChangeReason <<< customize) { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newAutoScalingPolicyStateChangeReason' :: ( { "Code" :: Maybe (AutoScalingPolicyStateChangeReasonCode) , "Message" :: Maybe (String) } -> {"Code" :: Maybe (AutoScalingPolicyStateChangeReasonCode) , "Message" :: Maybe (String) } ) -> AutoScalingPolicyStateChangeReason
+newAutoScalingPolicyStateChangeReason'  customize = (AutoScalingPolicyStateChangeReason <<< customize) { "Code": Nothing, "Message": Nothing }
 
 
 
@@ -317,8 +316,8 @@ instance encodeAutoScalingPolicyStateChangeReasonCode :: Encode AutoScalingPolic
 
 -- | <p>The status of an automatic scaling policy. </p>
 newtype AutoScalingPolicyStatus = AutoScalingPolicyStatus 
-  { "State" :: NullOrUndefined (AutoScalingPolicyState)
-  , "StateChangeReason" :: NullOrUndefined (AutoScalingPolicyStateChangeReason)
+  { "State" :: Maybe (AutoScalingPolicyState)
+  , "StateChangeReason" :: Maybe (AutoScalingPolicyStateChangeReason)
   }
 derive instance newtypeAutoScalingPolicyStatus :: Newtype AutoScalingPolicyStatus _
 derive instance repGenericAutoScalingPolicyStatus :: Generic AutoScalingPolicyStatus _
@@ -328,12 +327,12 @@ instance encodeAutoScalingPolicyStatus :: Encode AutoScalingPolicyStatus where e
 
 -- | Constructs AutoScalingPolicyStatus from required parameters
 newAutoScalingPolicyStatus :: AutoScalingPolicyStatus
-newAutoScalingPolicyStatus  = AutoScalingPolicyStatus { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing) }
+newAutoScalingPolicyStatus  = AutoScalingPolicyStatus { "State": Nothing, "StateChangeReason": Nothing }
 
 -- | Constructs AutoScalingPolicyStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutoScalingPolicyStatus' :: ( { "State" :: NullOrUndefined (AutoScalingPolicyState) , "StateChangeReason" :: NullOrUndefined (AutoScalingPolicyStateChangeReason) } -> {"State" :: NullOrUndefined (AutoScalingPolicyState) , "StateChangeReason" :: NullOrUndefined (AutoScalingPolicyStateChangeReason) } ) -> AutoScalingPolicyStatus
-newAutoScalingPolicyStatus'  customize = (AutoScalingPolicyStatus <<< customize) { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing) }
+newAutoScalingPolicyStatus' :: ( { "State" :: Maybe (AutoScalingPolicyState) , "StateChangeReason" :: Maybe (AutoScalingPolicyStateChangeReason) } -> {"State" :: Maybe (AutoScalingPolicyState) , "StateChangeReason" :: Maybe (AutoScalingPolicyStateChangeReason) } ) -> AutoScalingPolicyStatus
+newAutoScalingPolicyStatus'  customize = (AutoScalingPolicyStatus <<< customize) { "State": Nothing, "StateChangeReason": Nothing }
 
 
 
@@ -379,7 +378,7 @@ instance encodeBootstrapActionConfigList :: Encode BootstrapActionConfigList whe
 
 -- | <p>Reports the configuration of a bootstrap action in a cluster (job flow).</p>
 newtype BootstrapActionDetail = BootstrapActionDetail 
-  { "BootstrapActionConfig" :: NullOrUndefined (BootstrapActionConfig)
+  { "BootstrapActionConfig" :: Maybe (BootstrapActionConfig)
   }
 derive instance newtypeBootstrapActionDetail :: Newtype BootstrapActionDetail _
 derive instance repGenericBootstrapActionDetail :: Generic BootstrapActionDetail _
@@ -389,12 +388,12 @@ instance encodeBootstrapActionDetail :: Encode BootstrapActionDetail where encod
 
 -- | Constructs BootstrapActionDetail from required parameters
 newBootstrapActionDetail :: BootstrapActionDetail
-newBootstrapActionDetail  = BootstrapActionDetail { "BootstrapActionConfig": (NullOrUndefined Nothing) }
+newBootstrapActionDetail  = BootstrapActionDetail { "BootstrapActionConfig": Nothing }
 
 -- | Constructs BootstrapActionDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBootstrapActionDetail' :: ( { "BootstrapActionConfig" :: NullOrUndefined (BootstrapActionConfig) } -> {"BootstrapActionConfig" :: NullOrUndefined (BootstrapActionConfig) } ) -> BootstrapActionDetail
-newBootstrapActionDetail'  customize = (BootstrapActionDetail <<< customize) { "BootstrapActionConfig": (NullOrUndefined Nothing) }
+newBootstrapActionDetail' :: ( { "BootstrapActionConfig" :: Maybe (BootstrapActionConfig) } -> {"BootstrapActionConfig" :: Maybe (BootstrapActionConfig) } ) -> BootstrapActionDetail
+newBootstrapActionDetail'  customize = (BootstrapActionDetail <<< customize) { "BootstrapActionConfig": Nothing }
 
 
 
@@ -409,9 +408,9 @@ instance encodeBootstrapActionDetailList :: Encode BootstrapActionDetailList whe
 
 -- | <p>Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.</p>
 newtype CancelStepsInfo = CancelStepsInfo 
-  { "StepId" :: NullOrUndefined (StepId)
-  , "Status" :: NullOrUndefined (CancelStepsRequestStatus)
-  , "Reason" :: NullOrUndefined (String)
+  { "StepId" :: Maybe (StepId)
+  , "Status" :: Maybe (CancelStepsRequestStatus)
+  , "Reason" :: Maybe (String)
   }
 derive instance newtypeCancelStepsInfo :: Newtype CancelStepsInfo _
 derive instance repGenericCancelStepsInfo :: Generic CancelStepsInfo _
@@ -421,12 +420,12 @@ instance encodeCancelStepsInfo :: Encode CancelStepsInfo where encode = genericE
 
 -- | Constructs CancelStepsInfo from required parameters
 newCancelStepsInfo :: CancelStepsInfo
-newCancelStepsInfo  = CancelStepsInfo { "Reason": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StepId": (NullOrUndefined Nothing) }
+newCancelStepsInfo  = CancelStepsInfo { "Reason": Nothing, "Status": Nothing, "StepId": Nothing }
 
 -- | Constructs CancelStepsInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCancelStepsInfo' :: ( { "StepId" :: NullOrUndefined (StepId) , "Status" :: NullOrUndefined (CancelStepsRequestStatus) , "Reason" :: NullOrUndefined (String) } -> {"StepId" :: NullOrUndefined (StepId) , "Status" :: NullOrUndefined (CancelStepsRequestStatus) , "Reason" :: NullOrUndefined (String) } ) -> CancelStepsInfo
-newCancelStepsInfo'  customize = (CancelStepsInfo <<< customize) { "Reason": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StepId": (NullOrUndefined Nothing) }
+newCancelStepsInfo' :: ( { "StepId" :: Maybe (StepId) , "Status" :: Maybe (CancelStepsRequestStatus) , "Reason" :: Maybe (String) } -> {"StepId" :: Maybe (StepId) , "Status" :: Maybe (CancelStepsRequestStatus) , "Reason" :: Maybe (String) } ) -> CancelStepsInfo
+newCancelStepsInfo'  customize = (CancelStepsInfo <<< customize) { "Reason": Nothing, "Status": Nothing, "StepId": Nothing }
 
 
 
@@ -441,8 +440,8 @@ instance encodeCancelStepsInfoList :: Encode CancelStepsInfoList where encode = 
 
 -- | <p>The input argument to the <a>CancelSteps</a> operation.</p>
 newtype CancelStepsInput = CancelStepsInput 
-  { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "StepIds" :: NullOrUndefined (StepIdsList)
+  { "ClusterId" :: Maybe (XmlStringMaxLen256)
+  , "StepIds" :: Maybe (StepIdsList)
   }
 derive instance newtypeCancelStepsInput :: Newtype CancelStepsInput _
 derive instance repGenericCancelStepsInput :: Generic CancelStepsInput _
@@ -452,18 +451,18 @@ instance encodeCancelStepsInput :: Encode CancelStepsInput where encode = generi
 
 -- | Constructs CancelStepsInput from required parameters
 newCancelStepsInput :: CancelStepsInput
-newCancelStepsInput  = CancelStepsInput { "ClusterId": (NullOrUndefined Nothing), "StepIds": (NullOrUndefined Nothing) }
+newCancelStepsInput  = CancelStepsInput { "ClusterId": Nothing, "StepIds": Nothing }
 
 -- | Constructs CancelStepsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCancelStepsInput' :: ( { "ClusterId" :: NullOrUndefined (XmlStringMaxLen256) , "StepIds" :: NullOrUndefined (StepIdsList) } -> {"ClusterId" :: NullOrUndefined (XmlStringMaxLen256) , "StepIds" :: NullOrUndefined (StepIdsList) } ) -> CancelStepsInput
-newCancelStepsInput'  customize = (CancelStepsInput <<< customize) { "ClusterId": (NullOrUndefined Nothing), "StepIds": (NullOrUndefined Nothing) }
+newCancelStepsInput' :: ( { "ClusterId" :: Maybe (XmlStringMaxLen256) , "StepIds" :: Maybe (StepIdsList) } -> {"ClusterId" :: Maybe (XmlStringMaxLen256) , "StepIds" :: Maybe (StepIdsList) } ) -> CancelStepsInput
+newCancelStepsInput'  customize = (CancelStepsInput <<< customize) { "ClusterId": Nothing, "StepIds": Nothing }
 
 
 
 -- | <p> The output for the <a>CancelSteps</a> operation. </p>
 newtype CancelStepsOutput = CancelStepsOutput 
-  { "CancelStepsInfoList" :: NullOrUndefined (CancelStepsInfoList)
+  { "CancelStepsInfoList" :: Maybe (CancelStepsInfoList)
   }
 derive instance newtypeCancelStepsOutput :: Newtype CancelStepsOutput _
 derive instance repGenericCancelStepsOutput :: Generic CancelStepsOutput _
@@ -473,12 +472,12 @@ instance encodeCancelStepsOutput :: Encode CancelStepsOutput where encode = gene
 
 -- | Constructs CancelStepsOutput from required parameters
 newCancelStepsOutput :: CancelStepsOutput
-newCancelStepsOutput  = CancelStepsOutput { "CancelStepsInfoList": (NullOrUndefined Nothing) }
+newCancelStepsOutput  = CancelStepsOutput { "CancelStepsInfoList": Nothing }
 
 -- | Constructs CancelStepsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCancelStepsOutput' :: ( { "CancelStepsInfoList" :: NullOrUndefined (CancelStepsInfoList) } -> {"CancelStepsInfoList" :: NullOrUndefined (CancelStepsInfoList) } ) -> CancelStepsOutput
-newCancelStepsOutput'  customize = (CancelStepsOutput <<< customize) { "CancelStepsInfoList": (NullOrUndefined Nothing) }
+newCancelStepsOutput' :: ( { "CancelStepsInfoList" :: Maybe (CancelStepsInfoList) } -> {"CancelStepsInfoList" :: Maybe (CancelStepsInfoList) } ) -> CancelStepsOutput
+newCancelStepsOutput'  customize = (CancelStepsOutput <<< customize) { "CancelStepsInfoList": Nothing }
 
 
 
@@ -494,14 +493,14 @@ instance encodeCancelStepsRequestStatus :: Encode CancelStepsRequestStatus where
 -- | <p>The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.</p>
 newtype CloudWatchAlarmDefinition = CloudWatchAlarmDefinition 
   { "ComparisonOperator" :: (ComparisonOperator)
-  , "EvaluationPeriods" :: NullOrUndefined (Int)
+  , "EvaluationPeriods" :: Maybe (Int)
   , "MetricName" :: (String)
-  , "Namespace" :: NullOrUndefined (String)
+  , "Namespace" :: Maybe (String)
   , "Period" :: (Int)
-  , "Statistic" :: NullOrUndefined (Statistic)
+  , "Statistic" :: Maybe (Statistic)
   , "Threshold" :: (NonNegativeDouble)
-  , "Unit" :: NullOrUndefined (Unit'')
-  , "Dimensions" :: NullOrUndefined (MetricDimensionList)
+  , "Unit" :: Maybe (Unit'')
+  , "Dimensions" :: Maybe (MetricDimensionList)
   }
 derive instance newtypeCloudWatchAlarmDefinition :: Newtype CloudWatchAlarmDefinition _
 derive instance repGenericCloudWatchAlarmDefinition :: Generic CloudWatchAlarmDefinition _
@@ -511,42 +510,42 @@ instance encodeCloudWatchAlarmDefinition :: Encode CloudWatchAlarmDefinition whe
 
 -- | Constructs CloudWatchAlarmDefinition from required parameters
 newCloudWatchAlarmDefinition :: ComparisonOperator -> String -> Int -> NonNegativeDouble -> CloudWatchAlarmDefinition
-newCloudWatchAlarmDefinition _ComparisonOperator _MetricName _Period _Threshold = CloudWatchAlarmDefinition { "ComparisonOperator": _ComparisonOperator, "MetricName": _MetricName, "Period": _Period, "Threshold": _Threshold, "Dimensions": (NullOrUndefined Nothing), "EvaluationPeriods": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newCloudWatchAlarmDefinition _ComparisonOperator _MetricName _Period _Threshold = CloudWatchAlarmDefinition { "ComparisonOperator": _ComparisonOperator, "MetricName": _MetricName, "Period": _Period, "Threshold": _Threshold, "Dimensions": Nothing, "EvaluationPeriods": Nothing, "Namespace": Nothing, "Statistic": Nothing, "Unit": Nothing }
 
 -- | Constructs CloudWatchAlarmDefinition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloudWatchAlarmDefinition' :: ComparisonOperator -> String -> Int -> NonNegativeDouble -> ( { "ComparisonOperator" :: (ComparisonOperator) , "EvaluationPeriods" :: NullOrUndefined (Int) , "MetricName" :: (String) , "Namespace" :: NullOrUndefined (String) , "Period" :: (Int) , "Statistic" :: NullOrUndefined (Statistic) , "Threshold" :: (NonNegativeDouble) , "Unit" :: NullOrUndefined (Unit'') , "Dimensions" :: NullOrUndefined (MetricDimensionList) } -> {"ComparisonOperator" :: (ComparisonOperator) , "EvaluationPeriods" :: NullOrUndefined (Int) , "MetricName" :: (String) , "Namespace" :: NullOrUndefined (String) , "Period" :: (Int) , "Statistic" :: NullOrUndefined (Statistic) , "Threshold" :: (NonNegativeDouble) , "Unit" :: NullOrUndefined (Unit'') , "Dimensions" :: NullOrUndefined (MetricDimensionList) } ) -> CloudWatchAlarmDefinition
-newCloudWatchAlarmDefinition' _ComparisonOperator _MetricName _Period _Threshold customize = (CloudWatchAlarmDefinition <<< customize) { "ComparisonOperator": _ComparisonOperator, "MetricName": _MetricName, "Period": _Period, "Threshold": _Threshold, "Dimensions": (NullOrUndefined Nothing), "EvaluationPeriods": (NullOrUndefined Nothing), "Namespace": (NullOrUndefined Nothing), "Statistic": (NullOrUndefined Nothing), "Unit": (NullOrUndefined Nothing) }
+newCloudWatchAlarmDefinition' :: ComparisonOperator -> String -> Int -> NonNegativeDouble -> ( { "ComparisonOperator" :: (ComparisonOperator) , "EvaluationPeriods" :: Maybe (Int) , "MetricName" :: (String) , "Namespace" :: Maybe (String) , "Period" :: (Int) , "Statistic" :: Maybe (Statistic) , "Threshold" :: (NonNegativeDouble) , "Unit" :: Maybe (Unit'') , "Dimensions" :: Maybe (MetricDimensionList) } -> {"ComparisonOperator" :: (ComparisonOperator) , "EvaluationPeriods" :: Maybe (Int) , "MetricName" :: (String) , "Namespace" :: Maybe (String) , "Period" :: (Int) , "Statistic" :: Maybe (Statistic) , "Threshold" :: (NonNegativeDouble) , "Unit" :: Maybe (Unit'') , "Dimensions" :: Maybe (MetricDimensionList) } ) -> CloudWatchAlarmDefinition
+newCloudWatchAlarmDefinition' _ComparisonOperator _MetricName _Period _Threshold customize = (CloudWatchAlarmDefinition <<< customize) { "ComparisonOperator": _ComparisonOperator, "MetricName": _MetricName, "Period": _Period, "Threshold": _Threshold, "Dimensions": Nothing, "EvaluationPeriods": Nothing, "Namespace": Nothing, "Statistic": Nothing, "Unit": Nothing }
 
 
 
 -- | <p>The detailed description of the cluster.</p>
 newtype Cluster = Cluster 
-  { "Id" :: NullOrUndefined (ClusterId)
-  , "Name" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (ClusterStatus)
-  , "Ec2InstanceAttributes" :: NullOrUndefined (Ec2InstanceAttributes)
-  , "InstanceCollectionType" :: NullOrUndefined (InstanceCollectionType)
-  , "LogUri" :: NullOrUndefined (String)
-  , "RequestedAmiVersion" :: NullOrUndefined (String)
-  , "RunningAmiVersion" :: NullOrUndefined (String)
-  , "ReleaseLabel" :: NullOrUndefined (String)
-  , "AutoTerminate" :: NullOrUndefined (Boolean)
-  , "TerminationProtected" :: NullOrUndefined (Boolean)
-  , "VisibleToAllUsers" :: NullOrUndefined (Boolean)
-  , "Applications" :: NullOrUndefined (ApplicationList)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "ServiceRole" :: NullOrUndefined (String)
-  , "NormalizedInstanceHours" :: NullOrUndefined (Int)
-  , "MasterPublicDnsName" :: NullOrUndefined (String)
-  , "Configurations" :: NullOrUndefined (ConfigurationList)
-  , "SecurityConfiguration" :: NullOrUndefined (XmlString)
-  , "AutoScalingRole" :: NullOrUndefined (XmlString)
-  , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior)
-  , "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "EbsRootVolumeSize" :: NullOrUndefined (Int)
-  , "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot)
-  , "KerberosAttributes" :: NullOrUndefined (KerberosAttributes)
+  { "Id" :: Maybe (ClusterId)
+  , "Name" :: Maybe (String)
+  , "Status" :: Maybe (ClusterStatus)
+  , "Ec2InstanceAttributes" :: Maybe (Ec2InstanceAttributes)
+  , "InstanceCollectionType" :: Maybe (InstanceCollectionType)
+  , "LogUri" :: Maybe (String)
+  , "RequestedAmiVersion" :: Maybe (String)
+  , "RunningAmiVersion" :: Maybe (String)
+  , "ReleaseLabel" :: Maybe (String)
+  , "AutoTerminate" :: Maybe (Boolean)
+  , "TerminationProtected" :: Maybe (Boolean)
+  , "VisibleToAllUsers" :: Maybe (Boolean)
+  , "Applications" :: Maybe (ApplicationList)
+  , "Tags" :: Maybe (TagList)
+  , "ServiceRole" :: Maybe (String)
+  , "NormalizedInstanceHours" :: Maybe (Int)
+  , "MasterPublicDnsName" :: Maybe (String)
+  , "Configurations" :: Maybe (ConfigurationList)
+  , "SecurityConfiguration" :: Maybe (XmlString)
+  , "AutoScalingRole" :: Maybe (XmlString)
+  , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior)
+  , "CustomAmiId" :: Maybe (XmlStringMaxLen256)
+  , "EbsRootVolumeSize" :: Maybe (Int)
+  , "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot)
+  , "KerberosAttributes" :: Maybe (KerberosAttributes)
   }
 derive instance newtypeCluster :: Newtype Cluster _
 derive instance repGenericCluster :: Generic Cluster _
@@ -556,12 +555,12 @@ instance encodeCluster :: Encode Cluster where encode = genericEncode options
 
 -- | Constructs Cluster from required parameters
 newCluster :: Cluster
-newCluster  = Cluster { "Applications": (NullOrUndefined Nothing), "AutoScalingRole": (NullOrUndefined Nothing), "AutoTerminate": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "CustomAmiId": (NullOrUndefined Nothing), "EbsRootVolumeSize": (NullOrUndefined Nothing), "Ec2InstanceAttributes": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InstanceCollectionType": (NullOrUndefined Nothing), "KerberosAttributes": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MasterPublicDnsName": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NormalizedInstanceHours": (NullOrUndefined Nothing), "ReleaseLabel": (NullOrUndefined Nothing), "RepoUpgradeOnBoot": (NullOrUndefined Nothing), "RequestedAmiVersion": (NullOrUndefined Nothing), "RunningAmiVersion": (NullOrUndefined Nothing), "ScaleDownBehavior": (NullOrUndefined Nothing), "SecurityConfiguration": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TerminationProtected": (NullOrUndefined Nothing), "VisibleToAllUsers": (NullOrUndefined Nothing) }
+newCluster  = Cluster { "Applications": Nothing, "AutoScalingRole": Nothing, "AutoTerminate": Nothing, "Configurations": Nothing, "CustomAmiId": Nothing, "EbsRootVolumeSize": Nothing, "Ec2InstanceAttributes": Nothing, "Id": Nothing, "InstanceCollectionType": Nothing, "KerberosAttributes": Nothing, "LogUri": Nothing, "MasterPublicDnsName": Nothing, "Name": Nothing, "NormalizedInstanceHours": Nothing, "ReleaseLabel": Nothing, "RepoUpgradeOnBoot": Nothing, "RequestedAmiVersion": Nothing, "RunningAmiVersion": Nothing, "ScaleDownBehavior": Nothing, "SecurityConfiguration": Nothing, "ServiceRole": Nothing, "Status": Nothing, "Tags": Nothing, "TerminationProtected": Nothing, "VisibleToAllUsers": Nothing }
 
 -- | Constructs Cluster's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCluster' :: ( { "Id" :: NullOrUndefined (ClusterId) , "Name" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (ClusterStatus) , "Ec2InstanceAttributes" :: NullOrUndefined (Ec2InstanceAttributes) , "InstanceCollectionType" :: NullOrUndefined (InstanceCollectionType) , "LogUri" :: NullOrUndefined (String) , "RequestedAmiVersion" :: NullOrUndefined (String) , "RunningAmiVersion" :: NullOrUndefined (String) , "ReleaseLabel" :: NullOrUndefined (String) , "AutoTerminate" :: NullOrUndefined (Boolean) , "TerminationProtected" :: NullOrUndefined (Boolean) , "VisibleToAllUsers" :: NullOrUndefined (Boolean) , "Applications" :: NullOrUndefined (ApplicationList) , "Tags" :: NullOrUndefined (TagList) , "ServiceRole" :: NullOrUndefined (String) , "NormalizedInstanceHours" :: NullOrUndefined (Int) , "MasterPublicDnsName" :: NullOrUndefined (String) , "Configurations" :: NullOrUndefined (ConfigurationList) , "SecurityConfiguration" :: NullOrUndefined (XmlString) , "AutoScalingRole" :: NullOrUndefined (XmlString) , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) , "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256) , "EbsRootVolumeSize" :: NullOrUndefined (Int) , "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot) , "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) } -> {"Id" :: NullOrUndefined (ClusterId) , "Name" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (ClusterStatus) , "Ec2InstanceAttributes" :: NullOrUndefined (Ec2InstanceAttributes) , "InstanceCollectionType" :: NullOrUndefined (InstanceCollectionType) , "LogUri" :: NullOrUndefined (String) , "RequestedAmiVersion" :: NullOrUndefined (String) , "RunningAmiVersion" :: NullOrUndefined (String) , "ReleaseLabel" :: NullOrUndefined (String) , "AutoTerminate" :: NullOrUndefined (Boolean) , "TerminationProtected" :: NullOrUndefined (Boolean) , "VisibleToAllUsers" :: NullOrUndefined (Boolean) , "Applications" :: NullOrUndefined (ApplicationList) , "Tags" :: NullOrUndefined (TagList) , "ServiceRole" :: NullOrUndefined (String) , "NormalizedInstanceHours" :: NullOrUndefined (Int) , "MasterPublicDnsName" :: NullOrUndefined (String) , "Configurations" :: NullOrUndefined (ConfigurationList) , "SecurityConfiguration" :: NullOrUndefined (XmlString) , "AutoScalingRole" :: NullOrUndefined (XmlString) , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) , "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256) , "EbsRootVolumeSize" :: NullOrUndefined (Int) , "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot) , "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) } ) -> Cluster
-newCluster'  customize = (Cluster <<< customize) { "Applications": (NullOrUndefined Nothing), "AutoScalingRole": (NullOrUndefined Nothing), "AutoTerminate": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "CustomAmiId": (NullOrUndefined Nothing), "EbsRootVolumeSize": (NullOrUndefined Nothing), "Ec2InstanceAttributes": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InstanceCollectionType": (NullOrUndefined Nothing), "KerberosAttributes": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MasterPublicDnsName": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NormalizedInstanceHours": (NullOrUndefined Nothing), "ReleaseLabel": (NullOrUndefined Nothing), "RepoUpgradeOnBoot": (NullOrUndefined Nothing), "RequestedAmiVersion": (NullOrUndefined Nothing), "RunningAmiVersion": (NullOrUndefined Nothing), "ScaleDownBehavior": (NullOrUndefined Nothing), "SecurityConfiguration": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TerminationProtected": (NullOrUndefined Nothing), "VisibleToAllUsers": (NullOrUndefined Nothing) }
+newCluster' :: ( { "Id" :: Maybe (ClusterId) , "Name" :: Maybe (String) , "Status" :: Maybe (ClusterStatus) , "Ec2InstanceAttributes" :: Maybe (Ec2InstanceAttributes) , "InstanceCollectionType" :: Maybe (InstanceCollectionType) , "LogUri" :: Maybe (String) , "RequestedAmiVersion" :: Maybe (String) , "RunningAmiVersion" :: Maybe (String) , "ReleaseLabel" :: Maybe (String) , "AutoTerminate" :: Maybe (Boolean) , "TerminationProtected" :: Maybe (Boolean) , "VisibleToAllUsers" :: Maybe (Boolean) , "Applications" :: Maybe (ApplicationList) , "Tags" :: Maybe (TagList) , "ServiceRole" :: Maybe (String) , "NormalizedInstanceHours" :: Maybe (Int) , "MasterPublicDnsName" :: Maybe (String) , "Configurations" :: Maybe (ConfigurationList) , "SecurityConfiguration" :: Maybe (XmlString) , "AutoScalingRole" :: Maybe (XmlString) , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) , "CustomAmiId" :: Maybe (XmlStringMaxLen256) , "EbsRootVolumeSize" :: Maybe (Int) , "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot) , "KerberosAttributes" :: Maybe (KerberosAttributes) } -> {"Id" :: Maybe (ClusterId) , "Name" :: Maybe (String) , "Status" :: Maybe (ClusterStatus) , "Ec2InstanceAttributes" :: Maybe (Ec2InstanceAttributes) , "InstanceCollectionType" :: Maybe (InstanceCollectionType) , "LogUri" :: Maybe (String) , "RequestedAmiVersion" :: Maybe (String) , "RunningAmiVersion" :: Maybe (String) , "ReleaseLabel" :: Maybe (String) , "AutoTerminate" :: Maybe (Boolean) , "TerminationProtected" :: Maybe (Boolean) , "VisibleToAllUsers" :: Maybe (Boolean) , "Applications" :: Maybe (ApplicationList) , "Tags" :: Maybe (TagList) , "ServiceRole" :: Maybe (String) , "NormalizedInstanceHours" :: Maybe (Int) , "MasterPublicDnsName" :: Maybe (String) , "Configurations" :: Maybe (ConfigurationList) , "SecurityConfiguration" :: Maybe (XmlString) , "AutoScalingRole" :: Maybe (XmlString) , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) , "CustomAmiId" :: Maybe (XmlStringMaxLen256) , "EbsRootVolumeSize" :: Maybe (Int) , "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot) , "KerberosAttributes" :: Maybe (KerberosAttributes) } ) -> Cluster
+newCluster'  customize = (Cluster <<< customize) { "Applications": Nothing, "AutoScalingRole": Nothing, "AutoTerminate": Nothing, "Configurations": Nothing, "CustomAmiId": Nothing, "EbsRootVolumeSize": Nothing, "Ec2InstanceAttributes": Nothing, "Id": Nothing, "InstanceCollectionType": Nothing, "KerberosAttributes": Nothing, "LogUri": Nothing, "MasterPublicDnsName": Nothing, "Name": Nothing, "NormalizedInstanceHours": Nothing, "ReleaseLabel": Nothing, "RepoUpgradeOnBoot": Nothing, "RequestedAmiVersion": Nothing, "RunningAmiVersion": Nothing, "ScaleDownBehavior": Nothing, "SecurityConfiguration": Nothing, "ServiceRole": Nothing, "Status": Nothing, "Tags": Nothing, "TerminationProtected": Nothing, "VisibleToAllUsers": Nothing }
 
 
 
@@ -585,8 +584,8 @@ instance encodeClusterState :: Encode ClusterState where encode = genericEncode 
 
 -- | <p>The reason that the cluster changed to its current state.</p>
 newtype ClusterStateChangeReason = ClusterStateChangeReason 
-  { "Code" :: NullOrUndefined (ClusterStateChangeReasonCode)
-  , "Message" :: NullOrUndefined (String)
+  { "Code" :: Maybe (ClusterStateChangeReasonCode)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeClusterStateChangeReason :: Newtype ClusterStateChangeReason _
 derive instance repGenericClusterStateChangeReason :: Generic ClusterStateChangeReason _
@@ -596,12 +595,12 @@ instance encodeClusterStateChangeReason :: Encode ClusterStateChangeReason where
 
 -- | Constructs ClusterStateChangeReason from required parameters
 newClusterStateChangeReason :: ClusterStateChangeReason
-newClusterStateChangeReason  = ClusterStateChangeReason { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newClusterStateChangeReason  = ClusterStateChangeReason { "Code": Nothing, "Message": Nothing }
 
 -- | Constructs ClusterStateChangeReason's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterStateChangeReason' :: ( { "Code" :: NullOrUndefined (ClusterStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } -> {"Code" :: NullOrUndefined (ClusterStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } ) -> ClusterStateChangeReason
-newClusterStateChangeReason'  customize = (ClusterStateChangeReason <<< customize) { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newClusterStateChangeReason' :: ( { "Code" :: Maybe (ClusterStateChangeReasonCode) , "Message" :: Maybe (String) } -> {"Code" :: Maybe (ClusterStateChangeReasonCode) , "Message" :: Maybe (String) } ) -> ClusterStateChangeReason
+newClusterStateChangeReason'  customize = (ClusterStateChangeReason <<< customize) { "Code": Nothing, "Message": Nothing }
 
 
 
@@ -625,9 +624,9 @@ instance encodeClusterStateList :: Encode ClusterStateList where encode = generi
 
 -- | <p>The detailed status of the cluster.</p>
 newtype ClusterStatus = ClusterStatus 
-  { "State" :: NullOrUndefined (ClusterState)
-  , "StateChangeReason" :: NullOrUndefined (ClusterStateChangeReason)
-  , "Timeline" :: NullOrUndefined (ClusterTimeline)
+  { "State" :: Maybe (ClusterState)
+  , "StateChangeReason" :: Maybe (ClusterStateChangeReason)
+  , "Timeline" :: Maybe (ClusterTimeline)
   }
 derive instance newtypeClusterStatus :: Newtype ClusterStatus _
 derive instance repGenericClusterStatus :: Generic ClusterStatus _
@@ -637,21 +636,21 @@ instance encodeClusterStatus :: Encode ClusterStatus where encode = genericEncod
 
 -- | Constructs ClusterStatus from required parameters
 newClusterStatus :: ClusterStatus
-newClusterStatus  = ClusterStatus { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newClusterStatus  = ClusterStatus { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 -- | Constructs ClusterStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterStatus' :: ( { "State" :: NullOrUndefined (ClusterState) , "StateChangeReason" :: NullOrUndefined (ClusterStateChangeReason) , "Timeline" :: NullOrUndefined (ClusterTimeline) } -> {"State" :: NullOrUndefined (ClusterState) , "StateChangeReason" :: NullOrUndefined (ClusterStateChangeReason) , "Timeline" :: NullOrUndefined (ClusterTimeline) } ) -> ClusterStatus
-newClusterStatus'  customize = (ClusterStatus <<< customize) { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newClusterStatus' :: ( { "State" :: Maybe (ClusterState) , "StateChangeReason" :: Maybe (ClusterStateChangeReason) , "Timeline" :: Maybe (ClusterTimeline) } -> {"State" :: Maybe (ClusterState) , "StateChangeReason" :: Maybe (ClusterStateChangeReason) , "Timeline" :: Maybe (ClusterTimeline) } ) -> ClusterStatus
+newClusterStatus'  customize = (ClusterStatus <<< customize) { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 
 
 -- | <p>The summary description of the cluster.</p>
 newtype ClusterSummary = ClusterSummary 
-  { "Id" :: NullOrUndefined (ClusterId)
-  , "Name" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (ClusterStatus)
-  , "NormalizedInstanceHours" :: NullOrUndefined (Int)
+  { "Id" :: Maybe (ClusterId)
+  , "Name" :: Maybe (String)
+  , "Status" :: Maybe (ClusterStatus)
+  , "NormalizedInstanceHours" :: Maybe (Int)
   }
 derive instance newtypeClusterSummary :: Newtype ClusterSummary _
 derive instance repGenericClusterSummary :: Generic ClusterSummary _
@@ -661,12 +660,12 @@ instance encodeClusterSummary :: Encode ClusterSummary where encode = genericEnc
 
 -- | Constructs ClusterSummary from required parameters
 newClusterSummary :: ClusterSummary
-newClusterSummary  = ClusterSummary { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NormalizedInstanceHours": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newClusterSummary  = ClusterSummary { "Id": Nothing, "Name": Nothing, "NormalizedInstanceHours": Nothing, "Status": Nothing }
 
 -- | Constructs ClusterSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSummary' :: ( { "Id" :: NullOrUndefined (ClusterId) , "Name" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (ClusterStatus) , "NormalizedInstanceHours" :: NullOrUndefined (Int) } -> {"Id" :: NullOrUndefined (ClusterId) , "Name" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (ClusterStatus) , "NormalizedInstanceHours" :: NullOrUndefined (Int) } ) -> ClusterSummary
-newClusterSummary'  customize = (ClusterSummary <<< customize) { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NormalizedInstanceHours": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newClusterSummary' :: ( { "Id" :: Maybe (ClusterId) , "Name" :: Maybe (String) , "Status" :: Maybe (ClusterStatus) , "NormalizedInstanceHours" :: Maybe (Int) } -> {"Id" :: Maybe (ClusterId) , "Name" :: Maybe (String) , "Status" :: Maybe (ClusterStatus) , "NormalizedInstanceHours" :: Maybe (Int) } ) -> ClusterSummary
+newClusterSummary'  customize = (ClusterSummary <<< customize) { "Id": Nothing, "Name": Nothing, "NormalizedInstanceHours": Nothing, "Status": Nothing }
 
 
 
@@ -681,9 +680,9 @@ instance encodeClusterSummaryList :: Encode ClusterSummaryList where encode = ge
 
 -- | <p>Represents the timeline of the cluster's lifecycle.</p>
 newtype ClusterTimeline = ClusterTimeline 
-  { "CreationDateTime" :: NullOrUndefined (Date)
-  , "ReadyDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
+  { "CreationDateTime" :: Maybe (Date)
+  , "ReadyDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
   }
 derive instance newtypeClusterTimeline :: Newtype ClusterTimeline _
 derive instance repGenericClusterTimeline :: Generic ClusterTimeline _
@@ -693,20 +692,20 @@ instance encodeClusterTimeline :: Encode ClusterTimeline where encode = genericE
 
 -- | Constructs ClusterTimeline from required parameters
 newClusterTimeline :: ClusterTimeline
-newClusterTimeline  = ClusterTimeline { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newClusterTimeline  = ClusterTimeline { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 -- | Constructs ClusterTimeline's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterTimeline' :: ( { "CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } -> {"CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } ) -> ClusterTimeline
-newClusterTimeline'  customize = (ClusterTimeline <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newClusterTimeline' :: ( { "CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } -> {"CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } ) -> ClusterTimeline
+newClusterTimeline'  customize = (ClusterTimeline <<< customize) { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 
 
 -- | <p>An entity describing an executable that runs on a cluster.</p>
 newtype Command = Command 
-  { "Name" :: NullOrUndefined (String)
-  , "ScriptPath" :: NullOrUndefined (String)
-  , "Args" :: NullOrUndefined (StringList)
+  { "Name" :: Maybe (String)
+  , "ScriptPath" :: Maybe (String)
+  , "Args" :: Maybe (StringList)
   }
 derive instance newtypeCommand :: Newtype Command _
 derive instance repGenericCommand :: Generic Command _
@@ -716,12 +715,12 @@ instance encodeCommand :: Encode Command where encode = genericEncode options
 
 -- | Constructs Command from required parameters
 newCommand :: Command
-newCommand  = Command { "Args": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ScriptPath": (NullOrUndefined Nothing) }
+newCommand  = Command { "Args": Nothing, "Name": Nothing, "ScriptPath": Nothing }
 
 -- | Constructs Command's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommand' :: ( { "Name" :: NullOrUndefined (String) , "ScriptPath" :: NullOrUndefined (String) , "Args" :: NullOrUndefined (StringList) } -> {"Name" :: NullOrUndefined (String) , "ScriptPath" :: NullOrUndefined (String) , "Args" :: NullOrUndefined (StringList) } ) -> Command
-newCommand'  customize = (Command <<< customize) { "Args": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ScriptPath": (NullOrUndefined Nothing) }
+newCommand' :: ( { "Name" :: Maybe (String) , "ScriptPath" :: Maybe (String) , "Args" :: Maybe (StringList) } -> {"Name" :: Maybe (String) , "ScriptPath" :: Maybe (String) , "Args" :: Maybe (StringList) } ) -> Command
+newCommand'  customize = (Command <<< customize) { "Args": Nothing, "Name": Nothing, "ScriptPath": Nothing }
 
 
 
@@ -745,8 +744,8 @@ instance encodeComparisonOperator :: Encode ComparisonOperator where encode = ge
 
 -- | <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p>
 newtype Configuration = Configuration 
-  { "Classification" :: NullOrUndefined (String)
-  , "Properties" :: NullOrUndefined (StringMap)
+  { "Classification" :: Maybe (String)
+  , "Properties" :: Maybe (StringMap)
   }
 derive instance newtypeConfiguration :: Newtype Configuration _
 derive instance repGenericConfiguration :: Generic Configuration _
@@ -756,12 +755,12 @@ instance encodeConfiguration :: Encode Configuration where encode = genericEncod
 
 -- | Constructs Configuration from required parameters
 newConfiguration :: Configuration
-newConfiguration  = Configuration { "Classification": (NullOrUndefined Nothing), "Properties": (NullOrUndefined Nothing) }
+newConfiguration  = Configuration { "Classification": Nothing, "Properties": Nothing }
 
 -- | Constructs Configuration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfiguration' :: ( { "Classification" :: NullOrUndefined (String) , "Properties" :: NullOrUndefined (StringMap) } -> {"Classification" :: NullOrUndefined (String) , "Properties" :: NullOrUndefined (StringMap) } ) -> Configuration
-newConfiguration'  customize = (Configuration <<< customize) { "Classification": (NullOrUndefined Nothing), "Properties": (NullOrUndefined Nothing) }
+newConfiguration' :: ( { "Classification" :: Maybe (String) , "Properties" :: Maybe (StringMap) } -> {"Classification" :: Maybe (String) , "Properties" :: Maybe (StringMap) } ) -> Configuration
+newConfiguration'  customize = (Configuration <<< customize) { "Classification": Nothing, "Properties": Nothing }
 
 
 
@@ -877,7 +876,7 @@ newDescribeClusterInput' _ClusterId customize = (DescribeClusterInput <<< custom
 
 -- | <p>This output contains the description of the cluster.</p>
 newtype DescribeClusterOutput = DescribeClusterOutput 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeDescribeClusterOutput :: Newtype DescribeClusterOutput _
 derive instance repGenericDescribeClusterOutput :: Generic DescribeClusterOutput _
@@ -887,21 +886,21 @@ instance encodeDescribeClusterOutput :: Encode DescribeClusterOutput where encod
 
 -- | Constructs DescribeClusterOutput from required parameters
 newDescribeClusterOutput :: DescribeClusterOutput
-newDescribeClusterOutput  = DescribeClusterOutput { "Cluster": (NullOrUndefined Nothing) }
+newDescribeClusterOutput  = DescribeClusterOutput { "Cluster": Nothing }
 
 -- | Constructs DescribeClusterOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterOutput' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> DescribeClusterOutput
-newDescribeClusterOutput'  customize = (DescribeClusterOutput <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newDescribeClusterOutput' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> DescribeClusterOutput
+newDescribeClusterOutput'  customize = (DescribeClusterOutput <<< customize) { "Cluster": Nothing }
 
 
 
 -- | <p> The input for the <a>DescribeJobFlows</a> operation. </p>
 newtype DescribeJobFlowsInput = DescribeJobFlowsInput 
-  { "CreatedAfter" :: NullOrUndefined (Date)
-  , "CreatedBefore" :: NullOrUndefined (Date)
-  , "JobFlowIds" :: NullOrUndefined (XmlStringList)
-  , "JobFlowStates" :: NullOrUndefined (JobFlowExecutionStateList)
+  { "CreatedAfter" :: Maybe (Date)
+  , "CreatedBefore" :: Maybe (Date)
+  , "JobFlowIds" :: Maybe (XmlStringList)
+  , "JobFlowStates" :: Maybe (JobFlowExecutionStateList)
   }
 derive instance newtypeDescribeJobFlowsInput :: Newtype DescribeJobFlowsInput _
 derive instance repGenericDescribeJobFlowsInput :: Generic DescribeJobFlowsInput _
@@ -911,18 +910,18 @@ instance encodeDescribeJobFlowsInput :: Encode DescribeJobFlowsInput where encod
 
 -- | Constructs DescribeJobFlowsInput from required parameters
 newDescribeJobFlowsInput :: DescribeJobFlowsInput
-newDescribeJobFlowsInput  = DescribeJobFlowsInput { "CreatedAfter": (NullOrUndefined Nothing), "CreatedBefore": (NullOrUndefined Nothing), "JobFlowIds": (NullOrUndefined Nothing), "JobFlowStates": (NullOrUndefined Nothing) }
+newDescribeJobFlowsInput  = DescribeJobFlowsInput { "CreatedAfter": Nothing, "CreatedBefore": Nothing, "JobFlowIds": Nothing, "JobFlowStates": Nothing }
 
 -- | Constructs DescribeJobFlowsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobFlowsInput' :: ( { "CreatedAfter" :: NullOrUndefined (Date) , "CreatedBefore" :: NullOrUndefined (Date) , "JobFlowIds" :: NullOrUndefined (XmlStringList) , "JobFlowStates" :: NullOrUndefined (JobFlowExecutionStateList) } -> {"CreatedAfter" :: NullOrUndefined (Date) , "CreatedBefore" :: NullOrUndefined (Date) , "JobFlowIds" :: NullOrUndefined (XmlStringList) , "JobFlowStates" :: NullOrUndefined (JobFlowExecutionStateList) } ) -> DescribeJobFlowsInput
-newDescribeJobFlowsInput'  customize = (DescribeJobFlowsInput <<< customize) { "CreatedAfter": (NullOrUndefined Nothing), "CreatedBefore": (NullOrUndefined Nothing), "JobFlowIds": (NullOrUndefined Nothing), "JobFlowStates": (NullOrUndefined Nothing) }
+newDescribeJobFlowsInput' :: ( { "CreatedAfter" :: Maybe (Date) , "CreatedBefore" :: Maybe (Date) , "JobFlowIds" :: Maybe (XmlStringList) , "JobFlowStates" :: Maybe (JobFlowExecutionStateList) } -> {"CreatedAfter" :: Maybe (Date) , "CreatedBefore" :: Maybe (Date) , "JobFlowIds" :: Maybe (XmlStringList) , "JobFlowStates" :: Maybe (JobFlowExecutionStateList) } ) -> DescribeJobFlowsInput
+newDescribeJobFlowsInput'  customize = (DescribeJobFlowsInput <<< customize) { "CreatedAfter": Nothing, "CreatedBefore": Nothing, "JobFlowIds": Nothing, "JobFlowStates": Nothing }
 
 
 
 -- | <p> The output for the <a>DescribeJobFlows</a> operation. </p>
 newtype DescribeJobFlowsOutput = DescribeJobFlowsOutput 
-  { "JobFlows" :: NullOrUndefined (JobFlowDetailList)
+  { "JobFlows" :: Maybe (JobFlowDetailList)
   }
 derive instance newtypeDescribeJobFlowsOutput :: Newtype DescribeJobFlowsOutput _
 derive instance repGenericDescribeJobFlowsOutput :: Generic DescribeJobFlowsOutput _
@@ -932,12 +931,12 @@ instance encodeDescribeJobFlowsOutput :: Encode DescribeJobFlowsOutput where enc
 
 -- | Constructs DescribeJobFlowsOutput from required parameters
 newDescribeJobFlowsOutput :: DescribeJobFlowsOutput
-newDescribeJobFlowsOutput  = DescribeJobFlowsOutput { "JobFlows": (NullOrUndefined Nothing) }
+newDescribeJobFlowsOutput  = DescribeJobFlowsOutput { "JobFlows": Nothing }
 
 -- | Constructs DescribeJobFlowsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobFlowsOutput' :: ( { "JobFlows" :: NullOrUndefined (JobFlowDetailList) } -> {"JobFlows" :: NullOrUndefined (JobFlowDetailList) } ) -> DescribeJobFlowsOutput
-newDescribeJobFlowsOutput'  customize = (DescribeJobFlowsOutput <<< customize) { "JobFlows": (NullOrUndefined Nothing) }
+newDescribeJobFlowsOutput' :: ( { "JobFlows" :: Maybe (JobFlowDetailList) } -> {"JobFlows" :: Maybe (JobFlowDetailList) } ) -> DescribeJobFlowsOutput
+newDescribeJobFlowsOutput'  customize = (DescribeJobFlowsOutput <<< customize) { "JobFlows": Nothing }
 
 
 
@@ -962,9 +961,9 @@ newDescribeSecurityConfigurationInput' _Name customize = (DescribeSecurityConfig
 
 
 newtype DescribeSecurityConfigurationOutput = DescribeSecurityConfigurationOutput 
-  { "Name" :: NullOrUndefined (XmlString)
-  , "SecurityConfiguration" :: NullOrUndefined (String)
-  , "CreationDateTime" :: NullOrUndefined (Date)
+  { "Name" :: Maybe (XmlString)
+  , "SecurityConfiguration" :: Maybe (String)
+  , "CreationDateTime" :: Maybe (Date)
   }
 derive instance newtypeDescribeSecurityConfigurationOutput :: Newtype DescribeSecurityConfigurationOutput _
 derive instance repGenericDescribeSecurityConfigurationOutput :: Generic DescribeSecurityConfigurationOutput _
@@ -974,12 +973,12 @@ instance encodeDescribeSecurityConfigurationOutput :: Encode DescribeSecurityCon
 
 -- | Constructs DescribeSecurityConfigurationOutput from required parameters
 newDescribeSecurityConfigurationOutput :: DescribeSecurityConfigurationOutput
-newDescribeSecurityConfigurationOutput  = DescribeSecurityConfigurationOutput { "CreationDateTime": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityConfiguration": (NullOrUndefined Nothing) }
+newDescribeSecurityConfigurationOutput  = DescribeSecurityConfigurationOutput { "CreationDateTime": Nothing, "Name": Nothing, "SecurityConfiguration": Nothing }
 
 -- | Constructs DescribeSecurityConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSecurityConfigurationOutput' :: ( { "Name" :: NullOrUndefined (XmlString) , "SecurityConfiguration" :: NullOrUndefined (String) , "CreationDateTime" :: NullOrUndefined (Date) } -> {"Name" :: NullOrUndefined (XmlString) , "SecurityConfiguration" :: NullOrUndefined (String) , "CreationDateTime" :: NullOrUndefined (Date) } ) -> DescribeSecurityConfigurationOutput
-newDescribeSecurityConfigurationOutput'  customize = (DescribeSecurityConfigurationOutput <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityConfiguration": (NullOrUndefined Nothing) }
+newDescribeSecurityConfigurationOutput' :: ( { "Name" :: Maybe (XmlString) , "SecurityConfiguration" :: Maybe (String) , "CreationDateTime" :: Maybe (Date) } -> {"Name" :: Maybe (XmlString) , "SecurityConfiguration" :: Maybe (String) , "CreationDateTime" :: Maybe (Date) } ) -> DescribeSecurityConfigurationOutput
+newDescribeSecurityConfigurationOutput'  customize = (DescribeSecurityConfigurationOutput <<< customize) { "CreationDateTime": Nothing, "Name": Nothing, "SecurityConfiguration": Nothing }
 
 
 
@@ -1007,7 +1006,7 @@ newDescribeStepInput' _ClusterId _StepId customize = (DescribeStepInput <<< cust
 
 -- | <p>This output contains the description of the cluster step.</p>
 newtype DescribeStepOutput = DescribeStepOutput 
-  { "Step" :: NullOrUndefined (Step)
+  { "Step" :: Maybe (Step)
   }
 derive instance newtypeDescribeStepOutput :: Newtype DescribeStepOutput _
 derive instance repGenericDescribeStepOutput :: Generic DescribeStepOutput _
@@ -1017,12 +1016,12 @@ instance encodeDescribeStepOutput :: Encode DescribeStepOutput where encode = ge
 
 -- | Constructs DescribeStepOutput from required parameters
 newDescribeStepOutput :: DescribeStepOutput
-newDescribeStepOutput  = DescribeStepOutput { "Step": (NullOrUndefined Nothing) }
+newDescribeStepOutput  = DescribeStepOutput { "Step": Nothing }
 
 -- | Constructs DescribeStepOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeStepOutput' :: ( { "Step" :: NullOrUndefined (Step) } -> {"Step" :: NullOrUndefined (Step) } ) -> DescribeStepOutput
-newDescribeStepOutput'  customize = (DescribeStepOutput <<< customize) { "Step": (NullOrUndefined Nothing) }
+newDescribeStepOutput' :: ( { "Step" :: Maybe (Step) } -> {"Step" :: Maybe (Step) } ) -> DescribeStepOutput
+newDescribeStepOutput'  customize = (DescribeStepOutput <<< customize) { "Step": Nothing }
 
 
 
@@ -1046,8 +1045,8 @@ instance encodeEC2InstanceIdsToTerminateList :: Encode EC2InstanceIdsToTerminate
 
 -- | <p>Configuration of requested EBS block device associated with the instance group.</p>
 newtype EbsBlockDevice = EbsBlockDevice 
-  { "VolumeSpecification" :: NullOrUndefined (VolumeSpecification)
-  , "Device" :: NullOrUndefined (String)
+  { "VolumeSpecification" :: Maybe (VolumeSpecification)
+  , "Device" :: Maybe (String)
   }
 derive instance newtypeEbsBlockDevice :: Newtype EbsBlockDevice _
 derive instance repGenericEbsBlockDevice :: Generic EbsBlockDevice _
@@ -1057,19 +1056,19 @@ instance encodeEbsBlockDevice :: Encode EbsBlockDevice where encode = genericEnc
 
 -- | Constructs EbsBlockDevice from required parameters
 newEbsBlockDevice :: EbsBlockDevice
-newEbsBlockDevice  = EbsBlockDevice { "Device": (NullOrUndefined Nothing), "VolumeSpecification": (NullOrUndefined Nothing) }
+newEbsBlockDevice  = EbsBlockDevice { "Device": Nothing, "VolumeSpecification": Nothing }
 
 -- | Constructs EbsBlockDevice's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEbsBlockDevice' :: ( { "VolumeSpecification" :: NullOrUndefined (VolumeSpecification) , "Device" :: NullOrUndefined (String) } -> {"VolumeSpecification" :: NullOrUndefined (VolumeSpecification) , "Device" :: NullOrUndefined (String) } ) -> EbsBlockDevice
-newEbsBlockDevice'  customize = (EbsBlockDevice <<< customize) { "Device": (NullOrUndefined Nothing), "VolumeSpecification": (NullOrUndefined Nothing) }
+newEbsBlockDevice' :: ( { "VolumeSpecification" :: Maybe (VolumeSpecification) , "Device" :: Maybe (String) } -> {"VolumeSpecification" :: Maybe (VolumeSpecification) , "Device" :: Maybe (String) } ) -> EbsBlockDevice
+newEbsBlockDevice'  customize = (EbsBlockDevice <<< customize) { "Device": Nothing, "VolumeSpecification": Nothing }
 
 
 
 -- | <p>Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.</p>
 newtype EbsBlockDeviceConfig = EbsBlockDeviceConfig 
   { "VolumeSpecification" :: (VolumeSpecification)
-  , "VolumesPerInstance" :: NullOrUndefined (Int)
+  , "VolumesPerInstance" :: Maybe (Int)
   }
 derive instance newtypeEbsBlockDeviceConfig :: Newtype EbsBlockDeviceConfig _
 derive instance repGenericEbsBlockDeviceConfig :: Generic EbsBlockDeviceConfig _
@@ -1079,12 +1078,12 @@ instance encodeEbsBlockDeviceConfig :: Encode EbsBlockDeviceConfig where encode 
 
 -- | Constructs EbsBlockDeviceConfig from required parameters
 newEbsBlockDeviceConfig :: VolumeSpecification -> EbsBlockDeviceConfig
-newEbsBlockDeviceConfig _VolumeSpecification = EbsBlockDeviceConfig { "VolumeSpecification": _VolumeSpecification, "VolumesPerInstance": (NullOrUndefined Nothing) }
+newEbsBlockDeviceConfig _VolumeSpecification = EbsBlockDeviceConfig { "VolumeSpecification": _VolumeSpecification, "VolumesPerInstance": Nothing }
 
 -- | Constructs EbsBlockDeviceConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEbsBlockDeviceConfig' :: VolumeSpecification -> ( { "VolumeSpecification" :: (VolumeSpecification) , "VolumesPerInstance" :: NullOrUndefined (Int) } -> {"VolumeSpecification" :: (VolumeSpecification) , "VolumesPerInstance" :: NullOrUndefined (Int) } ) -> EbsBlockDeviceConfig
-newEbsBlockDeviceConfig' _VolumeSpecification customize = (EbsBlockDeviceConfig <<< customize) { "VolumeSpecification": _VolumeSpecification, "VolumesPerInstance": (NullOrUndefined Nothing) }
+newEbsBlockDeviceConfig' :: VolumeSpecification -> ( { "VolumeSpecification" :: (VolumeSpecification) , "VolumesPerInstance" :: Maybe (Int) } -> {"VolumeSpecification" :: (VolumeSpecification) , "VolumesPerInstance" :: Maybe (Int) } ) -> EbsBlockDeviceConfig
+newEbsBlockDeviceConfig' _VolumeSpecification customize = (EbsBlockDeviceConfig <<< customize) { "VolumeSpecification": _VolumeSpecification, "VolumesPerInstance": Nothing }
 
 
 
@@ -1108,8 +1107,8 @@ instance encodeEbsBlockDeviceList :: Encode EbsBlockDeviceList where encode = ge
 
 -- | <p>The Amazon EBS configuration of a cluster instance.</p>
 newtype EbsConfiguration = EbsConfiguration 
-  { "EbsBlockDeviceConfigs" :: NullOrUndefined (EbsBlockDeviceConfigList)
-  , "EbsOptimized" :: NullOrUndefined (BooleanObject)
+  { "EbsBlockDeviceConfigs" :: Maybe (EbsBlockDeviceConfigList)
+  , "EbsOptimized" :: Maybe (BooleanObject)
   }
 derive instance newtypeEbsConfiguration :: Newtype EbsConfiguration _
 derive instance repGenericEbsConfiguration :: Generic EbsConfiguration _
@@ -1119,19 +1118,19 @@ instance encodeEbsConfiguration :: Encode EbsConfiguration where encode = generi
 
 -- | Constructs EbsConfiguration from required parameters
 newEbsConfiguration :: EbsConfiguration
-newEbsConfiguration  = EbsConfiguration { "EbsBlockDeviceConfigs": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing) }
+newEbsConfiguration  = EbsConfiguration { "EbsBlockDeviceConfigs": Nothing, "EbsOptimized": Nothing }
 
 -- | Constructs EbsConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEbsConfiguration' :: ( { "EbsBlockDeviceConfigs" :: NullOrUndefined (EbsBlockDeviceConfigList) , "EbsOptimized" :: NullOrUndefined (BooleanObject) } -> {"EbsBlockDeviceConfigs" :: NullOrUndefined (EbsBlockDeviceConfigList) , "EbsOptimized" :: NullOrUndefined (BooleanObject) } ) -> EbsConfiguration
-newEbsConfiguration'  customize = (EbsConfiguration <<< customize) { "EbsBlockDeviceConfigs": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing) }
+newEbsConfiguration' :: ( { "EbsBlockDeviceConfigs" :: Maybe (EbsBlockDeviceConfigList) , "EbsOptimized" :: Maybe (BooleanObject) } -> {"EbsBlockDeviceConfigs" :: Maybe (EbsBlockDeviceConfigList) , "EbsOptimized" :: Maybe (BooleanObject) } ) -> EbsConfiguration
+newEbsConfiguration'  customize = (EbsConfiguration <<< customize) { "EbsBlockDeviceConfigs": Nothing, "EbsOptimized": Nothing }
 
 
 
 -- | <p>EBS block device that's attached to an EC2 instance.</p>
 newtype EbsVolume = EbsVolume 
-  { "Device" :: NullOrUndefined (String)
-  , "VolumeId" :: NullOrUndefined (String)
+  { "Device" :: Maybe (String)
+  , "VolumeId" :: Maybe (String)
   }
 derive instance newtypeEbsVolume :: Newtype EbsVolume _
 derive instance repGenericEbsVolume :: Generic EbsVolume _
@@ -1141,12 +1140,12 @@ instance encodeEbsVolume :: Encode EbsVolume where encode = genericEncode option
 
 -- | Constructs EbsVolume from required parameters
 newEbsVolume :: EbsVolume
-newEbsVolume  = EbsVolume { "Device": (NullOrUndefined Nothing), "VolumeId": (NullOrUndefined Nothing) }
+newEbsVolume  = EbsVolume { "Device": Nothing, "VolumeId": Nothing }
 
 -- | Constructs EbsVolume's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEbsVolume' :: ( { "Device" :: NullOrUndefined (String) , "VolumeId" :: NullOrUndefined (String) } -> {"Device" :: NullOrUndefined (String) , "VolumeId" :: NullOrUndefined (String) } ) -> EbsVolume
-newEbsVolume'  customize = (EbsVolume <<< customize) { "Device": (NullOrUndefined Nothing), "VolumeId": (NullOrUndefined Nothing) }
+newEbsVolume' :: ( { "Device" :: Maybe (String) , "VolumeId" :: Maybe (String) } -> {"Device" :: Maybe (String) , "VolumeId" :: Maybe (String) } ) -> EbsVolume
+newEbsVolume'  customize = (EbsVolume <<< customize) { "Device": Nothing, "VolumeId": Nothing }
 
 
 
@@ -1161,17 +1160,17 @@ instance encodeEbsVolumeList :: Encode EbsVolumeList where encode = genericEncod
 
 -- | <p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
 newtype Ec2InstanceAttributes = Ec2InstanceAttributes 
-  { "Ec2KeyName" :: NullOrUndefined (String)
-  , "Ec2SubnetId" :: NullOrUndefined (String)
-  , "RequestedEc2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List)
-  , "Ec2AvailabilityZone" :: NullOrUndefined (String)
-  , "RequestedEc2AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List)
-  , "IamInstanceProfile" :: NullOrUndefined (String)
-  , "EmrManagedMasterSecurityGroup" :: NullOrUndefined (String)
-  , "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (String)
-  , "ServiceAccessSecurityGroup" :: NullOrUndefined (String)
-  , "AdditionalMasterSecurityGroups" :: NullOrUndefined (StringList)
-  , "AdditionalSlaveSecurityGroups" :: NullOrUndefined (StringList)
+  { "Ec2KeyName" :: Maybe (String)
+  , "Ec2SubnetId" :: Maybe (String)
+  , "RequestedEc2SubnetIds" :: Maybe (XmlStringMaxLen256List)
+  , "Ec2AvailabilityZone" :: Maybe (String)
+  , "RequestedEc2AvailabilityZones" :: Maybe (XmlStringMaxLen256List)
+  , "IamInstanceProfile" :: Maybe (String)
+  , "EmrManagedMasterSecurityGroup" :: Maybe (String)
+  , "EmrManagedSlaveSecurityGroup" :: Maybe (String)
+  , "ServiceAccessSecurityGroup" :: Maybe (String)
+  , "AdditionalMasterSecurityGroups" :: Maybe (StringList)
+  , "AdditionalSlaveSecurityGroups" :: Maybe (StringList)
   }
 derive instance newtypeEc2InstanceAttributes :: Newtype Ec2InstanceAttributes _
 derive instance repGenericEc2InstanceAttributes :: Generic Ec2InstanceAttributes _
@@ -1181,12 +1180,12 @@ instance encodeEc2InstanceAttributes :: Encode Ec2InstanceAttributes where encod
 
 -- | Constructs Ec2InstanceAttributes from required parameters
 newEc2InstanceAttributes :: Ec2InstanceAttributes
-newEc2InstanceAttributes  = Ec2InstanceAttributes { "AdditionalMasterSecurityGroups": (NullOrUndefined Nothing), "AdditionalSlaveSecurityGroups": (NullOrUndefined Nothing), "Ec2AvailabilityZone": (NullOrUndefined Nothing), "Ec2KeyName": (NullOrUndefined Nothing), "Ec2SubnetId": (NullOrUndefined Nothing), "EmrManagedMasterSecurityGroup": (NullOrUndefined Nothing), "EmrManagedSlaveSecurityGroup": (NullOrUndefined Nothing), "IamInstanceProfile": (NullOrUndefined Nothing), "RequestedEc2AvailabilityZones": (NullOrUndefined Nothing), "RequestedEc2SubnetIds": (NullOrUndefined Nothing), "ServiceAccessSecurityGroup": (NullOrUndefined Nothing) }
+newEc2InstanceAttributes  = Ec2InstanceAttributes { "AdditionalMasterSecurityGroups": Nothing, "AdditionalSlaveSecurityGroups": Nothing, "Ec2AvailabilityZone": Nothing, "Ec2KeyName": Nothing, "Ec2SubnetId": Nothing, "EmrManagedMasterSecurityGroup": Nothing, "EmrManagedSlaveSecurityGroup": Nothing, "IamInstanceProfile": Nothing, "RequestedEc2AvailabilityZones": Nothing, "RequestedEc2SubnetIds": Nothing, "ServiceAccessSecurityGroup": Nothing }
 
 -- | Constructs Ec2InstanceAttributes's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEc2InstanceAttributes' :: ( { "Ec2KeyName" :: NullOrUndefined (String) , "Ec2SubnetId" :: NullOrUndefined (String) , "RequestedEc2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List) , "Ec2AvailabilityZone" :: NullOrUndefined (String) , "RequestedEc2AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) , "IamInstanceProfile" :: NullOrUndefined (String) , "EmrManagedMasterSecurityGroup" :: NullOrUndefined (String) , "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (String) , "ServiceAccessSecurityGroup" :: NullOrUndefined (String) , "AdditionalMasterSecurityGroups" :: NullOrUndefined (StringList) , "AdditionalSlaveSecurityGroups" :: NullOrUndefined (StringList) } -> {"Ec2KeyName" :: NullOrUndefined (String) , "Ec2SubnetId" :: NullOrUndefined (String) , "RequestedEc2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List) , "Ec2AvailabilityZone" :: NullOrUndefined (String) , "RequestedEc2AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) , "IamInstanceProfile" :: NullOrUndefined (String) , "EmrManagedMasterSecurityGroup" :: NullOrUndefined (String) , "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (String) , "ServiceAccessSecurityGroup" :: NullOrUndefined (String) , "AdditionalMasterSecurityGroups" :: NullOrUndefined (StringList) , "AdditionalSlaveSecurityGroups" :: NullOrUndefined (StringList) } ) -> Ec2InstanceAttributes
-newEc2InstanceAttributes'  customize = (Ec2InstanceAttributes <<< customize) { "AdditionalMasterSecurityGroups": (NullOrUndefined Nothing), "AdditionalSlaveSecurityGroups": (NullOrUndefined Nothing), "Ec2AvailabilityZone": (NullOrUndefined Nothing), "Ec2KeyName": (NullOrUndefined Nothing), "Ec2SubnetId": (NullOrUndefined Nothing), "EmrManagedMasterSecurityGroup": (NullOrUndefined Nothing), "EmrManagedSlaveSecurityGroup": (NullOrUndefined Nothing), "IamInstanceProfile": (NullOrUndefined Nothing), "RequestedEc2AvailabilityZones": (NullOrUndefined Nothing), "RequestedEc2SubnetIds": (NullOrUndefined Nothing), "ServiceAccessSecurityGroup": (NullOrUndefined Nothing) }
+newEc2InstanceAttributes' :: ( { "Ec2KeyName" :: Maybe (String) , "Ec2SubnetId" :: Maybe (String) , "RequestedEc2SubnetIds" :: Maybe (XmlStringMaxLen256List) , "Ec2AvailabilityZone" :: Maybe (String) , "RequestedEc2AvailabilityZones" :: Maybe (XmlStringMaxLen256List) , "IamInstanceProfile" :: Maybe (String) , "EmrManagedMasterSecurityGroup" :: Maybe (String) , "EmrManagedSlaveSecurityGroup" :: Maybe (String) , "ServiceAccessSecurityGroup" :: Maybe (String) , "AdditionalMasterSecurityGroups" :: Maybe (StringList) , "AdditionalSlaveSecurityGroups" :: Maybe (StringList) } -> {"Ec2KeyName" :: Maybe (String) , "Ec2SubnetId" :: Maybe (String) , "RequestedEc2SubnetIds" :: Maybe (XmlStringMaxLen256List) , "Ec2AvailabilityZone" :: Maybe (String) , "RequestedEc2AvailabilityZones" :: Maybe (XmlStringMaxLen256List) , "IamInstanceProfile" :: Maybe (String) , "EmrManagedMasterSecurityGroup" :: Maybe (String) , "EmrManagedSlaveSecurityGroup" :: Maybe (String) , "ServiceAccessSecurityGroup" :: Maybe (String) , "AdditionalMasterSecurityGroups" :: Maybe (StringList) , "AdditionalSlaveSecurityGroups" :: Maybe (StringList) } ) -> Ec2InstanceAttributes
+newEc2InstanceAttributes'  customize = (Ec2InstanceAttributes <<< customize) { "AdditionalMasterSecurityGroups": Nothing, "AdditionalSlaveSecurityGroups": Nothing, "Ec2AvailabilityZone": Nothing, "Ec2KeyName": Nothing, "Ec2SubnetId": Nothing, "EmrManagedMasterSecurityGroup": Nothing, "EmrManagedSlaveSecurityGroup": Nothing, "IamInstanceProfile": Nothing, "RequestedEc2AvailabilityZones": Nothing, "RequestedEc2SubnetIds": Nothing, "ServiceAccessSecurityGroup": Nothing }
 
 
 
@@ -1210,9 +1209,9 @@ instance encodeErrorMessage :: Encode ErrorMessage where encode = genericEncode 
 
 -- | <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
 newtype FailureDetails = FailureDetails 
-  { "Reason" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
-  , "LogFile" :: NullOrUndefined (String)
+  { "Reason" :: Maybe (String)
+  , "Message" :: Maybe (String)
+  , "LogFile" :: Maybe (String)
   }
 derive instance newtypeFailureDetails :: Newtype FailureDetails _
 derive instance repGenericFailureDetails :: Generic FailureDetails _
@@ -1222,21 +1221,21 @@ instance encodeFailureDetails :: Encode FailureDetails where encode = genericEnc
 
 -- | Constructs FailureDetails from required parameters
 newFailureDetails :: FailureDetails
-newFailureDetails  = FailureDetails { "LogFile": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing) }
+newFailureDetails  = FailureDetails { "LogFile": Nothing, "Message": Nothing, "Reason": Nothing }
 
 -- | Constructs FailureDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFailureDetails' :: ( { "Reason" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) , "LogFile" :: NullOrUndefined (String) } -> {"Reason" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) , "LogFile" :: NullOrUndefined (String) } ) -> FailureDetails
-newFailureDetails'  customize = (FailureDetails <<< customize) { "LogFile": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing) }
+newFailureDetails' :: ( { "Reason" :: Maybe (String) , "Message" :: Maybe (String) , "LogFile" :: Maybe (String) } -> {"Reason" :: Maybe (String) , "Message" :: Maybe (String) , "LogFile" :: Maybe (String) } ) -> FailureDetails
+newFailureDetails'  customize = (FailureDetails <<< customize) { "LogFile": Nothing, "Message": Nothing, "Reason": Nothing }
 
 
 
 -- | <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 newtype HadoopJarStepConfig = HadoopJarStepConfig 
-  { "Properties" :: NullOrUndefined (KeyValueList)
+  { "Properties" :: Maybe (KeyValueList)
   , "Jar" :: (XmlString)
-  , "MainClass" :: NullOrUndefined (XmlString)
-  , "Args" :: NullOrUndefined (XmlStringList)
+  , "MainClass" :: Maybe (XmlString)
+  , "Args" :: Maybe (XmlStringList)
   }
 derive instance newtypeHadoopJarStepConfig :: Newtype HadoopJarStepConfig _
 derive instance repGenericHadoopJarStepConfig :: Generic HadoopJarStepConfig _
@@ -1246,21 +1245,21 @@ instance encodeHadoopJarStepConfig :: Encode HadoopJarStepConfig where encode = 
 
 -- | Constructs HadoopJarStepConfig from required parameters
 newHadoopJarStepConfig :: XmlString -> HadoopJarStepConfig
-newHadoopJarStepConfig _Jar = HadoopJarStepConfig { "Jar": _Jar, "Args": (NullOrUndefined Nothing), "MainClass": (NullOrUndefined Nothing), "Properties": (NullOrUndefined Nothing) }
+newHadoopJarStepConfig _Jar = HadoopJarStepConfig { "Jar": _Jar, "Args": Nothing, "MainClass": Nothing, "Properties": Nothing }
 
 -- | Constructs HadoopJarStepConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHadoopJarStepConfig' :: XmlString -> ( { "Properties" :: NullOrUndefined (KeyValueList) , "Jar" :: (XmlString) , "MainClass" :: NullOrUndefined (XmlString) , "Args" :: NullOrUndefined (XmlStringList) } -> {"Properties" :: NullOrUndefined (KeyValueList) , "Jar" :: (XmlString) , "MainClass" :: NullOrUndefined (XmlString) , "Args" :: NullOrUndefined (XmlStringList) } ) -> HadoopJarStepConfig
-newHadoopJarStepConfig' _Jar customize = (HadoopJarStepConfig <<< customize) { "Jar": _Jar, "Args": (NullOrUndefined Nothing), "MainClass": (NullOrUndefined Nothing), "Properties": (NullOrUndefined Nothing) }
+newHadoopJarStepConfig' :: XmlString -> ( { "Properties" :: Maybe (KeyValueList) , "Jar" :: (XmlString) , "MainClass" :: Maybe (XmlString) , "Args" :: Maybe (XmlStringList) } -> {"Properties" :: Maybe (KeyValueList) , "Jar" :: (XmlString) , "MainClass" :: Maybe (XmlString) , "Args" :: Maybe (XmlStringList) } ) -> HadoopJarStepConfig
+newHadoopJarStepConfig' _Jar customize = (HadoopJarStepConfig <<< customize) { "Jar": _Jar, "Args": Nothing, "MainClass": Nothing, "Properties": Nothing }
 
 
 
 -- | <p>A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 newtype HadoopStepConfig = HadoopStepConfig 
-  { "Jar" :: NullOrUndefined (String)
-  , "Properties" :: NullOrUndefined (StringMap)
-  , "MainClass" :: NullOrUndefined (String)
-  , "Args" :: NullOrUndefined (StringList)
+  { "Jar" :: Maybe (String)
+  , "Properties" :: Maybe (StringMap)
+  , "MainClass" :: Maybe (String)
+  , "Args" :: Maybe (StringList)
   }
 derive instance newtypeHadoopStepConfig :: Newtype HadoopStepConfig _
 derive instance repGenericHadoopStepConfig :: Generic HadoopStepConfig _
@@ -1270,29 +1269,29 @@ instance encodeHadoopStepConfig :: Encode HadoopStepConfig where encode = generi
 
 -- | Constructs HadoopStepConfig from required parameters
 newHadoopStepConfig :: HadoopStepConfig
-newHadoopStepConfig  = HadoopStepConfig { "Args": (NullOrUndefined Nothing), "Jar": (NullOrUndefined Nothing), "MainClass": (NullOrUndefined Nothing), "Properties": (NullOrUndefined Nothing) }
+newHadoopStepConfig  = HadoopStepConfig { "Args": Nothing, "Jar": Nothing, "MainClass": Nothing, "Properties": Nothing }
 
 -- | Constructs HadoopStepConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHadoopStepConfig' :: ( { "Jar" :: NullOrUndefined (String) , "Properties" :: NullOrUndefined (StringMap) , "MainClass" :: NullOrUndefined (String) , "Args" :: NullOrUndefined (StringList) } -> {"Jar" :: NullOrUndefined (String) , "Properties" :: NullOrUndefined (StringMap) , "MainClass" :: NullOrUndefined (String) , "Args" :: NullOrUndefined (StringList) } ) -> HadoopStepConfig
-newHadoopStepConfig'  customize = (HadoopStepConfig <<< customize) { "Args": (NullOrUndefined Nothing), "Jar": (NullOrUndefined Nothing), "MainClass": (NullOrUndefined Nothing), "Properties": (NullOrUndefined Nothing) }
+newHadoopStepConfig' :: ( { "Jar" :: Maybe (String) , "Properties" :: Maybe (StringMap) , "MainClass" :: Maybe (String) , "Args" :: Maybe (StringList) } -> {"Jar" :: Maybe (String) , "Properties" :: Maybe (StringMap) , "MainClass" :: Maybe (String) , "Args" :: Maybe (StringList) } ) -> HadoopStepConfig
+newHadoopStepConfig'  customize = (HadoopStepConfig <<< customize) { "Args": Nothing, "Jar": Nothing, "MainClass": Nothing, "Properties": Nothing }
 
 
 
 -- | <p>Represents an EC2 instance provisioned as part of cluster.</p>
 newtype Instance = Instance 
-  { "Id" :: NullOrUndefined (InstanceId)
-  , "Ec2InstanceId" :: NullOrUndefined (InstanceId)
-  , "PublicDnsName" :: NullOrUndefined (String)
-  , "PublicIpAddress" :: NullOrUndefined (String)
-  , "PrivateDnsName" :: NullOrUndefined (String)
-  , "PrivateIpAddress" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (InstanceStatus)
-  , "InstanceGroupId" :: NullOrUndefined (String)
-  , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId)
-  , "Market" :: NullOrUndefined (MarketType)
-  , "InstanceType" :: NullOrUndefined (InstanceType)
-  , "EbsVolumes" :: NullOrUndefined (EbsVolumeList)
+  { "Id" :: Maybe (InstanceId)
+  , "Ec2InstanceId" :: Maybe (InstanceId)
+  , "PublicDnsName" :: Maybe (String)
+  , "PublicIpAddress" :: Maybe (String)
+  , "PrivateDnsName" :: Maybe (String)
+  , "PrivateIpAddress" :: Maybe (String)
+  , "Status" :: Maybe (InstanceStatus)
+  , "InstanceGroupId" :: Maybe (String)
+  , "InstanceFleetId" :: Maybe (InstanceFleetId)
+  , "Market" :: Maybe (MarketType)
+  , "InstanceType" :: Maybe (InstanceType)
+  , "EbsVolumes" :: Maybe (EbsVolumeList)
   }
 derive instance newtypeInstance :: Newtype Instance _
 derive instance repGenericInstance :: Generic Instance _
@@ -1302,12 +1301,12 @@ instance encodeInstance :: Encode Instance where encode = genericEncode options
 
 -- | Constructs Instance from required parameters
 newInstance :: Instance
-newInstance  = Instance { "EbsVolumes": (NullOrUndefined Nothing), "Ec2InstanceId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InstanceFleetId": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "Market": (NullOrUndefined Nothing), "PrivateDnsName": (NullOrUndefined Nothing), "PrivateIpAddress": (NullOrUndefined Nothing), "PublicDnsName": (NullOrUndefined Nothing), "PublicIpAddress": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newInstance  = Instance { "EbsVolumes": Nothing, "Ec2InstanceId": Nothing, "Id": Nothing, "InstanceFleetId": Nothing, "InstanceGroupId": Nothing, "InstanceType": Nothing, "Market": Nothing, "PrivateDnsName": Nothing, "PrivateIpAddress": Nothing, "PublicDnsName": Nothing, "PublicIpAddress": Nothing, "Status": Nothing }
 
 -- | Constructs Instance's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstance' :: ( { "Id" :: NullOrUndefined (InstanceId) , "Ec2InstanceId" :: NullOrUndefined (InstanceId) , "PublicDnsName" :: NullOrUndefined (String) , "PublicIpAddress" :: NullOrUndefined (String) , "PrivateDnsName" :: NullOrUndefined (String) , "PrivateIpAddress" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (InstanceStatus) , "InstanceGroupId" :: NullOrUndefined (String) , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) , "Market" :: NullOrUndefined (MarketType) , "InstanceType" :: NullOrUndefined (InstanceType) , "EbsVolumes" :: NullOrUndefined (EbsVolumeList) } -> {"Id" :: NullOrUndefined (InstanceId) , "Ec2InstanceId" :: NullOrUndefined (InstanceId) , "PublicDnsName" :: NullOrUndefined (String) , "PublicIpAddress" :: NullOrUndefined (String) , "PrivateDnsName" :: NullOrUndefined (String) , "PrivateIpAddress" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (InstanceStatus) , "InstanceGroupId" :: NullOrUndefined (String) , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) , "Market" :: NullOrUndefined (MarketType) , "InstanceType" :: NullOrUndefined (InstanceType) , "EbsVolumes" :: NullOrUndefined (EbsVolumeList) } ) -> Instance
-newInstance'  customize = (Instance <<< customize) { "EbsVolumes": (NullOrUndefined Nothing), "Ec2InstanceId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InstanceFleetId": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "Market": (NullOrUndefined Nothing), "PrivateDnsName": (NullOrUndefined Nothing), "PrivateIpAddress": (NullOrUndefined Nothing), "PublicDnsName": (NullOrUndefined Nothing), "PublicIpAddress": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newInstance' :: ( { "Id" :: Maybe (InstanceId) , "Ec2InstanceId" :: Maybe (InstanceId) , "PublicDnsName" :: Maybe (String) , "PublicIpAddress" :: Maybe (String) , "PrivateDnsName" :: Maybe (String) , "PrivateIpAddress" :: Maybe (String) , "Status" :: Maybe (InstanceStatus) , "InstanceGroupId" :: Maybe (String) , "InstanceFleetId" :: Maybe (InstanceFleetId) , "Market" :: Maybe (MarketType) , "InstanceType" :: Maybe (InstanceType) , "EbsVolumes" :: Maybe (EbsVolumeList) } -> {"Id" :: Maybe (InstanceId) , "Ec2InstanceId" :: Maybe (InstanceId) , "PublicDnsName" :: Maybe (String) , "PublicIpAddress" :: Maybe (String) , "PrivateDnsName" :: Maybe (String) , "PrivateIpAddress" :: Maybe (String) , "Status" :: Maybe (InstanceStatus) , "InstanceGroupId" :: Maybe (String) , "InstanceFleetId" :: Maybe (InstanceFleetId) , "Market" :: Maybe (MarketType) , "InstanceType" :: Maybe (InstanceType) , "EbsVolumes" :: Maybe (EbsVolumeList) } ) -> Instance
+newInstance'  customize = (Instance <<< customize) { "EbsVolumes": Nothing, "Ec2InstanceId": Nothing, "Id": Nothing, "InstanceFleetId": Nothing, "InstanceGroupId": Nothing, "InstanceType": Nothing, "Market": Nothing, "PrivateDnsName": Nothing, "PrivateIpAddress": Nothing, "PublicDnsName": Nothing, "PublicIpAddress": Nothing, "Status": Nothing }
 
 
 
@@ -1322,16 +1321,16 @@ instance encodeInstanceCollectionType :: Encode InstanceCollectionType where enc
 
 -- | <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceFleet = InstanceFleet 
-  { "Id" :: NullOrUndefined (InstanceFleetId)
-  , "Name" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Status" :: NullOrUndefined (InstanceFleetStatus)
-  , "InstanceFleetType" :: NullOrUndefined (InstanceFleetType)
-  , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber)
-  , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber)
-  , "ProvisionedOnDemandCapacity" :: NullOrUndefined (WholeNumber)
-  , "ProvisionedSpotCapacity" :: NullOrUndefined (WholeNumber)
-  , "InstanceTypeSpecifications" :: NullOrUndefined (InstanceTypeSpecificationList)
-  , "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications)
+  { "Id" :: Maybe (InstanceFleetId)
+  , "Name" :: Maybe (XmlStringMaxLen256)
+  , "Status" :: Maybe (InstanceFleetStatus)
+  , "InstanceFleetType" :: Maybe (InstanceFleetType)
+  , "TargetOnDemandCapacity" :: Maybe (WholeNumber)
+  , "TargetSpotCapacity" :: Maybe (WholeNumber)
+  , "ProvisionedOnDemandCapacity" :: Maybe (WholeNumber)
+  , "ProvisionedSpotCapacity" :: Maybe (WholeNumber)
+  , "InstanceTypeSpecifications" :: Maybe (InstanceTypeSpecificationList)
+  , "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications)
   }
 derive instance newtypeInstanceFleet :: Newtype InstanceFleet _
 derive instance repGenericInstanceFleet :: Generic InstanceFleet _
@@ -1341,23 +1340,23 @@ instance encodeInstanceFleet :: Encode InstanceFleet where encode = genericEncod
 
 -- | Constructs InstanceFleet from required parameters
 newInstanceFleet :: InstanceFleet
-newInstanceFleet  = InstanceFleet { "Id": (NullOrUndefined Nothing), "InstanceFleetType": (NullOrUndefined Nothing), "InstanceTypeSpecifications": (NullOrUndefined Nothing), "LaunchSpecifications": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ProvisionedOnDemandCapacity": (NullOrUndefined Nothing), "ProvisionedSpotCapacity": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TargetOnDemandCapacity": (NullOrUndefined Nothing), "TargetSpotCapacity": (NullOrUndefined Nothing) }
+newInstanceFleet  = InstanceFleet { "Id": Nothing, "InstanceFleetType": Nothing, "InstanceTypeSpecifications": Nothing, "LaunchSpecifications": Nothing, "Name": Nothing, "ProvisionedOnDemandCapacity": Nothing, "ProvisionedSpotCapacity": Nothing, "Status": Nothing, "TargetOnDemandCapacity": Nothing, "TargetSpotCapacity": Nothing }
 
 -- | Constructs InstanceFleet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceFleet' :: ( { "Id" :: NullOrUndefined (InstanceFleetId) , "Name" :: NullOrUndefined (XmlStringMaxLen256) , "Status" :: NullOrUndefined (InstanceFleetStatus) , "InstanceFleetType" :: NullOrUndefined (InstanceFleetType) , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) , "ProvisionedOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "ProvisionedSpotCapacity" :: NullOrUndefined (WholeNumber) , "InstanceTypeSpecifications" :: NullOrUndefined (InstanceTypeSpecificationList) , "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) } -> {"Id" :: NullOrUndefined (InstanceFleetId) , "Name" :: NullOrUndefined (XmlStringMaxLen256) , "Status" :: NullOrUndefined (InstanceFleetStatus) , "InstanceFleetType" :: NullOrUndefined (InstanceFleetType) , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) , "ProvisionedOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "ProvisionedSpotCapacity" :: NullOrUndefined (WholeNumber) , "InstanceTypeSpecifications" :: NullOrUndefined (InstanceTypeSpecificationList) , "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) } ) -> InstanceFleet
-newInstanceFleet'  customize = (InstanceFleet <<< customize) { "Id": (NullOrUndefined Nothing), "InstanceFleetType": (NullOrUndefined Nothing), "InstanceTypeSpecifications": (NullOrUndefined Nothing), "LaunchSpecifications": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ProvisionedOnDemandCapacity": (NullOrUndefined Nothing), "ProvisionedSpotCapacity": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TargetOnDemandCapacity": (NullOrUndefined Nothing), "TargetSpotCapacity": (NullOrUndefined Nothing) }
+newInstanceFleet' :: ( { "Id" :: Maybe (InstanceFleetId) , "Name" :: Maybe (XmlStringMaxLen256) , "Status" :: Maybe (InstanceFleetStatus) , "InstanceFleetType" :: Maybe (InstanceFleetType) , "TargetOnDemandCapacity" :: Maybe (WholeNumber) , "TargetSpotCapacity" :: Maybe (WholeNumber) , "ProvisionedOnDemandCapacity" :: Maybe (WholeNumber) , "ProvisionedSpotCapacity" :: Maybe (WholeNumber) , "InstanceTypeSpecifications" :: Maybe (InstanceTypeSpecificationList) , "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) } -> {"Id" :: Maybe (InstanceFleetId) , "Name" :: Maybe (XmlStringMaxLen256) , "Status" :: Maybe (InstanceFleetStatus) , "InstanceFleetType" :: Maybe (InstanceFleetType) , "TargetOnDemandCapacity" :: Maybe (WholeNumber) , "TargetSpotCapacity" :: Maybe (WholeNumber) , "ProvisionedOnDemandCapacity" :: Maybe (WholeNumber) , "ProvisionedSpotCapacity" :: Maybe (WholeNumber) , "InstanceTypeSpecifications" :: Maybe (InstanceTypeSpecificationList) , "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) } ) -> InstanceFleet
+newInstanceFleet'  customize = (InstanceFleet <<< customize) { "Id": Nothing, "InstanceFleetType": Nothing, "InstanceTypeSpecifications": Nothing, "LaunchSpecifications": Nothing, "Name": Nothing, "ProvisionedOnDemandCapacity": Nothing, "ProvisionedSpotCapacity": Nothing, "Status": Nothing, "TargetOnDemandCapacity": Nothing, "TargetSpotCapacity": Nothing }
 
 
 
 -- | <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceFleetConfig = InstanceFleetConfig 
-  { "Name" :: NullOrUndefined (XmlStringMaxLen256)
+  { "Name" :: Maybe (XmlStringMaxLen256)
   , "InstanceFleetType" :: (InstanceFleetType)
-  , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber)
-  , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber)
-  , "InstanceTypeConfigs" :: NullOrUndefined (InstanceTypeConfigList)
-  , "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications)
+  , "TargetOnDemandCapacity" :: Maybe (WholeNumber)
+  , "TargetSpotCapacity" :: Maybe (WholeNumber)
+  , "InstanceTypeConfigs" :: Maybe (InstanceTypeConfigList)
+  , "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications)
   }
 derive instance newtypeInstanceFleetConfig :: Newtype InstanceFleetConfig _
 derive instance repGenericInstanceFleetConfig :: Generic InstanceFleetConfig _
@@ -1367,12 +1366,12 @@ instance encodeInstanceFleetConfig :: Encode InstanceFleetConfig where encode = 
 
 -- | Constructs InstanceFleetConfig from required parameters
 newInstanceFleetConfig :: InstanceFleetType -> InstanceFleetConfig
-newInstanceFleetConfig _InstanceFleetType = InstanceFleetConfig { "InstanceFleetType": _InstanceFleetType, "InstanceTypeConfigs": (NullOrUndefined Nothing), "LaunchSpecifications": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "TargetOnDemandCapacity": (NullOrUndefined Nothing), "TargetSpotCapacity": (NullOrUndefined Nothing) }
+newInstanceFleetConfig _InstanceFleetType = InstanceFleetConfig { "InstanceFleetType": _InstanceFleetType, "InstanceTypeConfigs": Nothing, "LaunchSpecifications": Nothing, "Name": Nothing, "TargetOnDemandCapacity": Nothing, "TargetSpotCapacity": Nothing }
 
 -- | Constructs InstanceFleetConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceFleetConfig' :: InstanceFleetType -> ( { "Name" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceFleetType" :: (InstanceFleetType) , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) , "InstanceTypeConfigs" :: NullOrUndefined (InstanceTypeConfigList) , "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) } -> {"Name" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceFleetType" :: (InstanceFleetType) , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) , "InstanceTypeConfigs" :: NullOrUndefined (InstanceTypeConfigList) , "LaunchSpecifications" :: NullOrUndefined (InstanceFleetProvisioningSpecifications) } ) -> InstanceFleetConfig
-newInstanceFleetConfig' _InstanceFleetType customize = (InstanceFleetConfig <<< customize) { "InstanceFleetType": _InstanceFleetType, "InstanceTypeConfigs": (NullOrUndefined Nothing), "LaunchSpecifications": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "TargetOnDemandCapacity": (NullOrUndefined Nothing), "TargetSpotCapacity": (NullOrUndefined Nothing) }
+newInstanceFleetConfig' :: InstanceFleetType -> ( { "Name" :: Maybe (XmlStringMaxLen256) , "InstanceFleetType" :: (InstanceFleetType) , "TargetOnDemandCapacity" :: Maybe (WholeNumber) , "TargetSpotCapacity" :: Maybe (WholeNumber) , "InstanceTypeConfigs" :: Maybe (InstanceTypeConfigList) , "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) } -> {"Name" :: Maybe (XmlStringMaxLen256) , "InstanceFleetType" :: (InstanceFleetType) , "TargetOnDemandCapacity" :: Maybe (WholeNumber) , "TargetSpotCapacity" :: Maybe (WholeNumber) , "InstanceTypeConfigs" :: Maybe (InstanceTypeConfigList) , "LaunchSpecifications" :: Maybe (InstanceFleetProvisioningSpecifications) } ) -> InstanceFleetConfig
+newInstanceFleetConfig' _InstanceFleetType customize = (InstanceFleetConfig <<< customize) { "InstanceFleetType": _InstanceFleetType, "InstanceTypeConfigs": Nothing, "LaunchSpecifications": Nothing, "Name": Nothing, "TargetOnDemandCapacity": Nothing, "TargetSpotCapacity": Nothing }
 
 
 
@@ -1406,8 +1405,8 @@ instance encodeInstanceFleetList :: Encode InstanceFleetList where encode = gene
 -- | <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceFleetModifyConfig = InstanceFleetModifyConfig 
   { "InstanceFleetId" :: (InstanceFleetId)
-  , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber)
-  , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber)
+  , "TargetOnDemandCapacity" :: Maybe (WholeNumber)
+  , "TargetSpotCapacity" :: Maybe (WholeNumber)
   }
 derive instance newtypeInstanceFleetModifyConfig :: Newtype InstanceFleetModifyConfig _
 derive instance repGenericInstanceFleetModifyConfig :: Generic InstanceFleetModifyConfig _
@@ -1417,12 +1416,12 @@ instance encodeInstanceFleetModifyConfig :: Encode InstanceFleetModifyConfig whe
 
 -- | Constructs InstanceFleetModifyConfig from required parameters
 newInstanceFleetModifyConfig :: InstanceFleetId -> InstanceFleetModifyConfig
-newInstanceFleetModifyConfig _InstanceFleetId = InstanceFleetModifyConfig { "InstanceFleetId": _InstanceFleetId, "TargetOnDemandCapacity": (NullOrUndefined Nothing), "TargetSpotCapacity": (NullOrUndefined Nothing) }
+newInstanceFleetModifyConfig _InstanceFleetId = InstanceFleetModifyConfig { "InstanceFleetId": _InstanceFleetId, "TargetOnDemandCapacity": Nothing, "TargetSpotCapacity": Nothing }
 
 -- | Constructs InstanceFleetModifyConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceFleetModifyConfig' :: InstanceFleetId -> ( { "InstanceFleetId" :: (InstanceFleetId) , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) } -> {"InstanceFleetId" :: (InstanceFleetId) , "TargetOnDemandCapacity" :: NullOrUndefined (WholeNumber) , "TargetSpotCapacity" :: NullOrUndefined (WholeNumber) } ) -> InstanceFleetModifyConfig
-newInstanceFleetModifyConfig' _InstanceFleetId customize = (InstanceFleetModifyConfig <<< customize) { "InstanceFleetId": _InstanceFleetId, "TargetOnDemandCapacity": (NullOrUndefined Nothing), "TargetSpotCapacity": (NullOrUndefined Nothing) }
+newInstanceFleetModifyConfig' :: InstanceFleetId -> ( { "InstanceFleetId" :: (InstanceFleetId) , "TargetOnDemandCapacity" :: Maybe (WholeNumber) , "TargetSpotCapacity" :: Maybe (WholeNumber) } -> {"InstanceFleetId" :: (InstanceFleetId) , "TargetOnDemandCapacity" :: Maybe (WholeNumber) , "TargetSpotCapacity" :: Maybe (WholeNumber) } ) -> InstanceFleetModifyConfig
+newInstanceFleetModifyConfig' _InstanceFleetId customize = (InstanceFleetModifyConfig <<< customize) { "InstanceFleetId": _InstanceFleetId, "TargetOnDemandCapacity": Nothing, "TargetSpotCapacity": Nothing }
 
 
 
@@ -1458,8 +1457,8 @@ instance encodeInstanceFleetState :: Encode InstanceFleetState where encode = ge
 
 -- | <p>Provides status change reason details for the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceFleetStateChangeReason = InstanceFleetStateChangeReason 
-  { "Code" :: NullOrUndefined (InstanceFleetStateChangeReasonCode)
-  , "Message" :: NullOrUndefined (String)
+  { "Code" :: Maybe (InstanceFleetStateChangeReasonCode)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeInstanceFleetStateChangeReason :: Newtype InstanceFleetStateChangeReason _
 derive instance repGenericInstanceFleetStateChangeReason :: Generic InstanceFleetStateChangeReason _
@@ -1469,12 +1468,12 @@ instance encodeInstanceFleetStateChangeReason :: Encode InstanceFleetStateChange
 
 -- | Constructs InstanceFleetStateChangeReason from required parameters
 newInstanceFleetStateChangeReason :: InstanceFleetStateChangeReason
-newInstanceFleetStateChangeReason  = InstanceFleetStateChangeReason { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInstanceFleetStateChangeReason  = InstanceFleetStateChangeReason { "Code": Nothing, "Message": Nothing }
 
 -- | Constructs InstanceFleetStateChangeReason's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceFleetStateChangeReason' :: ( { "Code" :: NullOrUndefined (InstanceFleetStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } -> {"Code" :: NullOrUndefined (InstanceFleetStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } ) -> InstanceFleetStateChangeReason
-newInstanceFleetStateChangeReason'  customize = (InstanceFleetStateChangeReason <<< customize) { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInstanceFleetStateChangeReason' :: ( { "Code" :: Maybe (InstanceFleetStateChangeReasonCode) , "Message" :: Maybe (String) } -> {"Code" :: Maybe (InstanceFleetStateChangeReasonCode) , "Message" :: Maybe (String) } ) -> InstanceFleetStateChangeReason
+newInstanceFleetStateChangeReason'  customize = (InstanceFleetStateChangeReason <<< customize) { "Code": Nothing, "Message": Nothing }
 
 
 
@@ -1489,9 +1488,9 @@ instance encodeInstanceFleetStateChangeReasonCode :: Encode InstanceFleetStateCh
 
 -- | <p>The status of the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceFleetStatus = InstanceFleetStatus 
-  { "State" :: NullOrUndefined (InstanceFleetState)
-  , "StateChangeReason" :: NullOrUndefined (InstanceFleetStateChangeReason)
-  , "Timeline" :: NullOrUndefined (InstanceFleetTimeline)
+  { "State" :: Maybe (InstanceFleetState)
+  , "StateChangeReason" :: Maybe (InstanceFleetStateChangeReason)
+  , "Timeline" :: Maybe (InstanceFleetTimeline)
   }
 derive instance newtypeInstanceFleetStatus :: Newtype InstanceFleetStatus _
 derive instance repGenericInstanceFleetStatus :: Generic InstanceFleetStatus _
@@ -1501,20 +1500,20 @@ instance encodeInstanceFleetStatus :: Encode InstanceFleetStatus where encode = 
 
 -- | Constructs InstanceFleetStatus from required parameters
 newInstanceFleetStatus :: InstanceFleetStatus
-newInstanceFleetStatus  = InstanceFleetStatus { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newInstanceFleetStatus  = InstanceFleetStatus { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 -- | Constructs InstanceFleetStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceFleetStatus' :: ( { "State" :: NullOrUndefined (InstanceFleetState) , "StateChangeReason" :: NullOrUndefined (InstanceFleetStateChangeReason) , "Timeline" :: NullOrUndefined (InstanceFleetTimeline) } -> {"State" :: NullOrUndefined (InstanceFleetState) , "StateChangeReason" :: NullOrUndefined (InstanceFleetStateChangeReason) , "Timeline" :: NullOrUndefined (InstanceFleetTimeline) } ) -> InstanceFleetStatus
-newInstanceFleetStatus'  customize = (InstanceFleetStatus <<< customize) { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newInstanceFleetStatus' :: ( { "State" :: Maybe (InstanceFleetState) , "StateChangeReason" :: Maybe (InstanceFleetStateChangeReason) , "Timeline" :: Maybe (InstanceFleetTimeline) } -> {"State" :: Maybe (InstanceFleetState) , "StateChangeReason" :: Maybe (InstanceFleetStateChangeReason) , "Timeline" :: Maybe (InstanceFleetTimeline) } ) -> InstanceFleetStatus
+newInstanceFleetStatus'  customize = (InstanceFleetStatus <<< customize) { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 
 
 -- | <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceFleetTimeline = InstanceFleetTimeline 
-  { "CreationDateTime" :: NullOrUndefined (Date)
-  , "ReadyDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
+  { "CreationDateTime" :: Maybe (Date)
+  , "ReadyDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
   }
 derive instance newtypeInstanceFleetTimeline :: Newtype InstanceFleetTimeline _
 derive instance repGenericInstanceFleetTimeline :: Generic InstanceFleetTimeline _
@@ -1524,12 +1523,12 @@ instance encodeInstanceFleetTimeline :: Encode InstanceFleetTimeline where encod
 
 -- | Constructs InstanceFleetTimeline from required parameters
 newInstanceFleetTimeline :: InstanceFleetTimeline
-newInstanceFleetTimeline  = InstanceFleetTimeline { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newInstanceFleetTimeline  = InstanceFleetTimeline { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 -- | Constructs InstanceFleetTimeline's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceFleetTimeline' :: ( { "CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } -> {"CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } ) -> InstanceFleetTimeline
-newInstanceFleetTimeline'  customize = (InstanceFleetTimeline <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newInstanceFleetTimeline' :: ( { "CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } -> {"CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } ) -> InstanceFleetTimeline
+newInstanceFleetTimeline'  customize = (InstanceFleetTimeline <<< customize) { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 
 
@@ -1544,20 +1543,20 @@ instance encodeInstanceFleetType :: Encode InstanceFleetType where encode = gene
 
 -- | <p>This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.</p>
 newtype InstanceGroup = InstanceGroup 
-  { "Id" :: NullOrUndefined (InstanceGroupId)
-  , "Name" :: NullOrUndefined (String)
-  , "Market" :: NullOrUndefined (MarketType)
-  , "InstanceGroupType" :: NullOrUndefined (InstanceGroupType)
-  , "BidPrice" :: NullOrUndefined (String)
-  , "InstanceType" :: NullOrUndefined (InstanceType)
-  , "RequestedInstanceCount" :: NullOrUndefined (Int)
-  , "RunningInstanceCount" :: NullOrUndefined (Int)
-  , "Status" :: NullOrUndefined (InstanceGroupStatus)
-  , "Configurations" :: NullOrUndefined (ConfigurationList)
-  , "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList)
-  , "EbsOptimized" :: NullOrUndefined (BooleanObject)
-  , "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy)
-  , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription)
+  { "Id" :: Maybe (InstanceGroupId)
+  , "Name" :: Maybe (String)
+  , "Market" :: Maybe (MarketType)
+  , "InstanceGroupType" :: Maybe (InstanceGroupType)
+  , "BidPrice" :: Maybe (String)
+  , "InstanceType" :: Maybe (InstanceType)
+  , "RequestedInstanceCount" :: Maybe (Int)
+  , "RunningInstanceCount" :: Maybe (Int)
+  , "Status" :: Maybe (InstanceGroupStatus)
+  , "Configurations" :: Maybe (ConfigurationList)
+  , "EbsBlockDevices" :: Maybe (EbsBlockDeviceList)
+  , "EbsOptimized" :: Maybe (BooleanObject)
+  , "ShrinkPolicy" :: Maybe (ShrinkPolicy)
+  , "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription)
   }
 derive instance newtypeInstanceGroup :: Newtype InstanceGroup _
 derive instance repGenericInstanceGroup :: Generic InstanceGroup _
@@ -1567,26 +1566,26 @@ instance encodeInstanceGroup :: Encode InstanceGroup where encode = genericEncod
 
 -- | Constructs InstanceGroup from required parameters
 newInstanceGroup :: InstanceGroup
-newInstanceGroup  = InstanceGroup { "AutoScalingPolicy": (NullOrUndefined Nothing), "BidPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsBlockDevices": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InstanceGroupType": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "Market": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestedInstanceCount": (NullOrUndefined Nothing), "RunningInstanceCount": (NullOrUndefined Nothing), "ShrinkPolicy": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newInstanceGroup  = InstanceGroup { "AutoScalingPolicy": Nothing, "BidPrice": Nothing, "Configurations": Nothing, "EbsBlockDevices": Nothing, "EbsOptimized": Nothing, "Id": Nothing, "InstanceGroupType": Nothing, "InstanceType": Nothing, "Market": Nothing, "Name": Nothing, "RequestedInstanceCount": Nothing, "RunningInstanceCount": Nothing, "ShrinkPolicy": Nothing, "Status": Nothing }
 
 -- | Constructs InstanceGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroup' :: ( { "Id" :: NullOrUndefined (InstanceGroupId) , "Name" :: NullOrUndefined (String) , "Market" :: NullOrUndefined (MarketType) , "InstanceGroupType" :: NullOrUndefined (InstanceGroupType) , "BidPrice" :: NullOrUndefined (String) , "InstanceType" :: NullOrUndefined (InstanceType) , "RequestedInstanceCount" :: NullOrUndefined (Int) , "RunningInstanceCount" :: NullOrUndefined (Int) , "Status" :: NullOrUndefined (InstanceGroupStatus) , "Configurations" :: NullOrUndefined (ConfigurationList) , "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList) , "EbsOptimized" :: NullOrUndefined (BooleanObject) , "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) } -> {"Id" :: NullOrUndefined (InstanceGroupId) , "Name" :: NullOrUndefined (String) , "Market" :: NullOrUndefined (MarketType) , "InstanceGroupType" :: NullOrUndefined (InstanceGroupType) , "BidPrice" :: NullOrUndefined (String) , "InstanceType" :: NullOrUndefined (InstanceType) , "RequestedInstanceCount" :: NullOrUndefined (Int) , "RunningInstanceCount" :: NullOrUndefined (Int) , "Status" :: NullOrUndefined (InstanceGroupStatus) , "Configurations" :: NullOrUndefined (ConfigurationList) , "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList) , "EbsOptimized" :: NullOrUndefined (BooleanObject) , "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) } ) -> InstanceGroup
-newInstanceGroup'  customize = (InstanceGroup <<< customize) { "AutoScalingPolicy": (NullOrUndefined Nothing), "BidPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsBlockDevices": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InstanceGroupType": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "Market": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestedInstanceCount": (NullOrUndefined Nothing), "RunningInstanceCount": (NullOrUndefined Nothing), "ShrinkPolicy": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newInstanceGroup' :: ( { "Id" :: Maybe (InstanceGroupId) , "Name" :: Maybe (String) , "Market" :: Maybe (MarketType) , "InstanceGroupType" :: Maybe (InstanceGroupType) , "BidPrice" :: Maybe (String) , "InstanceType" :: Maybe (InstanceType) , "RequestedInstanceCount" :: Maybe (Int) , "RunningInstanceCount" :: Maybe (Int) , "Status" :: Maybe (InstanceGroupStatus) , "Configurations" :: Maybe (ConfigurationList) , "EbsBlockDevices" :: Maybe (EbsBlockDeviceList) , "EbsOptimized" :: Maybe (BooleanObject) , "ShrinkPolicy" :: Maybe (ShrinkPolicy) , "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) } -> {"Id" :: Maybe (InstanceGroupId) , "Name" :: Maybe (String) , "Market" :: Maybe (MarketType) , "InstanceGroupType" :: Maybe (InstanceGroupType) , "BidPrice" :: Maybe (String) , "InstanceType" :: Maybe (InstanceType) , "RequestedInstanceCount" :: Maybe (Int) , "RunningInstanceCount" :: Maybe (Int) , "Status" :: Maybe (InstanceGroupStatus) , "Configurations" :: Maybe (ConfigurationList) , "EbsBlockDevices" :: Maybe (EbsBlockDeviceList) , "EbsOptimized" :: Maybe (BooleanObject) , "ShrinkPolicy" :: Maybe (ShrinkPolicy) , "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) } ) -> InstanceGroup
+newInstanceGroup'  customize = (InstanceGroup <<< customize) { "AutoScalingPolicy": Nothing, "BidPrice": Nothing, "Configurations": Nothing, "EbsBlockDevices": Nothing, "EbsOptimized": Nothing, "Id": Nothing, "InstanceGroupType": Nothing, "InstanceType": Nothing, "Market": Nothing, "Name": Nothing, "RequestedInstanceCount": Nothing, "RunningInstanceCount": Nothing, "ShrinkPolicy": Nothing, "Status": Nothing }
 
 
 
 -- | <p>Configuration defining a new instance group.</p>
 newtype InstanceGroupConfig = InstanceGroupConfig 
-  { "Name" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Market" :: NullOrUndefined (MarketType)
+  { "Name" :: Maybe (XmlStringMaxLen256)
+  , "Market" :: Maybe (MarketType)
   , "InstanceRole" :: (InstanceRoleType)
-  , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256)
+  , "BidPrice" :: Maybe (XmlStringMaxLen256)
   , "InstanceType" :: (InstanceType)
   , "InstanceCount" :: (Int)
-  , "Configurations" :: NullOrUndefined (ConfigurationList)
-  , "EbsConfiguration" :: NullOrUndefined (EbsConfiguration)
-  , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicy)
+  , "Configurations" :: Maybe (ConfigurationList)
+  , "EbsConfiguration" :: Maybe (EbsConfiguration)
+  , "AutoScalingPolicy" :: Maybe (AutoScalingPolicy)
   }
 derive instance newtypeInstanceGroupConfig :: Newtype InstanceGroupConfig _
 derive instance repGenericInstanceGroupConfig :: Generic InstanceGroupConfig _
@@ -1596,12 +1595,12 @@ instance encodeInstanceGroupConfig :: Encode InstanceGroupConfig where encode = 
 
 -- | Constructs InstanceGroupConfig from required parameters
 newInstanceGroupConfig :: Int -> InstanceRoleType -> InstanceType -> InstanceGroupConfig
-newInstanceGroupConfig _InstanceCount _InstanceRole _InstanceType = InstanceGroupConfig { "InstanceCount": _InstanceCount, "InstanceRole": _InstanceRole, "InstanceType": _InstanceType, "AutoScalingPolicy": (NullOrUndefined Nothing), "BidPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsConfiguration": (NullOrUndefined Nothing), "Market": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newInstanceGroupConfig _InstanceCount _InstanceRole _InstanceType = InstanceGroupConfig { "InstanceCount": _InstanceCount, "InstanceRole": _InstanceRole, "InstanceType": _InstanceType, "AutoScalingPolicy": Nothing, "BidPrice": Nothing, "Configurations": Nothing, "EbsConfiguration": Nothing, "Market": Nothing, "Name": Nothing }
 
 -- | Constructs InstanceGroupConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroupConfig' :: Int -> InstanceRoleType -> InstanceType -> ( { "Name" :: NullOrUndefined (XmlStringMaxLen256) , "Market" :: NullOrUndefined (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "Configurations" :: NullOrUndefined (ConfigurationList) , "EbsConfiguration" :: NullOrUndefined (EbsConfiguration) , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicy) } -> {"Name" :: NullOrUndefined (XmlStringMaxLen256) , "Market" :: NullOrUndefined (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "Configurations" :: NullOrUndefined (ConfigurationList) , "EbsConfiguration" :: NullOrUndefined (EbsConfiguration) , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicy) } ) -> InstanceGroupConfig
-newInstanceGroupConfig' _InstanceCount _InstanceRole _InstanceType customize = (InstanceGroupConfig <<< customize) { "InstanceCount": _InstanceCount, "InstanceRole": _InstanceRole, "InstanceType": _InstanceType, "AutoScalingPolicy": (NullOrUndefined Nothing), "BidPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsConfiguration": (NullOrUndefined Nothing), "Market": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newInstanceGroupConfig' :: Int -> InstanceRoleType -> InstanceType -> ( { "Name" :: Maybe (XmlStringMaxLen256) , "Market" :: Maybe (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "Configurations" :: Maybe (ConfigurationList) , "EbsConfiguration" :: Maybe (EbsConfiguration) , "AutoScalingPolicy" :: Maybe (AutoScalingPolicy) } -> {"Name" :: Maybe (XmlStringMaxLen256) , "Market" :: Maybe (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "Configurations" :: Maybe (ConfigurationList) , "EbsConfiguration" :: Maybe (EbsConfiguration) , "AutoScalingPolicy" :: Maybe (AutoScalingPolicy) } ) -> InstanceGroupConfig
+newInstanceGroupConfig' _InstanceCount _InstanceRole _InstanceType customize = (InstanceGroupConfig <<< customize) { "InstanceCount": _InstanceCount, "InstanceRole": _InstanceRole, "InstanceType": _InstanceType, "AutoScalingPolicy": Nothing, "BidPrice": Nothing, "Configurations": Nothing, "EbsConfiguration": Nothing, "Market": Nothing, "Name": Nothing }
 
 
 
@@ -1616,20 +1615,20 @@ instance encodeInstanceGroupConfigList :: Encode InstanceGroupConfigList where e
 
 -- | <p>Detailed information about an instance group.</p>
 newtype InstanceGroupDetail = InstanceGroupDetail 
-  { "InstanceGroupId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Name" :: NullOrUndefined (XmlStringMaxLen256)
+  { "InstanceGroupId" :: Maybe (XmlStringMaxLen256)
+  , "Name" :: Maybe (XmlStringMaxLen256)
   , "Market" :: (MarketType)
   , "InstanceRole" :: (InstanceRoleType)
-  , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256)
+  , "BidPrice" :: Maybe (XmlStringMaxLen256)
   , "InstanceType" :: (InstanceType)
   , "InstanceRequestCount" :: (Int)
   , "InstanceRunningCount" :: (Int)
   , "State" :: (InstanceGroupState)
-  , "LastStateChangeReason" :: NullOrUndefined (XmlString)
+  , "LastStateChangeReason" :: Maybe (XmlString)
   , "CreationDateTime" :: (Date)
-  , "StartDateTime" :: NullOrUndefined (Date)
-  , "ReadyDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
+  , "StartDateTime" :: Maybe (Date)
+  , "ReadyDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
   }
 derive instance newtypeInstanceGroupDetail :: Newtype InstanceGroupDetail _
 derive instance repGenericInstanceGroupDetail :: Generic InstanceGroupDetail _
@@ -1639,12 +1638,12 @@ instance encodeInstanceGroupDetail :: Encode InstanceGroupDetail where encode = 
 
 -- | Constructs InstanceGroupDetail from required parameters
 newInstanceGroupDetail :: Date -> Int -> InstanceRoleType -> Int -> InstanceType -> MarketType -> InstanceGroupState -> InstanceGroupDetail
-newInstanceGroupDetail _CreationDateTime _InstanceRequestCount _InstanceRole _InstanceRunningCount _InstanceType _Market _State = InstanceGroupDetail { "CreationDateTime": _CreationDateTime, "InstanceRequestCount": _InstanceRequestCount, "InstanceRole": _InstanceRole, "InstanceRunningCount": _InstanceRunningCount, "InstanceType": _InstanceType, "Market": _Market, "State": _State, "BidPrice": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing), "LastStateChangeReason": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newInstanceGroupDetail _CreationDateTime _InstanceRequestCount _InstanceRole _InstanceRunningCount _InstanceType _Market _State = InstanceGroupDetail { "CreationDateTime": _CreationDateTime, "InstanceRequestCount": _InstanceRequestCount, "InstanceRole": _InstanceRole, "InstanceRunningCount": _InstanceRunningCount, "InstanceType": _InstanceType, "Market": _Market, "State": _State, "BidPrice": Nothing, "EndDateTime": Nothing, "InstanceGroupId": Nothing, "LastStateChangeReason": Nothing, "Name": Nothing, "ReadyDateTime": Nothing, "StartDateTime": Nothing }
 
 -- | Constructs InstanceGroupDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroupDetail' :: Date -> Int -> InstanceRoleType -> Int -> InstanceType -> MarketType -> InstanceGroupState -> ( { "InstanceGroupId" :: NullOrUndefined (XmlStringMaxLen256) , "Name" :: NullOrUndefined (XmlStringMaxLen256) , "Market" :: (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceRequestCount" :: (Int) , "InstanceRunningCount" :: (Int) , "State" :: (InstanceGroupState) , "LastStateChangeReason" :: NullOrUndefined (XmlString) , "CreationDateTime" :: (Date) , "StartDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } -> {"InstanceGroupId" :: NullOrUndefined (XmlStringMaxLen256) , "Name" :: NullOrUndefined (XmlStringMaxLen256) , "Market" :: (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceRequestCount" :: (Int) , "InstanceRunningCount" :: (Int) , "State" :: (InstanceGroupState) , "LastStateChangeReason" :: NullOrUndefined (XmlString) , "CreationDateTime" :: (Date) , "StartDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } ) -> InstanceGroupDetail
-newInstanceGroupDetail' _CreationDateTime _InstanceRequestCount _InstanceRole _InstanceRunningCount _InstanceType _Market _State customize = (InstanceGroupDetail <<< customize) { "CreationDateTime": _CreationDateTime, "InstanceRequestCount": _InstanceRequestCount, "InstanceRole": _InstanceRole, "InstanceRunningCount": _InstanceRunningCount, "InstanceType": _InstanceType, "Market": _Market, "State": _State, "BidPrice": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing), "LastStateChangeReason": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newInstanceGroupDetail' :: Date -> Int -> InstanceRoleType -> Int -> InstanceType -> MarketType -> InstanceGroupState -> ( { "InstanceGroupId" :: Maybe (XmlStringMaxLen256) , "Name" :: Maybe (XmlStringMaxLen256) , "Market" :: (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceRequestCount" :: (Int) , "InstanceRunningCount" :: (Int) , "State" :: (InstanceGroupState) , "LastStateChangeReason" :: Maybe (XmlString) , "CreationDateTime" :: (Date) , "StartDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } -> {"InstanceGroupId" :: Maybe (XmlStringMaxLen256) , "Name" :: Maybe (XmlStringMaxLen256) , "Market" :: (MarketType) , "InstanceRole" :: (InstanceRoleType) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "InstanceType" :: (InstanceType) , "InstanceRequestCount" :: (Int) , "InstanceRunningCount" :: (Int) , "State" :: (InstanceGroupState) , "LastStateChangeReason" :: Maybe (XmlString) , "CreationDateTime" :: (Date) , "StartDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } ) -> InstanceGroupDetail
+newInstanceGroupDetail' _CreationDateTime _InstanceRequestCount _InstanceRole _InstanceRunningCount _InstanceType _Market _State customize = (InstanceGroupDetail <<< customize) { "CreationDateTime": _CreationDateTime, "InstanceRequestCount": _InstanceRequestCount, "InstanceRole": _InstanceRole, "InstanceRunningCount": _InstanceRunningCount, "InstanceType": _InstanceType, "Market": _Market, "State": _State, "BidPrice": Nothing, "EndDateTime": Nothing, "InstanceGroupId": Nothing, "LastStateChangeReason": Nothing, "Name": Nothing, "ReadyDateTime": Nothing, "StartDateTime": Nothing }
 
 
 
@@ -1687,9 +1686,9 @@ instance encodeInstanceGroupList :: Encode InstanceGroupList where encode = gene
 -- | <p>Modify an instance group size.</p>
 newtype InstanceGroupModifyConfig = InstanceGroupModifyConfig 
   { "InstanceGroupId" :: (XmlStringMaxLen256)
-  , "InstanceCount" :: NullOrUndefined (Int)
-  , "EC2InstanceIdsToTerminate" :: NullOrUndefined (EC2InstanceIdsToTerminateList)
-  , "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy)
+  , "InstanceCount" :: Maybe (Int)
+  , "EC2InstanceIdsToTerminate" :: Maybe (EC2InstanceIdsToTerminateList)
+  , "ShrinkPolicy" :: Maybe (ShrinkPolicy)
   }
 derive instance newtypeInstanceGroupModifyConfig :: Newtype InstanceGroupModifyConfig _
 derive instance repGenericInstanceGroupModifyConfig :: Generic InstanceGroupModifyConfig _
@@ -1699,12 +1698,12 @@ instance encodeInstanceGroupModifyConfig :: Encode InstanceGroupModifyConfig whe
 
 -- | Constructs InstanceGroupModifyConfig from required parameters
 newInstanceGroupModifyConfig :: XmlStringMaxLen256 -> InstanceGroupModifyConfig
-newInstanceGroupModifyConfig _InstanceGroupId = InstanceGroupModifyConfig { "InstanceGroupId": _InstanceGroupId, "EC2InstanceIdsToTerminate": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "ShrinkPolicy": (NullOrUndefined Nothing) }
+newInstanceGroupModifyConfig _InstanceGroupId = InstanceGroupModifyConfig { "InstanceGroupId": _InstanceGroupId, "EC2InstanceIdsToTerminate": Nothing, "InstanceCount": Nothing, "ShrinkPolicy": Nothing }
 
 -- | Constructs InstanceGroupModifyConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroupModifyConfig' :: XmlStringMaxLen256 -> ( { "InstanceGroupId" :: (XmlStringMaxLen256) , "InstanceCount" :: NullOrUndefined (Int) , "EC2InstanceIdsToTerminate" :: NullOrUndefined (EC2InstanceIdsToTerminateList) , "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) } -> {"InstanceGroupId" :: (XmlStringMaxLen256) , "InstanceCount" :: NullOrUndefined (Int) , "EC2InstanceIdsToTerminate" :: NullOrUndefined (EC2InstanceIdsToTerminateList) , "ShrinkPolicy" :: NullOrUndefined (ShrinkPolicy) } ) -> InstanceGroupModifyConfig
-newInstanceGroupModifyConfig' _InstanceGroupId customize = (InstanceGroupModifyConfig <<< customize) { "InstanceGroupId": _InstanceGroupId, "EC2InstanceIdsToTerminate": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "ShrinkPolicy": (NullOrUndefined Nothing) }
+newInstanceGroupModifyConfig' :: XmlStringMaxLen256 -> ( { "InstanceGroupId" :: (XmlStringMaxLen256) , "InstanceCount" :: Maybe (Int) , "EC2InstanceIdsToTerminate" :: Maybe (EC2InstanceIdsToTerminateList) , "ShrinkPolicy" :: Maybe (ShrinkPolicy) } -> {"InstanceGroupId" :: (XmlStringMaxLen256) , "InstanceCount" :: Maybe (Int) , "EC2InstanceIdsToTerminate" :: Maybe (EC2InstanceIdsToTerminateList) , "ShrinkPolicy" :: Maybe (ShrinkPolicy) } ) -> InstanceGroupModifyConfig
+newInstanceGroupModifyConfig' _InstanceGroupId customize = (InstanceGroupModifyConfig <<< customize) { "InstanceGroupId": _InstanceGroupId, "EC2InstanceIdsToTerminate": Nothing, "InstanceCount": Nothing, "ShrinkPolicy": Nothing }
 
 
 
@@ -1728,8 +1727,8 @@ instance encodeInstanceGroupState :: Encode InstanceGroupState where encode = ge
 
 -- | <p>The status change reason details for the instance group.</p>
 newtype InstanceGroupStateChangeReason = InstanceGroupStateChangeReason 
-  { "Code" :: NullOrUndefined (InstanceGroupStateChangeReasonCode)
-  , "Message" :: NullOrUndefined (String)
+  { "Code" :: Maybe (InstanceGroupStateChangeReasonCode)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeInstanceGroupStateChangeReason :: Newtype InstanceGroupStateChangeReason _
 derive instance repGenericInstanceGroupStateChangeReason :: Generic InstanceGroupStateChangeReason _
@@ -1739,12 +1738,12 @@ instance encodeInstanceGroupStateChangeReason :: Encode InstanceGroupStateChange
 
 -- | Constructs InstanceGroupStateChangeReason from required parameters
 newInstanceGroupStateChangeReason :: InstanceGroupStateChangeReason
-newInstanceGroupStateChangeReason  = InstanceGroupStateChangeReason { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInstanceGroupStateChangeReason  = InstanceGroupStateChangeReason { "Code": Nothing, "Message": Nothing }
 
 -- | Constructs InstanceGroupStateChangeReason's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroupStateChangeReason' :: ( { "Code" :: NullOrUndefined (InstanceGroupStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } -> {"Code" :: NullOrUndefined (InstanceGroupStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } ) -> InstanceGroupStateChangeReason
-newInstanceGroupStateChangeReason'  customize = (InstanceGroupStateChangeReason <<< customize) { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInstanceGroupStateChangeReason' :: ( { "Code" :: Maybe (InstanceGroupStateChangeReasonCode) , "Message" :: Maybe (String) } -> {"Code" :: Maybe (InstanceGroupStateChangeReasonCode) , "Message" :: Maybe (String) } ) -> InstanceGroupStateChangeReason
+newInstanceGroupStateChangeReason'  customize = (InstanceGroupStateChangeReason <<< customize) { "Code": Nothing, "Message": Nothing }
 
 
 
@@ -1759,9 +1758,9 @@ instance encodeInstanceGroupStateChangeReasonCode :: Encode InstanceGroupStateCh
 
 -- | <p>The details of the instance group status.</p>
 newtype InstanceGroupStatus = InstanceGroupStatus 
-  { "State" :: NullOrUndefined (InstanceGroupState)
-  , "StateChangeReason" :: NullOrUndefined (InstanceGroupStateChangeReason)
-  , "Timeline" :: NullOrUndefined (InstanceGroupTimeline)
+  { "State" :: Maybe (InstanceGroupState)
+  , "StateChangeReason" :: Maybe (InstanceGroupStateChangeReason)
+  , "Timeline" :: Maybe (InstanceGroupTimeline)
   }
 derive instance newtypeInstanceGroupStatus :: Newtype InstanceGroupStatus _
 derive instance repGenericInstanceGroupStatus :: Generic InstanceGroupStatus _
@@ -1771,20 +1770,20 @@ instance encodeInstanceGroupStatus :: Encode InstanceGroupStatus where encode = 
 
 -- | Constructs InstanceGroupStatus from required parameters
 newInstanceGroupStatus :: InstanceGroupStatus
-newInstanceGroupStatus  = InstanceGroupStatus { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newInstanceGroupStatus  = InstanceGroupStatus { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 -- | Constructs InstanceGroupStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroupStatus' :: ( { "State" :: NullOrUndefined (InstanceGroupState) , "StateChangeReason" :: NullOrUndefined (InstanceGroupStateChangeReason) , "Timeline" :: NullOrUndefined (InstanceGroupTimeline) } -> {"State" :: NullOrUndefined (InstanceGroupState) , "StateChangeReason" :: NullOrUndefined (InstanceGroupStateChangeReason) , "Timeline" :: NullOrUndefined (InstanceGroupTimeline) } ) -> InstanceGroupStatus
-newInstanceGroupStatus'  customize = (InstanceGroupStatus <<< customize) { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newInstanceGroupStatus' :: ( { "State" :: Maybe (InstanceGroupState) , "StateChangeReason" :: Maybe (InstanceGroupStateChangeReason) , "Timeline" :: Maybe (InstanceGroupTimeline) } -> {"State" :: Maybe (InstanceGroupState) , "StateChangeReason" :: Maybe (InstanceGroupStateChangeReason) , "Timeline" :: Maybe (InstanceGroupTimeline) } ) -> InstanceGroupStatus
+newInstanceGroupStatus'  customize = (InstanceGroupStatus <<< customize) { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 
 
 -- | <p>The timeline of the instance group lifecycle.</p>
 newtype InstanceGroupTimeline = InstanceGroupTimeline 
-  { "CreationDateTime" :: NullOrUndefined (Date)
-  , "ReadyDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
+  { "CreationDateTime" :: Maybe (Date)
+  , "ReadyDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
   }
 derive instance newtypeInstanceGroupTimeline :: Newtype InstanceGroupTimeline _
 derive instance repGenericInstanceGroupTimeline :: Generic InstanceGroupTimeline _
@@ -1794,12 +1793,12 @@ instance encodeInstanceGroupTimeline :: Encode InstanceGroupTimeline where encod
 
 -- | Constructs InstanceGroupTimeline from required parameters
 newInstanceGroupTimeline :: InstanceGroupTimeline
-newInstanceGroupTimeline  = InstanceGroupTimeline { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newInstanceGroupTimeline  = InstanceGroupTimeline { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 -- | Constructs InstanceGroupTimeline's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceGroupTimeline' :: ( { "CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } -> {"CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } ) -> InstanceGroupTimeline
-newInstanceGroupTimeline'  customize = (InstanceGroupTimeline <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newInstanceGroupTimeline' :: ( { "CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } -> {"CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } ) -> InstanceGroupTimeline
+newInstanceGroupTimeline'  customize = (InstanceGroupTimeline <<< customize) { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 
 
@@ -1841,9 +1840,9 @@ instance encodeInstanceList :: Encode InstanceList where encode = genericEncode 
 
 -- | <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
 newtype InstanceResizePolicy = InstanceResizePolicy 
-  { "InstancesToTerminate" :: NullOrUndefined (EC2InstanceIdsList)
-  , "InstancesToProtect" :: NullOrUndefined (EC2InstanceIdsList)
-  , "InstanceTerminationTimeout" :: NullOrUndefined (Int)
+  { "InstancesToTerminate" :: Maybe (EC2InstanceIdsList)
+  , "InstancesToProtect" :: Maybe (EC2InstanceIdsList)
+  , "InstanceTerminationTimeout" :: Maybe (Int)
   }
 derive instance newtypeInstanceResizePolicy :: Newtype InstanceResizePolicy _
 derive instance repGenericInstanceResizePolicy :: Generic InstanceResizePolicy _
@@ -1853,12 +1852,12 @@ instance encodeInstanceResizePolicy :: Encode InstanceResizePolicy where encode 
 
 -- | Constructs InstanceResizePolicy from required parameters
 newInstanceResizePolicy :: InstanceResizePolicy
-newInstanceResizePolicy  = InstanceResizePolicy { "InstanceTerminationTimeout": (NullOrUndefined Nothing), "InstancesToProtect": (NullOrUndefined Nothing), "InstancesToTerminate": (NullOrUndefined Nothing) }
+newInstanceResizePolicy  = InstanceResizePolicy { "InstanceTerminationTimeout": Nothing, "InstancesToProtect": Nothing, "InstancesToTerminate": Nothing }
 
 -- | Constructs InstanceResizePolicy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceResizePolicy' :: ( { "InstancesToTerminate" :: NullOrUndefined (EC2InstanceIdsList) , "InstancesToProtect" :: NullOrUndefined (EC2InstanceIdsList) , "InstanceTerminationTimeout" :: NullOrUndefined (Int) } -> {"InstancesToTerminate" :: NullOrUndefined (EC2InstanceIdsList) , "InstancesToProtect" :: NullOrUndefined (EC2InstanceIdsList) , "InstanceTerminationTimeout" :: NullOrUndefined (Int) } ) -> InstanceResizePolicy
-newInstanceResizePolicy'  customize = (InstanceResizePolicy <<< customize) { "InstanceTerminationTimeout": (NullOrUndefined Nothing), "InstancesToProtect": (NullOrUndefined Nothing), "InstancesToTerminate": (NullOrUndefined Nothing) }
+newInstanceResizePolicy' :: ( { "InstancesToTerminate" :: Maybe (EC2InstanceIdsList) , "InstancesToProtect" :: Maybe (EC2InstanceIdsList) , "InstanceTerminationTimeout" :: Maybe (Int) } -> {"InstancesToTerminate" :: Maybe (EC2InstanceIdsList) , "InstancesToProtect" :: Maybe (EC2InstanceIdsList) , "InstanceTerminationTimeout" :: Maybe (Int) } ) -> InstanceResizePolicy
+newInstanceResizePolicy'  customize = (InstanceResizePolicy <<< customize) { "InstanceTerminationTimeout": Nothing, "InstancesToProtect": Nothing, "InstancesToTerminate": Nothing }
 
 
 
@@ -1882,8 +1881,8 @@ instance encodeInstanceState :: Encode InstanceState where encode = genericEncod
 
 -- | <p>The details of the status change reason for the instance.</p>
 newtype InstanceStateChangeReason = InstanceStateChangeReason 
-  { "Code" :: NullOrUndefined (InstanceStateChangeReasonCode)
-  , "Message" :: NullOrUndefined (String)
+  { "Code" :: Maybe (InstanceStateChangeReasonCode)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeInstanceStateChangeReason :: Newtype InstanceStateChangeReason _
 derive instance repGenericInstanceStateChangeReason :: Generic InstanceStateChangeReason _
@@ -1893,12 +1892,12 @@ instance encodeInstanceStateChangeReason :: Encode InstanceStateChangeReason whe
 
 -- | Constructs InstanceStateChangeReason from required parameters
 newInstanceStateChangeReason :: InstanceStateChangeReason
-newInstanceStateChangeReason  = InstanceStateChangeReason { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInstanceStateChangeReason  = InstanceStateChangeReason { "Code": Nothing, "Message": Nothing }
 
 -- | Constructs InstanceStateChangeReason's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceStateChangeReason' :: ( { "Code" :: NullOrUndefined (InstanceStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } -> {"Code" :: NullOrUndefined (InstanceStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } ) -> InstanceStateChangeReason
-newInstanceStateChangeReason'  customize = (InstanceStateChangeReason <<< customize) { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInstanceStateChangeReason' :: ( { "Code" :: Maybe (InstanceStateChangeReasonCode) , "Message" :: Maybe (String) } -> {"Code" :: Maybe (InstanceStateChangeReasonCode) , "Message" :: Maybe (String) } ) -> InstanceStateChangeReason
+newInstanceStateChangeReason'  customize = (InstanceStateChangeReason <<< customize) { "Code": Nothing, "Message": Nothing }
 
 
 
@@ -1922,9 +1921,9 @@ instance encodeInstanceStateList :: Encode InstanceStateList where encode = gene
 
 -- | <p>The instance status details.</p>
 newtype InstanceStatus = InstanceStatus 
-  { "State" :: NullOrUndefined (InstanceState)
-  , "StateChangeReason" :: NullOrUndefined (InstanceStateChangeReason)
-  , "Timeline" :: NullOrUndefined (InstanceTimeline)
+  { "State" :: Maybe (InstanceState)
+  , "StateChangeReason" :: Maybe (InstanceStateChangeReason)
+  , "Timeline" :: Maybe (InstanceTimeline)
   }
 derive instance newtypeInstanceStatus :: Newtype InstanceStatus _
 derive instance repGenericInstanceStatus :: Generic InstanceStatus _
@@ -1934,20 +1933,20 @@ instance encodeInstanceStatus :: Encode InstanceStatus where encode = genericEnc
 
 -- | Constructs InstanceStatus from required parameters
 newInstanceStatus :: InstanceStatus
-newInstanceStatus  = InstanceStatus { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newInstanceStatus  = InstanceStatus { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 -- | Constructs InstanceStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceStatus' :: ( { "State" :: NullOrUndefined (InstanceState) , "StateChangeReason" :: NullOrUndefined (InstanceStateChangeReason) , "Timeline" :: NullOrUndefined (InstanceTimeline) } -> {"State" :: NullOrUndefined (InstanceState) , "StateChangeReason" :: NullOrUndefined (InstanceStateChangeReason) , "Timeline" :: NullOrUndefined (InstanceTimeline) } ) -> InstanceStatus
-newInstanceStatus'  customize = (InstanceStatus <<< customize) { "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newInstanceStatus' :: ( { "State" :: Maybe (InstanceState) , "StateChangeReason" :: Maybe (InstanceStateChangeReason) , "Timeline" :: Maybe (InstanceTimeline) } -> {"State" :: Maybe (InstanceState) , "StateChangeReason" :: Maybe (InstanceStateChangeReason) , "Timeline" :: Maybe (InstanceTimeline) } ) -> InstanceStatus
+newInstanceStatus'  customize = (InstanceStatus <<< customize) { "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 
 
 -- | <p>The timeline of the instance lifecycle.</p>
 newtype InstanceTimeline = InstanceTimeline 
-  { "CreationDateTime" :: NullOrUndefined (Date)
-  , "ReadyDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
+  { "CreationDateTime" :: Maybe (Date)
+  , "ReadyDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
   }
 derive instance newtypeInstanceTimeline :: Newtype InstanceTimeline _
 derive instance repGenericInstanceTimeline :: Generic InstanceTimeline _
@@ -1957,12 +1956,12 @@ instance encodeInstanceTimeline :: Encode InstanceTimeline where encode = generi
 
 -- | Constructs InstanceTimeline from required parameters
 newInstanceTimeline :: InstanceTimeline
-newInstanceTimeline  = InstanceTimeline { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newInstanceTimeline  = InstanceTimeline { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 -- | Constructs InstanceTimeline's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceTimeline' :: ( { "CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } -> {"CreationDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } ) -> InstanceTimeline
-newInstanceTimeline'  customize = (InstanceTimeline <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing) }
+newInstanceTimeline' :: ( { "CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } -> {"CreationDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } ) -> InstanceTimeline
+newInstanceTimeline'  customize = (InstanceTimeline <<< customize) { "CreationDateTime": Nothing, "EndDateTime": Nothing, "ReadyDateTime": Nothing }
 
 
 
@@ -1978,11 +1977,11 @@ instance encodeInstanceType :: Encode InstanceType where encode = genericEncode 
 -- | <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceTypeConfig = InstanceTypeConfig 
   { "InstanceType" :: (InstanceType)
-  , "WeightedCapacity" :: NullOrUndefined (WholeNumber)
-  , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256)
-  , "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble)
-  , "EbsConfiguration" :: NullOrUndefined (EbsConfiguration)
-  , "Configurations" :: NullOrUndefined (ConfigurationList)
+  , "WeightedCapacity" :: Maybe (WholeNumber)
+  , "BidPrice" :: Maybe (XmlStringMaxLen256)
+  , "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble)
+  , "EbsConfiguration" :: Maybe (EbsConfiguration)
+  , "Configurations" :: Maybe (ConfigurationList)
   }
 derive instance newtypeInstanceTypeConfig :: Newtype InstanceTypeConfig _
 derive instance repGenericInstanceTypeConfig :: Generic InstanceTypeConfig _
@@ -1992,12 +1991,12 @@ instance encodeInstanceTypeConfig :: Encode InstanceTypeConfig where encode = ge
 
 -- | Constructs InstanceTypeConfig from required parameters
 newInstanceTypeConfig :: InstanceType -> InstanceTypeConfig
-newInstanceTypeConfig _InstanceType = InstanceTypeConfig { "InstanceType": _InstanceType, "BidPrice": (NullOrUndefined Nothing), "BidPriceAsPercentageOfOnDemandPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsConfiguration": (NullOrUndefined Nothing), "WeightedCapacity": (NullOrUndefined Nothing) }
+newInstanceTypeConfig _InstanceType = InstanceTypeConfig { "InstanceType": _InstanceType, "BidPrice": Nothing, "BidPriceAsPercentageOfOnDemandPrice": Nothing, "Configurations": Nothing, "EbsConfiguration": Nothing, "WeightedCapacity": Nothing }
 
 -- | Constructs InstanceTypeConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceTypeConfig' :: InstanceType -> ( { "InstanceType" :: (InstanceType) , "WeightedCapacity" :: NullOrUndefined (WholeNumber) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble) , "EbsConfiguration" :: NullOrUndefined (EbsConfiguration) , "Configurations" :: NullOrUndefined (ConfigurationList) } -> {"InstanceType" :: (InstanceType) , "WeightedCapacity" :: NullOrUndefined (WholeNumber) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble) , "EbsConfiguration" :: NullOrUndefined (EbsConfiguration) , "Configurations" :: NullOrUndefined (ConfigurationList) } ) -> InstanceTypeConfig
-newInstanceTypeConfig' _InstanceType customize = (InstanceTypeConfig <<< customize) { "InstanceType": _InstanceType, "BidPrice": (NullOrUndefined Nothing), "BidPriceAsPercentageOfOnDemandPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsConfiguration": (NullOrUndefined Nothing), "WeightedCapacity": (NullOrUndefined Nothing) }
+newInstanceTypeConfig' :: InstanceType -> ( { "InstanceType" :: (InstanceType) , "WeightedCapacity" :: Maybe (WholeNumber) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble) , "EbsConfiguration" :: Maybe (EbsConfiguration) , "Configurations" :: Maybe (ConfigurationList) } -> {"InstanceType" :: (InstanceType) , "WeightedCapacity" :: Maybe (WholeNumber) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble) , "EbsConfiguration" :: Maybe (EbsConfiguration) , "Configurations" :: Maybe (ConfigurationList) } ) -> InstanceTypeConfig
+newInstanceTypeConfig' _InstanceType customize = (InstanceTypeConfig <<< customize) { "InstanceType": _InstanceType, "BidPrice": Nothing, "BidPriceAsPercentageOfOnDemandPrice": Nothing, "Configurations": Nothing, "EbsConfiguration": Nothing, "WeightedCapacity": Nothing }
 
 
 
@@ -2012,13 +2011,13 @@ instance encodeInstanceTypeConfigList :: Encode InstanceTypeConfigList where enc
 
 -- | <p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note>
 newtype InstanceTypeSpecification = InstanceTypeSpecification 
-  { "InstanceType" :: NullOrUndefined (InstanceType)
-  , "WeightedCapacity" :: NullOrUndefined (WholeNumber)
-  , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256)
-  , "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble)
-  , "Configurations" :: NullOrUndefined (ConfigurationList)
-  , "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList)
-  , "EbsOptimized" :: NullOrUndefined (BooleanObject)
+  { "InstanceType" :: Maybe (InstanceType)
+  , "WeightedCapacity" :: Maybe (WholeNumber)
+  , "BidPrice" :: Maybe (XmlStringMaxLen256)
+  , "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble)
+  , "Configurations" :: Maybe (ConfigurationList)
+  , "EbsBlockDevices" :: Maybe (EbsBlockDeviceList)
+  , "EbsOptimized" :: Maybe (BooleanObject)
   }
 derive instance newtypeInstanceTypeSpecification :: Newtype InstanceTypeSpecification _
 derive instance repGenericInstanceTypeSpecification :: Generic InstanceTypeSpecification _
@@ -2028,12 +2027,12 @@ instance encodeInstanceTypeSpecification :: Encode InstanceTypeSpecification whe
 
 -- | Constructs InstanceTypeSpecification from required parameters
 newInstanceTypeSpecification :: InstanceTypeSpecification
-newInstanceTypeSpecification  = InstanceTypeSpecification { "BidPrice": (NullOrUndefined Nothing), "BidPriceAsPercentageOfOnDemandPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsBlockDevices": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "WeightedCapacity": (NullOrUndefined Nothing) }
+newInstanceTypeSpecification  = InstanceTypeSpecification { "BidPrice": Nothing, "BidPriceAsPercentageOfOnDemandPrice": Nothing, "Configurations": Nothing, "EbsBlockDevices": Nothing, "EbsOptimized": Nothing, "InstanceType": Nothing, "WeightedCapacity": Nothing }
 
 -- | Constructs InstanceTypeSpecification's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceTypeSpecification' :: ( { "InstanceType" :: NullOrUndefined (InstanceType) , "WeightedCapacity" :: NullOrUndefined (WholeNumber) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble) , "Configurations" :: NullOrUndefined (ConfigurationList) , "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList) , "EbsOptimized" :: NullOrUndefined (BooleanObject) } -> {"InstanceType" :: NullOrUndefined (InstanceType) , "WeightedCapacity" :: NullOrUndefined (WholeNumber) , "BidPrice" :: NullOrUndefined (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: NullOrUndefined (NonNegativeDouble) , "Configurations" :: NullOrUndefined (ConfigurationList) , "EbsBlockDevices" :: NullOrUndefined (EbsBlockDeviceList) , "EbsOptimized" :: NullOrUndefined (BooleanObject) } ) -> InstanceTypeSpecification
-newInstanceTypeSpecification'  customize = (InstanceTypeSpecification <<< customize) { "BidPrice": (NullOrUndefined Nothing), "BidPriceAsPercentageOfOnDemandPrice": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "EbsBlockDevices": (NullOrUndefined Nothing), "EbsOptimized": (NullOrUndefined Nothing), "InstanceType": (NullOrUndefined Nothing), "WeightedCapacity": (NullOrUndefined Nothing) }
+newInstanceTypeSpecification' :: ( { "InstanceType" :: Maybe (InstanceType) , "WeightedCapacity" :: Maybe (WholeNumber) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble) , "Configurations" :: Maybe (ConfigurationList) , "EbsBlockDevices" :: Maybe (EbsBlockDeviceList) , "EbsOptimized" :: Maybe (BooleanObject) } -> {"InstanceType" :: Maybe (InstanceType) , "WeightedCapacity" :: Maybe (WholeNumber) , "BidPrice" :: Maybe (XmlStringMaxLen256) , "BidPriceAsPercentageOfOnDemandPrice" :: Maybe (NonNegativeDouble) , "Configurations" :: Maybe (ConfigurationList) , "EbsBlockDevices" :: Maybe (EbsBlockDeviceList) , "EbsOptimized" :: Maybe (BooleanObject) } ) -> InstanceTypeSpecification
+newInstanceTypeSpecification'  customize = (InstanceTypeSpecification <<< customize) { "BidPrice": Nothing, "BidPriceAsPercentageOfOnDemandPrice": Nothing, "Configurations": Nothing, "EbsBlockDevices": Nothing, "EbsOptimized": Nothing, "InstanceType": Nothing, "WeightedCapacity": Nothing }
 
 
 
@@ -2058,7 +2057,7 @@ instance encodeInternalServerError :: Encode InternalServerError where encode = 
 
 -- | <p>This exception occurs when there is an internal failure in the EMR service.</p>
 newtype InternalServerException = InternalServerException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInternalServerException :: Newtype InternalServerException _
 derive instance repGenericInternalServerException :: Generic InternalServerException _
@@ -2068,19 +2067,19 @@ instance encodeInternalServerException :: Encode InternalServerException where e
 
 -- | Constructs InternalServerException from required parameters
 newInternalServerException :: InternalServerException
-newInternalServerException  = InternalServerException { "Message": (NullOrUndefined Nothing) }
+newInternalServerException  = InternalServerException { "Message": Nothing }
 
 -- | Constructs InternalServerException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServerException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> InternalServerException
-newInternalServerException'  customize = (InternalServerException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServerException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> InternalServerException
+newInternalServerException'  customize = (InternalServerException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>This exception occurs when there is something wrong with user input.</p>
 newtype InvalidRequestException = InvalidRequestException 
-  { "ErrorCode" :: NullOrUndefined (ErrorCode)
-  , "Message" :: NullOrUndefined (ErrorMessage)
+  { "ErrorCode" :: Maybe (ErrorCode)
+  , "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInvalidRequestException :: Newtype InvalidRequestException _
 derive instance repGenericInvalidRequestException :: Generic InvalidRequestException _
@@ -2090,12 +2089,12 @@ instance encodeInvalidRequestException :: Encode InvalidRequestException where e
 
 -- | Constructs InvalidRequestException from required parameters
 newInvalidRequestException :: InvalidRequestException
-newInvalidRequestException  = InvalidRequestException { "ErrorCode": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInvalidRequestException  = InvalidRequestException { "ErrorCode": Nothing, "Message": Nothing }
 
 -- | Constructs InvalidRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidRequestException' :: ( { "ErrorCode" :: NullOrUndefined (ErrorCode) , "Message" :: NullOrUndefined (ErrorMessage) } -> {"ErrorCode" :: NullOrUndefined (ErrorCode) , "Message" :: NullOrUndefined (ErrorMessage) } ) -> InvalidRequestException
-newInvalidRequestException'  customize = (InvalidRequestException <<< customize) { "ErrorCode": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInvalidRequestException' :: ( { "ErrorCode" :: Maybe (ErrorCode) , "Message" :: Maybe (ErrorMessage) } -> {"ErrorCode" :: Maybe (ErrorCode) , "Message" :: Maybe (ErrorMessage) } ) -> InvalidRequestException
+newInvalidRequestException'  customize = (InvalidRequestException <<< customize) { "ErrorCode": Nothing, "Message": Nothing }
 
 
 
@@ -2103,18 +2102,18 @@ newInvalidRequestException'  customize = (InvalidRequestException <<< customize)
 newtype JobFlowDetail = JobFlowDetail 
   { "JobFlowId" :: (XmlStringMaxLen256)
   , "Name" :: (XmlStringMaxLen256)
-  , "LogUri" :: NullOrUndefined (XmlString)
-  , "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256)
+  , "LogUri" :: Maybe (XmlString)
+  , "AmiVersion" :: Maybe (XmlStringMaxLen256)
   , "ExecutionStatusDetail" :: (JobFlowExecutionStatusDetail)
   , "Instances" :: (JobFlowInstancesDetail)
-  , "Steps" :: NullOrUndefined (StepDetailList)
-  , "BootstrapActions" :: NullOrUndefined (BootstrapActionDetailList)
-  , "SupportedProducts" :: NullOrUndefined (SupportedProductsList)
-  , "VisibleToAllUsers" :: NullOrUndefined (Boolean)
-  , "JobFlowRole" :: NullOrUndefined (XmlString)
-  , "ServiceRole" :: NullOrUndefined (XmlString)
-  , "AutoScalingRole" :: NullOrUndefined (XmlString)
-  , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior)
+  , "Steps" :: Maybe (StepDetailList)
+  , "BootstrapActions" :: Maybe (BootstrapActionDetailList)
+  , "SupportedProducts" :: Maybe (SupportedProductsList)
+  , "VisibleToAllUsers" :: Maybe (Boolean)
+  , "JobFlowRole" :: Maybe (XmlString)
+  , "ServiceRole" :: Maybe (XmlString)
+  , "AutoScalingRole" :: Maybe (XmlString)
+  , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior)
   }
 derive instance newtypeJobFlowDetail :: Newtype JobFlowDetail _
 derive instance repGenericJobFlowDetail :: Generic JobFlowDetail _
@@ -2124,12 +2123,12 @@ instance encodeJobFlowDetail :: Encode JobFlowDetail where encode = genericEncod
 
 -- | Constructs JobFlowDetail from required parameters
 newJobFlowDetail :: JobFlowExecutionStatusDetail -> JobFlowInstancesDetail -> XmlStringMaxLen256 -> XmlStringMaxLen256 -> JobFlowDetail
-newJobFlowDetail _ExecutionStatusDetail _Instances _JobFlowId _Name = JobFlowDetail { "ExecutionStatusDetail": _ExecutionStatusDetail, "Instances": _Instances, "JobFlowId": _JobFlowId, "Name": _Name, "AmiVersion": (NullOrUndefined Nothing), "AutoScalingRole": (NullOrUndefined Nothing), "BootstrapActions": (NullOrUndefined Nothing), "JobFlowRole": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "ScaleDownBehavior": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Steps": (NullOrUndefined Nothing), "SupportedProducts": (NullOrUndefined Nothing), "VisibleToAllUsers": (NullOrUndefined Nothing) }
+newJobFlowDetail _ExecutionStatusDetail _Instances _JobFlowId _Name = JobFlowDetail { "ExecutionStatusDetail": _ExecutionStatusDetail, "Instances": _Instances, "JobFlowId": _JobFlowId, "Name": _Name, "AmiVersion": Nothing, "AutoScalingRole": Nothing, "BootstrapActions": Nothing, "JobFlowRole": Nothing, "LogUri": Nothing, "ScaleDownBehavior": Nothing, "ServiceRole": Nothing, "Steps": Nothing, "SupportedProducts": Nothing, "VisibleToAllUsers": Nothing }
 
 -- | Constructs JobFlowDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobFlowDetail' :: JobFlowExecutionStatusDetail -> JobFlowInstancesDetail -> XmlStringMaxLen256 -> XmlStringMaxLen256 -> ( { "JobFlowId" :: (XmlStringMaxLen256) , "Name" :: (XmlStringMaxLen256) , "LogUri" :: NullOrUndefined (XmlString) , "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256) , "ExecutionStatusDetail" :: (JobFlowExecutionStatusDetail) , "Instances" :: (JobFlowInstancesDetail) , "Steps" :: NullOrUndefined (StepDetailList) , "BootstrapActions" :: NullOrUndefined (BootstrapActionDetailList) , "SupportedProducts" :: NullOrUndefined (SupportedProductsList) , "VisibleToAllUsers" :: NullOrUndefined (Boolean) , "JobFlowRole" :: NullOrUndefined (XmlString) , "ServiceRole" :: NullOrUndefined (XmlString) , "AutoScalingRole" :: NullOrUndefined (XmlString) , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) } -> {"JobFlowId" :: (XmlStringMaxLen256) , "Name" :: (XmlStringMaxLen256) , "LogUri" :: NullOrUndefined (XmlString) , "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256) , "ExecutionStatusDetail" :: (JobFlowExecutionStatusDetail) , "Instances" :: (JobFlowInstancesDetail) , "Steps" :: NullOrUndefined (StepDetailList) , "BootstrapActions" :: NullOrUndefined (BootstrapActionDetailList) , "SupportedProducts" :: NullOrUndefined (SupportedProductsList) , "VisibleToAllUsers" :: NullOrUndefined (Boolean) , "JobFlowRole" :: NullOrUndefined (XmlString) , "ServiceRole" :: NullOrUndefined (XmlString) , "AutoScalingRole" :: NullOrUndefined (XmlString) , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) } ) -> JobFlowDetail
-newJobFlowDetail' _ExecutionStatusDetail _Instances _JobFlowId _Name customize = (JobFlowDetail <<< customize) { "ExecutionStatusDetail": _ExecutionStatusDetail, "Instances": _Instances, "JobFlowId": _JobFlowId, "Name": _Name, "AmiVersion": (NullOrUndefined Nothing), "AutoScalingRole": (NullOrUndefined Nothing), "BootstrapActions": (NullOrUndefined Nothing), "JobFlowRole": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "ScaleDownBehavior": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Steps": (NullOrUndefined Nothing), "SupportedProducts": (NullOrUndefined Nothing), "VisibleToAllUsers": (NullOrUndefined Nothing) }
+newJobFlowDetail' :: JobFlowExecutionStatusDetail -> JobFlowInstancesDetail -> XmlStringMaxLen256 -> XmlStringMaxLen256 -> ( { "JobFlowId" :: (XmlStringMaxLen256) , "Name" :: (XmlStringMaxLen256) , "LogUri" :: Maybe (XmlString) , "AmiVersion" :: Maybe (XmlStringMaxLen256) , "ExecutionStatusDetail" :: (JobFlowExecutionStatusDetail) , "Instances" :: (JobFlowInstancesDetail) , "Steps" :: Maybe (StepDetailList) , "BootstrapActions" :: Maybe (BootstrapActionDetailList) , "SupportedProducts" :: Maybe (SupportedProductsList) , "VisibleToAllUsers" :: Maybe (Boolean) , "JobFlowRole" :: Maybe (XmlString) , "ServiceRole" :: Maybe (XmlString) , "AutoScalingRole" :: Maybe (XmlString) , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) } -> {"JobFlowId" :: (XmlStringMaxLen256) , "Name" :: (XmlStringMaxLen256) , "LogUri" :: Maybe (XmlString) , "AmiVersion" :: Maybe (XmlStringMaxLen256) , "ExecutionStatusDetail" :: (JobFlowExecutionStatusDetail) , "Instances" :: (JobFlowInstancesDetail) , "Steps" :: Maybe (StepDetailList) , "BootstrapActions" :: Maybe (BootstrapActionDetailList) , "SupportedProducts" :: Maybe (SupportedProductsList) , "VisibleToAllUsers" :: Maybe (Boolean) , "JobFlowRole" :: Maybe (XmlString) , "ServiceRole" :: Maybe (XmlString) , "AutoScalingRole" :: Maybe (XmlString) , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) } ) -> JobFlowDetail
+newJobFlowDetail' _ExecutionStatusDetail _Instances _JobFlowId _Name customize = (JobFlowDetail <<< customize) { "ExecutionStatusDetail": _ExecutionStatusDetail, "Instances": _Instances, "JobFlowId": _JobFlowId, "Name": _Name, "AmiVersion": Nothing, "AutoScalingRole": Nothing, "BootstrapActions": Nothing, "JobFlowRole": Nothing, "LogUri": Nothing, "ScaleDownBehavior": Nothing, "ServiceRole": Nothing, "Steps": Nothing, "SupportedProducts": Nothing, "VisibleToAllUsers": Nothing }
 
 
 
@@ -2165,10 +2164,10 @@ instance encodeJobFlowExecutionStateList :: Encode JobFlowExecutionStateList whe
 newtype JobFlowExecutionStatusDetail = JobFlowExecutionStatusDetail 
   { "State" :: (JobFlowExecutionState)
   , "CreationDateTime" :: (Date)
-  , "StartDateTime" :: NullOrUndefined (Date)
-  , "ReadyDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
-  , "LastStateChangeReason" :: NullOrUndefined (XmlString)
+  , "StartDateTime" :: Maybe (Date)
+  , "ReadyDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
+  , "LastStateChangeReason" :: Maybe (XmlString)
   }
 derive instance newtypeJobFlowExecutionStatusDetail :: Newtype JobFlowExecutionStatusDetail _
 derive instance repGenericJobFlowExecutionStatusDetail :: Generic JobFlowExecutionStatusDetail _
@@ -2178,34 +2177,34 @@ instance encodeJobFlowExecutionStatusDetail :: Encode JobFlowExecutionStatusDeta
 
 -- | Constructs JobFlowExecutionStatusDetail from required parameters
 newJobFlowExecutionStatusDetail :: Date -> JobFlowExecutionState -> JobFlowExecutionStatusDetail
-newJobFlowExecutionStatusDetail _CreationDateTime _State = JobFlowExecutionStatusDetail { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": (NullOrUndefined Nothing), "LastStateChangeReason": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newJobFlowExecutionStatusDetail _CreationDateTime _State = JobFlowExecutionStatusDetail { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": Nothing, "LastStateChangeReason": Nothing, "ReadyDateTime": Nothing, "StartDateTime": Nothing }
 
 -- | Constructs JobFlowExecutionStatusDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobFlowExecutionStatusDetail' :: Date -> JobFlowExecutionState -> ( { "State" :: (JobFlowExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) , "LastStateChangeReason" :: NullOrUndefined (XmlString) } -> {"State" :: (JobFlowExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: NullOrUndefined (Date) , "ReadyDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) , "LastStateChangeReason" :: NullOrUndefined (XmlString) } ) -> JobFlowExecutionStatusDetail
-newJobFlowExecutionStatusDetail' _CreationDateTime _State customize = (JobFlowExecutionStatusDetail <<< customize) { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": (NullOrUndefined Nothing), "LastStateChangeReason": (NullOrUndefined Nothing), "ReadyDateTime": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newJobFlowExecutionStatusDetail' :: Date -> JobFlowExecutionState -> ( { "State" :: (JobFlowExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) , "LastStateChangeReason" :: Maybe (XmlString) } -> {"State" :: (JobFlowExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: Maybe (Date) , "ReadyDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) , "LastStateChangeReason" :: Maybe (XmlString) } ) -> JobFlowExecutionStatusDetail
+newJobFlowExecutionStatusDetail' _CreationDateTime _State customize = (JobFlowExecutionStatusDetail <<< customize) { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": Nothing, "LastStateChangeReason": Nothing, "ReadyDateTime": Nothing, "StartDateTime": Nothing }
 
 
 
 -- | <p>A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.</p>
 newtype JobFlowInstancesConfig = JobFlowInstancesConfig 
-  { "MasterInstanceType" :: NullOrUndefined (InstanceType)
-  , "SlaveInstanceType" :: NullOrUndefined (InstanceType)
-  , "InstanceCount" :: NullOrUndefined (Int)
-  , "InstanceGroups" :: NullOrUndefined (InstanceGroupConfigList)
-  , "InstanceFleets" :: NullOrUndefined (InstanceFleetConfigList)
-  , "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Placement" :: NullOrUndefined (PlacementType)
-  , "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean)
-  , "TerminationProtected" :: NullOrUndefined (Boolean)
-  , "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Ec2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List)
-  , "EmrManagedMasterSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256)
-  , "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256)
-  , "ServiceAccessSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256)
-  , "AdditionalMasterSecurityGroups" :: NullOrUndefined (SecurityGroupsList)
-  , "AdditionalSlaveSecurityGroups" :: NullOrUndefined (SecurityGroupsList)
+  { "MasterInstanceType" :: Maybe (InstanceType)
+  , "SlaveInstanceType" :: Maybe (InstanceType)
+  , "InstanceCount" :: Maybe (Int)
+  , "InstanceGroups" :: Maybe (InstanceGroupConfigList)
+  , "InstanceFleets" :: Maybe (InstanceFleetConfigList)
+  , "Ec2KeyName" :: Maybe (XmlStringMaxLen256)
+  , "Placement" :: Maybe (PlacementType)
+  , "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean)
+  , "TerminationProtected" :: Maybe (Boolean)
+  , "HadoopVersion" :: Maybe (XmlStringMaxLen256)
+  , "Ec2SubnetId" :: Maybe (XmlStringMaxLen256)
+  , "Ec2SubnetIds" :: Maybe (XmlStringMaxLen256List)
+  , "EmrManagedMasterSecurityGroup" :: Maybe (XmlStringMaxLen256)
+  , "EmrManagedSlaveSecurityGroup" :: Maybe (XmlStringMaxLen256)
+  , "ServiceAccessSecurityGroup" :: Maybe (XmlStringMaxLen256)
+  , "AdditionalMasterSecurityGroups" :: Maybe (SecurityGroupsList)
+  , "AdditionalSlaveSecurityGroups" :: Maybe (SecurityGroupsList)
   }
 derive instance newtypeJobFlowInstancesConfig :: Newtype JobFlowInstancesConfig _
 derive instance repGenericJobFlowInstancesConfig :: Generic JobFlowInstancesConfig _
@@ -2215,30 +2214,30 @@ instance encodeJobFlowInstancesConfig :: Encode JobFlowInstancesConfig where enc
 
 -- | Constructs JobFlowInstancesConfig from required parameters
 newJobFlowInstancesConfig :: JobFlowInstancesConfig
-newJobFlowInstancesConfig  = JobFlowInstancesConfig { "AdditionalMasterSecurityGroups": (NullOrUndefined Nothing), "AdditionalSlaveSecurityGroups": (NullOrUndefined Nothing), "Ec2KeyName": (NullOrUndefined Nothing), "Ec2SubnetId": (NullOrUndefined Nothing), "Ec2SubnetIds": (NullOrUndefined Nothing), "EmrManagedMasterSecurityGroup": (NullOrUndefined Nothing), "EmrManagedSlaveSecurityGroup": (NullOrUndefined Nothing), "HadoopVersion": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "InstanceFleets": (NullOrUndefined Nothing), "InstanceGroups": (NullOrUndefined Nothing), "KeepJobFlowAliveWhenNoSteps": (NullOrUndefined Nothing), "MasterInstanceType": (NullOrUndefined Nothing), "Placement": (NullOrUndefined Nothing), "ServiceAccessSecurityGroup": (NullOrUndefined Nothing), "SlaveInstanceType": (NullOrUndefined Nothing), "TerminationProtected": (NullOrUndefined Nothing) }
+newJobFlowInstancesConfig  = JobFlowInstancesConfig { "AdditionalMasterSecurityGroups": Nothing, "AdditionalSlaveSecurityGroups": Nothing, "Ec2KeyName": Nothing, "Ec2SubnetId": Nothing, "Ec2SubnetIds": Nothing, "EmrManagedMasterSecurityGroup": Nothing, "EmrManagedSlaveSecurityGroup": Nothing, "HadoopVersion": Nothing, "InstanceCount": Nothing, "InstanceFleets": Nothing, "InstanceGroups": Nothing, "KeepJobFlowAliveWhenNoSteps": Nothing, "MasterInstanceType": Nothing, "Placement": Nothing, "ServiceAccessSecurityGroup": Nothing, "SlaveInstanceType": Nothing, "TerminationProtected": Nothing }
 
 -- | Constructs JobFlowInstancesConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobFlowInstancesConfig' :: ( { "MasterInstanceType" :: NullOrUndefined (InstanceType) , "SlaveInstanceType" :: NullOrUndefined (InstanceType) , "InstanceCount" :: NullOrUndefined (Int) , "InstanceGroups" :: NullOrUndefined (InstanceGroupConfigList) , "InstanceFleets" :: NullOrUndefined (InstanceFleetConfigList) , "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256) , "Placement" :: NullOrUndefined (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean) , "TerminationProtected" :: NullOrUndefined (Boolean) , "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) , "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256) , "Ec2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List) , "EmrManagedMasterSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256) , "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256) , "ServiceAccessSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256) , "AdditionalMasterSecurityGroups" :: NullOrUndefined (SecurityGroupsList) , "AdditionalSlaveSecurityGroups" :: NullOrUndefined (SecurityGroupsList) } -> {"MasterInstanceType" :: NullOrUndefined (InstanceType) , "SlaveInstanceType" :: NullOrUndefined (InstanceType) , "InstanceCount" :: NullOrUndefined (Int) , "InstanceGroups" :: NullOrUndefined (InstanceGroupConfigList) , "InstanceFleets" :: NullOrUndefined (InstanceFleetConfigList) , "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256) , "Placement" :: NullOrUndefined (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean) , "TerminationProtected" :: NullOrUndefined (Boolean) , "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) , "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256) , "Ec2SubnetIds" :: NullOrUndefined (XmlStringMaxLen256List) , "EmrManagedMasterSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256) , "EmrManagedSlaveSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256) , "ServiceAccessSecurityGroup" :: NullOrUndefined (XmlStringMaxLen256) , "AdditionalMasterSecurityGroups" :: NullOrUndefined (SecurityGroupsList) , "AdditionalSlaveSecurityGroups" :: NullOrUndefined (SecurityGroupsList) } ) -> JobFlowInstancesConfig
-newJobFlowInstancesConfig'  customize = (JobFlowInstancesConfig <<< customize) { "AdditionalMasterSecurityGroups": (NullOrUndefined Nothing), "AdditionalSlaveSecurityGroups": (NullOrUndefined Nothing), "Ec2KeyName": (NullOrUndefined Nothing), "Ec2SubnetId": (NullOrUndefined Nothing), "Ec2SubnetIds": (NullOrUndefined Nothing), "EmrManagedMasterSecurityGroup": (NullOrUndefined Nothing), "EmrManagedSlaveSecurityGroup": (NullOrUndefined Nothing), "HadoopVersion": (NullOrUndefined Nothing), "InstanceCount": (NullOrUndefined Nothing), "InstanceFleets": (NullOrUndefined Nothing), "InstanceGroups": (NullOrUndefined Nothing), "KeepJobFlowAliveWhenNoSteps": (NullOrUndefined Nothing), "MasterInstanceType": (NullOrUndefined Nothing), "Placement": (NullOrUndefined Nothing), "ServiceAccessSecurityGroup": (NullOrUndefined Nothing), "SlaveInstanceType": (NullOrUndefined Nothing), "TerminationProtected": (NullOrUndefined Nothing) }
+newJobFlowInstancesConfig' :: ( { "MasterInstanceType" :: Maybe (InstanceType) , "SlaveInstanceType" :: Maybe (InstanceType) , "InstanceCount" :: Maybe (Int) , "InstanceGroups" :: Maybe (InstanceGroupConfigList) , "InstanceFleets" :: Maybe (InstanceFleetConfigList) , "Ec2KeyName" :: Maybe (XmlStringMaxLen256) , "Placement" :: Maybe (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean) , "TerminationProtected" :: Maybe (Boolean) , "HadoopVersion" :: Maybe (XmlStringMaxLen256) , "Ec2SubnetId" :: Maybe (XmlStringMaxLen256) , "Ec2SubnetIds" :: Maybe (XmlStringMaxLen256List) , "EmrManagedMasterSecurityGroup" :: Maybe (XmlStringMaxLen256) , "EmrManagedSlaveSecurityGroup" :: Maybe (XmlStringMaxLen256) , "ServiceAccessSecurityGroup" :: Maybe (XmlStringMaxLen256) , "AdditionalMasterSecurityGroups" :: Maybe (SecurityGroupsList) , "AdditionalSlaveSecurityGroups" :: Maybe (SecurityGroupsList) } -> {"MasterInstanceType" :: Maybe (InstanceType) , "SlaveInstanceType" :: Maybe (InstanceType) , "InstanceCount" :: Maybe (Int) , "InstanceGroups" :: Maybe (InstanceGroupConfigList) , "InstanceFleets" :: Maybe (InstanceFleetConfigList) , "Ec2KeyName" :: Maybe (XmlStringMaxLen256) , "Placement" :: Maybe (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean) , "TerminationProtected" :: Maybe (Boolean) , "HadoopVersion" :: Maybe (XmlStringMaxLen256) , "Ec2SubnetId" :: Maybe (XmlStringMaxLen256) , "Ec2SubnetIds" :: Maybe (XmlStringMaxLen256List) , "EmrManagedMasterSecurityGroup" :: Maybe (XmlStringMaxLen256) , "EmrManagedSlaveSecurityGroup" :: Maybe (XmlStringMaxLen256) , "ServiceAccessSecurityGroup" :: Maybe (XmlStringMaxLen256) , "AdditionalMasterSecurityGroups" :: Maybe (SecurityGroupsList) , "AdditionalSlaveSecurityGroups" :: Maybe (SecurityGroupsList) } ) -> JobFlowInstancesConfig
+newJobFlowInstancesConfig'  customize = (JobFlowInstancesConfig <<< customize) { "AdditionalMasterSecurityGroups": Nothing, "AdditionalSlaveSecurityGroups": Nothing, "Ec2KeyName": Nothing, "Ec2SubnetId": Nothing, "Ec2SubnetIds": Nothing, "EmrManagedMasterSecurityGroup": Nothing, "EmrManagedSlaveSecurityGroup": Nothing, "HadoopVersion": Nothing, "InstanceCount": Nothing, "InstanceFleets": Nothing, "InstanceGroups": Nothing, "KeepJobFlowAliveWhenNoSteps": Nothing, "MasterInstanceType": Nothing, "Placement": Nothing, "ServiceAccessSecurityGroup": Nothing, "SlaveInstanceType": Nothing, "TerminationProtected": Nothing }
 
 
 
 -- | <p>Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.</p>
 newtype JobFlowInstancesDetail = JobFlowInstancesDetail 
   { "MasterInstanceType" :: (InstanceType)
-  , "MasterPublicDnsName" :: NullOrUndefined (XmlString)
-  , "MasterInstanceId" :: NullOrUndefined (XmlString)
+  , "MasterPublicDnsName" :: Maybe (XmlString)
+  , "MasterInstanceId" :: Maybe (XmlString)
   , "SlaveInstanceType" :: (InstanceType)
   , "InstanceCount" :: (Int)
-  , "InstanceGroups" :: NullOrUndefined (InstanceGroupDetailList)
-  , "NormalizedInstanceHours" :: NullOrUndefined (Int)
-  , "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Placement" :: NullOrUndefined (PlacementType)
-  , "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean)
-  , "TerminationProtected" :: NullOrUndefined (Boolean)
-  , "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256)
+  , "InstanceGroups" :: Maybe (InstanceGroupDetailList)
+  , "NormalizedInstanceHours" :: Maybe (Int)
+  , "Ec2KeyName" :: Maybe (XmlStringMaxLen256)
+  , "Ec2SubnetId" :: Maybe (XmlStringMaxLen256)
+  , "Placement" :: Maybe (PlacementType)
+  , "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean)
+  , "TerminationProtected" :: Maybe (Boolean)
+  , "HadoopVersion" :: Maybe (XmlStringMaxLen256)
   }
 derive instance newtypeJobFlowInstancesDetail :: Newtype JobFlowInstancesDetail _
 derive instance repGenericJobFlowInstancesDetail :: Generic JobFlowInstancesDetail _
@@ -2248,12 +2247,12 @@ instance encodeJobFlowInstancesDetail :: Encode JobFlowInstancesDetail where enc
 
 -- | Constructs JobFlowInstancesDetail from required parameters
 newJobFlowInstancesDetail :: Int -> InstanceType -> InstanceType -> JobFlowInstancesDetail
-newJobFlowInstancesDetail _InstanceCount _MasterInstanceType _SlaveInstanceType = JobFlowInstancesDetail { "InstanceCount": _InstanceCount, "MasterInstanceType": _MasterInstanceType, "SlaveInstanceType": _SlaveInstanceType, "Ec2KeyName": (NullOrUndefined Nothing), "Ec2SubnetId": (NullOrUndefined Nothing), "HadoopVersion": (NullOrUndefined Nothing), "InstanceGroups": (NullOrUndefined Nothing), "KeepJobFlowAliveWhenNoSteps": (NullOrUndefined Nothing), "MasterInstanceId": (NullOrUndefined Nothing), "MasterPublicDnsName": (NullOrUndefined Nothing), "NormalizedInstanceHours": (NullOrUndefined Nothing), "Placement": (NullOrUndefined Nothing), "TerminationProtected": (NullOrUndefined Nothing) }
+newJobFlowInstancesDetail _InstanceCount _MasterInstanceType _SlaveInstanceType = JobFlowInstancesDetail { "InstanceCount": _InstanceCount, "MasterInstanceType": _MasterInstanceType, "SlaveInstanceType": _SlaveInstanceType, "Ec2KeyName": Nothing, "Ec2SubnetId": Nothing, "HadoopVersion": Nothing, "InstanceGroups": Nothing, "KeepJobFlowAliveWhenNoSteps": Nothing, "MasterInstanceId": Nothing, "MasterPublicDnsName": Nothing, "NormalizedInstanceHours": Nothing, "Placement": Nothing, "TerminationProtected": Nothing }
 
 -- | Constructs JobFlowInstancesDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobFlowInstancesDetail' :: Int -> InstanceType -> InstanceType -> ( { "MasterInstanceType" :: (InstanceType) , "MasterPublicDnsName" :: NullOrUndefined (XmlString) , "MasterInstanceId" :: NullOrUndefined (XmlString) , "SlaveInstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "InstanceGroups" :: NullOrUndefined (InstanceGroupDetailList) , "NormalizedInstanceHours" :: NullOrUndefined (Int) , "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256) , "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256) , "Placement" :: NullOrUndefined (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean) , "TerminationProtected" :: NullOrUndefined (Boolean) , "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) } -> {"MasterInstanceType" :: (InstanceType) , "MasterPublicDnsName" :: NullOrUndefined (XmlString) , "MasterInstanceId" :: NullOrUndefined (XmlString) , "SlaveInstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "InstanceGroups" :: NullOrUndefined (InstanceGroupDetailList) , "NormalizedInstanceHours" :: NullOrUndefined (Int) , "Ec2KeyName" :: NullOrUndefined (XmlStringMaxLen256) , "Ec2SubnetId" :: NullOrUndefined (XmlStringMaxLen256) , "Placement" :: NullOrUndefined (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: NullOrUndefined (Boolean) , "TerminationProtected" :: NullOrUndefined (Boolean) , "HadoopVersion" :: NullOrUndefined (XmlStringMaxLen256) } ) -> JobFlowInstancesDetail
-newJobFlowInstancesDetail' _InstanceCount _MasterInstanceType _SlaveInstanceType customize = (JobFlowInstancesDetail <<< customize) { "InstanceCount": _InstanceCount, "MasterInstanceType": _MasterInstanceType, "SlaveInstanceType": _SlaveInstanceType, "Ec2KeyName": (NullOrUndefined Nothing), "Ec2SubnetId": (NullOrUndefined Nothing), "HadoopVersion": (NullOrUndefined Nothing), "InstanceGroups": (NullOrUndefined Nothing), "KeepJobFlowAliveWhenNoSteps": (NullOrUndefined Nothing), "MasterInstanceId": (NullOrUndefined Nothing), "MasterPublicDnsName": (NullOrUndefined Nothing), "NormalizedInstanceHours": (NullOrUndefined Nothing), "Placement": (NullOrUndefined Nothing), "TerminationProtected": (NullOrUndefined Nothing) }
+newJobFlowInstancesDetail' :: Int -> InstanceType -> InstanceType -> ( { "MasterInstanceType" :: (InstanceType) , "MasterPublicDnsName" :: Maybe (XmlString) , "MasterInstanceId" :: Maybe (XmlString) , "SlaveInstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "InstanceGroups" :: Maybe (InstanceGroupDetailList) , "NormalizedInstanceHours" :: Maybe (Int) , "Ec2KeyName" :: Maybe (XmlStringMaxLen256) , "Ec2SubnetId" :: Maybe (XmlStringMaxLen256) , "Placement" :: Maybe (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean) , "TerminationProtected" :: Maybe (Boolean) , "HadoopVersion" :: Maybe (XmlStringMaxLen256) } -> {"MasterInstanceType" :: (InstanceType) , "MasterPublicDnsName" :: Maybe (XmlString) , "MasterInstanceId" :: Maybe (XmlString) , "SlaveInstanceType" :: (InstanceType) , "InstanceCount" :: (Int) , "InstanceGroups" :: Maybe (InstanceGroupDetailList) , "NormalizedInstanceHours" :: Maybe (Int) , "Ec2KeyName" :: Maybe (XmlStringMaxLen256) , "Ec2SubnetId" :: Maybe (XmlStringMaxLen256) , "Placement" :: Maybe (PlacementType) , "KeepJobFlowAliveWhenNoSteps" :: Maybe (Boolean) , "TerminationProtected" :: Maybe (Boolean) , "HadoopVersion" :: Maybe (XmlStringMaxLen256) } ) -> JobFlowInstancesDetail
+newJobFlowInstancesDetail' _InstanceCount _MasterInstanceType _SlaveInstanceType customize = (JobFlowInstancesDetail <<< customize) { "InstanceCount": _InstanceCount, "MasterInstanceType": _MasterInstanceType, "SlaveInstanceType": _SlaveInstanceType, "Ec2KeyName": Nothing, "Ec2SubnetId": Nothing, "HadoopVersion": Nothing, "InstanceGroups": Nothing, "KeepJobFlowAliveWhenNoSteps": Nothing, "MasterInstanceId": Nothing, "MasterPublicDnsName": Nothing, "NormalizedInstanceHours": Nothing, "Placement": Nothing, "TerminationProtected": Nothing }
 
 
 
@@ -2261,9 +2260,9 @@ newJobFlowInstancesDetail' _InstanceCount _MasterInstanceType _SlaveInstanceType
 newtype KerberosAttributes = KerberosAttributes 
   { "Realm" :: (XmlStringMaxLen256)
   , "KdcAdminPassword" :: (XmlStringMaxLen256)
-  , "CrossRealmTrustPrincipalPassword" :: NullOrUndefined (XmlStringMaxLen256)
-  , "ADDomainJoinUser" :: NullOrUndefined (XmlStringMaxLen256)
-  , "ADDomainJoinPassword" :: NullOrUndefined (XmlStringMaxLen256)
+  , "CrossRealmTrustPrincipalPassword" :: Maybe (XmlStringMaxLen256)
+  , "ADDomainJoinUser" :: Maybe (XmlStringMaxLen256)
+  , "ADDomainJoinPassword" :: Maybe (XmlStringMaxLen256)
   }
 derive instance newtypeKerberosAttributes :: Newtype KerberosAttributes _
 derive instance repGenericKerberosAttributes :: Generic KerberosAttributes _
@@ -2273,19 +2272,19 @@ instance encodeKerberosAttributes :: Encode KerberosAttributes where encode = ge
 
 -- | Constructs KerberosAttributes from required parameters
 newKerberosAttributes :: XmlStringMaxLen256 -> XmlStringMaxLen256 -> KerberosAttributes
-newKerberosAttributes _KdcAdminPassword _Realm = KerberosAttributes { "KdcAdminPassword": _KdcAdminPassword, "Realm": _Realm, "ADDomainJoinPassword": (NullOrUndefined Nothing), "ADDomainJoinUser": (NullOrUndefined Nothing), "CrossRealmTrustPrincipalPassword": (NullOrUndefined Nothing) }
+newKerberosAttributes _KdcAdminPassword _Realm = KerberosAttributes { "KdcAdminPassword": _KdcAdminPassword, "Realm": _Realm, "ADDomainJoinPassword": Nothing, "ADDomainJoinUser": Nothing, "CrossRealmTrustPrincipalPassword": Nothing }
 
 -- | Constructs KerberosAttributes's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKerberosAttributes' :: XmlStringMaxLen256 -> XmlStringMaxLen256 -> ( { "Realm" :: (XmlStringMaxLen256) , "KdcAdminPassword" :: (XmlStringMaxLen256) , "CrossRealmTrustPrincipalPassword" :: NullOrUndefined (XmlStringMaxLen256) , "ADDomainJoinUser" :: NullOrUndefined (XmlStringMaxLen256) , "ADDomainJoinPassword" :: NullOrUndefined (XmlStringMaxLen256) } -> {"Realm" :: (XmlStringMaxLen256) , "KdcAdminPassword" :: (XmlStringMaxLen256) , "CrossRealmTrustPrincipalPassword" :: NullOrUndefined (XmlStringMaxLen256) , "ADDomainJoinUser" :: NullOrUndefined (XmlStringMaxLen256) , "ADDomainJoinPassword" :: NullOrUndefined (XmlStringMaxLen256) } ) -> KerberosAttributes
-newKerberosAttributes' _KdcAdminPassword _Realm customize = (KerberosAttributes <<< customize) { "KdcAdminPassword": _KdcAdminPassword, "Realm": _Realm, "ADDomainJoinPassword": (NullOrUndefined Nothing), "ADDomainJoinUser": (NullOrUndefined Nothing), "CrossRealmTrustPrincipalPassword": (NullOrUndefined Nothing) }
+newKerberosAttributes' :: XmlStringMaxLen256 -> XmlStringMaxLen256 -> ( { "Realm" :: (XmlStringMaxLen256) , "KdcAdminPassword" :: (XmlStringMaxLen256) , "CrossRealmTrustPrincipalPassword" :: Maybe (XmlStringMaxLen256) , "ADDomainJoinUser" :: Maybe (XmlStringMaxLen256) , "ADDomainJoinPassword" :: Maybe (XmlStringMaxLen256) } -> {"Realm" :: (XmlStringMaxLen256) , "KdcAdminPassword" :: (XmlStringMaxLen256) , "CrossRealmTrustPrincipalPassword" :: Maybe (XmlStringMaxLen256) , "ADDomainJoinUser" :: Maybe (XmlStringMaxLen256) , "ADDomainJoinPassword" :: Maybe (XmlStringMaxLen256) } ) -> KerberosAttributes
+newKerberosAttributes' _KdcAdminPassword _Realm customize = (KerberosAttributes <<< customize) { "KdcAdminPassword": _KdcAdminPassword, "Realm": _Realm, "ADDomainJoinPassword": Nothing, "ADDomainJoinUser": Nothing, "CrossRealmTrustPrincipalPassword": Nothing }
 
 
 
 -- | <p>A key value pair.</p>
 newtype KeyValue = KeyValue 
-  { "Key" :: NullOrUndefined (XmlString)
-  , "Value" :: NullOrUndefined (XmlString)
+  { "Key" :: Maybe (XmlString)
+  , "Value" :: Maybe (XmlString)
   }
 derive instance newtypeKeyValue :: Newtype KeyValue _
 derive instance repGenericKeyValue :: Generic KeyValue _
@@ -2295,12 +2294,12 @@ instance encodeKeyValue :: Encode KeyValue where encode = genericEncode options
 
 -- | Constructs KeyValue from required parameters
 newKeyValue :: KeyValue
-newKeyValue  = KeyValue { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newKeyValue  = KeyValue { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs KeyValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKeyValue' :: ( { "Key" :: NullOrUndefined (XmlString) , "Value" :: NullOrUndefined (XmlString) } -> {"Key" :: NullOrUndefined (XmlString) , "Value" :: NullOrUndefined (XmlString) } ) -> KeyValue
-newKeyValue'  customize = (KeyValue <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newKeyValue' :: ( { "Key" :: Maybe (XmlString) , "Value" :: Maybe (XmlString) } -> {"Key" :: Maybe (XmlString) , "Value" :: Maybe (XmlString) } ) -> KeyValue
+newKeyValue'  customize = (KeyValue <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -2316,7 +2315,7 @@ instance encodeKeyValueList :: Encode KeyValueList where encode = genericEncode 
 -- | <p>This input determines which bootstrap actions to retrieve.</p>
 newtype ListBootstrapActionsInput = ListBootstrapActionsInput 
   { "ClusterId" :: (ClusterId)
-  , "Marker" :: NullOrUndefined (Marker)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListBootstrapActionsInput :: Newtype ListBootstrapActionsInput _
 derive instance repGenericListBootstrapActionsInput :: Generic ListBootstrapActionsInput _
@@ -2326,19 +2325,19 @@ instance encodeListBootstrapActionsInput :: Encode ListBootstrapActionsInput whe
 
 -- | Constructs ListBootstrapActionsInput from required parameters
 newListBootstrapActionsInput :: ClusterId -> ListBootstrapActionsInput
-newListBootstrapActionsInput _ClusterId = ListBootstrapActionsInput { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing) }
+newListBootstrapActionsInput _ClusterId = ListBootstrapActionsInput { "ClusterId": _ClusterId, "Marker": Nothing }
 
 -- | Constructs ListBootstrapActionsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBootstrapActionsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "Marker" :: NullOrUndefined (Marker) } -> {"ClusterId" :: (ClusterId) , "Marker" :: NullOrUndefined (Marker) } ) -> ListBootstrapActionsInput
-newListBootstrapActionsInput' _ClusterId customize = (ListBootstrapActionsInput <<< customize) { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing) }
+newListBootstrapActionsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "Marker" :: Maybe (Marker) } -> {"ClusterId" :: (ClusterId) , "Marker" :: Maybe (Marker) } ) -> ListBootstrapActionsInput
+newListBootstrapActionsInput' _ClusterId customize = (ListBootstrapActionsInput <<< customize) { "ClusterId": _ClusterId, "Marker": Nothing }
 
 
 
 -- | <p>This output contains the bootstrap actions detail.</p>
 newtype ListBootstrapActionsOutput = ListBootstrapActionsOutput 
-  { "BootstrapActions" :: NullOrUndefined (CommandList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "BootstrapActions" :: Maybe (CommandList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListBootstrapActionsOutput :: Newtype ListBootstrapActionsOutput _
 derive instance repGenericListBootstrapActionsOutput :: Generic ListBootstrapActionsOutput _
@@ -2348,21 +2347,21 @@ instance encodeListBootstrapActionsOutput :: Encode ListBootstrapActionsOutput w
 
 -- | Constructs ListBootstrapActionsOutput from required parameters
 newListBootstrapActionsOutput :: ListBootstrapActionsOutput
-newListBootstrapActionsOutput  = ListBootstrapActionsOutput { "BootstrapActions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListBootstrapActionsOutput  = ListBootstrapActionsOutput { "BootstrapActions": Nothing, "Marker": Nothing }
 
 -- | Constructs ListBootstrapActionsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBootstrapActionsOutput' :: ( { "BootstrapActions" :: NullOrUndefined (CommandList) , "Marker" :: NullOrUndefined (Marker) } -> {"BootstrapActions" :: NullOrUndefined (CommandList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListBootstrapActionsOutput
-newListBootstrapActionsOutput'  customize = (ListBootstrapActionsOutput <<< customize) { "BootstrapActions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListBootstrapActionsOutput' :: ( { "BootstrapActions" :: Maybe (CommandList) , "Marker" :: Maybe (Marker) } -> {"BootstrapActions" :: Maybe (CommandList) , "Marker" :: Maybe (Marker) } ) -> ListBootstrapActionsOutput
+newListBootstrapActionsOutput'  customize = (ListBootstrapActionsOutput <<< customize) { "BootstrapActions": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>
 newtype ListClustersInput = ListClustersInput 
-  { "CreatedAfter" :: NullOrUndefined (Date)
-  , "CreatedBefore" :: NullOrUndefined (Date)
-  , "ClusterStates" :: NullOrUndefined (ClusterStateList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "CreatedAfter" :: Maybe (Date)
+  , "CreatedBefore" :: Maybe (Date)
+  , "ClusterStates" :: Maybe (ClusterStateList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListClustersInput :: Newtype ListClustersInput _
 derive instance repGenericListClustersInput :: Generic ListClustersInput _
@@ -2372,19 +2371,19 @@ instance encodeListClustersInput :: Encode ListClustersInput where encode = gene
 
 -- | Constructs ListClustersInput from required parameters
 newListClustersInput :: ListClustersInput
-newListClustersInput  = ListClustersInput { "ClusterStates": (NullOrUndefined Nothing), "CreatedAfter": (NullOrUndefined Nothing), "CreatedBefore": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListClustersInput  = ListClustersInput { "ClusterStates": Nothing, "CreatedAfter": Nothing, "CreatedBefore": Nothing, "Marker": Nothing }
 
 -- | Constructs ListClustersInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListClustersInput' :: ( { "CreatedAfter" :: NullOrUndefined (Date) , "CreatedBefore" :: NullOrUndefined (Date) , "ClusterStates" :: NullOrUndefined (ClusterStateList) , "Marker" :: NullOrUndefined (Marker) } -> {"CreatedAfter" :: NullOrUndefined (Date) , "CreatedBefore" :: NullOrUndefined (Date) , "ClusterStates" :: NullOrUndefined (ClusterStateList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListClustersInput
-newListClustersInput'  customize = (ListClustersInput <<< customize) { "ClusterStates": (NullOrUndefined Nothing), "CreatedAfter": (NullOrUndefined Nothing), "CreatedBefore": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListClustersInput' :: ( { "CreatedAfter" :: Maybe (Date) , "CreatedBefore" :: Maybe (Date) , "ClusterStates" :: Maybe (ClusterStateList) , "Marker" :: Maybe (Marker) } -> {"CreatedAfter" :: Maybe (Date) , "CreatedBefore" :: Maybe (Date) , "ClusterStates" :: Maybe (ClusterStateList) , "Marker" :: Maybe (Marker) } ) -> ListClustersInput
+newListClustersInput'  customize = (ListClustersInput <<< customize) { "ClusterStates": Nothing, "CreatedAfter": Nothing, "CreatedBefore": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>
 newtype ListClustersOutput = ListClustersOutput 
-  { "Clusters" :: NullOrUndefined (ClusterSummaryList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "Clusters" :: Maybe (ClusterSummaryList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListClustersOutput :: Newtype ListClustersOutput _
 derive instance repGenericListClustersOutput :: Generic ListClustersOutput _
@@ -2394,18 +2393,18 @@ instance encodeListClustersOutput :: Encode ListClustersOutput where encode = ge
 
 -- | Constructs ListClustersOutput from required parameters
 newListClustersOutput :: ListClustersOutput
-newListClustersOutput  = ListClustersOutput { "Clusters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListClustersOutput  = ListClustersOutput { "Clusters": Nothing, "Marker": Nothing }
 
 -- | Constructs ListClustersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListClustersOutput' :: ( { "Clusters" :: NullOrUndefined (ClusterSummaryList) , "Marker" :: NullOrUndefined (Marker) } -> {"Clusters" :: NullOrUndefined (ClusterSummaryList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListClustersOutput
-newListClustersOutput'  customize = (ListClustersOutput <<< customize) { "Clusters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListClustersOutput' :: ( { "Clusters" :: Maybe (ClusterSummaryList) , "Marker" :: Maybe (Marker) } -> {"Clusters" :: Maybe (ClusterSummaryList) , "Marker" :: Maybe (Marker) } ) -> ListClustersOutput
+newListClustersOutput'  customize = (ListClustersOutput <<< customize) { "Clusters": Nothing, "Marker": Nothing }
 
 
 
 newtype ListInstanceFleetsInput = ListInstanceFleetsInput 
   { "ClusterId" :: (ClusterId)
-  , "Marker" :: NullOrUndefined (Marker)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListInstanceFleetsInput :: Newtype ListInstanceFleetsInput _
 derive instance repGenericListInstanceFleetsInput :: Generic ListInstanceFleetsInput _
@@ -2415,18 +2414,18 @@ instance encodeListInstanceFleetsInput :: Encode ListInstanceFleetsInput where e
 
 -- | Constructs ListInstanceFleetsInput from required parameters
 newListInstanceFleetsInput :: ClusterId -> ListInstanceFleetsInput
-newListInstanceFleetsInput _ClusterId = ListInstanceFleetsInput { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing) }
+newListInstanceFleetsInput _ClusterId = ListInstanceFleetsInput { "ClusterId": _ClusterId, "Marker": Nothing }
 
 -- | Constructs ListInstanceFleetsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInstanceFleetsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "Marker" :: NullOrUndefined (Marker) } -> {"ClusterId" :: (ClusterId) , "Marker" :: NullOrUndefined (Marker) } ) -> ListInstanceFleetsInput
-newListInstanceFleetsInput' _ClusterId customize = (ListInstanceFleetsInput <<< customize) { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing) }
+newListInstanceFleetsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "Marker" :: Maybe (Marker) } -> {"ClusterId" :: (ClusterId) , "Marker" :: Maybe (Marker) } ) -> ListInstanceFleetsInput
+newListInstanceFleetsInput' _ClusterId customize = (ListInstanceFleetsInput <<< customize) { "ClusterId": _ClusterId, "Marker": Nothing }
 
 
 
 newtype ListInstanceFleetsOutput = ListInstanceFleetsOutput 
-  { "InstanceFleets" :: NullOrUndefined (InstanceFleetList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "InstanceFleets" :: Maybe (InstanceFleetList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListInstanceFleetsOutput :: Newtype ListInstanceFleetsOutput _
 derive instance repGenericListInstanceFleetsOutput :: Generic ListInstanceFleetsOutput _
@@ -2436,19 +2435,19 @@ instance encodeListInstanceFleetsOutput :: Encode ListInstanceFleetsOutput where
 
 -- | Constructs ListInstanceFleetsOutput from required parameters
 newListInstanceFleetsOutput :: ListInstanceFleetsOutput
-newListInstanceFleetsOutput  = ListInstanceFleetsOutput { "InstanceFleets": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstanceFleetsOutput  = ListInstanceFleetsOutput { "InstanceFleets": Nothing, "Marker": Nothing }
 
 -- | Constructs ListInstanceFleetsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInstanceFleetsOutput' :: ( { "InstanceFleets" :: NullOrUndefined (InstanceFleetList) , "Marker" :: NullOrUndefined (Marker) } -> {"InstanceFleets" :: NullOrUndefined (InstanceFleetList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListInstanceFleetsOutput
-newListInstanceFleetsOutput'  customize = (ListInstanceFleetsOutput <<< customize) { "InstanceFleets": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstanceFleetsOutput' :: ( { "InstanceFleets" :: Maybe (InstanceFleetList) , "Marker" :: Maybe (Marker) } -> {"InstanceFleets" :: Maybe (InstanceFleetList) , "Marker" :: Maybe (Marker) } ) -> ListInstanceFleetsOutput
+newListInstanceFleetsOutput'  customize = (ListInstanceFleetsOutput <<< customize) { "InstanceFleets": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>This input determines which instance groups to retrieve.</p>
 newtype ListInstanceGroupsInput = ListInstanceGroupsInput 
   { "ClusterId" :: (ClusterId)
-  , "Marker" :: NullOrUndefined (Marker)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListInstanceGroupsInput :: Newtype ListInstanceGroupsInput _
 derive instance repGenericListInstanceGroupsInput :: Generic ListInstanceGroupsInput _
@@ -2458,19 +2457,19 @@ instance encodeListInstanceGroupsInput :: Encode ListInstanceGroupsInput where e
 
 -- | Constructs ListInstanceGroupsInput from required parameters
 newListInstanceGroupsInput :: ClusterId -> ListInstanceGroupsInput
-newListInstanceGroupsInput _ClusterId = ListInstanceGroupsInput { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing) }
+newListInstanceGroupsInput _ClusterId = ListInstanceGroupsInput { "ClusterId": _ClusterId, "Marker": Nothing }
 
 -- | Constructs ListInstanceGroupsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInstanceGroupsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "Marker" :: NullOrUndefined (Marker) } -> {"ClusterId" :: (ClusterId) , "Marker" :: NullOrUndefined (Marker) } ) -> ListInstanceGroupsInput
-newListInstanceGroupsInput' _ClusterId customize = (ListInstanceGroupsInput <<< customize) { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing) }
+newListInstanceGroupsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "Marker" :: Maybe (Marker) } -> {"ClusterId" :: (ClusterId) , "Marker" :: Maybe (Marker) } ) -> ListInstanceGroupsInput
+newListInstanceGroupsInput' _ClusterId customize = (ListInstanceGroupsInput <<< customize) { "ClusterId": _ClusterId, "Marker": Nothing }
 
 
 
 -- | <p>This input determines which instance groups to retrieve.</p>
 newtype ListInstanceGroupsOutput = ListInstanceGroupsOutput 
-  { "InstanceGroups" :: NullOrUndefined (InstanceGroupList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "InstanceGroups" :: Maybe (InstanceGroupList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListInstanceGroupsOutput :: Newtype ListInstanceGroupsOutput _
 derive instance repGenericListInstanceGroupsOutput :: Generic ListInstanceGroupsOutput _
@@ -2480,24 +2479,24 @@ instance encodeListInstanceGroupsOutput :: Encode ListInstanceGroupsOutput where
 
 -- | Constructs ListInstanceGroupsOutput from required parameters
 newListInstanceGroupsOutput :: ListInstanceGroupsOutput
-newListInstanceGroupsOutput  = ListInstanceGroupsOutput { "InstanceGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstanceGroupsOutput  = ListInstanceGroupsOutput { "InstanceGroups": Nothing, "Marker": Nothing }
 
 -- | Constructs ListInstanceGroupsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInstanceGroupsOutput' :: ( { "InstanceGroups" :: NullOrUndefined (InstanceGroupList) , "Marker" :: NullOrUndefined (Marker) } -> {"InstanceGroups" :: NullOrUndefined (InstanceGroupList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListInstanceGroupsOutput
-newListInstanceGroupsOutput'  customize = (ListInstanceGroupsOutput <<< customize) { "InstanceGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstanceGroupsOutput' :: ( { "InstanceGroups" :: Maybe (InstanceGroupList) , "Marker" :: Maybe (Marker) } -> {"InstanceGroups" :: Maybe (InstanceGroupList) , "Marker" :: Maybe (Marker) } ) -> ListInstanceGroupsOutput
+newListInstanceGroupsOutput'  customize = (ListInstanceGroupsOutput <<< customize) { "InstanceGroups": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>This input determines which instances to list.</p>
 newtype ListInstancesInput = ListInstancesInput 
   { "ClusterId" :: (ClusterId)
-  , "InstanceGroupId" :: NullOrUndefined (InstanceGroupId)
-  , "InstanceGroupTypes" :: NullOrUndefined (InstanceGroupTypeList)
-  , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId)
-  , "InstanceFleetType" :: NullOrUndefined (InstanceFleetType)
-  , "InstanceStates" :: NullOrUndefined (InstanceStateList)
-  , "Marker" :: NullOrUndefined (Marker)
+  , "InstanceGroupId" :: Maybe (InstanceGroupId)
+  , "InstanceGroupTypes" :: Maybe (InstanceGroupTypeList)
+  , "InstanceFleetId" :: Maybe (InstanceFleetId)
+  , "InstanceFleetType" :: Maybe (InstanceFleetType)
+  , "InstanceStates" :: Maybe (InstanceStateList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListInstancesInput :: Newtype ListInstancesInput _
 derive instance repGenericListInstancesInput :: Generic ListInstancesInput _
@@ -2507,19 +2506,19 @@ instance encodeListInstancesInput :: Encode ListInstancesInput where encode = ge
 
 -- | Constructs ListInstancesInput from required parameters
 newListInstancesInput :: ClusterId -> ListInstancesInput
-newListInstancesInput _ClusterId = ListInstancesInput { "ClusterId": _ClusterId, "InstanceFleetId": (NullOrUndefined Nothing), "InstanceFleetType": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing), "InstanceGroupTypes": (NullOrUndefined Nothing), "InstanceStates": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstancesInput _ClusterId = ListInstancesInput { "ClusterId": _ClusterId, "InstanceFleetId": Nothing, "InstanceFleetType": Nothing, "InstanceGroupId": Nothing, "InstanceGroupTypes": Nothing, "InstanceStates": Nothing, "Marker": Nothing }
 
 -- | Constructs ListInstancesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInstancesInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "InstanceGroupId" :: NullOrUndefined (InstanceGroupId) , "InstanceGroupTypes" :: NullOrUndefined (InstanceGroupTypeList) , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) , "InstanceFleetType" :: NullOrUndefined (InstanceFleetType) , "InstanceStates" :: NullOrUndefined (InstanceStateList) , "Marker" :: NullOrUndefined (Marker) } -> {"ClusterId" :: (ClusterId) , "InstanceGroupId" :: NullOrUndefined (InstanceGroupId) , "InstanceGroupTypes" :: NullOrUndefined (InstanceGroupTypeList) , "InstanceFleetId" :: NullOrUndefined (InstanceFleetId) , "InstanceFleetType" :: NullOrUndefined (InstanceFleetType) , "InstanceStates" :: NullOrUndefined (InstanceStateList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListInstancesInput
-newListInstancesInput' _ClusterId customize = (ListInstancesInput <<< customize) { "ClusterId": _ClusterId, "InstanceFleetId": (NullOrUndefined Nothing), "InstanceFleetType": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing), "InstanceGroupTypes": (NullOrUndefined Nothing), "InstanceStates": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstancesInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "InstanceGroupId" :: Maybe (InstanceGroupId) , "InstanceGroupTypes" :: Maybe (InstanceGroupTypeList) , "InstanceFleetId" :: Maybe (InstanceFleetId) , "InstanceFleetType" :: Maybe (InstanceFleetType) , "InstanceStates" :: Maybe (InstanceStateList) , "Marker" :: Maybe (Marker) } -> {"ClusterId" :: (ClusterId) , "InstanceGroupId" :: Maybe (InstanceGroupId) , "InstanceGroupTypes" :: Maybe (InstanceGroupTypeList) , "InstanceFleetId" :: Maybe (InstanceFleetId) , "InstanceFleetType" :: Maybe (InstanceFleetType) , "InstanceStates" :: Maybe (InstanceStateList) , "Marker" :: Maybe (Marker) } ) -> ListInstancesInput
+newListInstancesInput' _ClusterId customize = (ListInstancesInput <<< customize) { "ClusterId": _ClusterId, "InstanceFleetId": Nothing, "InstanceFleetType": Nothing, "InstanceGroupId": Nothing, "InstanceGroupTypes": Nothing, "InstanceStates": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>This output contains the list of instances.</p>
 newtype ListInstancesOutput = ListInstancesOutput 
-  { "Instances" :: NullOrUndefined (InstanceList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "Instances" :: Maybe (InstanceList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListInstancesOutput :: Newtype ListInstancesOutput _
 derive instance repGenericListInstancesOutput :: Generic ListInstancesOutput _
@@ -2529,17 +2528,17 @@ instance encodeListInstancesOutput :: Encode ListInstancesOutput where encode = 
 
 -- | Constructs ListInstancesOutput from required parameters
 newListInstancesOutput :: ListInstancesOutput
-newListInstancesOutput  = ListInstancesOutput { "Instances": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstancesOutput  = ListInstancesOutput { "Instances": Nothing, "Marker": Nothing }
 
 -- | Constructs ListInstancesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInstancesOutput' :: ( { "Instances" :: NullOrUndefined (InstanceList) , "Marker" :: NullOrUndefined (Marker) } -> {"Instances" :: NullOrUndefined (InstanceList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListInstancesOutput
-newListInstancesOutput'  customize = (ListInstancesOutput <<< customize) { "Instances": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newListInstancesOutput' :: ( { "Instances" :: Maybe (InstanceList) , "Marker" :: Maybe (Marker) } -> {"Instances" :: Maybe (InstanceList) , "Marker" :: Maybe (Marker) } ) -> ListInstancesOutput
+newListInstancesOutput'  customize = (ListInstancesOutput <<< customize) { "Instances": Nothing, "Marker": Nothing }
 
 
 
 newtype ListSecurityConfigurationsInput = ListSecurityConfigurationsInput 
-  { "Marker" :: NullOrUndefined (Marker)
+  { "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListSecurityConfigurationsInput :: Newtype ListSecurityConfigurationsInput _
 derive instance repGenericListSecurityConfigurationsInput :: Generic ListSecurityConfigurationsInput _
@@ -2549,18 +2548,18 @@ instance encodeListSecurityConfigurationsInput :: Encode ListSecurityConfigurati
 
 -- | Constructs ListSecurityConfigurationsInput from required parameters
 newListSecurityConfigurationsInput :: ListSecurityConfigurationsInput
-newListSecurityConfigurationsInput  = ListSecurityConfigurationsInput { "Marker": (NullOrUndefined Nothing) }
+newListSecurityConfigurationsInput  = ListSecurityConfigurationsInput { "Marker": Nothing }
 
 -- | Constructs ListSecurityConfigurationsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSecurityConfigurationsInput' :: ( { "Marker" :: NullOrUndefined (Marker) } -> {"Marker" :: NullOrUndefined (Marker) } ) -> ListSecurityConfigurationsInput
-newListSecurityConfigurationsInput'  customize = (ListSecurityConfigurationsInput <<< customize) { "Marker": (NullOrUndefined Nothing) }
+newListSecurityConfigurationsInput' :: ( { "Marker" :: Maybe (Marker) } -> {"Marker" :: Maybe (Marker) } ) -> ListSecurityConfigurationsInput
+newListSecurityConfigurationsInput'  customize = (ListSecurityConfigurationsInput <<< customize) { "Marker": Nothing }
 
 
 
 newtype ListSecurityConfigurationsOutput = ListSecurityConfigurationsOutput 
-  { "SecurityConfigurations" :: NullOrUndefined (SecurityConfigurationList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "SecurityConfigurations" :: Maybe (SecurityConfigurationList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListSecurityConfigurationsOutput :: Newtype ListSecurityConfigurationsOutput _
 derive instance repGenericListSecurityConfigurationsOutput :: Generic ListSecurityConfigurationsOutput _
@@ -2570,21 +2569,21 @@ instance encodeListSecurityConfigurationsOutput :: Encode ListSecurityConfigurat
 
 -- | Constructs ListSecurityConfigurationsOutput from required parameters
 newListSecurityConfigurationsOutput :: ListSecurityConfigurationsOutput
-newListSecurityConfigurationsOutput  = ListSecurityConfigurationsOutput { "Marker": (NullOrUndefined Nothing), "SecurityConfigurations": (NullOrUndefined Nothing) }
+newListSecurityConfigurationsOutput  = ListSecurityConfigurationsOutput { "Marker": Nothing, "SecurityConfigurations": Nothing }
 
 -- | Constructs ListSecurityConfigurationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSecurityConfigurationsOutput' :: ( { "SecurityConfigurations" :: NullOrUndefined (SecurityConfigurationList) , "Marker" :: NullOrUndefined (Marker) } -> {"SecurityConfigurations" :: NullOrUndefined (SecurityConfigurationList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListSecurityConfigurationsOutput
-newListSecurityConfigurationsOutput'  customize = (ListSecurityConfigurationsOutput <<< customize) { "Marker": (NullOrUndefined Nothing), "SecurityConfigurations": (NullOrUndefined Nothing) }
+newListSecurityConfigurationsOutput' :: ( { "SecurityConfigurations" :: Maybe (SecurityConfigurationList) , "Marker" :: Maybe (Marker) } -> {"SecurityConfigurations" :: Maybe (SecurityConfigurationList) , "Marker" :: Maybe (Marker) } ) -> ListSecurityConfigurationsOutput
+newListSecurityConfigurationsOutput'  customize = (ListSecurityConfigurationsOutput <<< customize) { "Marker": Nothing, "SecurityConfigurations": Nothing }
 
 
 
 -- | <p>This input determines which steps to list.</p>
 newtype ListStepsInput = ListStepsInput 
   { "ClusterId" :: (ClusterId)
-  , "StepStates" :: NullOrUndefined (StepStateList)
-  , "StepIds" :: NullOrUndefined (XmlStringList)
-  , "Marker" :: NullOrUndefined (Marker)
+  , "StepStates" :: Maybe (StepStateList)
+  , "StepIds" :: Maybe (XmlStringList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListStepsInput :: Newtype ListStepsInput _
 derive instance repGenericListStepsInput :: Generic ListStepsInput _
@@ -2594,19 +2593,19 @@ instance encodeListStepsInput :: Encode ListStepsInput where encode = genericEnc
 
 -- | Constructs ListStepsInput from required parameters
 newListStepsInput :: ClusterId -> ListStepsInput
-newListStepsInput _ClusterId = ListStepsInput { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing), "StepIds": (NullOrUndefined Nothing), "StepStates": (NullOrUndefined Nothing) }
+newListStepsInput _ClusterId = ListStepsInput { "ClusterId": _ClusterId, "Marker": Nothing, "StepIds": Nothing, "StepStates": Nothing }
 
 -- | Constructs ListStepsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListStepsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "StepStates" :: NullOrUndefined (StepStateList) , "StepIds" :: NullOrUndefined (XmlStringList) , "Marker" :: NullOrUndefined (Marker) } -> {"ClusterId" :: (ClusterId) , "StepStates" :: NullOrUndefined (StepStateList) , "StepIds" :: NullOrUndefined (XmlStringList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListStepsInput
-newListStepsInput' _ClusterId customize = (ListStepsInput <<< customize) { "ClusterId": _ClusterId, "Marker": (NullOrUndefined Nothing), "StepIds": (NullOrUndefined Nothing), "StepStates": (NullOrUndefined Nothing) }
+newListStepsInput' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "StepStates" :: Maybe (StepStateList) , "StepIds" :: Maybe (XmlStringList) , "Marker" :: Maybe (Marker) } -> {"ClusterId" :: (ClusterId) , "StepStates" :: Maybe (StepStateList) , "StepIds" :: Maybe (XmlStringList) , "Marker" :: Maybe (Marker) } ) -> ListStepsInput
+newListStepsInput' _ClusterId customize = (ListStepsInput <<< customize) { "ClusterId": _ClusterId, "Marker": Nothing, "StepIds": Nothing, "StepStates": Nothing }
 
 
 
 -- | <p>This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.</p>
 newtype ListStepsOutput = ListStepsOutput 
-  { "Steps" :: NullOrUndefined (StepSummaryList)
-  , "Marker" :: NullOrUndefined (Marker)
+  { "Steps" :: Maybe (StepSummaryList)
+  , "Marker" :: Maybe (Marker)
   }
 derive instance newtypeListStepsOutput :: Newtype ListStepsOutput _
 derive instance repGenericListStepsOutput :: Generic ListStepsOutput _
@@ -2616,12 +2615,12 @@ instance encodeListStepsOutput :: Encode ListStepsOutput where encode = genericE
 
 -- | Constructs ListStepsOutput from required parameters
 newListStepsOutput :: ListStepsOutput
-newListStepsOutput  = ListStepsOutput { "Marker": (NullOrUndefined Nothing), "Steps": (NullOrUndefined Nothing) }
+newListStepsOutput  = ListStepsOutput { "Marker": Nothing, "Steps": Nothing }
 
 -- | Constructs ListStepsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListStepsOutput' :: ( { "Steps" :: NullOrUndefined (StepSummaryList) , "Marker" :: NullOrUndefined (Marker) } -> {"Steps" :: NullOrUndefined (StepSummaryList) , "Marker" :: NullOrUndefined (Marker) } ) -> ListStepsOutput
-newListStepsOutput'  customize = (ListStepsOutput <<< customize) { "Marker": (NullOrUndefined Nothing), "Steps": (NullOrUndefined Nothing) }
+newListStepsOutput' :: ( { "Steps" :: Maybe (StepSummaryList) , "Marker" :: Maybe (Marker) } -> {"Steps" :: Maybe (StepSummaryList) , "Marker" :: Maybe (Marker) } ) -> ListStepsOutput
+newListStepsOutput'  customize = (ListStepsOutput <<< customize) { "Marker": Nothing, "Steps": Nothing }
 
 
 
@@ -2645,8 +2644,8 @@ instance encodeMarketType :: Encode MarketType where encode = genericEncode opti
 
 -- | <p>A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.</p>
 newtype MetricDimension = MetricDimension 
-  { "Key" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "Key" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeMetricDimension :: Newtype MetricDimension _
 derive instance repGenericMetricDimension :: Generic MetricDimension _
@@ -2656,12 +2655,12 @@ instance encodeMetricDimension :: Encode MetricDimension where encode = genericE
 
 -- | Constructs MetricDimension from required parameters
 newMetricDimension :: MetricDimension
-newMetricDimension  = MetricDimension { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newMetricDimension  = MetricDimension { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs MetricDimension's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetricDimension' :: ( { "Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> MetricDimension
-newMetricDimension'  customize = (MetricDimension <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newMetricDimension' :: ( { "Key" :: Maybe (String) , "Value" :: Maybe (String) } -> {"Key" :: Maybe (String) , "Value" :: Maybe (String) } ) -> MetricDimension
+newMetricDimension'  customize = (MetricDimension <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -2697,8 +2696,8 @@ newModifyInstanceFleetInput' _ClusterId _InstanceFleet customize = (ModifyInstan
 
 -- | <p>Change the size of some instance groups.</p>
 newtype ModifyInstanceGroupsInput = ModifyInstanceGroupsInput 
-  { "ClusterId" :: NullOrUndefined (ClusterId)
-  , "InstanceGroups" :: NullOrUndefined (InstanceGroupModifyConfigList)
+  { "ClusterId" :: Maybe (ClusterId)
+  , "InstanceGroups" :: Maybe (InstanceGroupModifyConfigList)
   }
 derive instance newtypeModifyInstanceGroupsInput :: Newtype ModifyInstanceGroupsInput _
 derive instance repGenericModifyInstanceGroupsInput :: Generic ModifyInstanceGroupsInput _
@@ -2708,12 +2707,12 @@ instance encodeModifyInstanceGroupsInput :: Encode ModifyInstanceGroupsInput whe
 
 -- | Constructs ModifyInstanceGroupsInput from required parameters
 newModifyInstanceGroupsInput :: ModifyInstanceGroupsInput
-newModifyInstanceGroupsInput  = ModifyInstanceGroupsInput { "ClusterId": (NullOrUndefined Nothing), "InstanceGroups": (NullOrUndefined Nothing) }
+newModifyInstanceGroupsInput  = ModifyInstanceGroupsInput { "ClusterId": Nothing, "InstanceGroups": Nothing }
 
 -- | Constructs ModifyInstanceGroupsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyInstanceGroupsInput' :: ( { "ClusterId" :: NullOrUndefined (ClusterId) , "InstanceGroups" :: NullOrUndefined (InstanceGroupModifyConfigList) } -> {"ClusterId" :: NullOrUndefined (ClusterId) , "InstanceGroups" :: NullOrUndefined (InstanceGroupModifyConfigList) } ) -> ModifyInstanceGroupsInput
-newModifyInstanceGroupsInput'  customize = (ModifyInstanceGroupsInput <<< customize) { "ClusterId": (NullOrUndefined Nothing), "InstanceGroups": (NullOrUndefined Nothing) }
+newModifyInstanceGroupsInput' :: ( { "ClusterId" :: Maybe (ClusterId) , "InstanceGroups" :: Maybe (InstanceGroupModifyConfigList) } -> {"ClusterId" :: Maybe (ClusterId) , "InstanceGroups" :: Maybe (InstanceGroupModifyConfigList) } ) -> ModifyInstanceGroupsInput
+newModifyInstanceGroupsInput'  customize = (ModifyInstanceGroupsInput <<< customize) { "ClusterId": Nothing, "InstanceGroups": Nothing }
 
 
 
@@ -2737,8 +2736,8 @@ instance encodeNonNegativeDouble :: Encode NonNegativeDouble where encode = gene
 
 -- | <p>The Amazon EC2 Availability Zone configuration of the cluster (job flow).</p>
 newtype PlacementType = PlacementType 
-  { "AvailabilityZone" :: NullOrUndefined (XmlString)
-  , "AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List)
+  { "AvailabilityZone" :: Maybe (XmlString)
+  , "AvailabilityZones" :: Maybe (XmlStringMaxLen256List)
   }
 derive instance newtypePlacementType :: Newtype PlacementType _
 derive instance repGenericPlacementType :: Generic PlacementType _
@@ -2748,12 +2747,12 @@ instance encodePlacementType :: Encode PlacementType where encode = genericEncod
 
 -- | Constructs PlacementType from required parameters
 newPlacementType :: PlacementType
-newPlacementType  = PlacementType { "AvailabilityZone": (NullOrUndefined Nothing), "AvailabilityZones": (NullOrUndefined Nothing) }
+newPlacementType  = PlacementType { "AvailabilityZone": Nothing, "AvailabilityZones": Nothing }
 
 -- | Constructs PlacementType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPlacementType' :: ( { "AvailabilityZone" :: NullOrUndefined (XmlString) , "AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) } -> {"AvailabilityZone" :: NullOrUndefined (XmlString) , "AvailabilityZones" :: NullOrUndefined (XmlStringMaxLen256List) } ) -> PlacementType
-newPlacementType'  customize = (PlacementType <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "AvailabilityZones": (NullOrUndefined Nothing) }
+newPlacementType' :: ( { "AvailabilityZone" :: Maybe (XmlString) , "AvailabilityZones" :: Maybe (XmlStringMaxLen256List) } -> {"AvailabilityZone" :: Maybe (XmlString) , "AvailabilityZones" :: Maybe (XmlStringMaxLen256List) } ) -> PlacementType
+newPlacementType'  customize = (PlacementType <<< customize) { "AvailabilityZone": Nothing, "AvailabilityZones": Nothing }
 
 
 
@@ -2780,9 +2779,9 @@ newPutAutoScalingPolicyInput' _AutoScalingPolicy _ClusterId _InstanceGroupId cus
 
 
 newtype PutAutoScalingPolicyOutput = PutAutoScalingPolicyOutput 
-  { "ClusterId" :: NullOrUndefined (ClusterId)
-  , "InstanceGroupId" :: NullOrUndefined (InstanceGroupId)
-  , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription)
+  { "ClusterId" :: Maybe (ClusterId)
+  , "InstanceGroupId" :: Maybe (InstanceGroupId)
+  , "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription)
   }
 derive instance newtypePutAutoScalingPolicyOutput :: Newtype PutAutoScalingPolicyOutput _
 derive instance repGenericPutAutoScalingPolicyOutput :: Generic PutAutoScalingPolicyOutput _
@@ -2792,12 +2791,12 @@ instance encodePutAutoScalingPolicyOutput :: Encode PutAutoScalingPolicyOutput w
 
 -- | Constructs PutAutoScalingPolicyOutput from required parameters
 newPutAutoScalingPolicyOutput :: PutAutoScalingPolicyOutput
-newPutAutoScalingPolicyOutput  = PutAutoScalingPolicyOutput { "AutoScalingPolicy": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing) }
+newPutAutoScalingPolicyOutput  = PutAutoScalingPolicyOutput { "AutoScalingPolicy": Nothing, "ClusterId": Nothing, "InstanceGroupId": Nothing }
 
 -- | Constructs PutAutoScalingPolicyOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutAutoScalingPolicyOutput' :: ( { "ClusterId" :: NullOrUndefined (ClusterId) , "InstanceGroupId" :: NullOrUndefined (InstanceGroupId) , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) } -> {"ClusterId" :: NullOrUndefined (ClusterId) , "InstanceGroupId" :: NullOrUndefined (InstanceGroupId) , "AutoScalingPolicy" :: NullOrUndefined (AutoScalingPolicyDescription) } ) -> PutAutoScalingPolicyOutput
-newPutAutoScalingPolicyOutput'  customize = (PutAutoScalingPolicyOutput <<< customize) { "AutoScalingPolicy": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "InstanceGroupId": (NullOrUndefined Nothing) }
+newPutAutoScalingPolicyOutput' :: ( { "ClusterId" :: Maybe (ClusterId) , "InstanceGroupId" :: Maybe (InstanceGroupId) , "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) } -> {"ClusterId" :: Maybe (ClusterId) , "InstanceGroupId" :: Maybe (InstanceGroupId) , "AutoScalingPolicy" :: Maybe (AutoScalingPolicyDescription) } ) -> PutAutoScalingPolicyOutput
+newPutAutoScalingPolicyOutput'  customize = (PutAutoScalingPolicyOutput <<< customize) { "AutoScalingPolicy": Nothing, "ClusterId": Nothing, "InstanceGroupId": Nothing }
 
 
 
@@ -2884,28 +2883,28 @@ instance encodeResourceId :: Encode ResourceId where encode = genericEncode opti
 -- | <p> Input to the <a>RunJobFlow</a> operation. </p>
 newtype RunJobFlowInput = RunJobFlowInput 
   { "Name" :: (XmlStringMaxLen256)
-  , "LogUri" :: NullOrUndefined (XmlString)
-  , "AdditionalInfo" :: NullOrUndefined (XmlString)
-  , "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256)
-  , "ReleaseLabel" :: NullOrUndefined (XmlStringMaxLen256)
+  , "LogUri" :: Maybe (XmlString)
+  , "AdditionalInfo" :: Maybe (XmlString)
+  , "AmiVersion" :: Maybe (XmlStringMaxLen256)
+  , "ReleaseLabel" :: Maybe (XmlStringMaxLen256)
   , "Instances" :: (JobFlowInstancesConfig)
-  , "Steps" :: NullOrUndefined (StepConfigList)
-  , "BootstrapActions" :: NullOrUndefined (BootstrapActionConfigList)
-  , "SupportedProducts" :: NullOrUndefined (SupportedProductsList)
-  , "NewSupportedProducts" :: NullOrUndefined (NewSupportedProductsList)
-  , "Applications" :: NullOrUndefined (ApplicationList)
-  , "Configurations" :: NullOrUndefined (ConfigurationList)
-  , "VisibleToAllUsers" :: NullOrUndefined (Boolean)
-  , "JobFlowRole" :: NullOrUndefined (XmlString)
-  , "ServiceRole" :: NullOrUndefined (XmlString)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "SecurityConfiguration" :: NullOrUndefined (XmlString)
-  , "AutoScalingRole" :: NullOrUndefined (XmlString)
-  , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior)
-  , "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256)
-  , "EbsRootVolumeSize" :: NullOrUndefined (Int)
-  , "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot)
-  , "KerberosAttributes" :: NullOrUndefined (KerberosAttributes)
+  , "Steps" :: Maybe (StepConfigList)
+  , "BootstrapActions" :: Maybe (BootstrapActionConfigList)
+  , "SupportedProducts" :: Maybe (SupportedProductsList)
+  , "NewSupportedProducts" :: Maybe (NewSupportedProductsList)
+  , "Applications" :: Maybe (ApplicationList)
+  , "Configurations" :: Maybe (ConfigurationList)
+  , "VisibleToAllUsers" :: Maybe (Boolean)
+  , "JobFlowRole" :: Maybe (XmlString)
+  , "ServiceRole" :: Maybe (XmlString)
+  , "Tags" :: Maybe (TagList)
+  , "SecurityConfiguration" :: Maybe (XmlString)
+  , "AutoScalingRole" :: Maybe (XmlString)
+  , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior)
+  , "CustomAmiId" :: Maybe (XmlStringMaxLen256)
+  , "EbsRootVolumeSize" :: Maybe (Int)
+  , "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot)
+  , "KerberosAttributes" :: Maybe (KerberosAttributes)
   }
 derive instance newtypeRunJobFlowInput :: Newtype RunJobFlowInput _
 derive instance repGenericRunJobFlowInput :: Generic RunJobFlowInput _
@@ -2915,18 +2914,18 @@ instance encodeRunJobFlowInput :: Encode RunJobFlowInput where encode = genericE
 
 -- | Constructs RunJobFlowInput from required parameters
 newRunJobFlowInput :: JobFlowInstancesConfig -> XmlStringMaxLen256 -> RunJobFlowInput
-newRunJobFlowInput _Instances _Name = RunJobFlowInput { "Instances": _Instances, "Name": _Name, "AdditionalInfo": (NullOrUndefined Nothing), "AmiVersion": (NullOrUndefined Nothing), "Applications": (NullOrUndefined Nothing), "AutoScalingRole": (NullOrUndefined Nothing), "BootstrapActions": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "CustomAmiId": (NullOrUndefined Nothing), "EbsRootVolumeSize": (NullOrUndefined Nothing), "JobFlowRole": (NullOrUndefined Nothing), "KerberosAttributes": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "NewSupportedProducts": (NullOrUndefined Nothing), "ReleaseLabel": (NullOrUndefined Nothing), "RepoUpgradeOnBoot": (NullOrUndefined Nothing), "ScaleDownBehavior": (NullOrUndefined Nothing), "SecurityConfiguration": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Steps": (NullOrUndefined Nothing), "SupportedProducts": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VisibleToAllUsers": (NullOrUndefined Nothing) }
+newRunJobFlowInput _Instances _Name = RunJobFlowInput { "Instances": _Instances, "Name": _Name, "AdditionalInfo": Nothing, "AmiVersion": Nothing, "Applications": Nothing, "AutoScalingRole": Nothing, "BootstrapActions": Nothing, "Configurations": Nothing, "CustomAmiId": Nothing, "EbsRootVolumeSize": Nothing, "JobFlowRole": Nothing, "KerberosAttributes": Nothing, "LogUri": Nothing, "NewSupportedProducts": Nothing, "ReleaseLabel": Nothing, "RepoUpgradeOnBoot": Nothing, "ScaleDownBehavior": Nothing, "SecurityConfiguration": Nothing, "ServiceRole": Nothing, "Steps": Nothing, "SupportedProducts": Nothing, "Tags": Nothing, "VisibleToAllUsers": Nothing }
 
 -- | Constructs RunJobFlowInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRunJobFlowInput' :: JobFlowInstancesConfig -> XmlStringMaxLen256 -> ( { "Name" :: (XmlStringMaxLen256) , "LogUri" :: NullOrUndefined (XmlString) , "AdditionalInfo" :: NullOrUndefined (XmlString) , "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256) , "ReleaseLabel" :: NullOrUndefined (XmlStringMaxLen256) , "Instances" :: (JobFlowInstancesConfig) , "Steps" :: NullOrUndefined (StepConfigList) , "BootstrapActions" :: NullOrUndefined (BootstrapActionConfigList) , "SupportedProducts" :: NullOrUndefined (SupportedProductsList) , "NewSupportedProducts" :: NullOrUndefined (NewSupportedProductsList) , "Applications" :: NullOrUndefined (ApplicationList) , "Configurations" :: NullOrUndefined (ConfigurationList) , "VisibleToAllUsers" :: NullOrUndefined (Boolean) , "JobFlowRole" :: NullOrUndefined (XmlString) , "ServiceRole" :: NullOrUndefined (XmlString) , "Tags" :: NullOrUndefined (TagList) , "SecurityConfiguration" :: NullOrUndefined (XmlString) , "AutoScalingRole" :: NullOrUndefined (XmlString) , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) , "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256) , "EbsRootVolumeSize" :: NullOrUndefined (Int) , "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot) , "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) } -> {"Name" :: (XmlStringMaxLen256) , "LogUri" :: NullOrUndefined (XmlString) , "AdditionalInfo" :: NullOrUndefined (XmlString) , "AmiVersion" :: NullOrUndefined (XmlStringMaxLen256) , "ReleaseLabel" :: NullOrUndefined (XmlStringMaxLen256) , "Instances" :: (JobFlowInstancesConfig) , "Steps" :: NullOrUndefined (StepConfigList) , "BootstrapActions" :: NullOrUndefined (BootstrapActionConfigList) , "SupportedProducts" :: NullOrUndefined (SupportedProductsList) , "NewSupportedProducts" :: NullOrUndefined (NewSupportedProductsList) , "Applications" :: NullOrUndefined (ApplicationList) , "Configurations" :: NullOrUndefined (ConfigurationList) , "VisibleToAllUsers" :: NullOrUndefined (Boolean) , "JobFlowRole" :: NullOrUndefined (XmlString) , "ServiceRole" :: NullOrUndefined (XmlString) , "Tags" :: NullOrUndefined (TagList) , "SecurityConfiguration" :: NullOrUndefined (XmlString) , "AutoScalingRole" :: NullOrUndefined (XmlString) , "ScaleDownBehavior" :: NullOrUndefined (ScaleDownBehavior) , "CustomAmiId" :: NullOrUndefined (XmlStringMaxLen256) , "EbsRootVolumeSize" :: NullOrUndefined (Int) , "RepoUpgradeOnBoot" :: NullOrUndefined (RepoUpgradeOnBoot) , "KerberosAttributes" :: NullOrUndefined (KerberosAttributes) } ) -> RunJobFlowInput
-newRunJobFlowInput' _Instances _Name customize = (RunJobFlowInput <<< customize) { "Instances": _Instances, "Name": _Name, "AdditionalInfo": (NullOrUndefined Nothing), "AmiVersion": (NullOrUndefined Nothing), "Applications": (NullOrUndefined Nothing), "AutoScalingRole": (NullOrUndefined Nothing), "BootstrapActions": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "CustomAmiId": (NullOrUndefined Nothing), "EbsRootVolumeSize": (NullOrUndefined Nothing), "JobFlowRole": (NullOrUndefined Nothing), "KerberosAttributes": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "NewSupportedProducts": (NullOrUndefined Nothing), "ReleaseLabel": (NullOrUndefined Nothing), "RepoUpgradeOnBoot": (NullOrUndefined Nothing), "ScaleDownBehavior": (NullOrUndefined Nothing), "SecurityConfiguration": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Steps": (NullOrUndefined Nothing), "SupportedProducts": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VisibleToAllUsers": (NullOrUndefined Nothing) }
+newRunJobFlowInput' :: JobFlowInstancesConfig -> XmlStringMaxLen256 -> ( { "Name" :: (XmlStringMaxLen256) , "LogUri" :: Maybe (XmlString) , "AdditionalInfo" :: Maybe (XmlString) , "AmiVersion" :: Maybe (XmlStringMaxLen256) , "ReleaseLabel" :: Maybe (XmlStringMaxLen256) , "Instances" :: (JobFlowInstancesConfig) , "Steps" :: Maybe (StepConfigList) , "BootstrapActions" :: Maybe (BootstrapActionConfigList) , "SupportedProducts" :: Maybe (SupportedProductsList) , "NewSupportedProducts" :: Maybe (NewSupportedProductsList) , "Applications" :: Maybe (ApplicationList) , "Configurations" :: Maybe (ConfigurationList) , "VisibleToAllUsers" :: Maybe (Boolean) , "JobFlowRole" :: Maybe (XmlString) , "ServiceRole" :: Maybe (XmlString) , "Tags" :: Maybe (TagList) , "SecurityConfiguration" :: Maybe (XmlString) , "AutoScalingRole" :: Maybe (XmlString) , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) , "CustomAmiId" :: Maybe (XmlStringMaxLen256) , "EbsRootVolumeSize" :: Maybe (Int) , "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot) , "KerberosAttributes" :: Maybe (KerberosAttributes) } -> {"Name" :: (XmlStringMaxLen256) , "LogUri" :: Maybe (XmlString) , "AdditionalInfo" :: Maybe (XmlString) , "AmiVersion" :: Maybe (XmlStringMaxLen256) , "ReleaseLabel" :: Maybe (XmlStringMaxLen256) , "Instances" :: (JobFlowInstancesConfig) , "Steps" :: Maybe (StepConfigList) , "BootstrapActions" :: Maybe (BootstrapActionConfigList) , "SupportedProducts" :: Maybe (SupportedProductsList) , "NewSupportedProducts" :: Maybe (NewSupportedProductsList) , "Applications" :: Maybe (ApplicationList) , "Configurations" :: Maybe (ConfigurationList) , "VisibleToAllUsers" :: Maybe (Boolean) , "JobFlowRole" :: Maybe (XmlString) , "ServiceRole" :: Maybe (XmlString) , "Tags" :: Maybe (TagList) , "SecurityConfiguration" :: Maybe (XmlString) , "AutoScalingRole" :: Maybe (XmlString) , "ScaleDownBehavior" :: Maybe (ScaleDownBehavior) , "CustomAmiId" :: Maybe (XmlStringMaxLen256) , "EbsRootVolumeSize" :: Maybe (Int) , "RepoUpgradeOnBoot" :: Maybe (RepoUpgradeOnBoot) , "KerberosAttributes" :: Maybe (KerberosAttributes) } ) -> RunJobFlowInput
+newRunJobFlowInput' _Instances _Name customize = (RunJobFlowInput <<< customize) { "Instances": _Instances, "Name": _Name, "AdditionalInfo": Nothing, "AmiVersion": Nothing, "Applications": Nothing, "AutoScalingRole": Nothing, "BootstrapActions": Nothing, "Configurations": Nothing, "CustomAmiId": Nothing, "EbsRootVolumeSize": Nothing, "JobFlowRole": Nothing, "KerberosAttributes": Nothing, "LogUri": Nothing, "NewSupportedProducts": Nothing, "ReleaseLabel": Nothing, "RepoUpgradeOnBoot": Nothing, "ScaleDownBehavior": Nothing, "SecurityConfiguration": Nothing, "ServiceRole": Nothing, "Steps": Nothing, "SupportedProducts": Nothing, "Tags": Nothing, "VisibleToAllUsers": Nothing }
 
 
 
 -- | <p> The result of the <a>RunJobFlow</a> operation. </p>
 newtype RunJobFlowOutput = RunJobFlowOutput 
-  { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256)
+  { "JobFlowId" :: Maybe (XmlStringMaxLen256)
   }
 derive instance newtypeRunJobFlowOutput :: Newtype RunJobFlowOutput _
 derive instance repGenericRunJobFlowOutput :: Generic RunJobFlowOutput _
@@ -2936,12 +2935,12 @@ instance encodeRunJobFlowOutput :: Encode RunJobFlowOutput where encode = generi
 
 -- | Constructs RunJobFlowOutput from required parameters
 newRunJobFlowOutput :: RunJobFlowOutput
-newRunJobFlowOutput  = RunJobFlowOutput { "JobFlowId": (NullOrUndefined Nothing) }
+newRunJobFlowOutput  = RunJobFlowOutput { "JobFlowId": Nothing }
 
 -- | Constructs RunJobFlowOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRunJobFlowOutput' :: ( { "JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) } -> {"JobFlowId" :: NullOrUndefined (XmlStringMaxLen256) } ) -> RunJobFlowOutput
-newRunJobFlowOutput'  customize = (RunJobFlowOutput <<< customize) { "JobFlowId": (NullOrUndefined Nothing) }
+newRunJobFlowOutput' :: ( { "JobFlowId" :: Maybe (XmlStringMaxLen256) } -> {"JobFlowId" :: Maybe (XmlStringMaxLen256) } ) -> RunJobFlowOutput
+newRunJobFlowOutput'  customize = (RunJobFlowOutput <<< customize) { "JobFlowId": Nothing }
 
 
 
@@ -2956,7 +2955,7 @@ instance encodeScaleDownBehavior :: Encode ScaleDownBehavior where encode = gene
 
 -- | <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
 newtype ScalingAction = ScalingAction 
-  { "Market" :: NullOrUndefined (MarketType)
+  { "Market" :: Maybe (MarketType)
   , "SimpleScalingPolicyConfiguration" :: (SimpleScalingPolicyConfiguration)
   }
 derive instance newtypeScalingAction :: Newtype ScalingAction _
@@ -2967,12 +2966,12 @@ instance encodeScalingAction :: Encode ScalingAction where encode = genericEncod
 
 -- | Constructs ScalingAction from required parameters
 newScalingAction :: SimpleScalingPolicyConfiguration -> ScalingAction
-newScalingAction _SimpleScalingPolicyConfiguration = ScalingAction { "SimpleScalingPolicyConfiguration": _SimpleScalingPolicyConfiguration, "Market": (NullOrUndefined Nothing) }
+newScalingAction _SimpleScalingPolicyConfiguration = ScalingAction { "SimpleScalingPolicyConfiguration": _SimpleScalingPolicyConfiguration, "Market": Nothing }
 
 -- | Constructs ScalingAction's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScalingAction' :: SimpleScalingPolicyConfiguration -> ( { "Market" :: NullOrUndefined (MarketType) , "SimpleScalingPolicyConfiguration" :: (SimpleScalingPolicyConfiguration) } -> {"Market" :: NullOrUndefined (MarketType) , "SimpleScalingPolicyConfiguration" :: (SimpleScalingPolicyConfiguration) } ) -> ScalingAction
-newScalingAction' _SimpleScalingPolicyConfiguration customize = (ScalingAction <<< customize) { "SimpleScalingPolicyConfiguration": _SimpleScalingPolicyConfiguration, "Market": (NullOrUndefined Nothing) }
+newScalingAction' :: SimpleScalingPolicyConfiguration -> ( { "Market" :: Maybe (MarketType) , "SimpleScalingPolicyConfiguration" :: (SimpleScalingPolicyConfiguration) } -> {"Market" :: Maybe (MarketType) , "SimpleScalingPolicyConfiguration" :: (SimpleScalingPolicyConfiguration) } ) -> ScalingAction
+newScalingAction' _SimpleScalingPolicyConfiguration customize = (ScalingAction <<< customize) { "SimpleScalingPolicyConfiguration": _SimpleScalingPolicyConfiguration, "Market": Nothing }
 
 
 
@@ -3001,7 +3000,7 @@ newScalingConstraints' _MaxCapacity _MinCapacity customize = (ScalingConstraints
 -- | <p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
 newtype ScalingRule = ScalingRule 
   { "Name" :: (String)
-  , "Description" :: NullOrUndefined (String)
+  , "Description" :: Maybe (String)
   , "Action" :: (ScalingAction)
   , "Trigger" :: (ScalingTrigger)
   }
@@ -3013,12 +3012,12 @@ instance encodeScalingRule :: Encode ScalingRule where encode = genericEncode op
 
 -- | Constructs ScalingRule from required parameters
 newScalingRule :: ScalingAction -> String -> ScalingTrigger -> ScalingRule
-newScalingRule _Action _Name _Trigger = ScalingRule { "Action": _Action, "Name": _Name, "Trigger": _Trigger, "Description": (NullOrUndefined Nothing) }
+newScalingRule _Action _Name _Trigger = ScalingRule { "Action": _Action, "Name": _Name, "Trigger": _Trigger, "Description": Nothing }
 
 -- | Constructs ScalingRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScalingRule' :: ScalingAction -> String -> ScalingTrigger -> ( { "Name" :: (String) , "Description" :: NullOrUndefined (String) , "Action" :: (ScalingAction) , "Trigger" :: (ScalingTrigger) } -> {"Name" :: (String) , "Description" :: NullOrUndefined (String) , "Action" :: (ScalingAction) , "Trigger" :: (ScalingTrigger) } ) -> ScalingRule
-newScalingRule' _Action _Name _Trigger customize = (ScalingRule <<< customize) { "Action": _Action, "Name": _Name, "Trigger": _Trigger, "Description": (NullOrUndefined Nothing) }
+newScalingRule' :: ScalingAction -> String -> ScalingTrigger -> ( { "Name" :: (String) , "Description" :: Maybe (String) , "Action" :: (ScalingAction) , "Trigger" :: (ScalingTrigger) } -> {"Name" :: (String) , "Description" :: Maybe (String) , "Action" :: (ScalingAction) , "Trigger" :: (ScalingTrigger) } ) -> ScalingRule
+newScalingRule' _Action _Name _Trigger customize = (ScalingRule <<< customize) { "Action": _Action, "Name": _Name, "Trigger": _Trigger, "Description": Nothing }
 
 
 
@@ -3055,7 +3054,7 @@ newScalingTrigger' _CloudWatchAlarmDefinition customize = (ScalingTrigger <<< cu
 -- | <p>Configuration of the script to run during a bootstrap action.</p>
 newtype ScriptBootstrapActionConfig = ScriptBootstrapActionConfig 
   { "Path" :: (XmlString)
-  , "Args" :: NullOrUndefined (XmlStringList)
+  , "Args" :: Maybe (XmlStringList)
   }
 derive instance newtypeScriptBootstrapActionConfig :: Newtype ScriptBootstrapActionConfig _
 derive instance repGenericScriptBootstrapActionConfig :: Generic ScriptBootstrapActionConfig _
@@ -3065,12 +3064,12 @@ instance encodeScriptBootstrapActionConfig :: Encode ScriptBootstrapActionConfig
 
 -- | Constructs ScriptBootstrapActionConfig from required parameters
 newScriptBootstrapActionConfig :: XmlString -> ScriptBootstrapActionConfig
-newScriptBootstrapActionConfig _Path = ScriptBootstrapActionConfig { "Path": _Path, "Args": (NullOrUndefined Nothing) }
+newScriptBootstrapActionConfig _Path = ScriptBootstrapActionConfig { "Path": _Path, "Args": Nothing }
 
 -- | Constructs ScriptBootstrapActionConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScriptBootstrapActionConfig' :: XmlString -> ( { "Path" :: (XmlString) , "Args" :: NullOrUndefined (XmlStringList) } -> {"Path" :: (XmlString) , "Args" :: NullOrUndefined (XmlStringList) } ) -> ScriptBootstrapActionConfig
-newScriptBootstrapActionConfig' _Path customize = (ScriptBootstrapActionConfig <<< customize) { "Path": _Path, "Args": (NullOrUndefined Nothing) }
+newScriptBootstrapActionConfig' :: XmlString -> ( { "Path" :: (XmlString) , "Args" :: Maybe (XmlStringList) } -> {"Path" :: (XmlString) , "Args" :: Maybe (XmlStringList) } ) -> ScriptBootstrapActionConfig
+newScriptBootstrapActionConfig' _Path customize = (ScriptBootstrapActionConfig <<< customize) { "Path": _Path, "Args": Nothing }
 
 
 
@@ -3085,8 +3084,8 @@ instance encodeSecurityConfigurationList :: Encode SecurityConfigurationList whe
 
 -- | <p>The creation date and time, and name, of a security configuration.</p>
 newtype SecurityConfigurationSummary = SecurityConfigurationSummary 
-  { "Name" :: NullOrUndefined (XmlString)
-  , "CreationDateTime" :: NullOrUndefined (Date)
+  { "Name" :: Maybe (XmlString)
+  , "CreationDateTime" :: Maybe (Date)
   }
 derive instance newtypeSecurityConfigurationSummary :: Newtype SecurityConfigurationSummary _
 derive instance repGenericSecurityConfigurationSummary :: Generic SecurityConfigurationSummary _
@@ -3096,12 +3095,12 @@ instance encodeSecurityConfigurationSummary :: Encode SecurityConfigurationSumma
 
 -- | Constructs SecurityConfigurationSummary from required parameters
 newSecurityConfigurationSummary :: SecurityConfigurationSummary
-newSecurityConfigurationSummary  = SecurityConfigurationSummary { "CreationDateTime": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newSecurityConfigurationSummary  = SecurityConfigurationSummary { "CreationDateTime": Nothing, "Name": Nothing }
 
 -- | Constructs SecurityConfigurationSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSecurityConfigurationSummary' :: ( { "Name" :: NullOrUndefined (XmlString) , "CreationDateTime" :: NullOrUndefined (Date) } -> {"Name" :: NullOrUndefined (XmlString) , "CreationDateTime" :: NullOrUndefined (Date) } ) -> SecurityConfigurationSummary
-newSecurityConfigurationSummary'  customize = (SecurityConfigurationSummary <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newSecurityConfigurationSummary' :: ( { "Name" :: Maybe (XmlString) , "CreationDateTime" :: Maybe (Date) } -> {"Name" :: Maybe (XmlString) , "CreationDateTime" :: Maybe (Date) } ) -> SecurityConfigurationSummary
+newSecurityConfigurationSummary'  customize = (SecurityConfigurationSummary <<< customize) { "CreationDateTime": Nothing, "Name": Nothing }
 
 
 
@@ -3160,8 +3159,8 @@ newSetVisibleToAllUsersInput' _JobFlowIds _VisibleToAllUsers customize = (SetVis
 
 -- | <p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>
 newtype ShrinkPolicy = ShrinkPolicy 
-  { "DecommissionTimeout" :: NullOrUndefined (Int)
-  , "InstanceResizePolicy" :: NullOrUndefined (InstanceResizePolicy)
+  { "DecommissionTimeout" :: Maybe (Int)
+  , "InstanceResizePolicy" :: Maybe (InstanceResizePolicy)
   }
 derive instance newtypeShrinkPolicy :: Newtype ShrinkPolicy _
 derive instance repGenericShrinkPolicy :: Generic ShrinkPolicy _
@@ -3171,20 +3170,20 @@ instance encodeShrinkPolicy :: Encode ShrinkPolicy where encode = genericEncode 
 
 -- | Constructs ShrinkPolicy from required parameters
 newShrinkPolicy :: ShrinkPolicy
-newShrinkPolicy  = ShrinkPolicy { "DecommissionTimeout": (NullOrUndefined Nothing), "InstanceResizePolicy": (NullOrUndefined Nothing) }
+newShrinkPolicy  = ShrinkPolicy { "DecommissionTimeout": Nothing, "InstanceResizePolicy": Nothing }
 
 -- | Constructs ShrinkPolicy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newShrinkPolicy' :: ( { "DecommissionTimeout" :: NullOrUndefined (Int) , "InstanceResizePolicy" :: NullOrUndefined (InstanceResizePolicy) } -> {"DecommissionTimeout" :: NullOrUndefined (Int) , "InstanceResizePolicy" :: NullOrUndefined (InstanceResizePolicy) } ) -> ShrinkPolicy
-newShrinkPolicy'  customize = (ShrinkPolicy <<< customize) { "DecommissionTimeout": (NullOrUndefined Nothing), "InstanceResizePolicy": (NullOrUndefined Nothing) }
+newShrinkPolicy' :: ( { "DecommissionTimeout" :: Maybe (Int) , "InstanceResizePolicy" :: Maybe (InstanceResizePolicy) } -> {"DecommissionTimeout" :: Maybe (Int) , "InstanceResizePolicy" :: Maybe (InstanceResizePolicy) } ) -> ShrinkPolicy
+newShrinkPolicy'  customize = (ShrinkPolicy <<< customize) { "DecommissionTimeout": Nothing, "InstanceResizePolicy": Nothing }
 
 
 
 -- | <p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>
 newtype SimpleScalingPolicyConfiguration = SimpleScalingPolicyConfiguration 
-  { "AdjustmentType" :: NullOrUndefined (AdjustmentType)
+  { "AdjustmentType" :: Maybe (AdjustmentType)
   , "ScalingAdjustment" :: (Int)
-  , "CoolDown" :: NullOrUndefined (Int)
+  , "CoolDown" :: Maybe (Int)
   }
 derive instance newtypeSimpleScalingPolicyConfiguration :: Newtype SimpleScalingPolicyConfiguration _
 derive instance repGenericSimpleScalingPolicyConfiguration :: Generic SimpleScalingPolicyConfiguration _
@@ -3194,12 +3193,12 @@ instance encodeSimpleScalingPolicyConfiguration :: Encode SimpleScalingPolicyCon
 
 -- | Constructs SimpleScalingPolicyConfiguration from required parameters
 newSimpleScalingPolicyConfiguration :: Int -> SimpleScalingPolicyConfiguration
-newSimpleScalingPolicyConfiguration _ScalingAdjustment = SimpleScalingPolicyConfiguration { "ScalingAdjustment": _ScalingAdjustment, "AdjustmentType": (NullOrUndefined Nothing), "CoolDown": (NullOrUndefined Nothing) }
+newSimpleScalingPolicyConfiguration _ScalingAdjustment = SimpleScalingPolicyConfiguration { "ScalingAdjustment": _ScalingAdjustment, "AdjustmentType": Nothing, "CoolDown": Nothing }
 
 -- | Constructs SimpleScalingPolicyConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSimpleScalingPolicyConfiguration' :: Int -> ( { "AdjustmentType" :: NullOrUndefined (AdjustmentType) , "ScalingAdjustment" :: (Int) , "CoolDown" :: NullOrUndefined (Int) } -> {"AdjustmentType" :: NullOrUndefined (AdjustmentType) , "ScalingAdjustment" :: (Int) , "CoolDown" :: NullOrUndefined (Int) } ) -> SimpleScalingPolicyConfiguration
-newSimpleScalingPolicyConfiguration' _ScalingAdjustment customize = (SimpleScalingPolicyConfiguration <<< customize) { "ScalingAdjustment": _ScalingAdjustment, "AdjustmentType": (NullOrUndefined Nothing), "CoolDown": (NullOrUndefined Nothing) }
+newSimpleScalingPolicyConfiguration' :: Int -> ( { "AdjustmentType" :: Maybe (AdjustmentType) , "ScalingAdjustment" :: (Int) , "CoolDown" :: Maybe (Int) } -> {"AdjustmentType" :: Maybe (AdjustmentType) , "ScalingAdjustment" :: (Int) , "CoolDown" :: Maybe (Int) } ) -> SimpleScalingPolicyConfiguration
+newSimpleScalingPolicyConfiguration' _ScalingAdjustment customize = (SimpleScalingPolicyConfiguration <<< customize) { "ScalingAdjustment": _ScalingAdjustment, "AdjustmentType": Nothing, "CoolDown": Nothing }
 
 
 
@@ -3207,7 +3206,7 @@ newSimpleScalingPolicyConfiguration' _ScalingAdjustment customize = (SimpleScali
 newtype SpotProvisioningSpecification = SpotProvisioningSpecification 
   { "TimeoutDurationMinutes" :: (WholeNumber)
   , "TimeoutAction" :: (SpotProvisioningTimeoutAction)
-  , "BlockDurationMinutes" :: NullOrUndefined (WholeNumber)
+  , "BlockDurationMinutes" :: Maybe (WholeNumber)
   }
 derive instance newtypeSpotProvisioningSpecification :: Newtype SpotProvisioningSpecification _
 derive instance repGenericSpotProvisioningSpecification :: Generic SpotProvisioningSpecification _
@@ -3217,12 +3216,12 @@ instance encodeSpotProvisioningSpecification :: Encode SpotProvisioningSpecifica
 
 -- | Constructs SpotProvisioningSpecification from required parameters
 newSpotProvisioningSpecification :: SpotProvisioningTimeoutAction -> WholeNumber -> SpotProvisioningSpecification
-newSpotProvisioningSpecification _TimeoutAction _TimeoutDurationMinutes = SpotProvisioningSpecification { "TimeoutAction": _TimeoutAction, "TimeoutDurationMinutes": _TimeoutDurationMinutes, "BlockDurationMinutes": (NullOrUndefined Nothing) }
+newSpotProvisioningSpecification _TimeoutAction _TimeoutDurationMinutes = SpotProvisioningSpecification { "TimeoutAction": _TimeoutAction, "TimeoutDurationMinutes": _TimeoutDurationMinutes, "BlockDurationMinutes": Nothing }
 
 -- | Constructs SpotProvisioningSpecification's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSpotProvisioningSpecification' :: SpotProvisioningTimeoutAction -> WholeNumber -> ( { "TimeoutDurationMinutes" :: (WholeNumber) , "TimeoutAction" :: (SpotProvisioningTimeoutAction) , "BlockDurationMinutes" :: NullOrUndefined (WholeNumber) } -> {"TimeoutDurationMinutes" :: (WholeNumber) , "TimeoutAction" :: (SpotProvisioningTimeoutAction) , "BlockDurationMinutes" :: NullOrUndefined (WholeNumber) } ) -> SpotProvisioningSpecification
-newSpotProvisioningSpecification' _TimeoutAction _TimeoutDurationMinutes customize = (SpotProvisioningSpecification <<< customize) { "TimeoutAction": _TimeoutAction, "TimeoutDurationMinutes": _TimeoutDurationMinutes, "BlockDurationMinutes": (NullOrUndefined Nothing) }
+newSpotProvisioningSpecification' :: SpotProvisioningTimeoutAction -> WholeNumber -> ( { "TimeoutDurationMinutes" :: (WholeNumber) , "TimeoutAction" :: (SpotProvisioningTimeoutAction) , "BlockDurationMinutes" :: Maybe (WholeNumber) } -> {"TimeoutDurationMinutes" :: (WholeNumber) , "TimeoutAction" :: (SpotProvisioningTimeoutAction) , "BlockDurationMinutes" :: Maybe (WholeNumber) } ) -> SpotProvisioningSpecification
+newSpotProvisioningSpecification' _TimeoutAction _TimeoutDurationMinutes customize = (SpotProvisioningSpecification <<< customize) { "TimeoutAction": _TimeoutAction, "TimeoutDurationMinutes": _TimeoutDurationMinutes, "BlockDurationMinutes": Nothing }
 
 
 
@@ -3246,11 +3245,11 @@ instance encodeStatistic :: Encode Statistic where encode = genericEncode option
 
 -- | <p>This represents a step in a cluster.</p>
 newtype Step = Step 
-  { "Id" :: NullOrUndefined (StepId)
-  , "Name" :: NullOrUndefined (String)
-  , "Config" :: NullOrUndefined (HadoopStepConfig)
-  , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure)
-  , "Status" :: NullOrUndefined (StepStatus)
+  { "Id" :: Maybe (StepId)
+  , "Name" :: Maybe (String)
+  , "Config" :: Maybe (HadoopStepConfig)
+  , "ActionOnFailure" :: Maybe (ActionOnFailure)
+  , "Status" :: Maybe (StepStatus)
   }
 derive instance newtypeStep :: Newtype Step _
 derive instance repGenericStep :: Generic Step _
@@ -3260,19 +3259,19 @@ instance encodeStep :: Encode Step where encode = genericEncode options
 
 -- | Constructs Step from required parameters
 newStep :: Step
-newStep  = Step { "ActionOnFailure": (NullOrUndefined Nothing), "Config": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newStep  = Step { "ActionOnFailure": Nothing, "Config": Nothing, "Id": Nothing, "Name": Nothing, "Status": Nothing }
 
 -- | Constructs Step's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStep' :: ( { "Id" :: NullOrUndefined (StepId) , "Name" :: NullOrUndefined (String) , "Config" :: NullOrUndefined (HadoopStepConfig) , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure) , "Status" :: NullOrUndefined (StepStatus) } -> {"Id" :: NullOrUndefined (StepId) , "Name" :: NullOrUndefined (String) , "Config" :: NullOrUndefined (HadoopStepConfig) , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure) , "Status" :: NullOrUndefined (StepStatus) } ) -> Step
-newStep'  customize = (Step <<< customize) { "ActionOnFailure": (NullOrUndefined Nothing), "Config": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newStep' :: ( { "Id" :: Maybe (StepId) , "Name" :: Maybe (String) , "Config" :: Maybe (HadoopStepConfig) , "ActionOnFailure" :: Maybe (ActionOnFailure) , "Status" :: Maybe (StepStatus) } -> {"Id" :: Maybe (StepId) , "Name" :: Maybe (String) , "Config" :: Maybe (HadoopStepConfig) , "ActionOnFailure" :: Maybe (ActionOnFailure) , "Status" :: Maybe (StepStatus) } ) -> Step
+newStep'  customize = (Step <<< customize) { "ActionOnFailure": Nothing, "Config": Nothing, "Id": Nothing, "Name": Nothing, "Status": Nothing }
 
 
 
 -- | <p>Specification of a cluster (job flow) step.</p>
 newtype StepConfig = StepConfig 
   { "Name" :: (XmlStringMaxLen256)
-  , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure)
+  , "ActionOnFailure" :: Maybe (ActionOnFailure)
   , "HadoopJarStep" :: (HadoopJarStepConfig)
   }
 derive instance newtypeStepConfig :: Newtype StepConfig _
@@ -3283,12 +3282,12 @@ instance encodeStepConfig :: Encode StepConfig where encode = genericEncode opti
 
 -- | Constructs StepConfig from required parameters
 newStepConfig :: HadoopJarStepConfig -> XmlStringMaxLen256 -> StepConfig
-newStepConfig _HadoopJarStep _Name = StepConfig { "HadoopJarStep": _HadoopJarStep, "Name": _Name, "ActionOnFailure": (NullOrUndefined Nothing) }
+newStepConfig _HadoopJarStep _Name = StepConfig { "HadoopJarStep": _HadoopJarStep, "Name": _Name, "ActionOnFailure": Nothing }
 
 -- | Constructs StepConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepConfig' :: HadoopJarStepConfig -> XmlStringMaxLen256 -> ( { "Name" :: (XmlStringMaxLen256) , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure) , "HadoopJarStep" :: (HadoopJarStepConfig) } -> {"Name" :: (XmlStringMaxLen256) , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure) , "HadoopJarStep" :: (HadoopJarStepConfig) } ) -> StepConfig
-newStepConfig' _HadoopJarStep _Name customize = (StepConfig <<< customize) { "HadoopJarStep": _HadoopJarStep, "Name": _Name, "ActionOnFailure": (NullOrUndefined Nothing) }
+newStepConfig' :: HadoopJarStepConfig -> XmlStringMaxLen256 -> ( { "Name" :: (XmlStringMaxLen256) , "ActionOnFailure" :: Maybe (ActionOnFailure) , "HadoopJarStep" :: (HadoopJarStepConfig) } -> {"Name" :: (XmlStringMaxLen256) , "ActionOnFailure" :: Maybe (ActionOnFailure) , "HadoopJarStep" :: (HadoopJarStepConfig) } ) -> StepConfig
+newStepConfig' _HadoopJarStep _Name customize = (StepConfig <<< customize) { "HadoopJarStep": _HadoopJarStep, "Name": _Name, "ActionOnFailure": Nothing }
 
 
 
@@ -3345,9 +3344,9 @@ instance encodeStepExecutionState :: Encode StepExecutionState where encode = ge
 newtype StepExecutionStatusDetail = StepExecutionStatusDetail 
   { "State" :: (StepExecutionState)
   , "CreationDateTime" :: (Date)
-  , "StartDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
-  , "LastStateChangeReason" :: NullOrUndefined (XmlString)
+  , "StartDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
+  , "LastStateChangeReason" :: Maybe (XmlString)
   }
 derive instance newtypeStepExecutionStatusDetail :: Newtype StepExecutionStatusDetail _
 derive instance repGenericStepExecutionStatusDetail :: Generic StepExecutionStatusDetail _
@@ -3357,12 +3356,12 @@ instance encodeStepExecutionStatusDetail :: Encode StepExecutionStatusDetail whe
 
 -- | Constructs StepExecutionStatusDetail from required parameters
 newStepExecutionStatusDetail :: Date -> StepExecutionState -> StepExecutionStatusDetail
-newStepExecutionStatusDetail _CreationDateTime _State = StepExecutionStatusDetail { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": (NullOrUndefined Nothing), "LastStateChangeReason": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newStepExecutionStatusDetail _CreationDateTime _State = StepExecutionStatusDetail { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": Nothing, "LastStateChangeReason": Nothing, "StartDateTime": Nothing }
 
 -- | Constructs StepExecutionStatusDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepExecutionStatusDetail' :: Date -> StepExecutionState -> ( { "State" :: (StepExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) , "LastStateChangeReason" :: NullOrUndefined (XmlString) } -> {"State" :: (StepExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) , "LastStateChangeReason" :: NullOrUndefined (XmlString) } ) -> StepExecutionStatusDetail
-newStepExecutionStatusDetail' _CreationDateTime _State customize = (StepExecutionStatusDetail <<< customize) { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": (NullOrUndefined Nothing), "LastStateChangeReason": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newStepExecutionStatusDetail' :: Date -> StepExecutionState -> ( { "State" :: (StepExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) , "LastStateChangeReason" :: Maybe (XmlString) } -> {"State" :: (StepExecutionState) , "CreationDateTime" :: (Date) , "StartDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) , "LastStateChangeReason" :: Maybe (XmlString) } ) -> StepExecutionStatusDetail
+newStepExecutionStatusDetail' _CreationDateTime _State customize = (StepExecutionStatusDetail <<< customize) { "CreationDateTime": _CreationDateTime, "State": _State, "EndDateTime": Nothing, "LastStateChangeReason": Nothing, "StartDateTime": Nothing }
 
 
 
@@ -3395,8 +3394,8 @@ instance encodeStepState :: Encode StepState where encode = genericEncode option
 
 -- | <p>The details of the step state change reason.</p>
 newtype StepStateChangeReason = StepStateChangeReason 
-  { "Code" :: NullOrUndefined (StepStateChangeReasonCode)
-  , "Message" :: NullOrUndefined (String)
+  { "Code" :: Maybe (StepStateChangeReasonCode)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeStepStateChangeReason :: Newtype StepStateChangeReason _
 derive instance repGenericStepStateChangeReason :: Generic StepStateChangeReason _
@@ -3406,12 +3405,12 @@ instance encodeStepStateChangeReason :: Encode StepStateChangeReason where encod
 
 -- | Constructs StepStateChangeReason from required parameters
 newStepStateChangeReason :: StepStateChangeReason
-newStepStateChangeReason  = StepStateChangeReason { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newStepStateChangeReason  = StepStateChangeReason { "Code": Nothing, "Message": Nothing }
 
 -- | Constructs StepStateChangeReason's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepStateChangeReason' :: ( { "Code" :: NullOrUndefined (StepStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } -> {"Code" :: NullOrUndefined (StepStateChangeReasonCode) , "Message" :: NullOrUndefined (String) } ) -> StepStateChangeReason
-newStepStateChangeReason'  customize = (StepStateChangeReason <<< customize) { "Code": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newStepStateChangeReason' :: ( { "Code" :: Maybe (StepStateChangeReasonCode) , "Message" :: Maybe (String) } -> {"Code" :: Maybe (StepStateChangeReasonCode) , "Message" :: Maybe (String) } ) -> StepStateChangeReason
+newStepStateChangeReason'  customize = (StepStateChangeReason <<< customize) { "Code": Nothing, "Message": Nothing }
 
 
 
@@ -3435,10 +3434,10 @@ instance encodeStepStateList :: Encode StepStateList where encode = genericEncod
 
 -- | <p>The execution status details of the cluster step.</p>
 newtype StepStatus = StepStatus 
-  { "State" :: NullOrUndefined (StepState)
-  , "StateChangeReason" :: NullOrUndefined (StepStateChangeReason)
-  , "FailureDetails" :: NullOrUndefined (FailureDetails)
-  , "Timeline" :: NullOrUndefined (StepTimeline)
+  { "State" :: Maybe (StepState)
+  , "StateChangeReason" :: Maybe (StepStateChangeReason)
+  , "FailureDetails" :: Maybe (FailureDetails)
+  , "Timeline" :: Maybe (StepTimeline)
   }
 derive instance newtypeStepStatus :: Newtype StepStatus _
 derive instance repGenericStepStatus :: Generic StepStatus _
@@ -3448,22 +3447,22 @@ instance encodeStepStatus :: Encode StepStatus where encode = genericEncode opti
 
 -- | Constructs StepStatus from required parameters
 newStepStatus :: StepStatus
-newStepStatus  = StepStatus { "FailureDetails": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newStepStatus  = StepStatus { "FailureDetails": Nothing, "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 -- | Constructs StepStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepStatus' :: ( { "State" :: NullOrUndefined (StepState) , "StateChangeReason" :: NullOrUndefined (StepStateChangeReason) , "FailureDetails" :: NullOrUndefined (FailureDetails) , "Timeline" :: NullOrUndefined (StepTimeline) } -> {"State" :: NullOrUndefined (StepState) , "StateChangeReason" :: NullOrUndefined (StepStateChangeReason) , "FailureDetails" :: NullOrUndefined (FailureDetails) , "Timeline" :: NullOrUndefined (StepTimeline) } ) -> StepStatus
-newStepStatus'  customize = (StepStatus <<< customize) { "FailureDetails": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "StateChangeReason": (NullOrUndefined Nothing), "Timeline": (NullOrUndefined Nothing) }
+newStepStatus' :: ( { "State" :: Maybe (StepState) , "StateChangeReason" :: Maybe (StepStateChangeReason) , "FailureDetails" :: Maybe (FailureDetails) , "Timeline" :: Maybe (StepTimeline) } -> {"State" :: Maybe (StepState) , "StateChangeReason" :: Maybe (StepStateChangeReason) , "FailureDetails" :: Maybe (FailureDetails) , "Timeline" :: Maybe (StepTimeline) } ) -> StepStatus
+newStepStatus'  customize = (StepStatus <<< customize) { "FailureDetails": Nothing, "State": Nothing, "StateChangeReason": Nothing, "Timeline": Nothing }
 
 
 
 -- | <p>The summary of the cluster step.</p>
 newtype StepSummary = StepSummary 
-  { "Id" :: NullOrUndefined (StepId)
-  , "Name" :: NullOrUndefined (String)
-  , "Config" :: NullOrUndefined (HadoopStepConfig)
-  , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure)
-  , "Status" :: NullOrUndefined (StepStatus)
+  { "Id" :: Maybe (StepId)
+  , "Name" :: Maybe (String)
+  , "Config" :: Maybe (HadoopStepConfig)
+  , "ActionOnFailure" :: Maybe (ActionOnFailure)
+  , "Status" :: Maybe (StepStatus)
   }
 derive instance newtypeStepSummary :: Newtype StepSummary _
 derive instance repGenericStepSummary :: Generic StepSummary _
@@ -3473,12 +3472,12 @@ instance encodeStepSummary :: Encode StepSummary where encode = genericEncode op
 
 -- | Constructs StepSummary from required parameters
 newStepSummary :: StepSummary
-newStepSummary  = StepSummary { "ActionOnFailure": (NullOrUndefined Nothing), "Config": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newStepSummary  = StepSummary { "ActionOnFailure": Nothing, "Config": Nothing, "Id": Nothing, "Name": Nothing, "Status": Nothing }
 
 -- | Constructs StepSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepSummary' :: ( { "Id" :: NullOrUndefined (StepId) , "Name" :: NullOrUndefined (String) , "Config" :: NullOrUndefined (HadoopStepConfig) , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure) , "Status" :: NullOrUndefined (StepStatus) } -> {"Id" :: NullOrUndefined (StepId) , "Name" :: NullOrUndefined (String) , "Config" :: NullOrUndefined (HadoopStepConfig) , "ActionOnFailure" :: NullOrUndefined (ActionOnFailure) , "Status" :: NullOrUndefined (StepStatus) } ) -> StepSummary
-newStepSummary'  customize = (StepSummary <<< customize) { "ActionOnFailure": (NullOrUndefined Nothing), "Config": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newStepSummary' :: ( { "Id" :: Maybe (StepId) , "Name" :: Maybe (String) , "Config" :: Maybe (HadoopStepConfig) , "ActionOnFailure" :: Maybe (ActionOnFailure) , "Status" :: Maybe (StepStatus) } -> {"Id" :: Maybe (StepId) , "Name" :: Maybe (String) , "Config" :: Maybe (HadoopStepConfig) , "ActionOnFailure" :: Maybe (ActionOnFailure) , "Status" :: Maybe (StepStatus) } ) -> StepSummary
+newStepSummary'  customize = (StepSummary <<< customize) { "ActionOnFailure": Nothing, "Config": Nothing, "Id": Nothing, "Name": Nothing, "Status": Nothing }
 
 
 
@@ -3493,9 +3492,9 @@ instance encodeStepSummaryList :: Encode StepSummaryList where encode = genericE
 
 -- | <p>The timeline of the cluster step lifecycle.</p>
 newtype StepTimeline = StepTimeline 
-  { "CreationDateTime" :: NullOrUndefined (Date)
-  , "StartDateTime" :: NullOrUndefined (Date)
-  , "EndDateTime" :: NullOrUndefined (Date)
+  { "CreationDateTime" :: Maybe (Date)
+  , "StartDateTime" :: Maybe (Date)
+  , "EndDateTime" :: Maybe (Date)
   }
 derive instance newtypeStepTimeline :: Newtype StepTimeline _
 derive instance repGenericStepTimeline :: Generic StepTimeline _
@@ -3505,12 +3504,12 @@ instance encodeStepTimeline :: Encode StepTimeline where encode = genericEncode 
 
 -- | Constructs StepTimeline from required parameters
 newStepTimeline :: StepTimeline
-newStepTimeline  = StepTimeline { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newStepTimeline  = StepTimeline { "CreationDateTime": Nothing, "EndDateTime": Nothing, "StartDateTime": Nothing }
 
 -- | Constructs StepTimeline's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepTimeline' :: ( { "CreationDateTime" :: NullOrUndefined (Date) , "StartDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } -> {"CreationDateTime" :: NullOrUndefined (Date) , "StartDateTime" :: NullOrUndefined (Date) , "EndDateTime" :: NullOrUndefined (Date) } ) -> StepTimeline
-newStepTimeline'  customize = (StepTimeline <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "EndDateTime": (NullOrUndefined Nothing), "StartDateTime": (NullOrUndefined Nothing) }
+newStepTimeline' :: ( { "CreationDateTime" :: Maybe (Date) , "StartDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } -> {"CreationDateTime" :: Maybe (Date) , "StartDateTime" :: Maybe (Date) , "EndDateTime" :: Maybe (Date) } ) -> StepTimeline
+newStepTimeline'  customize = (StepTimeline <<< customize) { "CreationDateTime": Nothing, "EndDateTime": Nothing, "StartDateTime": Nothing }
 
 
 
@@ -3534,8 +3533,8 @@ instance encodeStringMap :: Encode StringMap where encode = genericEncode option
 
 -- | <p>The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>
 newtype SupportedProductConfig = SupportedProductConfig 
-  { "Name" :: NullOrUndefined (XmlStringMaxLen256)
-  , "Args" :: NullOrUndefined (XmlStringList)
+  { "Name" :: Maybe (XmlStringMaxLen256)
+  , "Args" :: Maybe (XmlStringList)
   }
 derive instance newtypeSupportedProductConfig :: Newtype SupportedProductConfig _
 derive instance repGenericSupportedProductConfig :: Generic SupportedProductConfig _
@@ -3545,12 +3544,12 @@ instance encodeSupportedProductConfig :: Encode SupportedProductConfig where enc
 
 -- | Constructs SupportedProductConfig from required parameters
 newSupportedProductConfig :: SupportedProductConfig
-newSupportedProductConfig  = SupportedProductConfig { "Args": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newSupportedProductConfig  = SupportedProductConfig { "Args": Nothing, "Name": Nothing }
 
 -- | Constructs SupportedProductConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSupportedProductConfig' :: ( { "Name" :: NullOrUndefined (XmlStringMaxLen256) , "Args" :: NullOrUndefined (XmlStringList) } -> {"Name" :: NullOrUndefined (XmlStringMaxLen256) , "Args" :: NullOrUndefined (XmlStringList) } ) -> SupportedProductConfig
-newSupportedProductConfig'  customize = (SupportedProductConfig <<< customize) { "Args": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newSupportedProductConfig' :: ( { "Name" :: Maybe (XmlStringMaxLen256) , "Args" :: Maybe (XmlStringList) } -> {"Name" :: Maybe (XmlStringMaxLen256) , "Args" :: Maybe (XmlStringList) } ) -> SupportedProductConfig
+newSupportedProductConfig'  customize = (SupportedProductConfig <<< customize) { "Args": Nothing, "Name": Nothing }
 
 
 
@@ -3565,8 +3564,8 @@ instance encodeSupportedProductsList :: Encode SupportedProductsList where encod
 
 -- | <p>A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "Key" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -3576,12 +3575,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (String) , "Value" :: Maybe (String) } -> {"Key" :: Maybe (String) , "Value" :: Maybe (String) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -3627,7 +3626,7 @@ instance encodeUnit'' :: Encode Unit'' where encode = genericEncode options
 -- | <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
 newtype VolumeSpecification = VolumeSpecification 
   { "VolumeType" :: (String)
-  , "Iops" :: NullOrUndefined (Int)
+  , "Iops" :: Maybe (Int)
   , "SizeInGB" :: (Int)
   }
 derive instance newtypeVolumeSpecification :: Newtype VolumeSpecification _
@@ -3638,12 +3637,12 @@ instance encodeVolumeSpecification :: Encode VolumeSpecification where encode = 
 
 -- | Constructs VolumeSpecification from required parameters
 newVolumeSpecification :: Int -> String -> VolumeSpecification
-newVolumeSpecification _SizeInGB _VolumeType = VolumeSpecification { "SizeInGB": _SizeInGB, "VolumeType": _VolumeType, "Iops": (NullOrUndefined Nothing) }
+newVolumeSpecification _SizeInGB _VolumeType = VolumeSpecification { "SizeInGB": _SizeInGB, "VolumeType": _VolumeType, "Iops": Nothing }
 
 -- | Constructs VolumeSpecification's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVolumeSpecification' :: Int -> String -> ( { "VolumeType" :: (String) , "Iops" :: NullOrUndefined (Int) , "SizeInGB" :: (Int) } -> {"VolumeType" :: (String) , "Iops" :: NullOrUndefined (Int) , "SizeInGB" :: (Int) } ) -> VolumeSpecification
-newVolumeSpecification' _SizeInGB _VolumeType customize = (VolumeSpecification <<< customize) { "SizeInGB": _SizeInGB, "VolumeType": _VolumeType, "Iops": (NullOrUndefined Nothing) }
+newVolumeSpecification' :: Int -> String -> ( { "VolumeType" :: (String) , "Iops" :: Maybe (Int) , "SizeInGB" :: (Int) } -> {"VolumeType" :: (String) , "Iops" :: Maybe (Int) , "SizeInGB" :: (Int) } ) -> VolumeSpecification
+newVolumeSpecification' _SizeInGB _VolumeType customize = (VolumeSpecification <<< customize) { "SizeInGB": _SizeInGB, "VolumeType": _VolumeType, "Iops": Nothing }
 
 
 
